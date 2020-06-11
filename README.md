@@ -1,6 +1,15 @@
 # TypeScript Next.js example
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+## Quick start
+
+```
+$ git clone --depth=1 https://github.com/wkddnjset/next-ts <PROJECT_NAME>
+$ cd <PROJECT_NAME>
+$ yarn add 
+$ git remote rm origin
+$ git remote add origin <NEW_REPO>
+$ yarn run dev
+```
 
 ## Deploy your own
 
