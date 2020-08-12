@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
   button:focus {
-    outline: none;
+    outline: none !important;
   }
   input {
     ::-webkit-outer-spin-button,
@@ -81,7 +81,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
   </Provider>
 );
 
-MyApp.getInitialProps = async ({ Component, ctx }) => {
+MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { ServerStyleSheets } from '@material-ui/styles'
+import { ServerStyleSheets } from "@material-ui/styles";
 
 const SITE_NAME = "SITE_NAME";
 const SITE_TITLE = "SITE_TITLE";
@@ -10,14 +10,14 @@ const SITE_IMAGE = "SITE_IMAGE";
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet()
-    const sheet2 = new ServerStyleSheets()
-    const page = renderPage(App => props =>
-      sheet.collectStyles(sheet2.collect(<App {...props} />)),
-    )
-    const styleTags = sheet.getStyleElement()
-    const styleTags2 = sheet2.getStyleElement()
-    return { ...page, styleTags, styleTags2 }
+    const sheet = new ServerStyleSheet();
+    const sheet2 = new ServerStyleSheets();
+    const page = renderPage((App) => (props) =>
+      sheet.collectStyles(sheet2.collect(<App {...props} />))
+    );
+    const styleTags = sheet.getStyleElement();
+    const styleTags2 = sheet2.getStyleElement();
+    return { ...page, styleTags, styleTags2 };
   }
   setGoogleTags() {
     return {
@@ -26,14 +26,20 @@ export default class MyDocument extends Document {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-155067425-1');
-      `
+
+        
+      `,
     };
   }
   render() {
     return (
       <Html>
         <Head>
-          <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'/>
+          <link
+            href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"
+            rel="stylesheet"
+            type="text/css"
+          />
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
@@ -54,7 +60,13 @@ export default class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="/static/favicon.ico" />
           {/* Google Analytics */}
+          <script
+            type="text/javascript"
+            src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+            charset="utf-8"
+          />
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+
           {this.props.styleTags}
           {this.props.styleTags2}
         </Head>
