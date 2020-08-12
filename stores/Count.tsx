@@ -1,3 +1,4 @@
+import { createContext } from "react";
 import { observable, action } from "mobx";
 
 class Count {
@@ -11,4 +12,5 @@ class Count {
   };
 }
 
-export default new Count();
+const countStore = new Count();
+export default createContext(countStore);
