@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider {...stores}>
     <ScrollToTop>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       <title>어썸샌드</title>
       <Component {...pageProps} />
     </ScrollToTop>
