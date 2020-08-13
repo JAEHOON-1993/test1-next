@@ -8,14 +8,14 @@ export const init = () => {
   return AxiosPermission.get(`/auth/normal/v1/init/validate`);
 };
 
-export const login = (req) => {
-  req.append("client_id", CLIENT_ID);
-  req.append("grant_type", "password");
+export const login = (formdata: any) => {
+  formdata.append("client_id", CLIENT_ID);
+  formdata.append("grant_type", "password");
 
   const headers = {
     "Content-Type": "multipart/form-data",
   };
-  return Axios.post(`/api/v1/auth/token/`, req, {
+  return Axios.post(`/api/v1/auth/token/`, formdata, {
     headers: headers,
   });
 };
@@ -37,15 +37,20 @@ export const refreshToken = async () => {
   });
 };
 
-export const signup = (provider, req) => {
+export const signup = (req: any) => {
+  return Axios.post(`/api/v1/auth/signup/`, req);
+};
+
+export const validation = (req: any) => {
+  return Axios.get(`/api/v1/auth/validation/`, req);
+};
+
+export const social_login = (formdata: any) => {
+  formdata.append("grant_type", "convert_token");
   const headers = {
     "Content-Type": "multipart/form-data",
   };
-  return Axios.post(`/auth/normal/v1/${provider}/register`, req, {
+  return Axios.post(`/api/v1/auth/social-login/`, formdata, {
     headers: headers,
   });
-};
-
-export const validation = (req) => {
-  return Axios.get(`/api/v1/auth/validation/`, req);
 };
