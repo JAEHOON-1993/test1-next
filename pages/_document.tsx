@@ -62,7 +62,7 @@ export default class MyDocument extends Document<Props> {
             content="telephone=no, address=no, email=no"
           />
           <link rel="shortcut icon" href="/public/favicon.ico" />
-          <link rel="manifest" href="/public/manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
           {/* Google Analytics */}
           <script
             type="text/javascript"
