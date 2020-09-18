@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useState, ReactNode, Ref } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import theme from "@layout/theme";
+import theme from "layout/theme";
 
 const CustomInput = withStyles({
   root: {
     width: "100%",
-    margin: "15px 0",
+    margin: "8px 0",
+    color: theme.color.DARKGRAY,
     "& label.Mui-focused": {
       color: theme.color.PRIMARY,
+    },
+    "& .MuiInput-underline.Mui-error:after": {
+      borderBottomColor: theme.color.DANGER,
     },
     "& .MuiInput-underline:after": {
       borderBottomColor: theme.color.PRIMARY,
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "red",
+        borderColor: theme.color.PRIMARY,
       },
       "&:hover fieldset": {
-        borderColor: "yellow",
+        borderColor: theme.color.PRIMARY,
       },
       "&.Mui-focused fieldset": {
         borderColor: theme.color.PRIMARY,
@@ -27,35 +31,55 @@ const CustomInput = withStyles({
   },
 })(TextField);
 
-class Input extends React.Component {
-  state = {
-    text: "",
-    focused: false,
+type Props = {
+  id?: string;
+  rows?: number;
+  error?: boolean;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  size?: "small" | undefined;
+  InputLabelProps?: object;
+  InputProps?: {
+    ref?: Ref<any>;
+    className?: string;
+    startAdornment?: ReactNode;
+    endAdornment?: ReactNode;
   };
-  onFocus = () => {
-    this.setState({ focused: true });
+  inputProps?: object;
+  label?: string;
+  placeholder?: string;
+  helperText?: string;
+  multiline?: boolean;
+  style?: any;
+  onChange?: any;
+  value?: any;
+  variant?: any;
+};
+
+const Input: React.FC<Props> = (props) => {
+  const [text, setText] = useState<string>("");
+  const [focused, setFocused] = useState<Boolean>(false);
+  const onFocus = () => {
+    setFocused(true);
   };
-  onBlur = () => {
-    if (!this.state.text) {
-      this.setState({ focused: false });
+  const onBlur = () => {
+    if (!text) {
+      setFocused(false);
     }
   };
-  onChange = (e) => {
-    this.setState({ text: e.target.value });
+  const onChange = (e: any) => {
+    setText(e.target.value);
+    props.onChange(e);
   };
-  render() {
-    const { focused } = this.state;
-    const { placeholder, label, ...props } = this.props;
-    return (
-      <CustomInput
-        {...props}
-        label={focused ? label : placeholder}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onChange={this.onChange}
-      />
-    );
-  }
-}
+  return (
+    <CustomInput
+      {...props}
+      label={focused ? props.label : props.placeholder}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChange}
+    />
+  );
+};
 
 export default Input;

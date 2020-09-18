@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 // components
 
 import NavMobile from "./nav_mo";
@@ -21,19 +21,23 @@ const NavPCWrap = styled.div`
     display: flex;
   }
 `;
-class Nav extends React.Component {
-  render() {
-    return (
-      <>
-        <NavMobileWrap>
-          <NavMobile />
-        </NavMobileWrap>
-        <NavPCWrap>
-          <NavPC fixed={this.props.fixed} />
-        </NavPCWrap>
-      </>
-    );
-  }
-}
+
+type Props = {
+  fixed?: boolean;
+  style?: any;
+};
+
+const Nav: React.FC<Props> = ({ fixed }) => {
+  return (
+    <>
+      <NavMobileWrap>
+        <NavMobile />
+      </NavMobileWrap>
+      <NavPCWrap>
+        <NavPC fixed={fixed} />
+      </NavPCWrap>
+    </>
+  );
+};
 
 export default Nav;

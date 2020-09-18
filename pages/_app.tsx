@@ -1,10 +1,16 @@
-import * as React from "react";
+import React from "react";
 import { AppProps } from "next/app";
 import { Provider } from "mobx-react";
 import { createGlobalStyle } from "styled-components";
 
 import ScrollToTop from "components/ScrollToTop";
 import stores from "stores";
+
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
 
 // CSS Reset Code
 const GlobalStyle = createGlobalStyle`

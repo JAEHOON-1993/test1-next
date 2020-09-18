@@ -4,7 +4,9 @@ import {
   StorageSetToken,
   StorageClearToken,
 } from "utils/Storage";
-import isRefreshTokenExpired from "utils/isRefreshTokenExpired";
+import * as AuthAPI from "./Auth";
+
+// import isRefreshTokenExpired from "utils/isRefreshTokenExpired";
 
 const refreshURL = "http://127.0.0.1:8000/api/v1/auth/token/";
 const SERVER_URL = "http://127.0.0.1:8000";
@@ -17,7 +19,7 @@ const Axios = axios.create({
   },
 });
 
-export function setHeader(token) {
+export function setHeader(token: string) {
   Axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
@@ -28,15 +30,13 @@ export function removeHeader() {
 Axios.interceptors.request.use(
   async (config) => {
     if (config.url === refreshURL) {
-      console.log("#refresh request: ", config);
       return config;
     }
     const token = await StorageGetToken();
-    console.log("token : ", token);
+    // console.log("token : ", token);
     if (token && token.accessToken) {
       config.headers["Authorization"] = "Bearer " + token.accessToken;
     }
-    console.log("request: ", config);
     return config;
   },
   (error) => {
@@ -44,7 +44,7 @@ Axios.interceptors.request.use(
   }
 );
 
-const UNAUTHORIZED = 401;
+const UNAUTHORIZED = 403 | 401;
 
 Axios.interceptors.response.use(
   (response) => {
@@ -82,42 +82,30 @@ Axios.interceptors.response.use(
       return Promise.reject(error);
     } else if (
       error.response.status === UNAUTHORIZED &&
-      !originalRequest._retry &&
-      error.response.data.message === "Jwt Token Expired" &&
-      !isRefreshTokenExpired()
+      !originalRequest._retry
     ) {
       originalRequest._retry = true;
-      const { refreshToken } = StorageGetToken();
-      setHeader(refreshToken);
-      return Axios.get(refreshURL)
-        .then((res) => {
-          if (res.data.isSuccess) {
-            StorageSetToken(
-              res.data.result.accessToken,
-              res.data.result.refreshToken
-            );
-            setHeader(res.data.result.accessToken);
+      return AuthAPI.refreshToken()
+        .then(async (res: any) => {
+          if (res.status === 200) {
+            const {
+              access_token,
+              expires_in,
+              refresh_token,
+            } = res?.data?.token;
+            await StorageSetToken(access_token, refresh_token, expires_in);
+            await setHeader(access_token);
             return Axios(originalRequest);
           }
         })
         .catch((err) => {
           //refresh Token not verified
-          try {
-            if (err.response.status === UNAUTHORIZED) {
-              console.log("refresh token error");
-
-              StorageClearToken();
-            }
-          } catch {}
+          window.location.replace("/login");
+          console.log("err : ", err);
+          console.log("refresh token error");
+          StorageClearToken();
         });
     }
-    // 401인 경우 모두 로그인으로 보내기 코드
-
-    // if (error.response.status === UNAUTHORIZED) {
-
-    //   StorageClearToken();
-    //   window.location.replace('/login');
-    // }
 
     return Promise.reject(error);
   }

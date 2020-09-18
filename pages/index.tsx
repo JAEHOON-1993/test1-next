@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Layout from "@components/Layout";
-import KakaoLogin from "@components/Social/KakaoLogin";
-import NaverLogin from "@components/Social/NaverLogin";
+import Layout from "components/Layout";
+import KakaoLogin from "components/Social/KakaoLogin";
+import NaverLogin from "components/Social/NaverLogin";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">

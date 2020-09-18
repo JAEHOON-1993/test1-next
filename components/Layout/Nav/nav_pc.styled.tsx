@@ -1,8 +1,5 @@
 import styled, { css } from "styled-components";
 
-const logo_ic = "/images/logo.png";
-const logo_white_ic = "/images/logo_white.png";
-
 interface Props {
   fixed?: boolean;
   scrolled?: boolean;
@@ -45,7 +42,8 @@ export const NavWrap = styled.div`
 
 export const Logo = styled.img`
   cursor: pointer;
-  width: 113px;
+  width: 60px;
+  height: 60px;
 `;
 
 export const Menu = styled.div`
@@ -67,15 +65,15 @@ export const NavLink = styled.p`
     margin-left: 30px;
     font-size: 14px;
   }
-  @media (min-width: 992px) and (max-width: 1299.98px) { 
+  @media (min-width: 992px) and (max-width: 1299.98px) {
     margin-left: 48px;
     font-size: 14px;
   }
-  @media (min-width: 1300px) and (max-width: 1599.98px) { 
+  @media (min-width: 1300px) and (max-width: 1599.98px) {
     margin-left: 48px;
     font-size: 14px;
   }
-  @media (min-width: 1600px) { 
+  @media (min-width: 1600px) {
     margin-left: 58px;
     font-size: 16px;
   }

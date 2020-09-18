@@ -5,7 +5,7 @@ export const StorageGetToken = async () => {
   };
   try {
     const token = await localStorage.getItem("@token");
-    return JSON.parse(token);
+    return JSON.parse(token ? token : "");
   } catch (error) {
     // Error retrieving data
     return defaultValue;
@@ -14,19 +14,17 @@ export const StorageGetToken = async () => {
 
 export const StorageSetToken = async (
   accessToken: string,
-  refreshToken: string
+  refreshToken: string,
+  expires_in: number
 ) => {
   const data = {
     accessToken: accessToken,
     refreshToken: refreshToken,
+    expires_in: expires_in,
   };
-  try {
-    await localStorage.setItem("@token", JSON.stringify(data));
-    return true;
-  } catch (error) {
-    // Error saving data
-    return false;
-  }
+  console.log(JSON.stringify(data));
+  await localStorage.setItem("@token", JSON.stringify(data));
+  return true;
 };
 
 export const StorageClearToken = async () => {

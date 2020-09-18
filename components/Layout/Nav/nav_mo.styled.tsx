@@ -12,7 +12,8 @@ export const NavWarp = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 24px;
+  height: 40px;
+  width: 40px;
 `;
 
 export const LogoWrap = styled.div`

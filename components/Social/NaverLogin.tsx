@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
+import Router from "next/router";
 
 import * as TextComponent from "../Text";
 import { Button, Hr, Icon } from "./Social.styled";
+import * as AuthAPI from "api/Auth";
+
+import { StorageSetToken } from "utils/Storage";
 
 declare global {
   interface Window {
@@ -10,6 +14,7 @@ declare global {
 }
 const NAVER_LOGO = "/images/naver_logo.png";
 const NAVER_KEY = "08vq8KC8O46oGKpXm4Fu";
+const NAVER_SECRET = "EXxQD5tVfW";
 interface Props {
   round?: boolean;
   style?: any;
@@ -21,28 +26,46 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
     naverLogin.getLoginStatus((status: boolean) => {
       if (status) {
         console.log("naverLogin : ", naverLogin);
-        const req = {
-          grant_type: "convert_token",
-          client_id: NAVER_KEY,
-          backend: "naver",
-          token: naverLogin.accessToken.accessToken,
-          email: naverLogin.user.email,
-        };
-        console.log(req);
+        const fromdata = new FormData();
+        fromdata.append("token", naverLogin.accessToken.accessToken);
+        fromdata.append("backend", "naver");
+        fromdata.append("client_id", NAVER_KEY);
+        fromdata.append("client_secret", NAVER_SECRET);
+        fromdata.append("email", naverLogin.user.email);
+        AuthAPI.social_login(fromdata)
+          .then(async (res: any) => {
+            if (res.status === 200) {
+              const {
+                access_token,
+                expires_in,
+                refresh_token,
+              } = res?.data?.token;
+              const result = await StorageSetToken(
+                access_token,
+                refresh_token,
+                expires_in
+              );
+              if (result) {
+                Router.push("/");
+              }
+            }
+          })
+          .catch(() => {});
       }
     });
   };
   useEffect(() => {
     if (window.naver) {
       const naver = window.naver;
-      const naverLogin = new naver.LoginWithNaverId({
+      const naverLogin: any = new naver.LoginWithNaverId({
         clientId: NAVER_KEY,
-        callbackUrl: "http://localhost:3000/",
+        // callbackUrl: "http://localhost:3000/login",
+        callbackUrl: "https://www.noutebook.com/login",
         isPopup: false,
         loginButton: { color: "green", type: 3, height: 60 },
       });
       naverLogin.init();
-      window.addEventListener("load", _naverLogin(naverLogin));
+      window.addEventListener("load", () => _naverLogin(naverLogin));
     }
   }, []);
   return (
@@ -53,7 +76,7 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
         round={props.round}
         style={props.style}
         onClick={() =>
-          document.getElementById("naverIdLogin_loginButton").click()
+          document.getElementById("naverIdLogin_loginButton")?.click()
         }
       >
         <Icon round={props.round} src={NAVER_LOGO} />

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { ServerStyleSheets } from "@material-ui/styles";
@@ -8,11 +8,16 @@ const SITE_TITLE = "SITE_TITLE";
 const SITE_DESCRIPTION = "SITE_DESCRIPTION";
 const SITE_IMAGE = "SITE_IMAGE";
 
-export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
+type Props = {
+  styleTags: any;
+  styleTags2: any;
+};
+
+export default class MyDocument extends Document<Props> {
+  static async getInitialProps({ renderPage }: any) {
     const sheet = new ServerStyleSheet();
     const sheet2 = new ServerStyleSheets();
-    const page = renderPage((App) => (props) =>
+    const page = renderPage((App: any) => (props: any) =>
       sheet.collectStyles(sheet2.collect(<App {...props} />))
     );
     const styleTags = sheet.getStyleElement();
@@ -26,8 +31,6 @@ export default class MyDocument extends Document {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-155067425-1');
-
-        
       `,
     };
   }
@@ -63,10 +66,8 @@ export default class MyDocument extends Document {
           <script
             type="text/javascript"
             src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
-            charset="utf-8"
           />
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
-
           {this.props.styleTags}
           {this.props.styleTags2}
         </Head>

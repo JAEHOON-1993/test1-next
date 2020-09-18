@@ -1,10 +1,10 @@
 import React, { ReactNode, useContext } from "react";
 import Link from "next/link";
 
-import Layout from "@components/Layout";
+import Layout from "components/Layout";
 
 import { observer } from "mobx-react-lite";
-import CountStore from "@stores/Count";
+import CountStore from "stores/Count";
 
 type Props = {
   children?: ReactNode;

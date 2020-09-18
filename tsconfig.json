@@ -20,13 +20,14 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@containers/*": ["containers/*"],
-      "@utils/*": ["utils/*"],
-      "@static/*": ["static/*"],
-      "@layout/*": ["layout/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@stores/*": ["stores/*"]
+      "components/*": ["components/*"],
+      "containers/*": ["containers/*"],
+      "utils/*": ["utils/*"],
+      "static/*": ["static/*", "public/*"],
+      "layout/*": ["layout/*"],
+      "interfaces/*": ["interfaces/*"],
+      "stores/*": ["stores/*"],
+      "sw.js": [".next/sw.js"]
     }
   },
   "exclude": ["node_modules"],
