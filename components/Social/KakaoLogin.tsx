@@ -2,6 +2,7 @@ import React from "react";
 
 import * as TextComponent from "../Text";
 import { StyledKakaoLogin, Hr, Icon } from "./Social.styled";
+import { isMobile } from "react-device-detect";
 
 const KAKAO_LOGO = "/images/kakao_logo.png";
 
@@ -32,6 +33,7 @@ const KakaoLoginComponent: React.FC<Props> = (props) => {
       onSuccess={success}
       onFailure={failure}
       getProfile={true}
+      throughTalk={isMobile}
       round={props.round}
     >
       <Icon round={props.round} src={KAKAO_LOGO} />
