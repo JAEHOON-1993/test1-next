@@ -10,7 +10,7 @@ const IndexPage = () => (
         flex: 1,
       }}
     >
-      <h1>홈입니다.</h1>
+      <h1>로켓메이커스 소식입니다.</h1>
     </div>
   </Layout>
 );

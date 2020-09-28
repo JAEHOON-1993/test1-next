@@ -38,9 +38,9 @@ const Footer: React.FC<Props> = () => {
             <a href="https://jangwon.io/" target="_blank" className="blog">
               기술 블로그
             </a>
-            <a href="https://www.instagram.com/rocketmakers/" target="_blank">
+            {/* <a href="https://www.instagram.com/rocketmakers/" target="_blank">
               <div className="social_btn insta"></div>
-            </a>
+            </a> */}
           </Social>
         </Content>
       </Container>

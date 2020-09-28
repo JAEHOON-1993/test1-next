@@ -2,13 +2,14 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import styled from "styled-components";
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
+const Layout = ({ children, title = "로켓메이커스" }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -16,9 +17,14 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Nav />
-    {children}
+    <Body>{children}</Body>
     <Footer />
   </div>
 );
 
 export default Layout;
+
+const Body = styled.div`
+  min-height: calc(100vh - 110px - 176px);
+  display: flex;
+`;

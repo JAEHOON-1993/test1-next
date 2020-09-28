@@ -6,6 +6,9 @@ import { createGlobalStyle } from "styled-components";
 import ScrollToTop from "components/ScrollToTop";
 import stores from "stores";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 declare global {
   interface Window {
     naver: any;
@@ -81,7 +84,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider {...stores}>
     <ScrollToTop>
       <GlobalStyle />
-      <title>어썸샌드</title>
+      <title>로켓메이커스</title>
       <Component {...pageProps} />
     </ScrollToTop>
   </Provider>

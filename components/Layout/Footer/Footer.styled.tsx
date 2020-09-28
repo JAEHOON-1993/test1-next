@@ -7,6 +7,9 @@ export const FooterWrap = styled.div`
   min-height: 40px;
   display: flex;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 `;
 
 export const Content = styled.div`
@@ -134,7 +137,7 @@ export const Social = styled.div`
     background-repeat: no-repeat;
   }
   .insta {
-    background-image: url("/static/images/logo.png");
+    background-image: url("/images/logo.png");
     margin: 0 10px;
   }
   @media (min-width: 0) and (max-width: 767.98px) {

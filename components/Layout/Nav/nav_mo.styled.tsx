@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import theme from "layout/theme";
 
 interface Props {
   fixed?: boolean;
@@ -6,7 +7,7 @@ interface Props {
 }
 
 export const NavWarp = styled.div`
-  height: 95px;
+  height: 110px;
   width: 100%;
   z-index: 100;
 `;
@@ -71,7 +72,7 @@ export const NavLink = styled.p`
   ${(props: Props) =>
     props.active &&
     css`
-      color: #006cb3;
+      color: ${theme.color.PRIMARY};
       position: relative;
       &:after {
         content: "";
@@ -83,7 +84,7 @@ export const NavLink = styled.p`
         border-radius: 4px;
         width: 4px;
         height: 4px;
-        border: 2px solid #006cb3;
+        border: 2px solid ${theme.color.PRIMARY};
       }
     `}
 `;

@@ -70,7 +70,7 @@ const NavPC: React.FC<Props> = ({ fixed }) => {
               onClick={() => Router.push("/news")}
               active={url === "news"}
             >
-              티릴리 소식
+              로켓메이커스 소식
             </NavLink>
             <NavLink
               fixed={fixed}
