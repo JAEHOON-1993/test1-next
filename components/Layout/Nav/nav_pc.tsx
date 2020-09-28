@@ -22,8 +22,7 @@ const NavPC: React.FC<Props> = ({ fixed }) => {
     setScrolled(winScroll > 0 ? true : false);
   };
   const toKakao = () => {
-    console.log("toKakao");
-    window.open("http://pf.kakao.com/_mGQqxb/chat");
+    window.open("https://open.kakao.com/me/rocketmakers");
   };
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);

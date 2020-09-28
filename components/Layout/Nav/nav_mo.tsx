@@ -23,8 +23,7 @@ class NavMobile extends React.Component {
     this.setState({ scrollFixed: winScroll > 37 ? true : false });
   };
   toKakao = () => {
-    console.log("toKakao");
-    window.open("http://pf.kakao.com/_mGQqxb/chat");
+    window.open("https://open.kakao.com/me/rocketmakers");
   };
   componentDidMount() {
     this.listenToScroll();
