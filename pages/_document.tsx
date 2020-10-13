@@ -43,6 +43,14 @@ export default class MyDocument extends Document<Props> {
             rel="stylesheet"
             type="text/css"
           />
+          <link rel="canonical" href="https://rocketmakers.com/" />
+          
+          <link rel="apple-touch-icon" href="/icons/120.png"/>
+          <link rel="apple-touch-icon" sizes="152x152" href="/icons/152.png"/>
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/180.png"/>
+          <link rel="apple-touch-icon" sizes="167x167" href="/icons/167.png"/>
+          <meta name="apple-mobile-web-app-capable" content="yes">
+
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"

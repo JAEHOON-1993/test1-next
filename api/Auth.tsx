@@ -1,5 +1,5 @@
-import Axios from "./public";
-import AxiosPermission from "./permission";
+import Axios from "./_public";
+import AxiosPermission from "./_permission";
 import { StorageGetToken } from "utils/Storage";
 
 const CLIENT_ID = "5NELzkaOdaYKQOBjUS5VWBOa9Cpny7Kgi3KZISJE";

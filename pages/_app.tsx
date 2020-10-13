@@ -1,10 +1,8 @@
 import React from "react";
 import { AppProps } from "next/app";
-import { Provider } from "mobx-react";
 import { createGlobalStyle } from "styled-components";
 
 import ScrollToTop from "components/ScrollToTop";
-import stores from "stores";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -81,13 +79,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Provider {...stores}>
-    <ScrollToTop>
-      <GlobalStyle />
-      <title>로켓메이커스</title>
-      <Component {...pageProps} />
-    </ScrollToTop>
-  </Provider>
+  <ScrollToTop>
+    <GlobalStyle />
+    <title>로켓메이커스</title>
+    <Component {...pageProps} />
+  </ScrollToTop>
 );
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
