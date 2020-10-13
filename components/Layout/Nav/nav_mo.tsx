@@ -85,7 +85,7 @@ class NavMobile extends React.Component {
                 onClick={() => Router.push("/news")}
                 active={url === "news"}
               >
-                로켓메이커스 소식
+                소식
               </NavLink>
               <NavLink onClick={this.toKakao}>문의하기</NavLink>
             </Slider>

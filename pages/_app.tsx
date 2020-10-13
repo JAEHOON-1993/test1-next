@@ -36,6 +36,12 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: baseline;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
   }
+  *:focus { 
+    -webkit-tap-highlight-color: transparent; 
+    outline: none; 
+    -ms-touch-action: manipulation; 
+    touch-action: manipulation; 
+  }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
