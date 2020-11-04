@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./index";
+import Container from "components/Container";
 
 export default { title: "Example/components/Container" };
 

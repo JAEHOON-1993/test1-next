@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import KakaoLogin from "react-kakao-login";
-import theme from "components/@theme";
+import theme from "layout/theme";
 
 interface Props {
   round?: boolean;

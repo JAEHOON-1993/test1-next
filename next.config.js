@@ -6,26 +6,11 @@ module.exports = withPWA({
     dest: "public",
     runtimeCaching,
   },
-  webpackFinal: async (config) => {
+  webpack(config) {
     config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: require.resolve("awesome-typescript-loader"),
-          options: {
-            configFileName: path.resolve(__dirname, "./tsconfig.json"),
-          },
-        },
-        // Optional
-        {
-          loader: require.resolve("react-docgen-typescript-loader"),
-          options: {
-            tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
-          },
-        },
-      ],
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
     });
-    config.resolve.extensions.push(".ts", ".tsx");
     return config;
   },
 });

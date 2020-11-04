@@ -20,6 +20,8 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
+      "api/*": ["api/*"],
+      "public/*": ["public/*"],
       "components/*": ["components/*"],
       "containers/*": ["containers/*"],
       "utils/*": ["utils/*"],
@@ -30,5 +32,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.svg"]
 }

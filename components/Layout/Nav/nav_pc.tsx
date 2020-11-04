@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Router from "next/router";
 
 // components
-import Container from "../../Container";
+import Container from "components/Container";
 import { NavWarp, NavWrap, Logo, Menu, NavLink } from "./nav_pc.styled";
 
 const LOGO = "/images/logo.png";

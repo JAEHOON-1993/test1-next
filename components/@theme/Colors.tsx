@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import theme from "./index";
+import theme from "layout/theme";
 // components
 
 type Props = {

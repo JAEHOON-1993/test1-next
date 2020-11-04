@@ -1,6 +1,6 @@
 import React from "react";
 import Router from "next/router";
-import Container from "../../Container";
+import Container from "components/Container";
 
 import { FooterWrap, Content, Logo, Info, Social } from "./Footer.styled";
 
