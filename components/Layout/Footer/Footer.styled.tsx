@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "components/@theme";
+import theme from "layout/theme";
 
 export const FooterWrap = styled.div`
   padding: 20px 0px;

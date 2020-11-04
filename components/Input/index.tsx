@@ -1,7 +1,7 @@
 import React, { useState, ReactNode, Ref } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import theme from "components/@theme";
+import theme from "layout/theme";
 
 const CustomInput = withStyles({
   root: {
