@@ -1,6 +1,6 @@
 import React from "react";
 
-export default { title: "Example/components/Button" };
+export default { title: "Example/components/Modal" };
 
 export const withText = () => <button>Hello Button</button>;
 
