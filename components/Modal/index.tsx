@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-export type modalProps = {
+export type ModalProps = {
   visible: boolean;
   closeModal: any;
   slideFrom?: "top" | "bottom" | "right" | "left" | undefined;
@@ -9,7 +9,7 @@ export type modalProps = {
   children?: any;
 };
 
-const ModalComponent: React.FC<modalProps> = ({
+const ModalComponent: React.FC<ModalProps> = ({
   visible,
   children,
   position,
@@ -22,7 +22,6 @@ const ModalComponent: React.FC<modalProps> = ({
       <Modal visible={visible} slideFrom={slideFrom} position={position}>
         {children}
       </Modal>
-      ;
     </Dim>
   );
 };
