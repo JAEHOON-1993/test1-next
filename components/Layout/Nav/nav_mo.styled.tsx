@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import theme from "layout/theme";
+import theme from "components/@theme";
 
 interface Props {
   fixed?: boolean;
