@@ -32,28 +32,38 @@ const Colors: React.FC<Props> = () => {
           <p>BLACK</p>
           <p>{theme.color.BLACK}</p>
         </Color>
-        <Color color={theme.color.DARKGRAY}>
+        <Color color={theme.color.GRAY5}>
           <div />
-          <p>DARKGRAY</p>
-          <p>{theme.color.DARKGRAY}</p>
+          <p>GRAY5</p>
+          <p>{theme.color.GRAY5}</p>
         </Color>
-        <Color color={theme.color.GRAY}>
+        <Color color={theme.color.GRAY4}>
           <div />
-          <p>GRAY</p>
-          <p>{theme.color.GRAY}</p>
+          <p>GRAY4</p>
+          <p>{theme.color.GRAY4}</p>
         </Color>
-        <Color color={theme.color.LIGHTGRAY}>
+        <Color color={theme.color.GRAY3}>
           <div />
-          <p>LIGHTGRAY</p>
-          <p>{theme.color.LIGHTGRAY}</p>
+          <p>GRAY3</p>
+          <p>{theme.color.GRAY3}</p>
         </Color>
-        <Color color={theme.color.PALEGRAY}>
+        <Color color={theme.color.GRAY2}>
           <div />
-          <p>PALEGRAY</p>
-          <p>{theme.color.PALEGRAY}</p>
+          <p>GRAY2</p>
+          <p>{theme.color.GRAY2}</p>
+        </Color>
+        <Color color={theme.color.GRAY1}>
+          <div />
+          <p>GRAY1</p>
+          <p>{theme.color.GRAY1}</p>
+        </Color>
+        <Color color={theme.color.GRAY0}>
+          <div />
+          <p>GRAY0</p>
+          <p>{theme.color.GRAY0}</p>
         </Color>
         <Color color={theme.color.WHITE}>
-          <div style={{ border: "1px solid #767676" }} />
+          <div style={{ border: `1px solid ${theme.color.GRAY3}` }} />
           <p>WHITE</p>
           <p>{theme.color.WHITE}</p>
         </Color>
@@ -111,7 +121,7 @@ const Color = styled.div`
     }
     :nth-of-type(2) {
       margin: 0px;
-      color: ${theme.color.DARKGRAY};
+      color: ${theme.color.GRAY5};
     }
   }
 `;

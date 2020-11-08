@@ -7,7 +7,7 @@ import theme from "layout/theme";
 
 const AddImageModal: React.FC<ModalProps> = ({ ...props }) => {
   return (
-    <Modal {...props} slideFrom="bottom" position="bottom">
+    <Modal {...props} slide="bottom" position="bottom">
       <div>
         <ModalBody>
           <div>앨범에서 선택</div>
@@ -36,7 +36,7 @@ const ModalBody = styled.div`
     cursor: pointer;
     color: ${theme.color.PRIMARY};
     :nth-of-type(1) {
-      border-bottom: 1px solid ${theme.color.GRAY};
+      border-bottom: 1px solid ${theme.color.GRAY4};
     }
   }
 `;

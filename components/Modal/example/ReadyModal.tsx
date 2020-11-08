@@ -9,7 +9,7 @@ import SuccessIcon from "components/Icon/SuccessIcon";
 
 const ReadyModal: React.FC<ModalProps> = ({ ...props }) => {
   return (
-    <Modal {...props} slideFrom="bottom">
+    <Modal {...props} slide="bottom">
       <ModalBody>
         <p>준비중입니다</p>
         <SuccessIcon color={theme.color.PRIMARY} />
@@ -41,7 +41,7 @@ const ModalBody = styled.div`
     }
     :nth-of-type(2) {
       text-align: center;
-      color: ${theme.color.DARKGRAY};
+      color: ${theme.color.GRAY5};
     }
   }
 `;
