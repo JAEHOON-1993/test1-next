@@ -64,11 +64,11 @@ export const positionModal = () => {
         </ModalBody>
       </Modal>
       <ButtonBox>
-        <Button onClick={() => setCenter(true)}>Center ReadyModal</Button>
-        <Button onClick={() => setTop(true)}>Top ReadyModal</Button>
-        <Button onClick={() => setBottom(true)}>Bottom ReadyModal</Button>
-        <Button onClick={() => setLeft(true)}>Left ReadyModal</Button>
-        <Button onClick={() => setRight(true)}>Right ReadyModal</Button>
+        <CustomButton onClick={() => setCenter(true)}>Center ReadyModal</CustomButton>
+        <CustomButton onClick={() => setTop(true)}>Top ReadyModal</CustomButton>
+        <CustomButton onClick={() => setBottom(true)}>Bottom ReadyModal</CustomButton>
+        <CustomButton onClick={() => setLeft(true)}>Left ReadyModal</CustomButton>
+        <CustomButton onClick={() => setRight(true)}>Right ReadyModal</CustomButton>
       </ButtonBox>
     </>
   );
@@ -82,6 +82,11 @@ const ButtonBox = styled(Container)`
     margin-right: 10px;
   }
 `;
+const CustomButton = styled(Button)`
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 0px 15px;
+`
 const ModalBody = styled.div`
   width: 200px;
   height: 100px;

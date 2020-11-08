@@ -12,9 +12,10 @@ declare global {
     naver: any;
   }
 }
-const NAVER_LOGO = "/images/naver_logo.png";
+const NAVER_LOGO = require("public/images/naver_logo.png");
 const NAVER_KEY = "08vq8KC8O46oGKpXm4Fu";
 const NAVER_SECRET = "EXxQD5tVfW";
+
 interface Props {
   round?: boolean;
   style?: any;

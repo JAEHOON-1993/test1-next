@@ -1,35 +1,98 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useRef } from "react";
+import styled, { css, keyframes } from "styled-components";
 
 import theme from "layout/theme";
 
 export type ButtonProps = {
+  outline?: boolean;
+  disabled?: boolean;
   style?: any;
   onClick?: any;
   children?: any;
 };
 
-const ButtonComponent: React.FC<ButtonProps> = ({ children, ...props }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ children, onClick, ...props }) => {
+  const buttonRef = useRef<any>(null)
+  const rippleRef = useRef<any>(null)
+
+
+  const clickHandler = (e: any) => {
+    const circle = rippleRef?.current;
+    const button = buttonRef?.current;
+    const diameter = Math.max(button.clientWidth, button.clientWidth);
+    const radius = diameter / 2;
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
+    circle.classList.add("ripple");
+
+    if (circle) {
+      circle.remove();
+    }
+    button.appendChild(circle);
+    onClick(e);
+  }
   return (
-    <Button {...props}>
-      <p>{children}</p>
+    <Button ref={buttonRef} onClick={clickHandler} {...props}>
+      {children}
+      <span ref={rippleRef}/>
     </Button>
   );
 };
 
 export default ButtonComponent;
 
-const Button = styled.div`
+
+
+type ButtonStyleProps = {
+  outline?: boolean;
+  disabled?: boolean;
+};
+
+const ripple = keyframes`
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+`
+
+const Button = styled.button`
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  padding: 8px 25px;
   height: 50px;
+  border: 0px;
   background-color: ${theme.color.PRIMARY};
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  > p {
-    color: ${theme.color.WHITE};
-    margin: 0px;
+  color: ${theme.color.WHITE};
+  :focus {
+    outline: none;
+  }
+  span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ${ripple} 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  ${(props: ButtonStyleProps) => 
+    props.outline && css`
+      background-color: ${theme.color.WHITE};
+      border: 1px solid ${theme.color.PRIMARY};
+      color: ${theme.color.PRIMARY};
+      span {
+        background-color: rgba(69, 117, 245, 0.7);
+      }
+    `
+  }
+  ${(props: ButtonStyleProps) => 
+    props.disabled && css`
+      background-color: ${theme.color.GRAY3};
+      border: 0px;
+      color: ${theme.color.WHITE};
+    `
   }
 `;

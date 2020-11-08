@@ -4,7 +4,7 @@ import * as Text from "components/Text";
 import { StyledKakaoLogin, Hr, Icon } from "./Social.styled";
 import { isMobile } from "react-device-detect";
 
-const KAKAO_LOGO = "/images/kakao_logo.png";
+const KAKAO_LOGO = require("public/images/kakao_logo.png");
 
 interface Props {
   round?: boolean;
