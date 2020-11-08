@@ -66,7 +66,7 @@ export const Info = styled.div`
     p,
     li {
       font-size: 10px;
-      color: ${theme.color.PALEGRAY};
+      color: ${theme.color.GRAY1};
       text-align: center;
     }
     li {

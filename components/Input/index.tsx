@@ -7,7 +7,7 @@ const CustomInput = withStyles({
   root: {
     width: "100%",
     margin: "8px 0",
-    color: theme.color.DARKGRAY,
+    color: theme.color.GRAY5,
     "& label.Mui-focused": {
       color: theme.color.PRIMARY,
     },
