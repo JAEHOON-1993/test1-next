@@ -27,7 +27,7 @@ export const positionModal = () => {
         visible={top}
         closeModal={() => setTop(false)}
         position="top"
-        slideFrom="top"
+        slide="top"
       >
         <ModalBody>
           <h1>Top</h1>
@@ -37,7 +37,7 @@ export const positionModal = () => {
         visible={bottom}
         closeModal={() => setBottom(false)}
         position="bottom"
-        slideFrom="bottom"
+        slide="bottom"
       >
         <ModalBody>
           <h1>Bottom</h1>
@@ -47,7 +47,7 @@ export const positionModal = () => {
         visible={left}
         closeModal={() => setLeft(false)}
         position="left"
-        slideFrom="left"
+        slide="left"
       >
         <ModalBody>
           <h1>Left</h1>
@@ -57,7 +57,7 @@ export const positionModal = () => {
         visible={right}
         closeModal={() => setRight(false)}
         position="right"
-        slideFrom="right"
+        slide="right"
       >
         <ModalBody>
           <h1>Right</h1>
@@ -98,7 +98,7 @@ export const readyModal = () => {
       <ReadyModal
         visible={visible}
         closeModal={() => setVisible(false)}
-        slideFrom="bottom"
+        slide="bottom"
       />
       <Button style={{ width: 150 }} onClick={() => setVisible(true)}>
         Ready Modal
@@ -114,7 +114,7 @@ export const addImageModal = () => {
       <AddImageModal
         visible={visible}
         closeModal={() => setVisible(false)}
-        slideFrom="bottom"
+        slide="bottom"
       />
       <Button style={{ width: 150 }} onClick={() => setVisible(true)}>
         Add Image Modal

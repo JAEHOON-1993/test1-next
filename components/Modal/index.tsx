@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 export type ModalProps = {
   visible: boolean;
   closeModal: any;
-  slideFrom?: "top" | "bottom" | "right" | "left" | undefined;
+  slide?: "top" | "bottom" | "right" | "left" | undefined;
   position?: "top" | "bottom" | "right" | "left" | undefined;
   children?: any;
 };
@@ -14,12 +14,12 @@ const ModalComponent: React.FC<ModalProps> = ({
   children,
   position,
   closeModal,
-  slideFrom,
+  slide,
   ...props
 }) => {
   return (
     <Dim {...props} visible={visible} onClick={closeModal}>
-      <Modal visible={visible} slideFrom={slideFrom} position={position}>
+      <Modal visible={visible} slide={slide} position={position}>
         {children}
       </Modal>
     </Dim>
@@ -30,7 +30,7 @@ export default ModalComponent;
 
 type styleProps = {
   visible?: boolean;
-  slideFrom?: "top" | "bottom" | "right" | "left" | undefined;
+  slide?: "top" | "bottom" | "right" | "left" | undefined;
   position?: "top" | "bottom" | "right" | "left" | undefined;
 };
 
@@ -64,28 +64,28 @@ const Modal = styled.div`
   }
 
   ${(props: styleProps) =>
-    props.slideFrom === "top" &&
+    props.slide === "top" &&
     css`
       > div {
         margin-bottom: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slideFrom === "bottom" &&
+    props.slide === "bottom" &&
     css`
       > div {
         margin-top: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slideFrom === "right" &&
+    props.slide === "right" &&
     css`
       > div {
         margin-left: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slideFrom === "left" &&
+    props.slide === "left" &&
     css`
       > div {
         margin-right: 50px;
@@ -125,7 +125,7 @@ const Modal = styled.div`
 
     ${(props: styleProps) =>
       props.position === "top" &&
-      props.slideFrom === "top" &&
+      props.slide === "top" &&
       css`
         > div {
           position: absolute;
@@ -140,7 +140,7 @@ const Modal = styled.div`
 
     ${(props: styleProps) =>
       props.position === "bottom" &&
-      props.slideFrom === "bottom" &&
+      props.slide === "bottom" &&
       css`
         > div {
           position: absolute;
@@ -155,7 +155,7 @@ const Modal = styled.div`
 
     ${(props: styleProps) =>
       props.position === "right" &&
-      props.slideFrom === "right" &&
+      props.slide === "right" &&
       css`
         > div {
           position: absolute;
@@ -170,7 +170,7 @@ const Modal = styled.div`
 
     ${(props: styleProps) =>
       props.position === "left" &&
-      props.slideFrom === "left" &&
+      props.slide === "left" &&
       css`
         > div {
           position: absolute;

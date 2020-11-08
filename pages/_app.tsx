@@ -35,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
+    -webkit-tap-highlight-color: transparent; 
+    outline: none; 
+    -ms-touch-action: manipulation; 
+    touch-action: manipulation; 
   }
   *:focus { 
     -webkit-tap-highlight-color: transparent; 

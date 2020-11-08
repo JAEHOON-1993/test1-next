@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as TextComponent from "../Text";
+import * as Text from "components/Text";
 import { StyledKakaoLogin, Hr, Icon } from "./Social.styled";
 import { isMobile } from "react-device-detect";
 
@@ -38,12 +38,11 @@ const KakaoLoginComponent: React.FC<Props> = (props) => {
     >
       <Icon round={props.round} src={KAKAO_LOGO} />
       {!props.round && <Hr />}
-      <TextComponent.FontSize18
-        fontWeight={500}
-        style={{ color: props.round ? "#381f1f" : "#000" }}
+      <Text.Button
+        style={{ color: props.round ? "#381f1f" : "#000", fontWeight: 500 }}
       >
         {props.round ? "카카오 계정으로 로그인" : "카카오톡 로그인"}
-      </TextComponent.FontSize18>
+      </Text.Button>
     </StyledKakaoLogin>
   );
 };

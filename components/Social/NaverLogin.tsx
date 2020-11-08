@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Router from "next/router";
 
-import * as TextComponent from "../Text";
+import * as Text from "components/Text";
 import { Button, Hr, Icon } from "./Social.styled";
 import * as AuthAPI from "api/Auth";
 
@@ -81,12 +81,11 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
       >
         <Icon round={props.round} src={NAVER_LOGO} />
         {!props.round && <Hr />}
-        <TextComponent.FontSize18
-          fontWeight={500}
-          style={{ color: props.round ? "#381f1f" : "#fff" }}
+        <Text.Button
+          style={{ color: props.round ? "#381f1f" : "#fff", fontWeight: 500 }}
         >
           {props.round ? "네이버 계정으로 로그인" : "네이버 로그인"}
-        </TextComponent.FontSize18>
+        </Text.Button>
       </Button>
     </>
   );

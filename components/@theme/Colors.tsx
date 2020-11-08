@@ -9,7 +9,7 @@ type Props = {
   style?: any;
 };
 
-const Nav: React.FC<Props> = () => {
+const Colors: React.FC<Props> = () => {
   return (
     <>
       <h1>Brand Color</h1>
@@ -85,7 +85,7 @@ const Nav: React.FC<Props> = () => {
   );
 };
 
-export default Nav;
+export default Colors;
 
 type styleProps = {
   color: string;
