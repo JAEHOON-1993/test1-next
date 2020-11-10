@@ -1,4 +1,6 @@
 import React from "react";
+import Head from 'next/head'
+
 import { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 
@@ -89,11 +91,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ScrollToTop>
-    <GlobalStyle />
-    <title>로켓메이커스</title>
-    <Component {...pageProps} />
-  </ScrollToTop>
+  <>
+    <Head>
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      />
+    </Head>
+    <ScrollToTop>
+      <GlobalStyle />
+      <title>로켓메이커스</title>
+      <Component {...pageProps} />
+    </ScrollToTop>
+  </>
 );
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {

@@ -16,6 +16,7 @@ const theme = {
     WARNING: "#FFC440",
     INFO: "#24ADF5",
   },
+  radius: 4,
 };
 
 export default theme;

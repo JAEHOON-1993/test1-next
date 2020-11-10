@@ -1,5 +1,7 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import KakaoLogin from "react-kakao-login";
+
+import ButtonComponent from 'components/Button'
 import theme from "layout/theme";
 
 interface Props {
@@ -7,6 +9,13 @@ interface Props {
   backgroundColor?: string;
   color?: string;
 }
+
+const ripple = keyframes`
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+`
 
 export const StyledKakaoLogin = styled(KakaoLogin)`
   cursor: pointer;
@@ -28,7 +37,13 @@ export const StyledKakaoLogin = styled(KakaoLogin)`
   :focus {
     outline: none;
   }
-
+  span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ${ripple} 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
   ${(props: Props) =>
     props.round &&
     css`
@@ -58,7 +73,7 @@ export const Icon = styled.img`
     `}
 `;
 
-export const Button = styled.button`
+export const Button = styled(ButtonComponent)`
   cursor: pointer;
   position: relative;
   width: 280px;

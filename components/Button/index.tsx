@@ -6,6 +6,8 @@ import theme from "layout/theme";
 export type ButtonProps = {
   outline?: boolean;
   disabled?: boolean;
+  round?: boolean;
+  color?: string;
   style?: any;
   onClick?: any;
   children?: any;
@@ -14,7 +16,6 @@ export type ButtonProps = {
 const ButtonComponent: React.FC<ButtonProps> = ({ children, onClick, ...props }) => {
   const buttonRef = useRef<any>(null)
   const rippleRef = useRef<any>(null)
-
 
   const clickHandler = (e: any) => {
     const circle = rippleRef?.current;
@@ -46,6 +47,8 @@ export default ButtonComponent;
 
 type ButtonStyleProps = {
   outline?: boolean;
+  round?: boolean;
+  color?: string;
   disabled?: boolean;
 };
 
@@ -62,8 +65,8 @@ const Button = styled.button`
   cursor: pointer;
   height: 50px;
   border: 0px;
-  background-color: ${theme.color.PRIMARY};
-  border-radius: 50px;
+  background-color: ${(props:ButtonStyleProps) => props.color ? props.color :theme.color.PRIMARY};
+  border-radius: ${theme.radius}px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,13 +81,16 @@ const Button = styled.button`
     animation: ${ripple} 600ms linear;
     background-color: rgba(255, 255, 255, 0.7);
   }
+  ${(props: ButtonStyleProps) => props.round && css`
+    border-radius: 50px;
+  `}
   ${(props: ButtonStyleProps) => 
     props.outline && css`
       background-color: ${theme.color.WHITE};
-      border: 1px solid ${theme.color.PRIMARY};
-      color: ${theme.color.PRIMARY};
+      border: 1px solid ${(props:ButtonStyleProps) => props.color ? props.color :theme.color.PRIMARY};
+      color: ${(props:ButtonStyleProps) => props.color ? props.color :theme.color.PRIMARY};
       span {
-        background-color: rgba(69, 117, 245, 0.7);
+        background-color: ${(props:ButtonStyleProps) => props.color ? `${props.color}77` :`${theme.color.PRIMARY}77`};
       }
     `
   }

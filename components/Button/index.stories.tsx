@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from 'styled-components';
-
+import theme from 'layout/theme';
 import Button from "components/Button";
 import NaverLogin from "components/Button/Social/NaverLogin";
 import KakaoLogin from "components/Button/Social/KakaoLogin";
@@ -11,14 +11,35 @@ export default { title: "Example/components/Button" };
 export const defaultButton = () => {
   return (
     <>
-      <Button style={{width: 350, marginBottom: 10}}>Text</Button>
-      <Button style={{width: 350, marginBottom: 10}} outline>Text</Button>
-      <Button style={{width: 350}} disabled>Text</Button>
+      <h1>Default</h1>
+      <ButtonBox>
+        <Button>Default</Button>
+        <Button outline>Outline</Button>
+        <Button disabled>Disabled</Button>
+      </ButtonBox>
+      <h1>Round</h1>
+      <ButtonBox>
+        <Button round>Default</Button>
+        <Button round outline>Outline</Button>
+        <Button round disabled>Disabled</Button>
+      </ButtonBox>
+      <h1>Custom Color</h1>
+      <ButtonBox>
+        <Button color={theme.color.SECONDARY}>Default</Button>
+        <Button color={theme.color.SECONDARY} outline>Outline</Button>
+        <Button color={theme.color.SECONDARY} disabled>Disabled</Button>
+      </ButtonBox>
     </>
   )
 };
-
-
+const ButtonBox = styled.div`
+  display: flex;
+  > button {
+    width: 300px;
+    margin-right: 8px;
+  }
+  margin-bottom: 10px;
+`
 export const socialButton = () => {
   return (
     <>
