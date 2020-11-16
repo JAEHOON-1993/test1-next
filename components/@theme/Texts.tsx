@@ -1,7 +1,7 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
-import * as Text from 'components/Text';
+import * as T from "components/Text";
 import theme from "layout/theme";
 // components
 
@@ -13,21 +13,21 @@ type Props = {
 const Texts: React.FC<Props> = () => {
   return (
     <>
-      <h1 style={{color: theme.color.PRIMARY}}>TYPOGRAPHY</h1>
+      <h1 style={{ color: theme.color.PRIMARY }}>TYPOGRAPHY</h1>
       <TextBox>
-        <Text.LargeTitle>Large Title</Text.LargeTitle>
-        <Text.Title>Title</Text.Title>
-        <Text.SubTitle>SubTitle</Text.SubTitle>
+        <T.Title lg>Title Large</T.Title>
+        <T.Title>Title</T.Title>
+        <T.Title sm>Title Small</T.Title>
       </TextBox>
       <TextBox>
-        <Text.Large>Large</Text.Large>
-        <Text.Body>Body</Text.Body>
-        <Text.Small>Small</Text.Small>
+        <T.Text>Text Large</T.Text>
+        <T.Text>Text</T.Text>
+        <T.Text>Text Small</T.Text>
       </TextBox>
       <TextBox last>
-        <Text.Button>Button</Text.Button>
-        <Text.ButtonSmall>Small</Text.ButtonSmall>
-        <Text.Caption>Caption</Text.Caption>
+        <T.Button>Button</T.Button>
+        <T.ButtonSmall>Small</T.ButtonSmall>
+        <T.Caption>Caption</T.Caption>
       </TextBox>
     </>
   );
@@ -44,14 +44,19 @@ const TextBox = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   border-bottom: 1px solid #e6e6e6;
-  ${(props:styleProps) => props.last && css`
-    border-bottom: 0px;
-  `}
+  ${(props: styleProps) =>
+    props.last &&
+    css`
+      border-bottom: 0px;
+    `}
 
   margin-bottom: 20px;
   padding-bottom: 20px;
 
-  h1,h2,h3,p {
+  h1,
+  h2,
+  h3,
+  p {
     margin-bottom: 10px;
     :last-child {
       margin-bottom: 0px;

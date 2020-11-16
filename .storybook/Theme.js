@@ -6,4 +6,5 @@ export default create({
   brandUrl: "https://toktokhan.dev",
   brandImage:
     "https://github.com/TokTokHan/TokTokHan.github.io/blob/master/images/text_logo.png?raw=true",
+  appContentBg: "#f2f2f2",
 });

@@ -1,4 +1,6 @@
 import React from "react";
+import SuccessIcon from "./SuccessIcon";
+import RateIcon from "./RateIcon";
 
 type Props = {
   name: string;
@@ -8,7 +10,13 @@ type Props = {
 };
 
 const Icon: React.FC<Props> = ({ name, ...props }) => {
-  return ();
+  switch (name) {
+    case "success":
+      return <SuccessIcon {...props} />;
+    case "rate":
+      return <RateIcon {...props} />;
+  }
+  return null;
 };
 
 export default Icon;
