@@ -47,17 +47,17 @@ const StyledTabs = withStyles({
   },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
 
-// export type NavProps = {
-//   menus?: Array<object>;
-//   value?: any;
-//   onChange?: any;
-// };
+export type NavProps = {
+  menus: Array<object>;
+  value?: any;
+  onChange?: any;
+};
 
-export const DefaultNav: React.FC<any> = ({ menus, ...props }) => {
+export const DefaultNav: React.FC<NavProps> = ({ menus, ...props }) => {
   return (
     <AppBar position="static" color="default">
       <CustomTabs variant="fullWidth" {...props}>
-        {menus.map((item, idx) => (
+        {menus.map((item: any, idx: number) => (
           <Tab key={idx} label={<T.Title>{item.name}</T.Title>}></Tab>
         ))}
       </CustomTabs>
@@ -65,11 +65,11 @@ export const DefaultNav: React.FC<any> = ({ menus, ...props }) => {
   );
 };
 
-export const CustomNav: React.FC<any> = ({ menus, ...props }) => {
+export const CustomNav: React.FC<NavProps> = ({ menus, ...props }) => {
   return (
     <AppBar position="static" color="default">
-      <StyledTabs variant="fullWidth" {...props}>
-        {menus.map((item, idx) => (
+      <StyledTabs {...props}>
+        {menus.map((item: any, idx: number) => (
           <Tab key={idx} label={<T.Title>{item.name}</T.Title>}></Tab>
         ))}
       </StyledTabs>

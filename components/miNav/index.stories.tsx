@@ -58,24 +58,15 @@ export const MiNav = () => {
   const [valueTwo, setValueTwo] = React.useState(0);
   const [valueThree, setValueThree] = React.useState(0);
 
-  const handleChangeOne = (
-    event: React.ChangeEvent<{}>,
-    newValueOne: number
-  ) => {
+  const handleChangeOne = (newValueOne: number) => {
     setValueOne(newValueOne);
   };
 
-  const handleChangeTwo = (
-    event: React.ChangeEvent<{}>,
-    newValueTwo: number
-  ) => {
+  const handleChangeTwo = (newValueTwo: number) => {
     setValueTwo(newValueTwo);
   };
 
-  const handleChangeThree = (
-    event: React.ChangeEvent<{}>,
-    newValueThree: number
-  ) => {
+  const handleChangeThree = (newValueThree: number) => {
     setValueThree(newValueThree);
   };
 
