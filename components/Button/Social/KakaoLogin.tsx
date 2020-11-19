@@ -1,10 +1,10 @@
-import React, {useRef} from "react";
+import React from "react";
+import KakaoLogin from "react-kakao-login";
 
-import * as Text from "components/Text";
-import { StyledKakaoLogin, Hr, Icon } from "./Social.styled";
-import { isMobile } from "react-device-detect";
+import * as T from "components/Text";
+import { Button, Icon } from "./Social.styled";
 
-const KAKAO_LOGO = require("public/images/kakao_logo.png");
+const KAKAO_LOGO = "/images/kakao_logo.png";
 
 interface Props {
   round?: boolean;
@@ -13,9 +13,7 @@ interface Props {
   children?: any;
 }
 
-const KakaoLoginComponent: React.FC<Props> = ({onClick, round, ...props}) => {
-  const rippleRef = useRef<any>(null)
-  const buttonRef = useRef<any>(null)
+const KakaoLoginComponent: React.FC<Props> = ({ onClick, round, ...props }) => {
   const success = (e: any) => {
     const { response, profile } = e;
     const data = {
@@ -30,45 +28,34 @@ const KakaoLoginComponent: React.FC<Props> = ({onClick, round, ...props}) => {
   const failure = (e: any) => {
     console.log(e);
   };
-  const clickHandler = (e: any) => {
-    const circle = rippleRef?.current;
-    const button = buttonRef?.current;
-    const diameter = Math.max(button.clientWidth, button.clientWidth);
-    const radius = diameter / 2;
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
-    circle.classList.add("ripple");
-
-    if (circle) {
-      circle.remove();
-    }
-    button.appendChild(circle);
-    onClick(e);
-  }
   return (
-    <div>
-      <StyledKakaoLogin
-        ref={buttonRef}
-        jsKey={"cb851b3824b45cb9fb60925fa1671e27"}
-        onSuccess={success}
-        onFailure={failure}
-        onClick={clickHandler}
-        getProfile={true}
-        throughTalk={isMobile}
-        round={round}
-        {...props}
-      >
-        <Icon round={round} src={KAKAO_LOGO} />
-        {!round && <Hr />}
-        <Text.Button
-          style={{ color: round ? "#381f1f" : "#000", fontWeight: 500 }}
-        >
-          {round ? "카카오 계정으로 로그인" : "카카오톡 로그인"}
-        </Text.Button>
-        <span ref={rippleRef}/>
-      </StyledKakaoLogin>
-    </div>
+    <KakaoLogin
+      {...props}
+      jsKey={"cb851b3824b45cb9fb60925fa1671e27"}
+      onSuccess={success}
+      onFailure={failure}
+      render={({ onClick }) => {
+        return (
+          <Button
+            backgroundColor={"#ffde32"}
+            onClick={(e: any) => {
+              e.preventDefault();
+              onClick();
+            }}
+          >
+            <Icon src={KAKAO_LOGO} />
+            <T.Text
+              style={{
+                color: "#000",
+                fontWeight: 500,
+              }}
+            >
+              카카오계정으로 로그인
+            </T.Text>
+          </Button>
+        );
+      }}
+    />
   );
 };
 

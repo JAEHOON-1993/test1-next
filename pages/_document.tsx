@@ -38,10 +38,10 @@ export default class MyDocument extends Document<Props> {
     return (
       <Html>
         <Head>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
             rel="stylesheet"
-            type="text/css"
           />
           <link rel="apple-touch-icon" href="/icons/120.png" />
           <link rel="apple-touch-icon" sizes="152x152" href="/icons/152.png" />

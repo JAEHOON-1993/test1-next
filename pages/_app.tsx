@@ -1,5 +1,5 @@
 import React from "react";
-import Head from 'next/head'
+import Head from "next/head";
 
 import { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: 'Spoqa Han Sans', 'Sans-serif';
+    font-family: 'Noto Sans KR', sans-serif;
     -webkit-tap-highlight-color: transparent; 
     outline: none; 
     -ms-touch-action: manipulation; 

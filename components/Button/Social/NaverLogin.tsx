@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Router from "next/router";
 
-import * as Text from "components/Text";
-import { Button, Hr, Icon } from "./Social.styled";
+import * as T from "components/Text";
+import { Button, Icon } from "./Social.styled";
 import * as AuthAPI from "api/Auth";
 
 import { StorageSetToken } from "utils/Storage";
@@ -12,7 +12,7 @@ declare global {
     naver: any;
   }
 }
-const NAVER_LOGO = require("public/images/naver_logo.png");
+const NAVER_LOGO = "/images/naver_logo.png";
 const NAVER_KEY = "08vq8KC8O46oGKpXm4Fu";
 const NAVER_SECRET = "EXxQD5tVfW";
 
@@ -81,12 +81,11 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
         }
       >
         <Icon round={props.round} src={NAVER_LOGO} />
-        {!props.round && <Hr />}
-        <Text.Button
+        <T.Text
           style={{ color: props.round ? "#381f1f" : "#fff", fontWeight: 500 }}
         >
-          {props.round ? "네이버 계정으로 로그인" : "네이버 로그인"}
-        </Text.Button>
+          {props.round ? "네이버 계정으로 로그인" : "네이버 계정으로 로그인"}
+        </T.Text>
       </Button>
     </>
   );

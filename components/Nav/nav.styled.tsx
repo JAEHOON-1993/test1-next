@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import theme from "layout/theme";
+import * as T from "components/Text";
 
 interface Props {
   fixed?: boolean;
@@ -12,7 +14,7 @@ export const NavWarp = styled.div`
   width: 100%;
   position: fixed;
   z-index: 1000;
-  background-color: #fff;
+  background-color: ${theme.color.WHITE};
   ${(props: Props) =>
     props.fixed &&
     css`
@@ -21,7 +23,7 @@ export const NavWarp = styled.div`
   ${(props: Props) =>
     props.scrolled &&
     css`
-      background-color: #fff;
+      background-color: ${theme.color.WHITE};
       transition: 0.6s;
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     `}
@@ -52,8 +54,8 @@ export const Menu = styled.div`
   margin-left: auto;
 `;
 
-export const NavLink = styled.p`
-  color: #000;
+export const NavLink = styled(T.Text)`
+  color: ${theme.color.GRAY5};
   margin: 0px;
   cursor: pointer;
   @media (min-width: 0px) and (max-width: 767.98px) {
@@ -80,12 +82,12 @@ export const NavLink = styled.p`
   ${(props: Props) =>
     props.fixed &&
     css`
-      color: #fff;
+      color: ${theme.color.WHITE};
     `}
   ${(props: Props) =>
     props.scrolled &&
     css`
-      color: #000;
+      color: ${theme.color.GRAY5};
       transition: 0.6s;
     `}
   ${(props: Props) =>

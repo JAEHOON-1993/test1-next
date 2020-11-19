@@ -5,7 +5,7 @@ import Modal, { ModalProps } from "components/Modal";
 
 import theme from "layout/theme";
 
-import SuccessIcon from "components/Icon/SuccessIcon";
+import SuccessIcon from "components/Icon/Success";
 
 const ReadyModal: React.FC<ModalProps> = ({ ...props }) => {
   return (
