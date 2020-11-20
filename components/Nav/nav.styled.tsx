@@ -1,103 +1,75 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import theme from "layout/theme";
-import * as T from "components/Text";
+import Container from "components/Container";
 
-interface Props {
-  fixed?: boolean;
-  scrolled?: boolean;
-  first?: boolean;
-  active?: boolean;
-}
-
-export const NavWarp = styled.div`
+export const EmptyBox = styled.div`
   height: 80px;
-  width: 100%;
-  position: fixed;
-  z-index: 1000;
-  background-color: ${theme.color.WHITE};
-  ${(props: Props) =>
-    props.fixed &&
-    css`
-      background-color: #fff0;
-    `}
-  ${(props: Props) =>
-    props.scrolled &&
-    css`
-      background-color: ${theme.color.WHITE};
-      transition: 0.6s;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    `}
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    height: 50px;
+  }
 `;
-
 export const NavWrap = styled.div`
-  display: flex;
-  align-items: center;
+  position: fixed;
+  width: 100%;
   height: 80px;
-  @media (min-width: 0px) and (max-width: 767.98px) {
-    padding: 0;
+  background-color: #fff;
+  z-index: 9999;
+  border-bottom: 1px solid #eee;
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    height: 50px;
+    border-bottom: 0px;
   }
-  @media (min-width: 768px) {
-    padding: 0 16px;
-  }
-  position: relative;
 `;
-
 export const Logo = styled.img`
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 25px;
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+  }
 `;
-
-export const Menu = styled.div`
+export const CustomContainer = styled(Container)`
+  position: relative;
+  height: 80px;
   display: flex;
   align-items: center;
-  margin-left: auto;
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    justify-content: center;
+    height: 50px;
+  }
 `;
-
-export const NavLink = styled(T.Text)`
-  color: ${theme.color.GRAY5};
-  margin: 0px;
-  cursor: pointer;
-  @media (min-width: 0px) and (max-width: 767.98px) {
+export const MobileLeftBox = styled.div`
+  margin-left: auto;
+  > svg {
+    cursor: pointer;
     margin-left: 20px;
-    font-size: 12px;
-    font-weight: 500;
   }
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    margin-left: 30px;
-    font-size: 14px;
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    > svg {
+      margin-left: 15px;
+    }
   }
-  @media (min-width: 992px) and (max-width: 1299.98px) {
-    margin-left: 48px;
-    font-size: 14px;
+`;
+export const LeftBox = styled.div`
+  border-left: 1px solid ${theme.color.GRAY5};
+  margin-left: 20px;
+  display: flex;
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    display: none;
   }
-  @media (min-width: 1300px) and (max-width: 1599.98px) {
-    margin-left: 48px;
-    font-size: 14px;
-  }
-  @media (min-width: 1600px) {
-    margin-left: 58px;
-    font-size: 16px;
-  }
-  ${(props: Props) =>
-    props.fixed &&
-    css`
-      color: ${theme.color.WHITE};
-    `}
-  ${(props: Props) =>
-    props.scrolled &&
-    css`
-      color: ${theme.color.GRAY5};
-      transition: 0.6s;
-    `}
-  ${(props: Props) =>
-    props.first &&
-    css`
-      margin-left: 0px !important;
-    `}
-  ${(props: Props) =>
-    props.active &&
-    css`
-      font-weight: bold;
-    `}
+`;
+export const Link = styled.a`
+  font-size: 15px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: ${theme.color.GRAY5};
+  font-weight: bold;
 `;

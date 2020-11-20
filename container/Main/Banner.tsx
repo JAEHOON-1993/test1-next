@@ -16,6 +16,7 @@ const BannerContainer: React.FC<Props> = () => {
   const [active, setActive] = useState<number>(1);
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
