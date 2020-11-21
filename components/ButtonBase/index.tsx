@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export type ButtonProps = {
   outline?: boolean;
@@ -45,6 +45,9 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
 export default ButtonComponent;
 
+type styleProps = {
+  disabled?: boolean;
+};
 const ripple = keyframes`
   to {
     transform: scale(4);
@@ -62,6 +65,13 @@ const Button = styled.button`
     border-radius: 50%;
     transform: scale(0);
     animation: ${ripple} 600ms linear;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
   }
+  ${(props: styleProps) =>
+    props.disabled &&
+    css`
+      span {
+        display: none;
+      }
+    `}
 `;

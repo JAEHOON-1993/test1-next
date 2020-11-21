@@ -1,62 +1,37 @@
 import React, { useState, ReactNode, Ref } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import styled from "styled-components";
+
+import * as T from "components/Text";
 import theme from "layout/theme";
 
-const CustomInput = withStyles({
-  root: {
-    width: "100%",
-    margin: "8px 0",
-    color: theme.color.GRAY5,
-    "& label.Mui-focused": {
-      color: theme.color.PRIMARY,
-    },
-    "& .MuiInput-underline.Mui-error:after": {
-      borderBottomColor: theme.color.DANGER,
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: theme.color.PRIMARY,
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: theme.color.PRIMARY,
-      },
-      "&:hover fieldset": {
-        borderColor: theme.color.PRIMARY,
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: theme.color.PRIMARY,
-      },
-    },
-  },
-})(TextField);
-
 type Props = {
+  label?: string;
   id?: string;
   rows?: number;
   error?: boolean;
   disabled?: boolean;
-  fullWidth?: boolean;
-  size?: "small" | undefined;
-  InputLabelProps?: object;
   InputProps?: {
     ref?: Ref<any>;
     className?: string;
     startAdornment?: ReactNode;
     endAdornment?: ReactNode;
   };
-  inputProps?: object;
-  label?: string;
+  onChange?: any;
   placeholder?: string;
   helperText?: string;
-  multiline?: boolean;
-  style?: any;
-  onChange?: any;
   value?: any;
-  variant?: any;
+  action?: any;
 };
 
-const Input: React.FC<Props> = (props) => {
+const InputComponent: React.FC<Props> = ({
+  label,
+  placeholder,
+  value,
+  disabled,
+  InputProps,
+  action,
+  ...props
+}) => {
   const [text, setText] = useState<string>("");
   const [focused, setFocused] = useState<Boolean>(false);
   const onFocus = () => {
@@ -67,19 +42,61 @@ const Input: React.FC<Props> = (props) => {
       setFocused(false);
     }
   };
-  const onChange = (e: any) => {
+  const changeHandler = (e: any) => {
     setText(e.target.value);
     props.onChange(e);
   };
   return (
-    <CustomInput
-      {...props}
-      label={focused ? props.label : props.placeholder}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onChange={onChange}
-    />
+    <div {...props}>
+      {label && <Label>{label}</Label>}
+      <InputBox>
+        <Input
+          {...InputProps}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          disabled={disabled}
+          onChange={changeHandler}
+        />
+        {action && <ActionBox>{action}</ActionBox>}
+      </InputBox>
+    </div>
   );
 };
 
-export default Input;
+export default InputComponent;
+
+const InputBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Label = styled(T.Caption)`
+  color: ${theme.color.PRIMARY};
+`;
+const Input = styled.input`
+  all: unset;
+  height: 50px;
+  width: 100%;
+  border-bottom: 1.5px solid ${theme.color.PRIMARY};
+
+  font-size: 15px;
+  line-height: 1.53;
+  letter-spacing: -0.15px;
+  /* Tab */
+  @media screen and (max-width: 991.98px) {
+    font-size: 14px;
+    line-height: 1.57;
+    letter-spacing: -0.14px;
+  }
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.16px;
+  }
+`;
+
+const ActionBox = styled.div`
+  margin-left: 10px;
+  width: auto;
+`;
