@@ -1,5 +1,5 @@
 import React, { useState, ReactNode, Ref } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 import * as T from "components/Text";
 import theme from "layout/theme";
@@ -18,12 +18,14 @@ type Props = {
   };
   onChange?: any;
   placeholder?: string;
+  name?: string;
   helperText?: string;
   value?: any;
   action?: any;
 };
 
 const InputComponent: React.FC<Props> = ({
+  name,
   label,
   placeholder,
   value,
@@ -57,7 +59,10 @@ const InputComponent: React.FC<Props> = ({
           value={value}
           disabled={disabled}
           onChange={changeHandler}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
+        <Hr focused={focused}/>
         {action && <ActionBox>{action}</ActionBox>}
       </InputBox>
     </div>
@@ -66,9 +71,14 @@ const InputComponent: React.FC<Props> = ({
 
 export default InputComponent;
 
+type styleProp = {
+  focused?: boolean
+}
+
 const InputBox = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 const Label = styled(T.Caption)`
   color: ${theme.color.PRIMARY};
@@ -77,7 +87,7 @@ const Input = styled.input`
   all: unset;
   height: 50px;
   width: 100%;
-  border-bottom: 1.5px solid ${theme.color.PRIMARY};
+  border-bottom: 1.5px solid ${theme.color.GRAY3};
 
   font-size: 15px;
   line-height: 1.53;
@@ -100,3 +110,16 @@ const ActionBox = styled.div`
   margin-left: 10px;
   width: auto;
 `;
+
+const Hr = styled.div`
+  bottom: 0px;
+  transition: .2s ease;
+  width: 0%;
+  height: 1.5px;
+  background-color: ${theme.color.PRIMARY};
+  position: absolute;
+  ${(props:styleProp) => props.focused && css`
+    width: 100%;
+  `}
+
+`

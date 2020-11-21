@@ -7,6 +7,7 @@ import HomeIcon from "./Home";
 import ChatIcon from "./Chat";
 import MypageIcon from "./Mypage";
 import ShoppingIcon from "./Shopping";
+import ArrowLeftIcon from "./ArrowLeft";
 
 export type IconName =
   | "success"
@@ -20,7 +21,8 @@ export type IconName =
   | "mypage"
   | "mypage-fill"
   | "shopping"
-  | "shopping-fill";
+  | "shopping-fill"
+  | "arrow-left";
 
 type Props = {
   name?: IconName;
@@ -40,6 +42,8 @@ const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
       return <QRIcon {...props} />;
     case "search":
       return <SearchIcon {...props} />;
+    case "arrow-left":
+      return <ArrowLeftIcon {...props} />;
     case "home":
       return <HomeIcon {...props} fill={fill} />;
     case "chat":
