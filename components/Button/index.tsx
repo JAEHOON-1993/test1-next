@@ -16,7 +16,6 @@ export type ButtonProps = {
 
 const ButtonComponent: React.FC<ButtonProps> = ({
   children,
-  onClick,
   ...props
 }) => {
   return <Button {...props}>{children}</Button>;

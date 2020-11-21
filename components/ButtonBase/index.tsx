@@ -21,19 +21,21 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
   const clickHandler = (e: any) => {
     const circle = rippleRef?.current;
-    const button = buttonRef?.current;
-    const diameter = Math.max(button.clientWidth, button.clientWidth);
+    const button = e.currentTarget;
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
     circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
+    circle.style.left = `${e.clientX - (button.offsetLeft + radius)}px`;
+    circle.style.top = `${e.clientY - (button.offsetTop + radius)}px`;
     circle.classList.add("ripple");
 
     if (circle) {
       circle.remove();
     }
     button.appendChild(circle);
-    onClick(e);
+    if(onClick) {
+      onClick(e);
+    }
   };
   return (
     <Button ref={buttonRef} onClick={clickHandler} {...props}>

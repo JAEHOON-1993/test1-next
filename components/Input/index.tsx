@@ -35,7 +35,7 @@ const InputComponent: React.FC<Props> = ({
   ...props
 }) => {
   const [text, setText] = useState<string>("");
-  const [focused, setFocused] = useState<Boolean>(false);
+  const [focused, setFocused] = useState<boolean>(false);
   const onFocus = () => {
     setFocused(true);
   };
@@ -107,8 +107,8 @@ const Input = styled.input`
 `;
 
 const ActionBox = styled.div`
+  position: relative;
   margin-left: 10px;
-  width: auto;
 `;
 
 const Hr = styled.div`

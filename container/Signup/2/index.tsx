@@ -5,7 +5,8 @@ import * as T from "components/Text";
 import ButtonBaseComponent from "components/ButtonBase";
 import IconComponent from "components/Icon";
 
-import { Container, Nav, TextBox, Input, Button } from '../index.styled'
+
+import { Container, Nav, TextBox, Input, Button, ActionButton } from '../index.styled'
 
 type Props = {
   fixed?: boolean;
@@ -22,13 +23,11 @@ const MainContainer: React.FC<Props> = () => {
       </Nav>
       <TextBox>
         <T.Text lg>
-          본인인증을 위한
-          <br />
-          핸드폰 번호를 입력하세요
+          전송된 인증번호를 입력하세요
         </T.Text>
       </TextBox>
-      <Input name="phone" label="핸드폰번호" placeholder="핸드폰 번호 입력('-'제외)"/>
-      <Button round disabled onClick={console.log}>
+      <Input name="phone" label="인증번호" placeholder="인증번호 입력" action={<ActionButton>재전송</ActionButton>}/>
+      <Button round onClick={console.log}>
         다음
       </Button>
     </Container>
@@ -36,4 +35,3 @@ const MainContainer: React.FC<Props> = () => {
 };
 
 export default MainContainer;
-
