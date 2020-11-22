@@ -1,11 +1,11 @@
 import React from "react";
 
-import IndoorContainer from "container/Indoor";
+import IndoorContainer from "container/Outdoor";
 import Layout from "components/Layout";
 
 const IndexPage = () => {
   return (
-    <Layout title="똑똑한개발자" pageName="실내">
+    <Layout title="똑똑한개발자" pageName="실외">
       <IndoorContainer />
     </Layout>
   );

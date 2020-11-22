@@ -1,6 +1,7 @@
 import React from "react";
 import SuccessIcon from "./Success";
-import RateIcon from "./Rate";
+import StarIcon from "./Star";
+import StarHalfIcon from "./StarHalf";
 import QRIcon from "./QR";
 import SearchIcon from "./Search";
 import HomeIcon from "./Home";
@@ -11,7 +12,8 @@ import ArrowLeftIcon from "./ArrowLeft";
 
 export type IconName =
   | "success"
-  | "rate"
+  | "star"
+  | "star-half"
   | "qr"
   | "search"
   | "home"
@@ -36,8 +38,10 @@ const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
   switch (name) {
     case "success":
       return <SuccessIcon {...props} />;
-    case "rate":
-      return <RateIcon {...props} />;
+    case "star":
+      return <StarIcon {...props} />;
+    case "star-half":
+      return <StarHalfIcon {...props} />;
     case "qr":
       return <QRIcon {...props} />;
     case "search":

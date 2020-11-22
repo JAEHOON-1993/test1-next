@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 import styled from "styled-components";
 
 import theme from "layout/theme";
@@ -14,13 +15,13 @@ type Props = {
 const MenuContainer: React.FC<Props> = () => {
   return (
     <Menu>
-      <Item>
+      <Item onClick={() => Router.push("/indoor")}>
         <div>
           <ColorIcon name="bed" />
         </div>
         <T.Text>실내</T.Text>
       </Item>
-      <Item>
+      <Item onClick={() => Router.push("/outdoor")}>
         <div>
           <ColorIcon name="home" />
         </div>

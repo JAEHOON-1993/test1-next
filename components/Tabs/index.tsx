@@ -18,7 +18,7 @@ const CATEGORIES = [
   { id: 9, name: "욕실" },
 ];
 const Tabs = () => {
-  const [active, setActive] = useState<number>(1);
+  const [active, setActive] = useState<number>(0);
   const listRef = useRef<any>(null);
   const activeBarRef = useRef<any>(null);
   useEffect(() => {
@@ -73,6 +73,11 @@ const List = styled.div`
   ::-webkit-scrollbar {
     height: 0px;
     width: 0px;
+  }
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    margin: auto;
+    max-width: fit-content;
   }
 `;
 const Item = styled.div`

@@ -6,12 +6,18 @@ import Nav from "components/Nav";
 import styled, { css } from "styled-components";
 
 type Props = {
+  pageName?: string;
   noHeader?: boolean;
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ children, noHeader, title = "똑똑한개발자" }: Props) => {
+const Layout = ({
+  pageName,
+  children,
+  noHeader,
+  title = "똑똑한개발자",
+}: Props) => {
   const [height, setHeight] = useState(0);
   useEffect(() => {
     const updateSize = () => {
@@ -28,7 +34,7 @@ const Layout = ({ children, noHeader, title = "똑똑한개발자" }: Props) => 
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && <Nav />}
+      {!noHeader && <Nav pageName={pageName} />}
       <Body height={height} noHeader={noHeader}>
         {children}
       </Body>

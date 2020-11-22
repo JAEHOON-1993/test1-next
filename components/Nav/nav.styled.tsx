@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import theme from "layout/theme";
 import Container from "components/Container";
+import * as T from "components/Text";
 
+export const PageName = styled(T.Text)`
+  color: ${theme.color.BLACK};
+  font-weight: bold;
+`;
 export const EmptyBox = styled.div`
   height: 80px;
   /* Mobile */
@@ -57,6 +62,18 @@ export const MobileLeftBox = styled.div`
     }
   }
 `;
+export const MobileRightBox = styled.div`
+  display: none;
+  margin-right: auto;
+  > svg {
+    cursor: pointer;
+  }
+  /* Mobile */
+  @media screen and (max-width: 767.98px) {
+    display: block;
+  }
+`;
+
 export const LeftBox = styled.div`
   border-left: 1px solid ${theme.color.GRAY5};
   margin-left: 20px;
@@ -72,4 +89,17 @@ export const Link = styled.a`
   text-decoration: none;
   color: ${theme.color.GRAY5};
   font-weight: bold;
+`;
+
+export const PCView = styled.div`
+  display: block;
+  @media screen and (max-width: 767.98px) {
+    display: none;
+  }
+`;
+export const MobileView = styled.div`
+  display: none;
+  @media screen and (max-width: 767.98px) {
+    display: block;
+  }
 `;

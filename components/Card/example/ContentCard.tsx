@@ -8,13 +8,14 @@ import Icon from "components/Icon";
 
 import theme from "layout/theme";
 
-export type Props = {
+type Props = {
   children?: any;
+  onClick?: any;
 };
 
-const ContentCard: React.FC<Props> = ({}) => {
+const ContentCard: React.FC<Props> = (props) => {
   return (
-    <CustomCard>
+    <CustomCard {...props}>
       <RatioBox src="https://picsum.photos/200" />
       <T.Text sm style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
         Text Small
@@ -24,7 +25,7 @@ const ContentCard: React.FC<Props> = ({}) => {
         <b>18%</b> Price
       </PriceText>
       <RateBox>
-        <Icon name="rate" color={theme.color.PRIMARY} />
+        <Icon name="star" color={theme.color.PRIMARY} />
         <p>5.0</p>
       </RateBox>
     </CustomCard>
