@@ -1,5 +1,5 @@
 import React, { useState, ReactNode, Ref } from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 import * as T from "components/Text";
 import theme from "layout/theme";
@@ -19,7 +19,7 @@ type Props = {
   onChange?: any;
   placeholder?: string;
   name?: string;
-  helperText?: string;
+  errorText?: string;
   value?: any;
   action?: any;
 };
@@ -32,6 +32,7 @@ const InputComponent: React.FC<Props> = ({
   disabled,
   InputProps,
   action,
+  errorText,
   ...props
 }) => {
   const [text, setText] = useState<string>("");
@@ -51,20 +52,23 @@ const InputComponent: React.FC<Props> = ({
   return (
     <div {...props}>
       {label && <Label>{label}</Label>}
-      <InputBox>
-        <Input
-          {...InputProps}
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          disabled={disabled}
-          onChange={changeHandler}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
-        <Hr focused={focused}/>
+      <FlexBox>
+        <InputBox>
+          <Input
+            {...InputProps}
+            name={name}
+            placeholder={placeholder}
+            value={value}
+            disabled={disabled}
+            onChange={changeHandler}
+            onFocus={onFocus}
+            onBlur={onBlur}
+          />
+          <Hr focused={focused} />
+          {errorText && <ErrorText sm>{errorText}</ErrorText>}
+        </InputBox>
         {action && <ActionBox>{action}</ActionBox>}
-      </InputBox>
+      </FlexBox>
     </div>
   );
 };
@@ -72,13 +76,20 @@ const InputComponent: React.FC<Props> = ({
 export default InputComponent;
 
 type styleProp = {
-  focused?: boolean
-}
+  focused?: boolean;
+};
 
+const FlexBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 const InputBox = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
 `;
 const Label = styled(T.Caption)`
   color: ${theme.color.PRIMARY};
@@ -107,19 +118,24 @@ const Input = styled.input`
 `;
 
 const ActionBox = styled.div`
-  position: relative;
   margin-left: 10px;
 `;
 
 const Hr = styled.div`
   bottom: 0px;
-  transition: .2s ease;
+  transition: 0.2s ease;
   width: 0%;
   height: 1.5px;
   background-color: ${theme.color.PRIMARY};
   position: absolute;
-  ${(props:styleProp) => props.focused && css`
-    width: 100%;
-  `}
-
-`
+  ${(props: styleProp) =>
+    props.focused &&
+    css`
+      width: 100%;
+    `}
+`;
+const ErrorText = styled(T.Text)`
+  color: ${theme.color.PRIMARY};
+  position: absolute;
+  right: 0;
+`;

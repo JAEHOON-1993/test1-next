@@ -33,9 +33,18 @@ const ContentCard: React.FC<Props> = ({}) => {
 export default ContentCard;
 
 const CustomCard = styled(Card)`
-  padding: 20px 5px;
+  padding: 20px 0px;
   flex-direction: column;
   width: 180px;
+  cursor: pointer;
+  > div > div {
+    transition: 0.2s;
+  }
+  :hover {
+    > div > div {
+      transform: scale(1.1);
+    }
+  }
 `;
 
 const PriceText = styled.p`
