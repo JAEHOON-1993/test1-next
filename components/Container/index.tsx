@@ -4,6 +4,7 @@
  * @module components.Container
  */
 import styled from "styled-components";
+import theme from "layout/theme";
 
 const Container = styled.div`
   padding-right: 15px;
@@ -15,15 +16,15 @@ const Container = styled.div`
   width: 1250px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${theme.window.pc} {
     width: 950px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${theme.window.tab} {
     width: 720px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${theme.window.mobile} {
     width: calc(100% - 40px);
     padding: 0 20px;
   }

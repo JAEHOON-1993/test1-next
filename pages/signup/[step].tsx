@@ -16,7 +16,7 @@ const IndexPage = () => {
     setStep(step);
   }, [router]);
   return (
-    <Layout title="똑똑한개발자" noHeader>
+    <Layout title="똑똑한개발자" noHeader centered>
       {step === "1" && <Step1 />}
       {step === "2" && <Step2 />}
       {step === "3" && <Step3 />}

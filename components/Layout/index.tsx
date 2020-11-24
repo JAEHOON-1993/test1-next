@@ -8,6 +8,8 @@ import styled, { css } from "styled-components";
 type Props = {
   pageName?: string;
   noHeader?: boolean;
+  centered?: boolean;
+  transparent?: boolean;
   children?: ReactNode;
   title?: string;
 };
@@ -16,6 +18,8 @@ const Layout = ({
   pageName,
   children,
   noHeader,
+  centered,
+  transparent,
   title = "똑똑한개발자",
 }: Props) => {
   const [height, setHeight] = useState(0);
@@ -34,8 +38,8 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && <Nav pageName={pageName} />}
-      <Body height={height} noHeader={noHeader}>
+      {!noHeader && <Nav pageName={pageName} transparent={transparent} />}
+      <Body height={height} noHeader={noHeader} centered={centered}>
         {children}
       </Body>
       {/* <Footer /> */}
@@ -48,9 +52,15 @@ export default Layout;
 type styleProps = {
   height: number;
   noHeader?: boolean;
+  centered?: boolean;
 };
 const Body = styled.div`
   min-height: ${(props: styleProps) => `${props.height}px`};
+  ${(props: styleProps) =>
+    props.centered &&
+    css`
+      display: flex;
+    `}
   ${(props: styleProps) =>
     !props.noHeader &&
     css`

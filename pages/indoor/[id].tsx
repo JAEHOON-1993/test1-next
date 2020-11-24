@@ -7,10 +7,10 @@ const IndexPage = () => {
   const router = useRouter();
   useEffect(() => {
     const { id } = router.query;
-    console.log(id);
+    console.log("id : ", id);
   }, [router]);
   return (
-    <Layout title="똑똑한개발자" pageName="실내">
+    <Layout title="똑똑한개발자" pageName=" " transparent>
       <IndoorDetailContainer />
     </Layout>
   );

@@ -4,6 +4,7 @@ type Props = {
   sm?: boolean;
   lg?: boolean;
 };
+
 export const Title = styled.h1`
   margin: 0px;
   font-size: 15px;

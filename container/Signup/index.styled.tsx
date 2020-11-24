@@ -5,14 +5,16 @@ import theme from "layout/theme";
 import ButtonComponent from "components/Button";
 import InputComponent from "components/Input";
 
-
 export const Nav = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
-`
+`;
 export const Container = styled.div`
+  + div {
+    display: flex;
+  }
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -107,7 +109,6 @@ export const Button = styled(ButtonComponent)`
     margin-top: auto;
   }
 `;
-
 
 export const ActionButton = styled(ButtonComponent)`
   width: 72px;

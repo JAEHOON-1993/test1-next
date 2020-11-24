@@ -19,7 +19,7 @@ const ShoppingIcon: React.FC<Props> = ({ color, fill, ...props }) => {
         viewBox="0 0 24 24"
       >
         <defs>
-          <clipPath id="clip-path">
+          <clipPath id="clipPath">
             <path
               id="사각형_28751"
               d="M0 0H23.92V17.744H0z"
@@ -32,7 +32,7 @@ const ShoppingIcon: React.FC<Props> = ({ color, fill, ...props }) => {
         </defs>
         <path id="사각형_1959" fill="none" d="M0 0H24V24H0z" />
         <g id="그룹_36736" transform="translate(1 4.745)">
-          <g id="그룹_36694" clip-path="url(#clip-path)">
+          <g id="그룹_36694" clipPath="url(#clipPath)">
             <path
               id="패스_264294"
               d="M15.343 10.6L18.723.3a.428.428 0 0 1 .409-.3h2.362c.236 0 .461.343.461.578s-.226.579-.461.579h-1.716L17 10.212c-.053.181-.211.392-.4.392"
@@ -82,7 +82,7 @@ const ShoppingIcon: React.FC<Props> = ({ color, fill, ...props }) => {
       viewBox="0 0 24 24"
     >
       <defs>
-        <clipPath id="clip-path">
+        <clipPath id="clipPath">
           <path
             id="사각형_28751"
             d="M0 0H23.92V17.744H0z"
@@ -95,7 +95,7 @@ const ShoppingIcon: React.FC<Props> = ({ color, fill, ...props }) => {
       </defs>
       <path id="사각형_1959" fill="none" d="M0 0H24V24H0z" />
       <g id="그룹_36736" transform="translate(1 4.745)">
-        <g id="그룹_36694" clip-path="url(#clip-path)">
+        <g id="그룹_36694" clipPath="url(#clipPath)">
           <path
             id="패스_264294"
             d="M16.465 11.543H3.481a.427.427 0 0 1-.4-.28L.026 2.861a.428.428 0 0 1 .051-.389.423.423 0 0 1 .349-.181h16.055a.425.425 0 1 1 0 .85H1.033l2.747 7.552h12.364L19.111.308A.428.428 0 0 1 19.52 0h1.974a.425.425 0 0 1 0 .85h-1.652l-2.969 10.386a.426.426 0 0 1-.408.307"

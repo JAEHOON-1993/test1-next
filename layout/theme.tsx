@@ -1,3 +1,11 @@
+// import baseStyled, { ThemedStyledInterface } from "styled-components";
+
+const size = {
+  mobile: 767.98, // 600px
+  tab: 991.98, // 500px
+  pc: 1299.98, // 400px
+};
+
 const theme = {
   color: {
     PRIMARY: "#4575f5",
@@ -19,6 +27,13 @@ const theme = {
     INFO: "#24ADF5",
   },
   radius: 4,
+  window: {
+    mobile: `@media screen and (max-width: ${size.mobile}px)`,
+    tab: `@media screen and (max-width: ${size.tab}px)`,
+    pc: `@media screen and (max-width: ${size.pc}px)`,
+  },
 };
 
+// export type Theme = typeof theme;
+// export const styled = baseStyled as ThemedStyledInterface<Theme>;
 export default theme;

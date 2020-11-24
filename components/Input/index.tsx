@@ -104,13 +104,13 @@ const Input = styled.input`
   line-height: 1.53;
   letter-spacing: -0.15px;
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${theme.window.tab} {
     font-size: 14px;
     line-height: 1.57;
     letter-spacing: -0.14px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${theme.window.mobile} {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.16px;

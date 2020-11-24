@@ -46,8 +46,8 @@ const HomeIcon: React.FC<Props> = ({ color, fill, ...props }) => {
           id="패스_1032"
           fill="none"
           stroke="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path
             d="M9.715 19.395v-5.787h3.858v5.786h4.822V11.68h2.893L11.644 3 2 11.68h2.893v7.715z"

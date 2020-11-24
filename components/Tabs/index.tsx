@@ -2,26 +2,31 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import theme from "layout/theme";
+import useWindowSize from "utils/useWindowSize";
 
 import Container from "components/Container";
 import * as T from "components/Text";
 
-const CATEGORIES = [
-  { id: 1, name: "벽지" },
-  { id: 2, name: "장판" },
-  { id: 3, name: "필름" },
-  { id: 4, name: "데코타일" },
-  { id: 5, name: "포트폴리오" },
-  { id: 6, name: "마루" },
-  { id: 7, name: "몰딩" },
-  { id: 8, name: "문" },
-  { id: 9, name: "욕실" },
-];
-const Tabs = () => {
+type Props = {
+  noMobile?: boolean;
+  render?: any;
+  centered?: boolean;
+  maxWidth?: number;
+  data?: any;
+};
+
+const Tabs: React.FC<Props> = ({
+  noMobile,
+  centered,
+  maxWidth,
+  data,
+  render,
+}) => {
+  const size = useWindowSize();
   const [active, setActive] = useState<number>(0);
   const listRef = useRef<any>(null);
   const activeBarRef = useRef<any>(null);
-  useEffect(() => {
+  const barHandler = () => {
     const listNodes = Array.prototype.slice.call(listRef.current.childNodes);
     const list = listNodes.slice(0, active);
     var left = 0;
@@ -29,19 +34,22 @@ const Tabs = () => {
     const bar = activeBarRef.current;
     bar.style.width = `${listNodes[active].clientWidth}px`;
     bar.style.left = `${left}px`;
-  }, [active]);
+  };
+  useEffect(() => {
+    barHandler();
+  }, [active, size]);
   return (
-    <TabsBox>
+    <TabsBox noMobile={noMobile}>
       <Container>
-        <List ref={listRef}>
-          {CATEGORIES.map((item, idx) => {
+        <List ref={listRef} centered={centered}>
+          {data?.map((item: any, idx: number) => {
             return (
               <Item
                 key={idx}
                 active={active === idx}
                 onClick={() => setActive(idx)}
               >
-                <T.Text>{item.name}</T.Text>
+                {render ? render(item) : <T.Text>{item.name}</T.Text>}
               </Item>
             );
           })}
@@ -51,19 +59,27 @@ const Tabs = () => {
     </TabsBox>
   );
 };
+
 export default Tabs;
 
 type styleProps = {
   active?: boolean;
+  noMobile?: boolean;
+  centered?: boolean;
 };
 const TabsBox = styled.div`
   border-bottom: 1px solid ${theme.color.GRAY1};
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${theme.window.mobile} {
     > div {
       width: 100%;
       padding: 0px;
     }
+    ${(props: styleProps) =>
+      props.noMobile &&
+      css`
+        display: none;
+      `}
   }
 `;
 const List = styled.div`
@@ -75,10 +91,16 @@ const List = styled.div`
     width: 0px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${theme.window.mobile} {
     margin: auto;
-    max-width: fit-content;
   }
+  ${(props: styleProps) =>
+    props.centered &&
+    css`
+      justify-content: center;
+      width: fit-content;
+      margin: auto;
+    `}
 `;
 const Item = styled.div`
   cursor: pointer;

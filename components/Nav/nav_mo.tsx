@@ -19,26 +19,54 @@ import Icon from "components/Icon";
 type Props = {
   pageName?: string;
   fixed?: boolean;
+  transparent?: boolean;
   style?: any;
 };
 
-const Nav: React.FC<Props> = ({ pageName }) => {
+const NoSearchPath = ["/", "/indoor", "/outdoor"];
+
+const Nav: React.FC<Props> = ({ pageName, transparent }) => {
   const router = useRouter();
+  const [fixed, setFixed] = useState<boolean>(false);
   const [isHome, setIsHome] = useState<boolean>(true);
+  const [noSearch, setNoSearch] = useState<boolean>(true);
   useEffect(() => {
     if (router.pathname != "/") {
       setIsHome(false);
     } else {
       setIsHome(true);
     }
+    if (NoSearchPath.indexOf(router.pathname) > 0) {
+      setNoSearch(true);
+    } else {
+      setNoSearch(false);
+    }
   }, [router]);
+  const listener = () => {
+    if (document.body.getBoundingClientRect().top === 0) {
+      setFixed(false);
+    } else {
+      setFixed(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  });
   return (
     <>
-      <NavWrap>
+      <NavWrap transparent={transparent} fixed={fixed}>
         <CustomContainer>
           {!isHome && (
             <MobileRightBox onClick={router.back}>
-              <Icon name="arrow-left" color={theme.color.GRAY5} />
+              <Icon
+                name="arrow-left"
+                color={
+                  transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
+                }
+              />
             </MobileRightBox>
           )}
           {pageName ? (
@@ -50,7 +78,15 @@ const Nav: React.FC<Props> = ({ pageName }) => {
             />
           )}
           <MobileLeftBox>
-            <Icon name="search" color={theme.color.GRAY5} />
+            {noSearch && (
+              <Icon
+                style={{ margin: 0 }}
+                name="search"
+                color={
+                  transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
+                }
+              />
+            )}
             {isHome && <Icon name="qr" color={theme.color.GRAY5} />}
           </MobileLeftBox>
           <LeftBox>

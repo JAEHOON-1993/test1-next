@@ -14,7 +14,7 @@ type Props = {
 
 const MainContainer: React.FC<Props> = () => {
   return (
-    <Container>
+    <Container style={{ display: "flex" }}>
       <Nav>
         <ButtonBaseComponent onClick={() => Router.push("/signup/2")}>
           <IconComponent name="arrow-left" color="#585858" />

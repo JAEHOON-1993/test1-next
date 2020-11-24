@@ -5,7 +5,7 @@ import Layout from "components/Layout";
 
 const LoginPage = () => {
   return (
-    <Layout title="똑똑한개발자" noHeader>
+    <Layout title="똑똑한개발자" noHeader centered>
       <LoginContainer />
     </Layout>
   );

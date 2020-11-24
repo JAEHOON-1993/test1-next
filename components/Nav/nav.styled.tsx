@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "layout/theme";
 import Container from "components/Container";
 import * as T from "components/Text";
 
+type styleProps = {
+  transparent?: boolean;
+  fixed?: boolean;
+};
 export const PageName = styled(T.Text)`
   color: ${theme.color.BLACK};
   font-weight: bold;
@@ -26,6 +30,23 @@ export const NavWrap = styled.div`
     height: 50px;
     border-bottom: 0px;
   }
+  ${(props: styleProps) =>
+    props.transparent &&
+    css`
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(249, 249, 249, 0) 100%
+      );
+
+      transition: 0.4s;
+      ${(props: styleProps) =>
+        props.fixed &&
+        css`
+          background: none;
+          background-color: #fff;
+        `}
+    `}
 `;
 export const Logo = styled.img`
   cursor: pointer;

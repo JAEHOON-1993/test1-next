@@ -26,6 +26,7 @@ const RatioBox = styled.div`
   border-radius: 4px;
   overflow: hidden;
   width: 100%;
+  height: fit-content;
   ::before {
     margin-top: ${(props: Props) => (props.ratio ? props.ratio : "100%")};
     content: "";

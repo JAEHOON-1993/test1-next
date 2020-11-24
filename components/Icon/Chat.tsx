@@ -56,7 +56,7 @@ const ChatIcon: React.FC<Props> = ({ color, fill, ...props }) => {
       viewBox="0 0 24 24"
     >
       <defs>
-        <clipPath id="clip-path">
+        <clipPath id="clipPath">
           <path
             id="사각형_28750"
             d="M0 0H19.649V18.761H0z"
@@ -68,7 +68,7 @@ const ChatIcon: React.FC<Props> = ({ color, fill, ...props }) => {
       </defs>
       <path id="사각형_1961" fill="none" d="M0 0H24V24H0z" />
       <g id="그룹_36735" transform="translate(1.829 2.701)">
-        <g id="그룹_36692" clip-path="url(#clip-path)">
+        <g id="그룹_36692" clipPath="url(#clipPath)">
           <path
             id="패스_264292"
             d="M17.871 7.005C17.871 3.142 13.863 0 8.936 0S0 3.142 0 7.005a6.421 6.421 0 0 0 2.791 5.088v3.551a.382.382 0 0 0 .651.27l2.35-2.35a11.123 11.123 0 0 0 3.144.446c4.927 0 8.935-3.142 8.935-7.005M3.393 11.588A5.71 5.71 0 0 1 .764 7.005C.764 3.564 4.43.763 8.936.763s8.172 2.8 8.172 6.242-3.666 6.242-8.172 6.242a10.365 10.365 0 0 1-3.136-.478.373.373 0 0 0-.384.094l-1.861 1.86v-2.8a.385.385 0 0 0-.161-.333"

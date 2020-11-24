@@ -17,7 +17,7 @@ const AddIcon: React.FC<Props> = ({ ...props }) => {
       viewBox="0 0 50 50"
     >
       <defs>
-        <clipPath id="clip-path">
+        <clipPath id="clipPath">
           <path
             id="사각형_28756"
             fill="none"
@@ -53,7 +53,7 @@ const AddIcon: React.FC<Props> = ({ ...props }) => {
         />
       </g>
       <g id="그룹_36752" transform="translate(11 3.307)">
-        <g id="그룹_36704" clip-path="url(#clip-path)">
+        <g id="그룹_36704" clipPath="url(#clipPath)">
           <path
             id="패스_264435"
             fill={theme.color.PRIMARYSUB}

@@ -2,9 +2,10 @@ import React from "react";
 import Head from "next/head";
 
 import { AppProps } from "next/app";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import ScrollToTop from "components/ScrollToTop";
+import theme from "layout/theme";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -74,6 +75,9 @@ const GlobalStyle = createGlobalStyle`
   button:focus {
     outline: none !important;
   }
+  /* svg * {
+    transition: 0.08s;
+  } */
   input {
     ::-webkit-outer-spin-button,
     ::-webkit-inner-spin-button {
@@ -99,9 +103,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       />
     </Head>
     <ScrollToTop>
-      <GlobalStyle />
-      <title>로켓메이커스</title>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <title>로켓메이커스</title>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </ScrollToTop>
   </>
 );
