@@ -11,17 +11,10 @@ type Props = {
   noMobile?: boolean;
   render?: any;
   centered?: boolean;
-  maxWidth?: number;
   data?: any;
 };
 
-const Tabs: React.FC<Props> = ({
-  noMobile,
-  centered,
-  maxWidth,
-  data,
-  render,
-}) => {
+const Tabs: React.FC<Props> = ({ noMobile, centered, data, render }) => {
   const size = useWindowSize();
   const [active, setActive] = useState<number>(0);
   const listRef = useRef<any>(null);
