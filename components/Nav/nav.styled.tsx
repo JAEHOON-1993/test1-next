@@ -8,6 +8,7 @@ type styleProps = {
   fixed?: boolean;
 };
 export const PageName = styled(T.Text)`
+  position: absolute;
   color: ${theme.color.BLACK};
   font-weight: bold;
 `;

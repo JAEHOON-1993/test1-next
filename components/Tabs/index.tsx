@@ -61,6 +61,7 @@ type styleProps = {
   centered?: boolean;
 };
 const TabsBox = styled.div`
+  z-index: 999;
   border-bottom: 1px solid ${theme.color.GRAY1};
   /* Mobile */
   ${theme.window.mobile} {

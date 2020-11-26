@@ -23,24 +23,15 @@ type Props = {
   style?: any;
 };
 
+const NoBackPath = ["/chat"];
 const NoSearchPath = ["/", "/indoor", "/outdoor"];
 
 const Nav: React.FC<Props> = ({ pageName, transparent }) => {
   const router = useRouter();
+  const [path, setPath] = useState<string>("/");
   const [fixed, setFixed] = useState<boolean>(false);
-  const [isHome, setIsHome] = useState<boolean>(true);
-  const [noSearch, setNoSearch] = useState<boolean>(true);
   useEffect(() => {
-    if (router.pathname != "/") {
-      setIsHome(false);
-    } else {
-      setIsHome(true);
-    }
-    if (NoSearchPath.indexOf(router.pathname) > 0) {
-      setNoSearch(true);
-    } else {
-      setNoSearch(false);
-    }
+    setPath(router.pathname);
   }, [router]);
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {
@@ -59,16 +50,19 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
     <>
       <NavWrap transparent={transparent} fixed={fixed}>
         <CustomContainer>
-          {!isHome && (
-            <MobileRightBox onClick={router.back}>
-              <Icon
-                name="arrow-left"
-                color={
-                  transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
-                }
-              />
-            </MobileRightBox>
-          )}
+          {path != "/" ||
+            (NoBackPath.indexOf(path) > 0 && (
+              <MobileRightBox onClick={router.back}>
+                <Icon
+                  name="arrow-left"
+                  color={
+                    transparent && !fixed
+                      ? theme.color.WHITE
+                      : theme.color.GRAY5
+                  }
+                />
+              </MobileRightBox>
+            ))}
           {pageName ? (
             <PageName lg>{pageName}</PageName>
           ) : (
@@ -78,7 +72,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
             />
           )}
           <MobileLeftBox>
-            {noSearch && (
+            {NoSearchPath.indexOf(path) > 0 && (
               <Icon
                 style={{ margin: 0 }}
                 name="search"
@@ -87,7 +81,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
                 }
               />
             )}
-            {isHome && <Icon name="qr" color={theme.color.GRAY5} />}
+            {path === "/" && <Icon name="qr" color={theme.color.GRAY5} />}
           </MobileLeftBox>
           <LeftBox>
             <Link href="/">장바구니</Link>

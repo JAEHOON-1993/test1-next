@@ -233,16 +233,4 @@ const ButtonBox = styled.div`
       }
     }
   }
-  ${theme.window.mobile} {
-    > button {
-      width: calc((100% - 10px) / 2);
-      :nth-of-type(2) {
-        display: none;
-      }
-      :nth-of-type(3) {
-        margin-top: 0px;
-        width: calc((100% - 10px) / 2);
-      }
-    }
-  }
 `;
