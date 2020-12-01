@@ -1,9 +1,9 @@
-import React from "react";
-import Router from "next/router";
-import styled from "styled-components";
+import React from 'react';
+import Router from 'next/router';
+import styled from 'styled-components';
 
 // components
-import Card from "components/Card/example/ContentCard";
+import Card from 'components/Card/example/ContentCard';
 
 type Props = {
   fixed?: boolean;
@@ -13,15 +13,15 @@ type Props = {
 const ContentContainer: React.FC<Props> = () => {
   return (
     <ContentBox>
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
-      <Card onClick={() => Router.push("/outdoor/1")} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/1')} />
     </ContentBox>
   );
 };
@@ -40,7 +40,7 @@ const ContentBox = styled.div`
     }
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     > div {
       width: calc((100% - 10px) / 2);
       margin-right: 10px;

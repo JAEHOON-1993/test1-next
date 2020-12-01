@@ -1,9 +1,9 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import Head from "next/head";
+import React, { ReactNode, useEffect, useState } from 'react';
+import Head from 'next/head';
 
-import Nav from "components/Nav";
+import Nav from 'components/Nav';
 // import Footer from "./Footer";
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 type Props = {
   pageName?: string;
@@ -20,7 +20,7 @@ const Layout = ({
   noHeader,
   centered,
   transparent,
-  title = "똑똑한개발자",
+  title = '똑똑한개발자',
 }: Props) => {
   const [height, setHeight] = useState(0);
   useEffect(() => {
@@ -28,8 +28,8 @@ const Layout = ({
       setHeight(window.innerHeight);
     };
     updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
   }, []);
   return (
     <div>
@@ -65,7 +65,7 @@ const Body = styled.div`
     !props.noHeader &&
     css`
       min-height: ${(props: styleProps) => `${props.height - 80}px`};
-      @media screen and (max-width: 767.98px) {
+      ${(props) => props.theme.window.mobile} {
         min-height: ${(props: styleProps) => `${props.height - 50}px`};
       }
     `}

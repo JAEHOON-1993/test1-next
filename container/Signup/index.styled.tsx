@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import theme from "layout/theme";
+import styled from 'styled-components';
+import theme from 'layout/theme';
 
 // components
-import ButtonComponent from "components/Button";
-import InputComponent from "components/Input";
+import ButtonComponent from 'components/Button';
+import InputComponent from 'components/Input';
 
 export const Nav = styled.div`
   width: 100%;
@@ -28,15 +28,15 @@ export const Container = styled.div`
   width: 535px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     width: 535px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     width: 345px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     width: calc(100% - 40px);
     padding: 0 20px;
   }
@@ -54,11 +54,11 @@ export const TextBox = styled.div`
   }
   height: 92px;
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     height: 72px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     height: 72px;
   }
 `;
@@ -69,15 +69,15 @@ export const Input = styled(InputComponent)`
   margin-top: 70px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     margin-top: 70px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     margin-top: 50px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     margin-top: 20px;
     margin-bottom: auto;
   }
@@ -97,15 +97,15 @@ export const Button = styled(ButtonComponent)`
   margin-top: 100px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     margin-top: 100px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     margin-top: 80px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     margin-top: auto;
   }
 `;

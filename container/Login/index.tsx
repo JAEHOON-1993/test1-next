@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import theme from "layout/theme";
+import React from 'react';
+import styled from 'styled-components';
+import theme from 'layout/theme';
 
 // components
-import SocialBoxContainer from "./SocialBox";
+import SocialBoxContainer from './SocialBox';
 
 type Props = {
   fixed?: boolean;
@@ -42,15 +42,15 @@ const Container = styled.div`
   width: 535px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     width: 535px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     width: 345px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     width: calc(100% - 40px);
     padding: 0 20px;
   }
@@ -68,7 +68,7 @@ const TextBox = styled.div`
     line-height: 1.8;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     margin-top: auto;
   }
 `;

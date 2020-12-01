@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 // components
-import * as T from "components/Text";
+import * as T from 'components/Text';
 
 type Props = {
   fixed?: boolean;
@@ -13,7 +13,7 @@ const TitleContainer: React.FC<Props> = () => {
   return (
     <Title>
       <div>
-        <T.Title style={{ fontWeight: "bold" }}>안녕하세요, Murat님!</T.Title>
+        <T.Title style={{ fontWeight: 'bold' }}>안녕하세요, Murat님!</T.Title>
         <T.Title>오늘은 어떤 걸 구매하시겠습니까?</T.Title>
       </div>
       <img src="/images/profile_default.png" />
@@ -33,7 +33,7 @@ const Title = styled.div`
     height: 50px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     height: 80px;
     margin-top: 50px;
     margin-bottom: 22px;

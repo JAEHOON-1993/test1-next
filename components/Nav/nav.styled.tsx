@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import theme from "layout/theme";
-import Container from "components/Container";
-import * as T from "components/Text";
+import styled, { css } from 'styled-components';
+import theme from 'layout/theme';
+import Container from 'components/Container';
+import * as T from 'components/Text';
 
 type styleProps = {
   transparent?: boolean;
@@ -15,7 +15,7 @@ export const PageName = styled(T.Text)`
 export const EmptyBox = styled.div`
   height: 80px;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     height: 50px;
   }
 `;
@@ -27,7 +27,7 @@ export const NavWrap = styled.div`
   z-index: 9999;
   border-bottom: 1px solid #eee;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     height: 50px;
     border-bottom: 0px;
   }
@@ -54,7 +54,7 @@ export const Logo = styled.img`
   width: 120px;
   height: 25px;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     position: absolute;
     width: 100px;
     height: 20px;
@@ -66,7 +66,7 @@ export const CustomContainer = styled(Container)`
   display: flex;
   align-items: center;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     justify-content: center;
     height: 50px;
   }
@@ -78,7 +78,7 @@ export const MobileLeftBox = styled.div`
     margin-left: 20px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     > svg {
       margin-left: 15px;
     }
@@ -91,7 +91,7 @@ export const MobileRightBox = styled.div`
     cursor: pointer;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     display: block;
   }
 `;
@@ -101,7 +101,7 @@ export const LeftBox = styled.div`
   margin-left: 20px;
   display: flex;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     display: none;
   }
 `;
@@ -115,13 +115,13 @@ export const Link = styled.a`
 
 export const PCView = styled.div`
   display: block;
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     display: none;
   }
 `;
 export const MobileView = styled.div`
   display: none;
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     display: block;
   }
 `;
