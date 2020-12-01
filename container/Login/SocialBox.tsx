@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 // components
 
-import KakaoLogin from "components/Button/Social/KakaoLogin";
-import NaverLogin from "components/Button/Social/NaverLogin";
+import KakaoLogin from 'components/Button/Social/KakaoLogin';
+import NaverLogin from 'components/Button/Social/NaverLogin';
 
 type Props = {
   fixed?: boolean;
@@ -36,15 +36,15 @@ const SocialBox = styled.div`
   margin-top: 100px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     margin-top: 100px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     margin-top: 80px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     margin-top: auto;
   }
 `;

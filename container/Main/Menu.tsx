@@ -1,11 +1,11 @@
-import React from "react";
-import Router from "next/router";
-import styled from "styled-components";
+import React from 'react';
+import Router from 'next/router';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
+import theme from 'layout/theme';
 // components
-import ColorIcon from "components/ColorIcon";
-import * as T from "components/Text";
+import ColorIcon from 'components/ColorIcon';
+import * as T from 'components/Text';
 
 type Props = {
   fixed?: boolean;
@@ -15,13 +15,13 @@ type Props = {
 const MenuContainer: React.FC<Props> = () => {
   return (
     <Menu>
-      <Item onClick={() => Router.push("/indoor")}>
+      <Item onClick={() => Router.push('/indoor')}>
         <div>
           <ColorIcon name="bed" />
         </div>
         <T.Text>실내</T.Text>
       </Item>
-      <Item onClick={() => Router.push("/outdoor")}>
+      <Item onClick={() => Router.push('/outdoor')}>
         <div>
           <ColorIcon name="home" />
         </div>
@@ -66,17 +66,17 @@ const Menu = styled.div`
   margin-top: 60px;
   padding: 0 150px;
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     margin-top: 60px;
     padding: 0 80px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     margin-top: 40px;
     padding: 0 20px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     margin-top: 40px;
     padding: 0;
   }
@@ -102,7 +102,7 @@ const Item = styled.div`
     color: ${theme.color.GRAY4};
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     min-width: calc(100% / 3);
     margin-bottom: 30px;
   }

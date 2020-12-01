@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
+import theme from 'layout/theme';
 // components
-import RatioBox from "components/RatioBox";
-import * as T from "components/Text";
+import RatioBox from 'components/RatioBox';
+import * as T from 'components/Text';
 
 type Props = {
   fixed?: boolean;
@@ -25,7 +25,7 @@ const BannerContainer: React.FC<Props> = () => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: 'relative' }}>
       <Slider {...settings}>
         <RatioBox ratio="30%" src="/images/banner/1.png" />
         <RatioBox ratio="30%" src="/images/banner/1.png" />
@@ -58,17 +58,17 @@ const PageNumber = styled.div`
   bottom: 15px;
 
   /* Small PC */
-  @media screen and (max-width: 1299.98px) {
+  ${(props) => props.theme.window.pc} {
     right: 20px;
     bottom: 15px;
   }
   /* Tab */
-  @media screen and (max-width: 991.98px) {
+  ${(props) => props.theme.window.tab} {
     right: 10px;
     bottom: 13px;
   }
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     right: 10px;
     bottom: 13px;
   }

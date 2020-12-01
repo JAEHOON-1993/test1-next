@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-import { IconName } from "components/Icon";
+import theme from 'layout/theme';
+import { IconName } from 'components/Icon';
 
 type Props = {
   style?: any;
@@ -48,7 +48,7 @@ const Container = styled.div`
 
   display: none;
   /* Mobile */
-  @media screen and (max-width: 767.98px) {
+  ${(props) => props.theme.window.mobile} {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
