@@ -1,9 +1,9 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import Head from 'next/head';
+import styled, { css } from 'styled-components';
 
 import Nav from 'components/Nav';
 // import Footer from "./Footer";
-import styled, { css } from 'styled-components';
 
 type Props = {
   pageName?: string;

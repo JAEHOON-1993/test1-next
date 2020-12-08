@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import Router from "next/router";
+import React, { useState } from 'react';
+import Router from 'next/router';
 
-// components
-import Container from "components/Container";
-import TitleContainer from "./Title";
-import BannerContainer from "./Banner";
-import MenuContainer from "./Menu";
+import Container from 'components/Container';
+import TitleContainer from './fragment/Title';
+import BannerContainer from './fragment/Banner';
+import MenuContainer from './fragment/Menu';
 
-import BottonNavigation from "components/BottomNavigation";
-import BottonNavigationAction from "components/BottomNavigationAction";
+import BottonNavigation from 'components/BottomNavigation';
+import BottonNavigationAction from 'components/BottomNavigationAction';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from './types';
 
 const MobileBottomNav = () => {
   const [active, setActive] = useState(0);
@@ -23,13 +19,13 @@ const MobileBottomNav = () => {
       <BottonNavigationAction
         label="채팅"
         icon="chat"
-        onClick={() => Router.push("/chat")}
+        onClick={() => Router.push('/chat')}
       />
       <BottonNavigationAction label="장바구니" icon="shopping" />
       <BottonNavigationAction
         label="마이페이지"
         icon="mypage"
-        onClick={() => Router.push("/login")}
+        onClick={() => Router.push('/login')}
       />
     </BottonNavigation>
   );

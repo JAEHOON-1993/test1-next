@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+
 import theme from 'layout/theme';
 
-// components
 import ButtonComponent from 'components/Button';
 import InputComponent from 'components/Input';
 

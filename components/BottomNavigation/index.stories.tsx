@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import BottonNavigation from "components/BottomNavigation";
-import BottonNavigationAction from "components/BottomNavigationAction";
+import BottonNavigation from 'components/BottomNavigation';
+import BottonNavigationAction from 'components/BottomNavigationAction';
 
-export default { title: "Example/components/BottomNavigation" };
+export default { title: 'Example/components/BottomNavigation' };
 
 export const BottomNavigation1 = () => {
   const [active, setActive] = useState(0);

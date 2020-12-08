@@ -1,14 +1,16 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import { AppProps } from "next/app";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { AppProps } from 'next/app';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import ScrollToTop from "components/ScrollToTop";
-import theme from "layout/theme";
+import ScrollToTop from 'components/ScrollToTop';
+import theme from 'layout/theme';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+React.useLayoutEffect = React.useEffect;
 
 declare global {
   interface Window {
@@ -42,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none; 
     -ms-touch-action: manipulation; 
     touch-action: manipulation; 
+    box-sizing: border-box;
   }
   *:focus { 
     -webkit-tap-highlight-color: transparent; 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// components
 
 import KakaoLogin from 'components/Button/Social/KakaoLogin';
 import NaverLogin from 'components/Button/Social/NaverLogin';

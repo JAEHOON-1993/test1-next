@@ -1,6 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { User } from "interfaces";
+type User = {
+  id: number;
+  name: string;
+};
 
 type ListDetailProps = {
   item: User;

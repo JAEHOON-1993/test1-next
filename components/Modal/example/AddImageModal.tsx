@@ -1,9 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Modal, { ModalProps } from "components/Modal";
-
-import theme from "layout/theme";
+import theme from 'layout/theme';
+import Modal, { ModalProps } from 'components/Modal';
 
 const AddImageModal: React.FC<ModalProps> = ({ ...props }) => {
   return (

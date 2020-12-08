@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
-import Router from "next/router";
+import React, { useEffect } from 'react';
+import Router from 'next/router';
 
-import * as T from "components/Text";
-import { Button, Icon } from "./Social.styled";
-import * as AuthAPI from "api/Auth";
+import * as T from 'components/Text';
 
-import { StorageSetToken } from "utils/Storage";
+import * as AuthAPI from 'api/Auth';
+import { StorageSetToken } from 'utils/Storage';
+
+import { Button, Icon } from './Social.styled';
 
 declare global {
   interface Window {
     naver: any;
   }
 }
-const NAVER_LOGO = "/images/naver_logo.png";
-const NAVER_KEY = "08vq8KC8O46oGKpXm4Fu";
-const NAVER_SECRET = "EXxQD5tVfW";
+const NAVER_LOGO = '/images/naver_logo.png';
+const NAVER_KEY = '08vq8KC8O46oGKpXm4Fu';
+const NAVER_SECRET = 'EXxQD5tVfW';
 
 interface Props {
   round?: boolean;
@@ -26,13 +27,13 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
   const _naverLogin = (naverLogin: any) => {
     naverLogin.getLoginStatus((status: boolean) => {
       if (status) {
-        console.log("naverLogin : ", naverLogin);
+        console.log('naverLogin : ', naverLogin);
         const fromdata = new FormData();
-        fromdata.append("token", naverLogin.accessToken.accessToken);
-        fromdata.append("backend", "naver");
-        fromdata.append("client_id", NAVER_KEY);
-        fromdata.append("client_secret", NAVER_SECRET);
-        fromdata.append("email", naverLogin.user.email);
+        fromdata.append('token', naverLogin.accessToken.accessToken);
+        fromdata.append('backend', 'naver');
+        fromdata.append('client_id', NAVER_KEY);
+        fromdata.append('client_secret', NAVER_SECRET);
+        fromdata.append('email', naverLogin.user.email);
         AuthAPI.social_login(fromdata)
           .then(async (res: any) => {
             if (res.status === 200) {
@@ -44,10 +45,10 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
               const result = await StorageSetToken(
                 access_token,
                 refresh_token,
-                expires_in
+                expires_in,
               );
               if (result) {
-                Router.push("/");
+                Router.push('/');
               }
             }
           })
@@ -61,30 +62,30 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
       const naverLogin: any = new naver.LoginWithNaverId({
         clientId: NAVER_KEY,
         // callbackUrl: "http://localhost:3000/login",
-        callbackUrl: "https://www.noutebook.com/login",
+        callbackUrl: 'https://www.noutebook.com/login',
         isPopup: false,
-        loginButton: { color: "green", type: 3, height: 60 },
+        loginButton: { color: 'green', type: 3, height: 60 },
       });
       naverLogin.init();
-      window.addEventListener("load", () => _naverLogin(naverLogin));
+      window.addEventListener('load', () => _naverLogin(naverLogin));
     }
   }, []);
   return (
     <>
-      <div id="naverIdLogin" style={{ display: "none" }} />
+      <div id="naverIdLogin" style={{ display: 'none' }} />
       <Button
-        backgroundColor={"#7fdd34"}
+        backgroundColor={'#7fdd34'}
         round={props.round}
         style={props.style}
         onClick={() =>
-          document.getElementById("naverIdLogin_loginButton")?.click()
+          document.getElementById('naverIdLogin_loginButton')?.click()
         }
       >
         <Icon round={props.round} src={NAVER_LOGO} />
         <T.Text
-          style={{ color: props.round ? "#381f1f" : "#fff", fontWeight: 500 }}
+          style={{ color: props.round ? '#381f1f' : '#fff', fontWeight: 500 }}
         >
-          {props.round ? "네이버 계정으로 로그인" : "네이버 계정으로 로그인"}
+          {props.round ? '네이버 계정으로 로그인' : '네이버 계정으로 로그인'}
         </T.Text>
       </Button>
     </>

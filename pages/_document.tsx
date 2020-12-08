@@ -1,12 +1,12 @@
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import { ServerStyleSheets } from "@material-ui/styles";
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheets } from '@material-ui/styles';
 
-const SITE_NAME = "SITE_NAME";
-const SITE_TITLE = "SITE_TITLE";
-const SITE_DESCRIPTION = "SITE_DESCRIPTION";
-const SITE_IMAGE = "SITE_IMAGE";
+const SITE_NAME = 'SITE_NAME';
+const SITE_TITLE = 'SITE_TITLE';
+const SITE_DESCRIPTION = 'SITE_DESCRIPTION';
+const SITE_IMAGE = 'SITE_IMAGE';
 
 type Props = {
   styleTags: any;
@@ -18,7 +18,7 @@ export default class MyDocument extends Document<Props> {
     const sheet = new ServerStyleSheet();
     const sheet2 = new ServerStyleSheets();
     const page = renderPage((App: any) => (props: any) =>
-      sheet.collectStyles(sheet2.collect(<App {...props} />))
+      sheet.collectStyles(sheet2.collect(<App {...props} />)),
     );
     const styleTags = sheet.getStyleElement();
     const styleTags2 = sheet2.getStyleElement();

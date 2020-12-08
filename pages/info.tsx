@@ -1,12 +1,12 @@
-import Layout from "components/Layout";
+import Layout from 'components/Layout';
 
 const IndexPage = () => (
   <Layout title="로켓메이커스">
     <div
       style={{
-        alignItems: "center",
-        justifyContent: "center",
-        display: "flex",
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
         flex: 1,
       }}
     >

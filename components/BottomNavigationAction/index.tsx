@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-import * as T from "components/Text";
-import Icon, { IconName } from "components/Icon";
-import ButtonBase from "components/ButtonBase";
+import theme from 'layout/theme';
+import * as T from 'components/Text';
+import Icon, { IconName } from 'components/Icon';
+import ButtonBase from 'components/ButtonBase';
 
 type Props = {
   id?: number;

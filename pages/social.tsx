@@ -1,7 +1,8 @@
-import Link from "next/link";
-import Layout from "components/Layout";
-import KakaoLogin from "components/Button/Social/KakaoLogin";
-import NaverLogin from "components/Button/Social/NaverLogin";
+import Link from 'next/link';
+
+import Layout from 'components/Layout';
+import KakaoLogin from 'components/Button/Social/KakaoLogin';
+import NaverLogin from 'components/Button/Social/NaverLogin';
 
 const IndexPage = () => (
   <Layout title="로켓메이커스">

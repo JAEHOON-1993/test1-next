@@ -1,10 +1,11 @@
-import React from "react";
-import BedIcon from "./Bed";
-import HomeIcon from "./Home";
-import SearchIcon from "./Search";
-import FixIcon from "./Fix";
-import AIIcon from "./AI";
-import AddIcon from "./Add";
+import React from 'react';
+
+import BedIcon from './Bed';
+import HomeIcon from './Home';
+import SearchIcon from './Search';
+import FixIcon from './Fix';
+import AIIcon from './AI';
+import AddIcon from './Add';
 
 type Props = {
   name: string;
@@ -15,17 +16,17 @@ type Props = {
 
 const Icon: React.FC<Props> = ({ name, ...props }) => {
   switch (name) {
-    case "bed":
+    case 'bed':
       return <BedIcon {...props} />;
-    case "home":
+    case 'home':
       return <HomeIcon {...props} />;
-    case "search":
+    case 'search':
       return <SearchIcon {...props} />;
-    case "fix":
+    case 'fix':
       return <FixIcon {...props} />;
-    case "ai":
+    case 'ai':
       return <AIIcon {...props} />;
-    case "add":
+    case 'add':
       return <AddIcon {...props} />;
   }
   return null;

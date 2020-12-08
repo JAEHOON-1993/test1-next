@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import PCNav from "./nav_pc";
-import MobileNav from "./nav_mo";
-import { PCView, MobileView } from "./nav.styled";
+import PCNav from './nav_pc';
+import MobileNav from './nav_mo';
+
+import { PCView, MobileView } from './nav.styled';
 
 type Props = {
   pageName?: string;

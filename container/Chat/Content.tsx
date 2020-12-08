@@ -2,7 +2,6 @@ import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
 
-// components
 import Card from 'components/Card/example/ContentCard';
 
 type Props = {

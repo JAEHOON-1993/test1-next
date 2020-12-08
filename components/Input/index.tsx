@@ -1,8 +1,8 @@
-import React, { useState, ReactNode, Ref } from "react";
-import styled, { css } from "styled-components";
+import React, { useState, ReactNode, Ref } from 'react';
+import styled, { css } from 'styled-components';
 
-import * as T from "components/Text";
-import theme from "layout/theme";
+import * as T from 'components/Text';
+import theme from 'layout/theme';
 
 type Props = {
   label?: string;
@@ -35,7 +35,7 @@ const InputComponent: React.FC<Props> = ({
   errorText,
   ...props
 }) => {
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>('');
   const [focused, setFocused] = useState<boolean>(false);
   const onFocus = () => {
     setFocused(true);

@@ -3,14 +3,11 @@ import Router from 'next/router';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-// components
+
 import ColorIcon from 'components/ColorIcon';
 import * as T from 'components/Text';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const MenuContainer: React.FC<Props> = () => {
   return (

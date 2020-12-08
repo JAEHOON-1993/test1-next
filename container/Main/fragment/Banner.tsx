@@ -3,14 +3,11 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-// components
+
 import RatioBox from 'components/RatioBox';
 import * as T from 'components/Text';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const BannerContainer: React.FC<Props> = () => {
   const [active, setActive] = useState<number>(1);
@@ -42,7 +39,6 @@ export default BannerContainer;
 
 const PageNumber = styled.div`
   position: absolute;
-
   width: 40px;
   height: 20px;
   border-radius: 10px;

@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import theme from "layout/theme";
-import ButtonBase from "components/ButtonBase";
+import theme from 'layout/theme';
+import ButtonBase from 'components/ButtonBase';
 
 export type ButtonProps = {
   outline?: boolean;
@@ -14,10 +14,7 @@ export type ButtonProps = {
   children?: any;
 };
 
-const ButtonComponent: React.FC<ButtonProps> = ({
-  children,
-  ...props
-}) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ children, ...props }) => {
   return <Button {...props}>{children}</Button>;
 };
 

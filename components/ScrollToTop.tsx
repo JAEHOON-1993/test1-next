@@ -1,5 +1,5 @@
-import * as React from "react";
-import { withRouter, SingletonRouter } from "next/router";
+import * as React from 'react';
+import { withRouter, SingletonRouter } from 'next/router';
 
 type Props = {
   router: SingletonRouter;

@@ -1,11 +1,11 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 export type ModalProps = {
   visible: boolean;
   closeModal: any;
-  slide?: "top" | "bottom" | "right" | "left" | undefined;
-  position?: "top" | "bottom" | "right" | "left" | undefined;
+  slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
+  position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   children?: any;
 };
 
@@ -30,8 +30,8 @@ export default ModalComponent;
 
 type styleProps = {
   visible?: boolean;
-  slide?: "top" | "bottom" | "right" | "left" | undefined;
-  position?: "top" | "bottom" | "right" | "left" | undefined;
+  slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
+  position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
 };
 
 const Dim = styled.div`
@@ -64,28 +64,28 @@ const Modal = styled.div`
   }
 
   ${(props: styleProps) =>
-    props.slide === "top" &&
+    props.slide === 'top' &&
     css`
       > div {
         margin-bottom: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slide === "bottom" &&
+    props.slide === 'bottom' &&
     css`
       > div {
         margin-top: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slide === "right" &&
+    props.slide === 'right' &&
     css`
       > div {
         margin-left: 50px;
       }
     `}
   ${(props: styleProps) =>
-    props.slide === "left" &&
+    props.slide === 'left' &&
     css`
       > div {
         margin-right: 50px;
@@ -93,22 +93,22 @@ const Modal = styled.div`
     `}
 
   ${(props: styleProps) =>
-    props.position === "top" &&
+    props.position === 'top' &&
     css`
       justify-content: flex-start;
     `}
   ${(props: styleProps) =>
-    props.position === "bottom" &&
+    props.position === 'bottom' &&
     css`
       justify-content: flex-end;
     `}
   ${(props: styleProps) =>
-    props.position === "right" &&
+    props.position === 'right' &&
     css`
       align-items: flex-end;
     `}
   ${(props: styleProps) =>
-    props.position === "left" &&
+    props.position === 'left' &&
     css`
       align-items: flex-start;
     `}
@@ -124,62 +124,62 @@ const Modal = styled.div`
     `}
 
     ${(props: styleProps) =>
-      props.position === "top" &&
-      props.slide === "top" &&
-      css`
-        > div {
-          position: absolute;
-          top: -50px;
-          ${(props: styleProps) =>
-            props.visible &&
-            css`
-              top: 0px;
-            `}
-        }
-      `}
+    props.position === 'top' &&
+    props.slide === 'top' &&
+    css`
+      > div {
+        position: absolute;
+        top: -50px;
+        ${(props: styleProps) =>
+          props.visible &&
+          css`
+            top: 0px;
+          `}
+      }
+    `}
 
     ${(props: styleProps) =>
-      props.position === "bottom" &&
-      props.slide === "bottom" &&
-      css`
-        > div {
-          position: absolute;
-          bottom: -50px;
-          ${(props: styleProps) =>
-            props.visible &&
-            css`
-              bottom: 0px;
-            `}
-        }
-      `}
+    props.position === 'bottom' &&
+    props.slide === 'bottom' &&
+    css`
+      > div {
+        position: absolute;
+        bottom: -50px;
+        ${(props: styleProps) =>
+          props.visible &&
+          css`
+            bottom: 0px;
+          `}
+      }
+    `}
 
     ${(props: styleProps) =>
-      props.position === "right" &&
-      props.slide === "right" &&
-      css`
-        > div {
-          position: absolute;
-          right: -50px;
-          ${(props: styleProps) =>
-            props.visible &&
-            css`
-              right: 0px;
-            `}
-        }
-      `}
+    props.position === 'right' &&
+    props.slide === 'right' &&
+    css`
+      > div {
+        position: absolute;
+        right: -50px;
+        ${(props: styleProps) =>
+          props.visible &&
+          css`
+            right: 0px;
+          `}
+      }
+    `}
 
     ${(props: styleProps) =>
-      props.position === "left" &&
-      props.slide === "left" &&
-      css`
-        > div {
-          position: absolute;
-          left: -50px;
-          ${(props: styleProps) =>
-            props.visible &&
-            css`
-              left: 0px;
-            `}
-        }
-      `}
+    props.position === 'left' &&
+    props.slide === 'left' &&
+    css`
+      > div {
+        position: absolute;
+        left: -50px;
+        ${(props: styleProps) =>
+          props.visible &&
+          css`
+            left: 0px;
+          `}
+      }
+    `}
 `;

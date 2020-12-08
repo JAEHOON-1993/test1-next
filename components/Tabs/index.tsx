@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import React, { useEffect, useState, useRef } from 'react';
+import styled, { css } from 'styled-components';
 
-import theme from "layout/theme";
-import useWindowSize from "utils/useWindowSize";
-
-import Container from "components/Container";
-import * as T from "components/Text";
+import theme from 'layout/theme';
+import useWindowSize from 'utils/useWindowSize';
+import Container from 'components/Container';
+import * as T from 'components/Text';
 
 type Props = {
   noMobile?: boolean;
@@ -60,6 +59,7 @@ type styleProps = {
   noMobile?: boolean;
   centered?: boolean;
 };
+
 const TabsBox = styled.div`
   z-index: 999;
   border-bottom: 1px solid ${theme.color.GRAY1};
@@ -76,6 +76,7 @@ const TabsBox = styled.div`
       `}
   }
 `;
+
 const List = styled.div`
   display: flex;
   overflow: auto;
@@ -96,6 +97,7 @@ const List = styled.div`
       margin: auto;
     `}
 `;
+
 const Item = styled.div`
   cursor: pointer;
   > p {
@@ -110,6 +112,7 @@ const Item = styled.div`
       color: ${theme.color.PRIMARY};
     `}
 `;
+
 const ActiveBar = styled.div`
   position: absolute;
   transition: 0.2s ease;

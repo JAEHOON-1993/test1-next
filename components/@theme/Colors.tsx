@@ -1,8 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-// components
+import theme from 'layout/theme';
 
 type Props = {
   fixed?: boolean;

@@ -1,5 +1,8 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
+
+import theme from 'layout/theme';
+import Icon from 'components/Icon';
 
 import {
   NavWrap,
@@ -9,10 +12,7 @@ import {
   LeftBox,
   Link,
   EmptyBox,
-} from "./nav.styled";
-import theme from "layout/theme";
-// components
-import Icon from "components/Icon";
+} from './nav.styled';
 
 type Props = {
   pageName?: string;
@@ -26,7 +26,7 @@ const Nav: React.FC<Props> = () => {
     <>
       <NavWrap>
         <CustomContainer>
-          <Logo onClick={() => router.push("/")} src="/icons/logo_black.png" />
+          <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
           <MobileLeftBox>
             <Icon name="search" color={theme.color.GRAY5} />
             <Icon name="qr" color={theme.color.GRAY5} />

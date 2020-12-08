@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import theme from "layout/theme";
-import * as T from "components/Text";
+import theme from 'layout/theme';
+import * as T from 'components/Text';
 
 export type CardProps = {
   children?: any;

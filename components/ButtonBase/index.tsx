@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import styled, { keyframes, css } from "styled-components";
+import React, { useRef } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
 export type ButtonProps = {
   outline?: boolean;
@@ -27,13 +27,13 @@ const ButtonComponent: React.FC<ButtonProps> = ({
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${e.clientX - (button.offsetLeft + radius)}px`;
     circle.style.top = `${e.clientY - (button.offsetTop + radius)}px`;
-    circle.classList.add("ripple");
+    circle.classList.add('ripple');
 
     if (circle) {
       circle.remove();
     }
     button.appendChild(circle);
-    if(onClick) {
+    if (onClick) {
       onClick(e);
     }
   };

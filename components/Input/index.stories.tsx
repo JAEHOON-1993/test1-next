@@ -1,8 +1,9 @@
-import React from "react";
-import Input from "components/Input";
-import Button from "components/Button";
+import React from 'react';
 
-export default { title: "Example/components/Input" };
+import Input from 'components/Input';
+import Button from 'components/Button';
+
+export default { title: 'Example/components/Input' };
 
 export const defaultInput = () => (
   <Input

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import IndoorContainer from "container/Outdoor";
-import Layout from "components/Layout";
+import IndoorContainer from 'container/Outdoor';
+import Layout from 'components/Layout';
 
 const IndexPage = () => {
   return (

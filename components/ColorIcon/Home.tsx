@@ -1,5 +1,6 @@
-import React from "react";
-import theme from "layout/theme";
+import React from 'react';
+
+import theme from 'layout/theme';
 
 type Props = {
   style?: any;
