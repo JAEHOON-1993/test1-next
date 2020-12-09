@@ -4,10 +4,10 @@ import Container from 'components/Container';
 import ContentContainer from './Content';
 import Tabs from 'components/Tabs';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const CATEGORIES = [
   { id: 1, name: '벽지' },

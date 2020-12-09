@@ -6,12 +6,12 @@ import useWindowSize from 'utils/useWindowSize';
 import Container from 'components/Container';
 import * as T from 'components/Text';
 
-type Props = {
+interface Props {
   noMobile?: boolean;
   render?: any;
   centered?: boolean;
   data?: any;
-};
+}
 
 const Tabs: React.FC<Props> = ({ noMobile, centered, data, render }) => {
   const size = useWindowSize();
@@ -54,11 +54,11 @@ const Tabs: React.FC<Props> = ({ noMobile, centered, data, render }) => {
 
 export default Tabs;
 
-type styleProps = {
+interface styleProps {
   active?: boolean;
   noMobile?: boolean;
   centered?: boolean;
-};
+}
 
 const TabsBox = styled.div`
   z-index: 999;

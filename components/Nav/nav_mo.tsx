@@ -16,12 +16,12 @@ import {
   EmptyBox,
 } from './nav.styled';
 
-type Props = {
+interface Props {
   pageName?: string;
   fixed?: boolean;
   transparent?: boolean;
   style?: any;
-};
+}
 
 const NO_BACK_PATH = ['/', '/chat'];
 const SEARCH_PATH = ['/', '/indoor', '/outdoor'];
@@ -36,6 +36,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
     console.log(NO_BACK_PATH.indexOf(path));
     console.log(SEARCH_PATH.indexOf(path));
   }, [router]);
+
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {
       setFixed(false);

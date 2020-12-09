@@ -14,10 +14,7 @@ import {
   ActionButton,
 } from '../index.styled';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const MainContainer: React.FC<Props> = () => {
   return (

@@ -7,10 +7,10 @@ import { Card } from 'components/Card';
 import RatioBox from 'components/RatioBox';
 import Icon from 'components/Icon';
 
-type Props = {
+interface Props {
   children?: any;
   onClick?: any;
-};
+}
 
 const ContentCard: React.FC<Props> = (props) => {
   return (

@@ -7,10 +7,7 @@ import IconComponent from 'components/Icon';
 
 import { Container, Nav, TextBox, Input, Button } from '../index.styled';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const MainContainer: React.FC<Props> = () => {
   return (

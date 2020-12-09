@@ -9,6 +9,29 @@ import * as T from 'components/Text';
 
 import { Props } from '../types';
 
+const itemsData = [
+  {
+    id: 1,
+    name: 'search',
+    text: 'AI 스마트검색',
+  },
+  {
+    id: 2,
+    name: 'fix',
+    text: '시공업체',
+  },
+  {
+    id: 3,
+    name: 'ai',
+    text: 'AI 가상시공',
+  },
+  {
+    id: 4,
+    name: 'add',
+    text: '업체등록',
+  },
+];
+
 const MenuContainer: React.FC<Props> = () => {
   return (
     <Menu>
@@ -24,30 +47,14 @@ const MenuContainer: React.FC<Props> = () => {
         </div>
         <T.Text>실외</T.Text>
       </Item>
-      <Item>
-        <div>
-          <ColorIcon name="search" />
-        </div>
-        <T.Text>AI 스마트검색</T.Text>
-      </Item>
-      <Item>
-        <div>
-          <ColorIcon name="fix" />
-        </div>
-        <T.Text>시공업체</T.Text>
-      </Item>
-      <Item>
-        <div>
-          <ColorIcon name="ai" />
-        </div>
-        <T.Text>AI 가상시공</T.Text>
-      </Item>
-      <Item>
-        <div>
-          <ColorIcon name="add" />
-        </div>
-        <T.Text>업체등록</T.Text>
-      </Item>
+      {itemsData.map((item) => (
+        <Item key={item.id}>
+          <div>
+            <ColorIcon name={item.name} />
+          </div>
+          <T.Text>{item.text}</T.Text>
+        </Item>
+      ))}
     </Menu>
   );
 };

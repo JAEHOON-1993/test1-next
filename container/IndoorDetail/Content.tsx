@@ -10,10 +10,10 @@ import Rate from 'components/Rate';
 import RatioBox from 'components/RatioBox';
 import * as T from 'components/Text';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const options = [
   { value: 1, label: '그레이' },
@@ -24,6 +24,7 @@ const sizeOptions = [
   { value: 50, label: '50 X 50 cm' },
   { value: 80, label: '80 X 80 cm' },
 ];
+
 const ContentContainer: React.FC<Props> = () => {
   return (
     <>

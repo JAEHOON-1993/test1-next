@@ -7,12 +7,12 @@ import FixIcon from './Fix';
 import AIIcon from './AI';
 import AddIcon from './Add';
 
-type Props = {
+interface Props {
   name: string;
   color?: string;
   style?: any;
   className?: any;
-};
+}
 
 const Icon: React.FC<Props> = ({ name, ...props }) => {
   switch (name) {

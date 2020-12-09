@@ -6,10 +6,10 @@ import theme from 'layout/theme';
 import * as T from 'components/Text';
 import Tabs from 'components/Tabs';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const DATA = [
   { id: 1, name: '상품정보' },

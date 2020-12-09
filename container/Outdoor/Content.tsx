@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 import Card from 'components/Card/example/ContentCard';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const ContentContainer: React.FC<Props> = () => {
   return (

@@ -12,7 +12,7 @@ import MypageIcon from './Mypage';
 import ShoppingIcon from './Shopping';
 import ArrowLeftIcon from './ArrowLeft';
 
-export type IconName =
+type IconName =
   | 'success'
   | 'star'
   | 'star-half'
@@ -29,13 +29,13 @@ export type IconName =
   | 'shopping-fill'
   | 'arrow-left';
 
-type Props = {
+interface Props {
   name?: IconName;
   color?: string;
   style?: any;
   fill?: boolean;
   className?: any;
-};
+}
 
 const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
   switch (name) {

@@ -7,9 +7,9 @@ import { FooterWrap, Content, Logo, Info, Social } from './Footer.styled';
 
 const FOOTER_LOGO = '/images/logo_white.png';
 
-type Props = {
+interface Props {
   style?: any;
-};
+}
 
 const Footer: React.FC<Props> = () => {
   return (

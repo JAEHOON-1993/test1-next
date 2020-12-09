@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import theme from 'layout/theme';
 import Icon from 'components/Icon';
 
-type Props = {
+interface Props {
   count?: number;
   value?: number;
   defaultValue?: number;
@@ -12,7 +12,7 @@ type Props = {
   onClick?: any;
   children?: any;
   style?: any;
-};
+}
 
 const Rate: React.FC<Props> = ({
   count = 5,

@@ -7,8 +7,8 @@ import Step2 from 'container/Signup/2';
 import Step3 from 'container/Signup/3';
 
 const IndexPage = () => {
-  const [step, setStep] = useState<any>(0);
   const router = useRouter();
+  const [step, setStep] = useState<any>(0);
   useEffect(() => {
     const { step } = router.query;
     console.log(step);

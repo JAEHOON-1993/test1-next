@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import * as T from 'components/Text';
 import theme from 'layout/theme';
 
-type Props = {
+interface Props {
   label?: string;
   id?: string;
   rows?: number;
@@ -22,7 +22,7 @@ type Props = {
   errorText?: string;
   value?: any;
   action?: any;
-};
+}
 
 const InputComponent: React.FC<Props> = ({
   name,
@@ -75,9 +75,9 @@ const InputComponent: React.FC<Props> = ({
 
 export default InputComponent;
 
-type styleProp = {
+interface styleProp {
   focused?: boolean;
-};
+}
 
 const FlexBox = styled.div`
   display: flex;

@@ -1,12 +1,8 @@
 import React from 'react';
 
-type Props = {
-  color?: string;
-  style?: any;
-  className?: any;
-};
+import { SvgProps } from './types';
 
-const RateHalfIcon: React.FC<Props> = ({ color, ...props }) => {
+const RateHalfIcon: React.FC<SvgProps> = ({ color, ...props }) => {
   return (
     <svg
       {...props}

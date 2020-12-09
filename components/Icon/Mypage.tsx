@@ -1,13 +1,8 @@
 import React from 'react';
 
-type Props = {
-  color?: string;
-  fill?: boolean;
-  style?: any;
-  className?: any;
-};
+import { SvgWithFillProps } from './types';
 
-const MypageIcon: React.FC<Props> = ({ color, fill, ...props }) => {
+const MypageIcon: React.FC<SvgWithFillProps> = ({ color, fill, ...props }) => {
   if (fill) {
     return (
       <svg

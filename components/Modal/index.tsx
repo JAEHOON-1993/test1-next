@@ -1,13 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export type ModalProps = {
+export interface ModalProps {
   visible: boolean;
   closeModal: any;
   slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   children?: any;
-};
+}
 
 const ModalComponent: React.FC<ModalProps> = ({
   visible,
@@ -28,11 +28,11 @@ const ModalComponent: React.FC<ModalProps> = ({
 
 export default ModalComponent;
 
-type styleProps = {
+interface styleProps {
   visible?: boolean;
   slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
-};
+}
 
 const Dim = styled.div`
   position: fixed;

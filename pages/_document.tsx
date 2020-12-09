@@ -8,10 +8,10 @@ const SITE_TITLE = 'SITE_TITLE';
 const SITE_DESCRIPTION = 'SITE_DESCRIPTION';
 const SITE_IMAGE = 'SITE_IMAGE';
 
-type Props = {
+interface Props {
   styleTags: any;
   styleTags2: any;
-};
+}
 
 export default class MyDocument extends Document<Props> {
   static async getInitialProps({ renderPage }: any) {

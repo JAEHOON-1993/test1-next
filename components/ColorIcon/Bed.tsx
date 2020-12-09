@@ -2,10 +2,7 @@ import React from 'react';
 
 import theme from 'layout/theme';
 
-type Props = {
-  style?: any;
-  className?: any;
-};
+import { Props } from './types';
 
 const BedIcon: React.FC<Props> = ({ ...props }) => {
   return (

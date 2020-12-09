@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 import theme from 'layout/theme';
 import * as T from 'components/Text';
 
-export type CardProps = {
+export interface CardProps {
   children?: any;
-};
+}
 
 export const Card: React.FC<CardProps> = ({ children, ...props }) => {
   return <CardComponent {...props}>{children}</CardComponent>;
@@ -19,14 +19,14 @@ const CardComponent = styled.div`
   max-width: 375px;
 `;
 
-export type CardHeaderProps = {
+export interface CardHeaderProps {
   title?: string;
   subTitle?: string;
   thumbnail?: any;
   avatar?: any;
   action?: any;
   children?: any;
-};
+}
 
 export const CardHeader: React.FC<CardHeaderProps> = ({
   title,

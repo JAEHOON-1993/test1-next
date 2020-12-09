@@ -5,10 +5,10 @@ import theme from 'layout/theme';
 
 import SocialBoxContainer from './SocialBox';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const MainContainer: React.FC<Props> = () => {
   return (

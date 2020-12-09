@@ -12,7 +12,7 @@ type Props = {
   icon?: IconName;
 };
 
-const BottonNavigation: React.FC<Props> = ({
+const BottomNavigation: React.FC<Props> = ({
   active,
   setActive,
   children,
@@ -34,7 +34,7 @@ const BottonNavigation: React.FC<Props> = ({
   return <Container {...props}>{childrenWithProps}</Container>;
 };
 
-export default BottonNavigation;
+export default BottomNavigation;
 
 const Container = styled.div`
   background-color: #fff;

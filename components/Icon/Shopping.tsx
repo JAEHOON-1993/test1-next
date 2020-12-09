@@ -1,13 +1,12 @@
 import React from 'react';
 
-type Props = {
-  color?: string;
-  fill?: boolean;
-  style?: any;
-  className?: any;
-};
+import { SvgWithFillProps } from './types';
 
-const ShoppingIcon: React.FC<Props> = ({ color, fill, ...props }) => {
+const ShoppingIcon: React.FC<SvgWithFillProps> = ({
+  color,
+  fill,
+  ...props
+}) => {
   if (fill) {
     return (
       <svg

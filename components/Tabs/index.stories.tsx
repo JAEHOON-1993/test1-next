@@ -29,6 +29,11 @@ const Template: Story = (args) => (
 
 export const DefaultTabs = Template.bind({});
 DefaultTabs.args = {
+  data: CATEGORIES,
+};
+
+export const CenteredTabs = Template.bind({});
+CenteredTabs.args = {
   centered: true,
   data: CATEGORIES,
 };

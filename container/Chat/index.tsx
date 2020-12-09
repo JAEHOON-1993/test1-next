@@ -4,8 +4,8 @@ import Router from 'next/router';
 import Container from 'components/Container';
 import ContentContainer from './Content';
 import Tabs from 'components/Tabs';
-import BottonNavigation from 'components/BottomNavigation';
-import BottonNavigationAction from 'components/BottomNavigationAction';
+import BottomNavigation from 'components/BottomNavigation';
+import BottomNavigationAction from 'components/BottomNavigationAction';
 
 type Props = {
   fixed?: boolean;
@@ -27,20 +27,20 @@ const CATEGORIES = [
 const MobileBottomNav = () => {
   const [active, setActive] = useState(0);
   return (
-    <BottonNavigation setActive={setActive} active={active}>
-      <BottonNavigationAction
+    <BottomNavigation setActive={setActive} active={active}>
+      <BottomNavigationAction
         label="홈"
         icon="home"
         onClick={() => Router.push('/')}
       />
-      <BottonNavigationAction label="채팅" icon="chat" />
-      <BottonNavigationAction label="장바구니" icon="shopping" />
-      <BottonNavigationAction
+      <BottomNavigationAction label="채팅" icon="chat" />
+      <BottomNavigationAction label="장바구니" icon="shopping" />
+      <BottomNavigationAction
         label="마이페이지"
         icon="mypage"
         onClick={() => Router.push('/login')}
       />
-    </BottonNavigation>
+    </BottomNavigation>
   );
 };
 

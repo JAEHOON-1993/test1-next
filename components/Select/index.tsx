@@ -57,14 +57,14 @@ const customStyles = {
   },
 };
 
-type Props = {
+interface Props {
   options?: any;
   placeholder?: string;
   isSearchable?: boolean;
   onClick?: any;
   children?: any;
   style?: any;
-};
+}
 
 const SelectComponent: React.FC<Props> = (props) => {
   return <CustomSelect {...props} styles={customStyles} />;

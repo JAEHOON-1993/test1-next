@@ -14,11 +14,11 @@ import {
   EmptyBox,
 } from './nav.styled';
 
-type Props = {
+interface Props {
   pageName?: string;
   fixed?: boolean;
   style?: any;
-};
+}
 
 const Nav: React.FC<Props> = () => {
   const router = useRouter();

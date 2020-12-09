@@ -4,10 +4,7 @@ import styled, { css } from 'styled-components';
 import * as T from 'components/Text';
 import theme from 'layout/theme';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from './types';
 
 const Texts: React.FC<Props> = () => {
   return (
@@ -34,9 +31,9 @@ const Texts: React.FC<Props> = () => {
 
 export default Texts;
 
-type styleProps = {
+interface styleProps {
   last?: boolean;
-};
+}
 
 const TextBox = styled.div`
   display: flex;

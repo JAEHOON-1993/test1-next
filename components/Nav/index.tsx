@@ -5,12 +5,12 @@ import MobileNav from './nav_mo';
 
 import { PCView, MobileView } from './nav.styled';
 
-type Props = {
+interface Props {
   pageName?: string;
   fixed?: boolean;
   transparent?: boolean;
   style?: any;
-};
+}
 
 const Nav: React.FC<Props> = ({ pageName, transparent }) => {
   return (

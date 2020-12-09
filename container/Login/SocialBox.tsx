@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import KakaoLogin from 'components/Button/Social/KakaoLogin';
 import NaverLogin from 'components/Button/Social/NaverLogin';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const SocialBoxContainer: React.FC<Props> = () => {
   return (
