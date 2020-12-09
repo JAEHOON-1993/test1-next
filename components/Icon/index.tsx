@@ -12,7 +12,7 @@ import MypageIcon from './Mypage';
 import ShoppingIcon from './Shopping';
 import ArrowLeftIcon from './ArrowLeft';
 
-type IconName =
+export type IconName =
   | 'success'
   | 'star'
   | 'star-half'
