@@ -1,12 +1,8 @@
-import React from "react";
+import React from 'react';
 
-type Props = {
-  color?: string;
-  style?: any;
-  className?: any;
-};
+import { SvgProps } from './types';
 
-const StarOIcon: React.FC<Props> = ({ color, ...props }) => {
+const StarOIcon: React.FC<SvgProps> = ({ color, ...props }) => {
   return (
     <svg
       {...props}

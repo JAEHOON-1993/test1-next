@@ -1,18 +1,18 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import Head from 'next/head';
+import styled, { css } from 'styled-components';
 
 import Nav from 'components/Nav';
 // import Footer from "./Footer";
-import styled, { css } from 'styled-components';
 
-type Props = {
+interface Props {
   pageName?: string;
   noHeader?: boolean;
   centered?: boolean;
   transparent?: boolean;
   children?: ReactNode;
   title?: string;
-};
+}
 
 const Layout = ({
   pageName,
@@ -49,11 +49,12 @@ const Layout = ({
 
 export default Layout;
 
-type styleProps = {
+interface styleProps {
   height: number;
   noHeader?: boolean;
   centered?: boolean;
-};
+}
+
 const Body = styled.div`
   min-height: ${(props: styleProps) => `${props.height}px`};
   ${(props: styleProps) =>

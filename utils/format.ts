@@ -1,5 +1,5 @@
 export const intcomma = (x: number | string) => {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
 export const formatDate = (d: string) => {
@@ -20,12 +20,12 @@ export const formatDateTime = (d: string) => {
   const min = date.getMinutes();
 
   return `${year}.${monthIndex}.${`0${day}`.slice(
-    -2
+    -2,
   )} ${hour}:${`0${min}`.slice(-2)}`;
 };
 
 export const getDays = (d: string) => {
-  var week = ["일", "월", "화", "수", "목", "금", "토"];
+  var week = ['일', '월', '화', '수', '목', '금', '토'];
   var dayOfWeek = week[new Date(d).getDay()];
   return dayOfWeek;
 };

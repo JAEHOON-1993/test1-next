@@ -3,8 +3,8 @@
  * @Component
  * @module components.Container
  */
-import styled from "styled-components";
-import theme from "layout/theme";
+import styled from 'styled-components';
+import theme from 'layout/theme';
 
 const Container = styled.div`
   padding-right: 15px;

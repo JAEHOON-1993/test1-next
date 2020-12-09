@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import theme from "layout/theme";
+import styled from 'styled-components';
+import theme from 'layout/theme';
 
 export const FooterWrap = styled.div`
   padding: 20px 0px;
@@ -49,7 +49,7 @@ export const Info = styled.div`
   }
   li {
     &:after {
-      content: "";
+      content: '';
       display: inline-block;
       width: 1px;
       height: 8px;
@@ -137,7 +137,7 @@ export const Social = styled.div`
     background-repeat: no-repeat;
   }
   .insta {
-    background-image: url("/images/logo.png");
+    background-image: url('/images/logo.png');
     margin: 0 10px;
   }
   @media (min-width: 0) and (max-width: 767.98px) {

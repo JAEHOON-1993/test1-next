@@ -1,10 +1,11 @@
-import React from "react";
-import KakaoLogin from "react-kakao-login";
+import React from 'react';
+import KakaoLogin from 'react-kakao-login';
 
-import * as T from "components/Text";
-import { Button, Icon } from "./Social.styled";
+import * as T from 'components/Text';
 
-const KAKAO_LOGO = "/images/kakao_logo.png";
+import { Button, Icon } from './Social.styled';
+
+const KAKAO_LOGO = '/images/kakao_logo.png';
 
 interface Props {
   round?: boolean;
@@ -18,9 +19,9 @@ const KakaoLoginComponent: React.FC<Props> = ({ onClick, round, ...props }) => {
     const { response, profile } = e;
     const data = {
       token: response.access_token,
-      grant_type: "convert_token",
-      backend: "kakao",
-      client_id: "59990fc2177c0efa96ed2b2b0d028be3",
+      grant_type: 'convert_token',
+      backend: 'kakao',
+      client_id: '59990fc2177c0efa96ed2b2b0d028be3',
       email: profile.kakao_account.email,
     };
     console.log(data);
@@ -31,13 +32,13 @@ const KakaoLoginComponent: React.FC<Props> = ({ onClick, round, ...props }) => {
   return (
     <KakaoLogin
       {...props}
-      jsKey={"cb851b3824b45cb9fb60925fa1671e27"}
+      jsKey={'cb851b3824b45cb9fb60925fa1671e27'}
       onSuccess={success}
       onFailure={failure}
       render={({ onClick }) => {
         return (
           <Button
-            backgroundColor={"#ffde32"}
+            backgroundColor={'#ffde32'}
             onClick={(e: any) => {
               e.preventDefault();
               onClick();
@@ -46,7 +47,7 @@ const KakaoLoginComponent: React.FC<Props> = ({ onClick, round, ...props }) => {
             <Icon src={KAKAO_LOGO} />
             <T.Text
               style={{
-                color: "#000",
+                color: '#000',
                 fontWeight: 500,
               }}
             >

@@ -1,22 +1,19 @@
-import React from "react";
-import Router from "next/router";
-// components
-import * as T from "components/Text";
-import ButtonBaseComponent from "components/ButtonBase";
-import IconComponent from "components/Icon";
+import React from 'react';
+import Router from 'next/router';
 
-import { Container, Nav, TextBox, Input, Button } from "../index.styled";
+import * as T from 'components/Text';
+import ButtonBaseComponent from 'components/ButtonBase';
+import IconComponent from 'components/Icon';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Container, Nav, TextBox, Input, Button } from '../index.styled';
+
+import { Props } from '../types';
 
 const MainContainer: React.FC<Props> = () => {
   return (
-    <Container style={{ display: "flex" }}>
+    <Container style={{ display: 'flex' }}>
       <Nav>
-        <ButtonBaseComponent onClick={() => Router.push("/signup/2")}>
+        <ButtonBaseComponent onClick={() => Router.push('/signup/2')}>
           <IconComponent name="arrow-left" color="#585858" />
         </ButtonBaseComponent>
       </Nav>

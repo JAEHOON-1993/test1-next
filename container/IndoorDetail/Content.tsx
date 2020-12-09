@@ -1,29 +1,30 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-import { intcomma } from "utils/format";
-// components
-import Select from "components/Select";
-import Button from "components/Button";
-import Rate from "components/Rate";
-import RatioBox from "components/RatioBox";
-import * as T from "components/Text";
+import theme from 'layout/theme';
+import { intcomma } from 'utils/format';
 
-type Props = {
+import Select from 'components/Select';
+import Button from 'components/Button';
+import Rate from 'components/Rate';
+import RatioBox from 'components/RatioBox';
+import * as T from 'components/Text';
+
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const options = [
-  { value: 1, label: "그레이" },
-  { value: 2, label: "아이보리" },
-  { value: 3, label: "블루" },
+  { value: 1, label: '그레이' },
+  { value: 2, label: '아이보리' },
+  { value: 3, label: '블루' },
 ];
 const sizeOptions = [
-  { value: 50, label: "50 X 50 cm" },
-  { value: 80, label: "80 X 80 cm" },
+  { value: 50, label: '50 X 50 cm' },
+  { value: 80, label: '80 X 80 cm' },
 ];
+
 const ContentContainer: React.FC<Props> = () => {
   return (
     <>

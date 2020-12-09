@@ -1,14 +1,15 @@
-import React from "react";
-import Router from "next/router";
-import Container from "components/Container";
+import React from 'react';
+import Router from 'next/router';
 
-import { FooterWrap, Content, Logo, Info, Social } from "./Footer.styled";
+import Container from 'components/Container';
 
-const FOOTER_LOGO = "/images/logo_white.png";
+import { FooterWrap, Content, Logo, Info, Social } from './Footer.styled';
 
-type Props = {
+const FOOTER_LOGO = '/images/logo_white.png';
+
+interface Props {
   style?: any;
-};
+}
 
 const Footer: React.FC<Props> = () => {
   return (
@@ -29,7 +30,7 @@ const Footer: React.FC<Props> = () => {
           </Info>
           <Social>
             <a
-              onClick={() => Router.push("/")}
+              onClick={() => Router.push('/')}
               className="blog"
               style={{ marginRight: 8 }}
             >

@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-type Props = {
+interface Props {
   sm?: boolean;
   lg?: boolean;
-};
+}
 
 export const Title = styled.h1`
   margin: 0px;

@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// components
 import * as T from 'components/Text';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const TitleContainer: React.FC<Props> = () => {
   return (

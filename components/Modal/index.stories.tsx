@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-import ReadyModal from "components/Modal/example/ReadyModal";
-import AddImageModal from "components/Modal/example/AddImageModal";
+import ReadyModal from 'components/Modal/example/ReadyModal';
+import AddImageModal from 'components/Modal/example/AddImageModal';
+import Modal from 'components/Modal';
+import Container from 'components/Container';
+import Button from 'components/Button';
 
-import Modal from "components/Modal";
-import Container from "components/Container";
-import Button from "components/Button";
-
-export default { title: "Example/components/Modal" };
+export default { title: 'Example/components/Modal' };
 
 export const positionModal = () => {
   const [center, setCenter] = useState<boolean>(false);
@@ -64,11 +63,19 @@ export const positionModal = () => {
         </ModalBody>
       </Modal>
       <ButtonBox>
-        <CustomButton onClick={() => setCenter(true)}>Center ReadyModal</CustomButton>
+        <CustomButton onClick={() => setCenter(true)}>
+          Center ReadyModal
+        </CustomButton>
         <CustomButton onClick={() => setTop(true)}>Top ReadyModal</CustomButton>
-        <CustomButton onClick={() => setBottom(true)}>Bottom ReadyModal</CustomButton>
-        <CustomButton onClick={() => setLeft(true)}>Left ReadyModal</CustomButton>
-        <CustomButton onClick={() => setRight(true)}>Right ReadyModal</CustomButton>
+        <CustomButton onClick={() => setBottom(true)}>
+          Bottom ReadyModal
+        </CustomButton>
+        <CustomButton onClick={() => setLeft(true)}>
+          Left ReadyModal
+        </CustomButton>
+        <CustomButton onClick={() => setRight(true)}>
+          Right ReadyModal
+        </CustomButton>
       </ButtonBox>
     </>
   );
@@ -86,7 +93,7 @@ const CustomButton = styled(Button)`
   margin-right: 8px;
   margin-bottom: 8px;
   padding: 0px 15px;
-`
+`;
 const ModalBody = styled.div`
   width: 200px;
   height: 100px;

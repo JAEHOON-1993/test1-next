@@ -1,10 +1,10 @@
-import React, { useState, ReactNode, Ref } from "react";
-import styled, { css } from "styled-components";
+import React, { useState, ReactNode, Ref } from 'react';
+import styled, { css } from 'styled-components';
 
-import * as T from "components/Text";
-import theme from "layout/theme";
+import * as T from 'components/Text';
+import theme from 'layout/theme';
 
-type Props = {
+interface Props {
   label?: string;
   id?: string;
   rows?: number;
@@ -22,7 +22,7 @@ type Props = {
   errorText?: string;
   value?: any;
   action?: any;
-};
+}
 
 const InputComponent: React.FC<Props> = ({
   name,
@@ -35,7 +35,7 @@ const InputComponent: React.FC<Props> = ({
   errorText,
   ...props
 }) => {
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>('');
   const [focused, setFocused] = useState<boolean>(false);
   const onFocus = () => {
     setFocused(true);
@@ -75,9 +75,9 @@ const InputComponent: React.FC<Props> = ({
 
 export default InputComponent;
 
-type styleProp = {
+interface styleProp {
   focused?: boolean;
-};
+}
 
 const FlexBox = styled.div`
   display: flex;

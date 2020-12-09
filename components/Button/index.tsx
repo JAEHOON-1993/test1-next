@@ -1,10 +1,10 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import theme from "layout/theme";
-import ButtonBase from "components/ButtonBase";
+import theme from 'layout/theme';
+import ButtonBase from 'components/ButtonBase';
 
-export type ButtonProps = {
+export interface ButtonProps {
   outline?: boolean;
   disabled?: boolean;
   round?: boolean;
@@ -12,23 +12,20 @@ export type ButtonProps = {
   style?: any;
   onClick?: any;
   children?: any;
-};
+}
 
-const ButtonComponent: React.FC<ButtonProps> = ({
-  children,
-  ...props
-}) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ children, ...props }) => {
   return <Button {...props}>{children}</Button>;
 };
 
 export default ButtonComponent;
 
-type ButtonStyleProps = {
+interface ButtonStyleProps {
   outline?: boolean;
   round?: boolean;
   color?: string;
   disabled?: boolean;
-};
+}
 
 const Button = styled(ButtonBase)`
   height: 50px;

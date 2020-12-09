@@ -1,17 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import * as T from "components/Text";
-import { Card } from "components/Card";
-import RatioBox from "components/RatioBox";
-import Icon from "components/Icon";
+import theme from 'layout/theme';
+import * as T from 'components/Text';
+import { Card } from 'components/Card';
+import RatioBox from 'components/RatioBox';
+import Icon from 'components/Icon';
 
-import theme from "layout/theme";
-
-type Props = {
+interface Props {
   children?: any;
   onClick?: any;
-};
+}
 
 const ContentCard: React.FC<Props> = (props) => {
   return (

@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-import * as T from "components/Text";
-import Icon, { IconName } from "components/Icon";
-import ButtonBase from "components/ButtonBase";
+import theme from 'layout/theme';
+import * as T from 'components/Text';
+import Icon, { IconName } from 'components/Icon';
+import ButtonBase from 'components/ButtonBase';
 
-type Props = {
+interface Props {
   id?: number;
   value?: string;
   label?: string;
@@ -14,7 +14,7 @@ type Props = {
   active?: boolean;
   setActive?: any;
   onClick?: any;
-};
+}
 
 const BottomNavigationAction: React.FC<Props> = ({
   value,

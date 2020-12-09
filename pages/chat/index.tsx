@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import ChatContainer from "container/Chat";
-import Layout from "components/Layout";
+import ChatContainer from 'container/Chat';
+import Layout from 'components/Layout';
 
 const IndexPage: React.FC = (props) => {
   console.log(props);

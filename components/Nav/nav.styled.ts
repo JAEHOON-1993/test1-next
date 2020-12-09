@@ -1,12 +1,14 @@
 import styled, { css } from 'styled-components';
+
 import theme from 'layout/theme';
 import Container from 'components/Container';
 import * as T from 'components/Text';
 
-type styleProps = {
+interface styleProps {
   transparent?: boolean;
   fixed?: boolean;
-};
+}
+
 export const PageName = styled(T.Text)`
   position: absolute;
   color: ${theme.color.BLACK};

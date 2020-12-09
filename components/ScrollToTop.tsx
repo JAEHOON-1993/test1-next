@@ -1,14 +1,14 @@
-import * as React from "react";
-import { withRouter, SingletonRouter } from "next/router";
+import React, { useRef, useEffect } from 'react';
+import { withRouter, SingletonRouter } from 'next/router';
 
-type Props = {
+interface Props {
   router: SingletonRouter;
   children?: any;
-};
+}
 
 const ScrollToTop: React.FC<Props> = (props) => {
-  const prevRouterRef = React.useRef<any>();
-  React.useEffect(() => {
+  const prevRouterRef = useRef<any>();
+  useEffect(() => {
     if (props.router.pathname !== prevRouterRef.current) {
       window.scrollTo(0, 0);
     }

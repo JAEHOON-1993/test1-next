@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-import Icon from "components/Icon";
+import theme from 'layout/theme';
+import Icon from 'components/Icon';
 
-type Props = {
+interface Props {
   count?: number;
   value?: number;
   defaultValue?: number;
@@ -12,7 +12,7 @@ type Props = {
   onClick?: any;
   children?: any;
   style?: any;
-};
+}
 
 const Rate: React.FC<Props> = ({
   count = 5,
@@ -26,14 +26,14 @@ const Rate: React.FC<Props> = ({
   var data = [];
   if (decimal > 0) {
     data = [
-      ...Array(newValue).fill("star"),
-      "star-half",
-      ...Array(count - newValue - 1).fill("star-o"),
+      ...Array(newValue).fill('star'),
+      'star-half',
+      ...Array(count - newValue - 1).fill('star-o'),
     ];
   } else {
     data = [
-      ...Array(newValue).fill("star"),
-      ...Array(count - newValue).fill("star-o"),
+      ...Array(newValue).fill('star'),
+      ...Array(count - newValue).fill('star-o'),
     ];
   }
 

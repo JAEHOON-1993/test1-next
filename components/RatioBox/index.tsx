@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 interface Props {
   src?: string;
@@ -28,8 +28,8 @@ const RatioBox = styled.div`
   width: 100%;
   height: fit-content;
   ::before {
-    margin-top: ${(props: Props) => (props.ratio ? props.ratio : "100%")};
-    content: "";
+    margin-top: ${(props: Props) => (props.ratio ? props.ratio : '100%')};
+    content: '';
     display: block;
   }
   > div {

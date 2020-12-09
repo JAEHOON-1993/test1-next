@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from "styled-components";
-import KakaoLogin from "react-kakao-login";
+import styled, { css, keyframes } from 'styled-components';
+import KakaoLogin from 'react-kakao-login';
 
-import ButtonComponent from "components/Button";
-import theme from "layout/theme";
+import ButtonComponent from 'components/Button';
+import theme from 'layout/theme';
 
 interface Props {
   round?: boolean;

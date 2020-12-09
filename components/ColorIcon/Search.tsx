@@ -1,10 +1,8 @@
-import React from "react";
-import theme from "layout/theme";
+import React from 'react';
 
-type Props = {
-  style?: any;
-  className?: any;
-};
+import theme from 'layout/theme';
+
+import { Props } from './types';
 
 const SearchIcon: React.FC<Props> = ({ ...props }) => {
   return (

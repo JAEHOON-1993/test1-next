@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import styled, { keyframes, css } from "styled-components";
+import React, { useRef } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
-export type ButtonProps = {
+export interface ButtonProps {
   outline?: boolean;
   disabled?: boolean;
   round?: boolean;
@@ -9,7 +9,7 @@ export type ButtonProps = {
   style?: any;
   onClick?: any;
   children?: any;
-};
+}
 
 const ButtonComponent: React.FC<ButtonProps> = ({
   children,
@@ -27,13 +27,13 @@ const ButtonComponent: React.FC<ButtonProps> = ({
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${e.clientX - (button.offsetLeft + radius)}px`;
     circle.style.top = `${e.clientY - (button.offsetTop + radius)}px`;
-    circle.classList.add("ripple");
+    circle.classList.add('ripple');
 
     if (circle) {
       circle.remove();
     }
     button.appendChild(circle);
-    if(onClick) {
+    if (onClick) {
       onClick(e);
     }
   };
@@ -47,9 +47,10 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
 export default ButtonComponent;
 
-type styleProps = {
+interface styleProps {
   disabled?: boolean;
-};
+}
+
 const ripple = keyframes`
   to {
     transform: scale(4);

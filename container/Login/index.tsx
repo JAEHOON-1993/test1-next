@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import theme from 'layout/theme';
 
-// components
 import SocialBoxContainer from './SocialBox';
 
-type Props = {
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const MainContainer: React.FC<Props> = () => {
   return (

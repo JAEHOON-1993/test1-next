@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+
 import theme from 'layout/theme';
 
-// components
 import ButtonComponent from 'components/Button';
 import InputComponent from 'components/Input';
 
@@ -11,6 +11,7 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
 `;
+
 export const Container = styled.div`
   + div {
     display: flex;

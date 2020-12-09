@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+import theme from 'layout/theme';
+import Icon from 'components/Icon';
 
 import {
   NavWrap,
@@ -11,31 +14,29 @@ import {
   LeftBox,
   Link,
   EmptyBox,
-} from "./nav.styled";
-import theme from "layout/theme";
-// components
-import Icon from "components/Icon";
+} from './nav.styled';
 
-type Props = {
+interface Props {
   pageName?: string;
   fixed?: boolean;
   transparent?: boolean;
   style?: any;
-};
+}
 
-const NO_BACK_PATH = ["/", "/chat"];
-const SEARCH_PATH = ["/", "/indoor", "/outdoor"];
+const NO_BACK_PATH = ['/', '/chat'];
+const SEARCH_PATH = ['/', '/indoor', '/outdoor'];
 
 const Nav: React.FC<Props> = ({ pageName, transparent }) => {
   const router = useRouter();
-  const [path, setPath] = useState<string>("/");
+  const [path, setPath] = useState<string>('/');
   const [fixed, setFixed] = useState<boolean>(false);
   useEffect(() => {
     setPath(router.pathname);
-    console.log("router.pathname : ", router.pathname);
+    console.log('router.pathname : ', router.pathname);
     console.log(NO_BACK_PATH.indexOf(path));
     console.log(SEARCH_PATH.indexOf(path));
   }, [router]);
+
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {
       setFixed(false);
@@ -44,9 +45,9 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", listener);
+    window.addEventListener('scroll', listener);
     return () => {
-      window.removeEventListener("scroll", listener);
+      window.removeEventListener('scroll', listener);
     };
   }, []);
   return (
@@ -67,7 +68,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
             <PageName lg>{pageName}</PageName>
           ) : (
             <Logo
-              onClick={() => router.push("/")}
+              onClick={() => router.push('/')}
               src="/icons/logo_black.png"
             />
           )}
@@ -81,7 +82,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
                 }
               />
             )}
-            {path === "/" && <Icon name="qr" color={theme.color.GRAY5} />}
+            {path === '/' && <Icon name="qr" color={theme.color.GRAY5} />}
           </MobileLeftBox>
           <LeftBox>
             <Link href="/">장바구니</Link>

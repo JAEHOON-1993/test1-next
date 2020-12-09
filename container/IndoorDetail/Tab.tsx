@@ -1,20 +1,20 @@
-import React from "react";
-import styled from "styled-components";
-// components
-import * as T from "components/Text";
-import Tabs from "components/Tabs";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
+import theme from 'layout/theme';
 
-type Props = {
+import * as T from 'components/Text';
+import Tabs from 'components/Tabs';
+
+interface Props {
   fixed?: boolean;
   style?: any;
-};
+}
 
 const DATA = [
-  { id: 1, name: "상품정보" },
-  { id: 2, name: "리뷰", value: 13 },
-  { id: 3, name: "교환/환불정책" },
+  { id: 1, name: '상품정보' },
+  { id: 2, name: '리뷰', value: 13 },
+  { id: 3, name: '교환/환불정책' },
 ];
 
 const TabContainer: React.FC<Props> = () => {

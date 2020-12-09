@@ -1,11 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Modal, { ModalProps } from "components/Modal";
-
-import theme from "layout/theme";
-
-import SuccessIcon from "components/Icon/Success";
+import theme from 'layout/theme';
+import Modal, { ModalProps } from 'components/Modal';
+import SuccessIcon from 'components/Icon/Success';
 
 const ReadyModal: React.FC<ModalProps> = ({ ...props }) => {
   return (

@@ -1,9 +1,9 @@
-import React from "react";
-import Router from "next/router";
-// components
-import * as T from "components/Text";
-import ButtonBaseComponent from "components/ButtonBase";
-import IconComponent from "components/Icon";
+import React from 'react';
+import Router from 'next/router';
+
+import * as T from 'components/Text';
+import ButtonBaseComponent from 'components/ButtonBase';
+import IconComponent from 'components/Icon';
 
 import {
   Container,
@@ -12,18 +12,15 @@ import {
   Input,
   Button,
   ActionButton,
-} from "../index.styled";
+} from '../index.styled';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from '../types';
 
 const MainContainer: React.FC<Props> = () => {
   return (
-    <Container style={{ display: "flex" }}>
+    <Container style={{ display: 'flex' }}>
       <Nav>
-        <ButtonBaseComponent onClick={() => Router.push("/signup/1")}>
+        <ButtonBaseComponent onClick={() => Router.push('/signup/1')}>
           <IconComponent name="arrow-left" color="#585858" />
         </ButtonBaseComponent>
       </Nav>
@@ -36,7 +33,7 @@ const MainContainer: React.FC<Props> = () => {
         placeholder="인증번호 입력"
         action={<ActionButton>재전송</ActionButton>}
       />
-      <Button round onClick={() => Router.push("/signup/3")}>
+      <Button round onClick={() => Router.push('/signup/3')}>
         다음
       </Button>
     </Container>

@@ -1,13 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import theme from "layout/theme";
-// components
+import theme from 'layout/theme';
 
-type Props = {
-  fixed?: boolean;
-  style?: any;
-};
+import { Props } from './types';
 
 const Colors: React.FC<Props> = () => {
   return (
@@ -97,9 +93,9 @@ const Colors: React.FC<Props> = () => {
 
 export default Colors;
 
-type styleProps = {
+interface styleProps {
   color: string;
-};
+}
 
 const ColorBox = styled.div`
   display: flex;
