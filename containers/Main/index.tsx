@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 
 import Container from 'components/Container';
-import TitleContainer from './fragment/Title';
-import BannerContainer from './fragment/Banner';
-import MenuContainer from './fragment/Menu';
+import TitleContainer from './_fragments/Title';
+import BannerContainer from './_fragments/Banner';
+import MenuContainer from './_fragments/Menu';
 
 import BottomNavigation from 'components/BottomNavigation';
 import BottomNavigationAction from 'components/BottomNavigationAction';
