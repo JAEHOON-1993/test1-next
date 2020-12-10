@@ -11,8 +11,6 @@ import {
   Logo,
   MobileLeftBox,
   MobileRightBox,
-  LeftBox,
-  Link,
   EmptyBox,
 } from './nav.styled';
 
@@ -20,13 +18,14 @@ interface Props {
   pageName?: string;
   fixed?: boolean;
   transparent?: boolean;
+  noBorder?: boolean;
   style?: any;
 }
 
-const NO_BACK_PATH = ['/', '/chat'];
+const NO_BACK_PATH = ['/', '/chat', '/cart', '/mypage'];
 const SEARCH_PATH = ['/', '/indoor', '/outdoor'];
 
-const Nav: React.FC<Props> = ({ pageName, transparent }) => {
+const Nav: React.FC<Props> = ({ pageName, transparent, noBorder }) => {
   const router = useRouter();
   const [path, setPath] = useState<string>('/');
   const [fixed, setFixed] = useState<boolean>(false);
@@ -36,7 +35,6 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
     console.log(NO_BACK_PATH.indexOf(path));
     console.log(SEARCH_PATH.indexOf(path));
   }, [router]);
-
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {
       setFixed(false);
@@ -52,7 +50,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
   }, []);
   return (
     <>
-      <NavWrap transparent={transparent} fixed={fixed}>
+      <NavWrap noBorder={noBorder} transparent={transparent} fixed={fixed}>
         <CustomContainer>
           {NO_BACK_PATH.indexOf(path) < 0 && (
             <MobileRightBox onClick={router.back}>
@@ -75,6 +73,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
           <MobileLeftBox>
             {SEARCH_PATH.indexOf(path) > -1 && (
               <Icon
+                onClick={() => router.push('/search')}
                 style={{ margin: 0 }}
                 name="search"
                 color={
@@ -84,11 +83,6 @@ const Nav: React.FC<Props> = ({ pageName, transparent }) => {
             )}
             {path === '/' && <Icon name="qr" color={theme.color.GRAY5} />}
           </MobileLeftBox>
-          <LeftBox>
-            <Link href="/">장바구니</Link>
-            <Link href="/login">로그인</Link>
-            <Link href="#">채팅</Link>
-          </LeftBox>
         </CustomContainer>
       </NavWrap>
       <EmptyBox />

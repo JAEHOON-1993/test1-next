@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import { Card, CardHeader } from 'components/Card';
 
-import ContentCard from './example/ContentCard';
+import ContentCard from './_fragments/ContentCard';
 
 export default { title: 'Example/components/Card' };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IndoorContainer from 'container/Outdoor';
+import IndoorContainer from 'containers/Outdoor';
 import Layout from 'components/Layout';
 
 const IndexPage = () => {

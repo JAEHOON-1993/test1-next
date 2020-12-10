@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import IndoorDetailContainer from 'container/IndoorDetail';
+import IndoorDetailContainer from 'containers/IndoorDetail';
 import Layout from 'components/Layout';
 
 const IndexPage = () => {

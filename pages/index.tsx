@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainContainer from 'container/Main';
+import MainContainer from 'containers/Main';
 import Layout from 'components/Layout';
 
 const IndexPage = () => {

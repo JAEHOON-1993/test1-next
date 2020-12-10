@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 import theme from 'layout/theme';
 import useWindowSize from 'utils/useWindowSize';
+
 import Container from 'components/Container';
 import * as T from 'components/Text';
 
@@ -11,9 +12,20 @@ interface Props {
   render?: any;
   centered?: boolean;
   data?: any;
+  className?: string;
+  itemStyle?: any;
+  onChange?: any;
 }
 
-const Tabs: React.FC<Props> = ({ noMobile, centered, data, render }) => {
+const Tabs: React.FC<Props> = ({
+  className,
+  noMobile,
+  centered,
+  data,
+  render,
+  itemStyle,
+  onChange,
+}) => {
   const size = useWindowSize();
   const [active, setActive] = useState<number>(0);
   const listRef = useRef<any>(null);
@@ -27,19 +39,24 @@ const Tabs: React.FC<Props> = ({ noMobile, centered, data, render }) => {
     bar.style.width = `${listNodes[active].clientWidth}px`;
     bar.style.left = `${left}px`;
   };
+  const tabChangeHandler = (idx: number) => {
+    setActive(idx);
+    onChange(idx, data[idx]);
+  };
   useEffect(() => {
     barHandler();
   }, [active, size]);
   return (
-    <TabsBox noMobile={noMobile}>
+    <TabsBox noMobile={noMobile} className={className}>
       <Container>
         <List ref={listRef} centered={centered}>
           {data?.map((item: any, idx: number) => {
             return (
               <Item
                 key={idx}
+                style={itemStyle}
                 active={active === idx}
-                onClick={() => setActive(idx)}
+                onClick={() => tabChangeHandler(idx)}
               >
                 {render ? render(item) : <T.Text>{item.name}</T.Text>}
               </Item>

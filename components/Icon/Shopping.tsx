@@ -1,12 +1,8 @@
 import React from 'react';
 
-import { SvgWithFillProps } from './types';
+import { WithFillProps } from './types';
 
-const ShoppingIcon: React.FC<SvgWithFillProps> = ({
-  color,
-  fill,
-  ...props
-}) => {
+const ShoppingIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
   if (fill) {
     return (
       <svg
