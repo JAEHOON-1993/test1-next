@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { SvgProps } from './types';
+import { Props } from './types';
 
-const SearchIcon: React.FC<SvgProps> = ({ color, ...props }) => {
+const SearchIcon: React.FC<Props> = ({ color, ...props }) => {
   return (
     <svg
       {...props}

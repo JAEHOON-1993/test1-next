@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import theme from 'layout/theme';
 import * as T from 'components/Text';
 
-export interface CardProps {
+interface CardProps {
   children?: any;
 }
 
@@ -19,7 +19,7 @@ const CardComponent = styled.div`
   max-width: 375px;
 `;
 
-export interface CardHeaderProps {
+interface CardHeaderProps {
   title?: string;
   subTitle?: string;
   thumbnail?: any;

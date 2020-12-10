@@ -1,9 +1,9 @@
-export interface SvgProps {
+export interface Props {
   color?: string;
   style?: any;
   className?: any;
 }
 
-export interface SvgWithFillProps extends SvgProps {
+export interface WithFillProps extends Props {
   fill?: boolean;
 }

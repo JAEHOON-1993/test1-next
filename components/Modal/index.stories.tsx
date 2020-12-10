@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import ReadyModal from 'components/Modal/example/ReadyModal';
-import AddImageModal from 'components/Modal/example/AddImageModal';
+import ReadyModal from 'components/Modal/_fragments/ReadyModal';
+import AddImageModal from 'components/Modal/_fragments/AddImageModal';
 import Modal from 'components/Modal';
 import Container from 'components/Container';
 import Button from 'components/Button';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IndoorContainer from 'container/Indoor';
+import IndoorContainer from 'containers/Indoor';
 import Layout from 'components/Layout';
 
 const IndexPage: React.FC = (props) => {

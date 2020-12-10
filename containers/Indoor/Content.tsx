@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
 
-import Card from 'components/Card/example/ContentCard';
+import Card from 'components/Card/_fragments/ContentCard';
 
 interface Props {
   fixed?: boolean;

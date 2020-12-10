@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import theme from 'layout/theme';
 import { IconName } from 'components/Icon';
 
-type Props = {
+interface Props {
   style?: any;
   children?: any;
   active?: number;
   setActive?: any;
   icon?: IconName;
-};
+}
 
 const BottomNavigation: React.FC<Props> = ({
   active,

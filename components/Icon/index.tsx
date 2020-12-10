@@ -1,5 +1,4 @@
 import React from 'react';
-
 import SuccessIcon from './Success';
 import StarIcon from './Star';
 import StarHalfIcon from './StarHalf';
@@ -11,6 +10,18 @@ import ChatIcon from './Chat';
 import MypageIcon from './Mypage';
 import ShoppingIcon from './Shopping';
 import ArrowLeftIcon from './ArrowLeft';
+import PlusIcon from './Plus';
+import AlertIcon from './Alert';
+import CloseIcon from './Close';
+import CheckBoxIcon from './CheckBox';
+import SmallXIcon from './SmallX';
+import SmallMinusIcon from './SmallMinus';
+import SmallPlusIcon from './SmallPlus';
+import SettingIcon from './Setting';
+import TruckIcon from './Truck';
+import BoxIcon from './Box';
+import MessageIcon from './Message';
+import ArrowRightIcon from './ArrowRight';
 
 export type IconName =
   | 'success'
@@ -20,16 +31,25 @@ export type IconName =
   | 'qr'
   | 'search'
   | 'home'
-  | 'home-fill'
   | 'chat'
-  | 'chat-fill'
   | 'mypage'
-  | 'mypage-fill'
   | 'shopping'
-  | 'shopping-fill'
-  | 'arrow-left';
+  | 'arrow-left'
+  | 'plus'
+  | 'alert'
+  | 'close'
+  | 'small-x'
+  | 'small-minus'
+  | 'small-plus'
+  | 'check-box'
+  | 'setting'
+  | 'truck'
+  | 'box'
+  | 'message'
+  | 'arrow-right';
 
 interface Props {
+  onClick?: any;
   name?: IconName;
   color?: string;
   style?: any;
@@ -61,6 +81,30 @@ const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
       return <MypageIcon {...props} fill={fill} />;
     case 'shopping':
       return <ShoppingIcon {...props} fill={fill} />;
+    case 'plus':
+      return <PlusIcon {...props} fill={fill} />;
+    case 'alert':
+      return <AlertIcon {...props} fill={fill} />;
+    case 'close':
+      return <CloseIcon {...props} />;
+    case 'check-box':
+      return <CheckBoxIcon {...props} fill={fill} />;
+    case 'small-x':
+      return <SmallXIcon {...props} />;
+    case 'small-minus':
+      return <SmallPlusIcon {...props} />;
+    case 'small-plus':
+      return <SmallMinusIcon {...props} />;
+    case 'setting':
+      return <SettingIcon {...props} />;
+    case 'truck':
+      return <TruckIcon {...props} />;
+    case 'box':
+      return <BoxIcon {...props} />;
+    case 'message':
+      return <MessageIcon {...props} />;
+    case 'arrow-right':
+      return <ArrowRightIcon {...props} />;
   }
   return null;
 };

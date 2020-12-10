@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { SvgProps } from './types';
+import { Props } from './types';
 
-const RateIcon: React.FC<SvgProps> = ({ color, ...props }) => {
+const RateIcon: React.FC<Props> = ({ color, ...props }) => {
   return (
     <svg
       {...props}

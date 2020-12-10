@@ -3,10 +3,14 @@
  * @Component
  * @module components.Container
  */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'layout/theme';
 
-const Container = styled.div`
+interface ContainerProps {
+  mobileNoPadding?: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -27,6 +31,12 @@ const Container = styled.div`
   ${theme.window.mobile} {
     width: calc(100% - 40px);
     padding: 0 20px;
+    ${(props) =>
+      props.mobileNoPadding &&
+      css`
+        width: 100%;
+        padding: 0px;
+      `}
   }
 `;
 
