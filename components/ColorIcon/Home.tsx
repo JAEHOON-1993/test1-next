@@ -42,7 +42,7 @@ const HomeIcon: React.FC<Props> = ({ ...props }) => {
         id="사각형_28768"
         fill={theme.color.PRIMARY}
         stroke="#1a1a1a"
-        stroke-width="1.5px"
+        strokeWidth="1.5px"
       >
         <path stroke="none" d="M0 0H13V17H0z" transform="translate(18 27)" />
         <path

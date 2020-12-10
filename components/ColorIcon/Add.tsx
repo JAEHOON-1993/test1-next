@@ -20,7 +20,7 @@ const AddIcon: React.FC<Props> = ({ ...props }) => {
             id="사각형_28756"
             fill="none"
             stroke="#1a1a1a"
-            stroke-width="0.25px"
+            strokeWidth="0.25px"
             d="M0 0H36.094V44.767H0z"
             transform="translate(-2 -1)"
           />

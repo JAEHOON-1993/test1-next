@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components';
 
-interface Props {
+type Props = {
   sm?: boolean;
   lg?: boolean;
-}
+  bold?: boolean;
+  color?: string;
+};
 
-export const Title = styled.h1`
+export const Title = styled.h1<Props>`
   margin: 0px;
   font-size: 15px;
   line-height: 1.53;
   letter-spacing: -0.15px;
+  font-weight: ${(props) => props.bold && 'bold'};
+  color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
