@@ -9,6 +9,6 @@ export const defaultInput = () => (
   <Input
     label="Caption *"
     placeholder="placeholder"
-    action={<Button style={{ width: 100 }}>재전송</Button>}
+    action={<Button width="100px" label="재전송" />}
   />
 );

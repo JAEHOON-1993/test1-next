@@ -26,9 +26,7 @@ const MainContainer: React.FC<Props> = () => {
         placeholder="영문, 국문, 숫자만 입력 가능"
         errorText="사용 중인 닉네임입니다"
       />
-      <Button round onClick={console.log}>
-        다음
-      </Button>
+      <Button label="다음" round onClick={console.log} />
     </Container>
   );
 };

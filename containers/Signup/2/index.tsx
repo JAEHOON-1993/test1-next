@@ -31,11 +31,9 @@ const MainContainer: React.FC<Props> = () => {
         name="phone"
         label="인증번호"
         placeholder="인증번호 입력"
-        action={<ActionButton>재전송</ActionButton>}
+        action={<ActionButton label="재전송" />}
       />
-      <Button round onClick={() => Router.push('/signup/3')}>
-        다음
-      </Button>
+      <Button label="다음" round onClick={() => Router.push('/signup/3')} />
     </Container>
   );
 };

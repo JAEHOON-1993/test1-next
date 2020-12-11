@@ -29,9 +29,12 @@ const MainContainer: React.FC<Props> = () => {
         label="핸드폰번호"
         placeholder="핸드폰 번호 입력('-'제외)"
       />
-      <Button round disabled={false} onClick={() => Router.push('/signup/2')}>
-        다음
-      </Button>
+      <Button
+        label="다음"
+        round
+        disabled={false}
+        onClick={() => Router.push('/signup/2')}
+      />
     </Container>
   );
 };
