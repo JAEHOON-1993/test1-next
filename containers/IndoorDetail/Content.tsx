@@ -81,13 +81,9 @@ const ContentContainer: React.FC<Props> = () => {
             </div>
           </PriceBox>
           <ButtonBox>
-            <Button outline round>
-              견적상담
-            </Button>
-            <Button outline round>
-              장바구니에 담기
-            </Button>
-            <Button round>지금 구매하기</Button>
+            <Button outline round label="견적상담" />
+            <Button outline round label="장바구니에 담기" />
+            <Button round label="지금 구매하기" />
           </ButtonBox>
           <MobileHr />
         </Content>

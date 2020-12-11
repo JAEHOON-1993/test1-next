@@ -38,22 +38,18 @@ const KakaoLoginComponent: React.FC<Props> = ({ onClick, round, ...props }) => {
       render={({ onClick }) => {
         return (
           <Button
+            label={
+              <T.Text style={{ color: '#000', fontWeight: 500 }}>
+                카카오계정으로 로그인
+              </T.Text>
+            }
             backgroundColor={'#ffde32'}
             onClick={(e: any) => {
               e.preventDefault();
               onClick();
             }}
-          >
-            <Icon src={KAKAO_LOGO} />
-            <T.Text
-              style={{
-                color: '#000',
-                fontWeight: 500,
-              }}
-            >
-              카카오계정으로 로그인
-            </T.Text>
-          </Button>
+            icon={<Icon src={KAKAO_LOGO} />}
+          />
         );
       }}
     />

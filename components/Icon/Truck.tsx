@@ -2,13 +2,18 @@ import React from 'react';
 
 import { Props } from './types';
 
-const TruckIcon: React.FC<Props> = ({ color, ...props }) => {
+const TruckIcon: React.FC<Props> = ({
+  color,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="50"
-      height="50"
+      width={width}
+      height={height}
       viewBox="0 0 50 50"
     >
       <path

@@ -74,20 +74,21 @@ const NaverLoginComponent: React.FC<Props> = (props) => {
     <>
       <div id="naverIdLogin" style={{ display: 'none' }} />
       <Button
+        label={
+          <T.Text
+            style={{ color: props.round ? '#381f1f' : '#fff', fontWeight: 500 }}
+          >
+            {props.round ? '네이버 계정으로 로그인' : '네이버 계정으로 로그인'}
+          </T.Text>
+        }
         backgroundColor={'#7fdd34'}
         round={props.round}
         style={props.style}
-        onClick={() =>
-          document.getElementById('naverIdLogin_loginButton')?.click()
-        }
-      >
-        <Icon round={props.round} src={NAVER_LOGO} />
-        <T.Text
-          style={{ color: props.round ? '#381f1f' : '#fff', fontWeight: 500 }}
-        >
-          {props.round ? '네이버 계정으로 로그인' : '네이버 계정으로 로그인'}
-        </T.Text>
-      </Button>
+        onClick={() => {
+          document.getElementById('naverIdLogin_loginButton')?.click();
+        }}
+        icon={<Icon src={NAVER_LOGO} />}
+      />
     </>
   );
 };

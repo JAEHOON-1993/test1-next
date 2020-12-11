@@ -2,13 +2,19 @@ import React from 'react';
 
 import { WithFillProps } from './types';
 
-const PlusIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
+const PlusIcon: React.FC<WithFillProps> = ({
+  color,
+  fill,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <g>

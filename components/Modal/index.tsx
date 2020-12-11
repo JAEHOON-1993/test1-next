@@ -19,7 +19,12 @@ const ModalComponent: React.FC<ModalProps> = ({
 }) => {
   return (
     <Dim {...props} visible={visible} onClick={closeModal}>
-      <Modal visible={visible} slide={slide} position={position}>
+      <Modal
+        visible={visible}
+        slide={slide}
+        position={position}
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </Modal>
     </Dim>
@@ -41,6 +46,9 @@ const Dim = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
@@ -52,9 +60,9 @@ const Dim = styled.div`
       visibility: visible;
     `};
 `;
-const Modal = styled.div`
-  width: 100%;
-  height: 100%;
+
+const Modal = styled.div<styleProps>`
+  z-index: 10000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,28 +71,28 @@ const Modal = styled.div`
     transition: 0.2s ease;
   }
 
-  ${(props: styleProps) =>
+  ${(props) =>
     props.slide === 'top' &&
     css`
       > div {
         margin-bottom: 50px;
       }
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.slide === 'bottom' &&
     css`
       > div {
         margin-top: 50px;
       }
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.slide === 'right' &&
     css`
       > div {
         margin-left: 50px;
       }
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.slide === 'left' &&
     css`
       > div {
@@ -92,27 +100,27 @@ const Modal = styled.div`
       }
     `}
 
-  ${(props: styleProps) =>
+  ${(props) =>
     props.position === 'top' &&
     css`
       justify-content: flex-start;
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.position === 'bottom' &&
     css`
       justify-content: flex-end;
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.position === 'right' &&
     css`
       align-items: flex-end;
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.position === 'left' &&
     css`
       align-items: flex-start;
     `}
-  ${(props: styleProps) =>
+  ${(props) =>
     props.visible &&
     css`
       > div {
@@ -123,7 +131,7 @@ const Modal = styled.div`
       }
     `}
 
-    ${(props: styleProps) =>
+    ${(props) =>
     props.position === 'top' &&
     props.slide === 'top' &&
     css`
@@ -138,7 +146,7 @@ const Modal = styled.div`
       }
     `}
 
-    ${(props: styleProps) =>
+    ${(props) =>
     props.position === 'bottom' &&
     props.slide === 'bottom' &&
     css`
@@ -153,7 +161,7 @@ const Modal = styled.div`
       }
     `}
 
-    ${(props: styleProps) =>
+    ${(props) =>
     props.position === 'right' &&
     props.slide === 'right' &&
     css`
@@ -168,7 +176,7 @@ const Modal = styled.div`
       }
     `}
 
-    ${(props: styleProps) =>
+    ${(props) =>
     props.position === 'left' &&
     props.slide === 'left' &&
     css`

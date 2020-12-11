@@ -2,14 +2,19 @@ import React from 'react';
 
 import { Props } from './types';
 
-const MessageIcon: React.FC<Props> = ({ color, ...props }) => {
+const MessageIcon: React.FC<Props> = ({
+  color,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="estimate_icon"
-      width="50"
-      height="50"
+      width={width}
+      height={height}
       viewBox="0 0 50 50"
     >
       <path id="사각형_28859" fill="none" d="M0 0H50V50H0z" />

@@ -48,9 +48,9 @@ export const positionModal = () => {
         position="left"
         slide="left"
       >
-        <ModalBody>
+        <ModalBodyFull>
           <h1>Left</h1>
-        </ModalBody>
+        </ModalBodyFull>
       </Modal>
       <Modal
         visible={right}
@@ -58,24 +58,22 @@ export const positionModal = () => {
         position="right"
         slide="right"
       >
-        <ModalBody>
+        <ModalBodyFull>
           <h1>Right</h1>
-        </ModalBody>
+        </ModalBodyFull>
       </Modal>
       <ButtonBox>
-        <CustomButton onClick={() => setCenter(true)}>
-          Center ReadyModal
-        </CustomButton>
-        <CustomButton onClick={() => setTop(true)}>Top ReadyModal</CustomButton>
-        <CustomButton onClick={() => setBottom(true)}>
-          Bottom ReadyModal
-        </CustomButton>
-        <CustomButton onClick={() => setLeft(true)}>
-          Left ReadyModal
-        </CustomButton>
-        <CustomButton onClick={() => setRight(true)}>
-          Right ReadyModal
-        </CustomButton>
+        <CustomButton
+          onClick={() => setCenter(true)}
+          label="Center ReadyModal"
+        />
+        <CustomButton onClick={() => setTop(true)} label="Top ReadyModal" />
+        <CustomButton
+          onClick={() => setBottom(true)}
+          label="Bottom ReadyModal"
+        />
+        <CustomButton onClick={() => setLeft(true)} label="Left ReadyModal" />
+        <CustomButton onClick={() => setRight(true)} label="Right ReadyModal" />
       </ButtonBox>
     </>
   );
@@ -94,6 +92,7 @@ const CustomButton = styled(Button)`
   margin-bottom: 8px;
   padding: 0px 15px;
 `;
+
 const ModalBody = styled.div`
   width: 200px;
   height: 100px;
@@ -101,6 +100,10 @@ const ModalBody = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fff;
+`;
+
+const ModalBodyFull = styled(ModalBody)`
+  height: 100vh;
 `;
 
 export const readyModal = () => {
@@ -112,9 +115,11 @@ export const readyModal = () => {
         closeModal={() => setVisible(false)}
         slide="bottom"
       />
-      <Button style={{ width: 150 }} onClick={() => setVisible(true)}>
-        Ready Modal
-      </Button>
+      <Button
+        width="150px"
+        onClick={() => setVisible(true)}
+        label="Ready Modal"
+      />
     </>
   );
 };
@@ -128,9 +133,11 @@ export const addImageModal = () => {
         closeModal={() => setVisible(false)}
         slide="bottom"
       />
-      <Button style={{ width: 150 }} onClick={() => setVisible(true)}>
-        Add Image Modal
-      </Button>
+      <Button
+        width="150px"
+        onClick={() => setVisible(true)}
+        label="Add Image Modal"
+      />
     </>
   );
 };

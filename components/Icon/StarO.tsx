@@ -2,13 +2,18 @@ import React from 'react';
 
 import { Props } from './types';
 
-const StarOIcon: React.FC<Props> = ({ color, ...props }) => {
+const StarOIcon: React.FC<Props> = ({
+  color,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="14"
-      height="14"
+      width={width}
+      height={height}
       viewBox="0 0 14 14"
     >
       <path

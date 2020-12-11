@@ -2,15 +2,21 @@ import React from 'react';
 
 import { WithFillProps } from './types';
 
-const ShoppingIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
+const ShoppingIcon: React.FC<WithFillProps> = ({
+  color,
+  fill,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   if (fill) {
     return (
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"
         id="shopping_list_select"
-        width="24"
-        height="24"
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
       >
         <defs>
@@ -72,8 +78,8 @@ const ShoppingIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="shopping_list_default"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <defs>

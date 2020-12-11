@@ -5,6 +5,9 @@ import Button from 'components/Button';
 import { Card, CardHeader } from 'components/Card';
 
 import ContentCard from './_fragments/ContentCard';
+import OutlineCard from './_fragments/OutlineCard';
+import ShippingCard from './_fragments/ShippingCard';
+import OptionCard from './_fragments/OptionCard';
 
 export default { title: 'Example/components/Card' };
 
@@ -16,7 +19,7 @@ export const Cards = () => {
           avatar="https://picsum.photos/200"
           title="Title"
           subTitle="Sub Title"
-          action={<Button style={{ width: 100 }}>Action</Button>}
+          action={<Button width="100px" label="Action" />}
         />
       </Card>
       <Card>
@@ -54,4 +57,16 @@ const Time = styled.p`
 
 export const ContentCards = () => {
   return <ContentCard />;
+};
+
+export const OutlineCards = () => {
+  return <OutlineCard />;
+};
+
+export const ShippingCards = () => {
+  return <ShippingCard />;
+};
+
+export const OptionCards = () => {
+  return <OptionCard />;
 };

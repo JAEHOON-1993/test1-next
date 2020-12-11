@@ -2,14 +2,19 @@ import React from 'react';
 
 import { Props } from './types';
 
-const CloseIcon: React.FC<Props> = ({ color, ...props }) => {
+const CloseIcon: React.FC<Props> = ({
+  color,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="X_white_icon"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <g id="icon-arrow" transform="translate(2.496 4.178)">

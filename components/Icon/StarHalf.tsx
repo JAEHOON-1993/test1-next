@@ -2,13 +2,18 @@ import React from 'react';
 
 import { Props } from './types';
 
-const RateHalfIcon: React.FC<Props> = ({ color, ...props }) => {
+const RateHalfIcon: React.FC<Props> = ({
+  color,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="17.651"
-      height="16.845"
+      width={width}
+      height={height}
       viewBox="0 0 17.651 16.845"
     >
       <path

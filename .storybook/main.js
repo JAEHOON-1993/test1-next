@@ -20,6 +20,10 @@ module.exports = {
       stores: path.resolve(__dirname, '../stores/'),
       api: path.resolve(__dirname, '../api/'),
     };
+    config.module.rules.unshift({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
     return config;
   },
 };

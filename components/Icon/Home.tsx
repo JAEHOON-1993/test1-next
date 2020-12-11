@@ -2,15 +2,21 @@ import React from 'react';
 
 import { WithFillProps } from './types';
 
-const HomeIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
+const HomeIcon: React.FC<WithFillProps> = ({
+  color,
+  fill,
+  width = 24,
+  height = 24.146,
+  ...props
+}) => {
   if (fill) {
     return (
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"
         id="home_select"
-        width="24"
-        height="24.146"
+        width={width}
+        height={height}
         viewBox="0 0 24 24.146"
       >
         <g id="home-24px" transform="translate(0 1)">
@@ -31,8 +37,8 @@ const HomeIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="home_default"
-      width="24"
-      height="24.146"
+      width={width}
+      height={height}
       viewBox="0 0 24 24.146"
     >
       <g id="home-24px" transform="translate(0 1)">

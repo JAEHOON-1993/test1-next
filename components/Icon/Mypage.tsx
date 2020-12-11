@@ -2,15 +2,21 @@ import React from 'react';
 
 import { WithFillProps } from './types';
 
-const MypageIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
+const MypageIcon: React.FC<WithFillProps> = ({
+  color,
+  fill,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   if (fill) {
     return (
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"
         id="mypage_select"
-        width="24"
-        height="24"
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
       >
         <path id="사각형_1940" fill="none" d="M0 0H24V24H0z" />
@@ -38,8 +44,8 @@ const MypageIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="mypage_default"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <path id="사각형_1940" fill="none" d="M0 0H24V24H0z" />

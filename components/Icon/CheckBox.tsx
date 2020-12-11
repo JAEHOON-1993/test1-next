@@ -1,15 +1,21 @@
-import React from "react";
+import React from 'react';
 
 import { WithFillProps } from './types';
 
-const CheckBoxIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
+const CheckBoxIcon: React.FC<WithFillProps> = ({
+  color,
+  fill,
+  width = 24,
+  height = 24,
+  ...props
+}) => {
   if (fill) {
     return (
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width={width}
+        height={height}
         viewBox="0 0 30 30"
       >
         <rect width="30" height="30" fill={color} rx="4" />
@@ -29,8 +35,8 @@ const CheckBoxIcon: React.FC<WithFillProps> = ({ color, fill, ...props }) => {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width={width}
+      height={height}
       viewBox="0 0 30 30"
     >
       <g fill="#fff" stroke="#bebebe">

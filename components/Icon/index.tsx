@@ -55,6 +55,8 @@ interface Props {
   style?: any;
   fill?: boolean;
   className?: any;
+  width?: string;
+  height?: string;
 }
 
 const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
