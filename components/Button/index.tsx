@@ -17,12 +17,14 @@ export interface ButtonProps {
   style?: any;
 }
 
+/**
+ * 버튼 컴포넌트
+ */
 const ButtonComponent: React.FC<ButtonProps> = ({
   label,
   onClick,
   icon,
   position = 'left',
-  style,
   ...props
 }) => {
   return (

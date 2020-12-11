@@ -7,6 +7,18 @@ import Tabs from 'components/Tabs';
 export default {
   title: 'Example/components/Tabs',
   component: Tabs,
+  argTypes: {
+    data: {
+      table: {
+        disable: true,
+      },
+    },
+    itemStyle: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const CATEGORIES = [
@@ -27,13 +39,13 @@ const Template: Story = (args) => (
   </div>
 );
 
-export const DefaultTabs = Template.bind({});
-DefaultTabs.args = {
+export const Default = Template.bind({});
+Default.args = {
   data: CATEGORIES,
 };
 
-export const CenteredTabs = Template.bind({});
-CenteredTabs.args = {
+export const Centered = Template.bind({});
+Centered.args = {
   centered: true,
   data: CATEGORIES,
 };

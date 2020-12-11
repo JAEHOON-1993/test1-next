@@ -6,7 +6,7 @@ import theme from 'layout/theme';
 import Icon from 'components/Icon';
 import * as T from 'components/Text';
 
-interface Props {
+export interface CheckboxProps {
   checked: boolean;
   ratio?: string;
   className?: string;
@@ -15,7 +15,7 @@ interface Props {
   style?: any;
 }
 
-const CheckBox: React.FC<Props> = ({ checked, children, ...props }) => {
+const CheckBox: React.FC<CheckboxProps> = ({ checked, children, ...props }) => {
   return (
     <CheckWrap {...props}>
       <Icon name="check-box" fill={checked} color={theme.color.PRIMARY} />

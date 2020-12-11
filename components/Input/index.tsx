@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import * as T from 'components/Text';
 import theme from 'layout/theme';
 
-interface Props {
+export interface Props {
   label?: string;
   id?: string;
   rows?: number;

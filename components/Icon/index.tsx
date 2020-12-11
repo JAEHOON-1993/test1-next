@@ -48,7 +48,7 @@ export type IconName =
   | 'message'
   | 'arrow-right';
 
-interface Props {
+export interface IconProps {
   onClick?: any;
   name?: IconName;
   color?: string;
@@ -59,7 +59,16 @@ interface Props {
   height?: string;
 }
 
-const Icon: React.FC<Props> = ({ name, fill, ...props }) => {
+/**
+ * Icon은 모두 svg로 만들어졌습니다.
+ */
+const Icon: React.FC<IconProps> = ({
+  name,
+  fill,
+  width = '24px',
+  height = '24px',
+  ...props
+}) => {
   switch (name) {
     case 'success':
       return <SuccessIcon {...props} />;

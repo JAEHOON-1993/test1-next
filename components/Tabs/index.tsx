@@ -17,6 +17,9 @@ interface Props {
   onChange?: any;
 }
 
+/**
+ * 카테고리에서 사용
+ */
 const Tabs: React.FC<Props> = ({
   className,
   noMobile,

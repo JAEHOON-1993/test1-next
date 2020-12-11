@@ -1,104 +1,46 @@
-import { Story } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 import styled from 'styled-components';
 
-import Icon from './index';
+import Icon, { IconProps } from './index';
 
 export default {
   title: 'Example/components/Icon',
-};
+  component: Icon,
+  argTypes: {
+    name: {
+      control: {
+        type: 'select',
+        options: [
+          'success',
+          'star',
+          'star-half',
+          'star-o',
+          'qr',
+          'search',
+          'home',
+          'chat',
+          'mypage',
+          'shopping',
+          'arrow-left',
+          'plus',
+          'alert',
+          'close',
+          'small-x',
+          'small-minus',
+          'small-plus',
+          'check-box',
+          'setting',
+          'truck',
+          'box',
+          'message',
+          'arrow-right',
+        ],
+      },
+    },
+  },
+} as Meta;
 
-export const all = () => {
-  return (
-    <div style={{ display: 'flex', padding: '30px' }}>
-      <FlexWrap>
-        <div>
-          <Icon name="alert" /> Alert
-        </div>
-        <div>
-          <Icon name="arrow-left" /> ArrowLeft
-        </div>
-        <div>
-          <Icon name="arrow-right" /> ArrowRight
-        </div>
-        <div>
-          <Icon name="box" /> Box
-        </div>
-        <div>
-          <Icon name="chat" fill /> Chat
-        </div>
-        <div>
-          <Icon name="check-box" /> CheckBox
-        </div>
-        <div>
-          <Icon name="close" /> Close
-        </div>
-        <div>
-          <Icon name="home" fill /> Home
-        </div>
-        <div>
-          <Icon name="message" /> Message
-        </div>
-        <div>
-          <Icon name="mypage" /> MyPage
-        </div>
-
-        <div>
-          <Icon name="plus" /> Plus
-        </div>
-      </FlexWrap>
-      <FlexWrap>
-        <div>
-          <Icon name="qr" /> QR
-        </div>
-        <div>
-          <Icon name="search" /> Search
-        </div>
-        <div>
-          <Icon name="setting" /> Setting
-        </div>
-        <div>
-          <Icon name="shopping" /> Shopping
-        </div>
-        <div>
-          <Icon name="small-minus" /> SmallMinus
-        </div>
-        <div>
-          <Icon name="small-plus" /> SmallPlus
-        </div>
-        <div>
-          <Icon name="small-x" /> SmallX
-        </div>
-        <div>
-          <Icon name="star" /> Star
-        </div>
-        <div>
-          <Icon name="star-half" /> StarHalf
-        </div>
-
-        <div>
-          <Icon name="star-o" /> StarO
-        </div>
-        <div>
-          <Icon name="success" /> Success
-        </div>
-        <div>
-          <Icon name="truck" /> Truck
-        </div>
-      </FlexWrap>
-    </div>
-  );
-};
-
-const FlexWrap = styled.div`
-  &:first-child {
-    margin-right: 50px;
-  }
-  > div {
-    margin-bottom: 10px;
-  }
-`;
-
-const Template: Story = (args) => <Icon {...args} />;
+const Template: Story<IconProps> = (args) => <Icon {...args} />;
 
 export const alert = Template.bind({});
 alert.args = {
@@ -215,3 +157,94 @@ export const truck = Template.bind({});
 truck.args = {
   name: 'truck',
 };
+
+export const all = () => {
+  return (
+    <div style={{ display: 'flex', padding: '30px' }}>
+      <FlexWrap>
+        <div>
+          <Icon name="alert" /> Alert
+        </div>
+        <div>
+          <Icon name="arrow-left" /> ArrowLeft
+        </div>
+        <div>
+          <Icon name="arrow-right" /> ArrowRight
+        </div>
+        <div>
+          <Icon name="box" /> Box
+        </div>
+        <div>
+          <Icon name="chat" fill /> Chat
+        </div>
+        <div>
+          <Icon name="check-box" /> CheckBox
+        </div>
+        <div>
+          <Icon name="close" /> Close
+        </div>
+        <div>
+          <Icon name="home" fill /> Home
+        </div>
+        <div>
+          <Icon name="message" /> Message
+        </div>
+        <div>
+          <Icon name="mypage" /> MyPage
+        </div>
+
+        <div>
+          <Icon name="plus" /> Plus
+        </div>
+      </FlexWrap>
+      <FlexWrap>
+        <div>
+          <Icon name="qr" /> QR
+        </div>
+        <div>
+          <Icon name="search" /> Search
+        </div>
+        <div>
+          <Icon name="setting" /> Setting
+        </div>
+        <div>
+          <Icon name="shopping" /> Shopping
+        </div>
+        <div>
+          <Icon name="small-minus" /> SmallMinus
+        </div>
+        <div>
+          <Icon name="small-plus" /> SmallPlus
+        </div>
+        <div>
+          <Icon name="small-x" /> SmallX
+        </div>
+        <div>
+          <Icon name="star" /> Star
+        </div>
+        <div>
+          <Icon name="star-half" /> StarHalf
+        </div>
+
+        <div>
+          <Icon name="star-o" /> StarO
+        </div>
+        <div>
+          <Icon name="success" /> Success
+        </div>
+        <div>
+          <Icon name="truck" /> Truck
+        </div>
+      </FlexWrap>
+    </div>
+  );
+};
+
+const FlexWrap = styled.div`
+  &:first-child {
+    margin-right: 50px;
+  }
+  > div {
+    margin-bottom: 10px;
+  }
+`;

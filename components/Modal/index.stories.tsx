@@ -1,13 +1,60 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
+import ModalComponent from 'components/Modal';
 import ReadyModal from 'components/Modal/_fragments/ReadyModal';
 import AddImageModal from 'components/Modal/_fragments/AddImageModal';
-import Modal from 'components/Modal';
 import Container from 'components/Container';
 import Button from 'components/Button';
 
-export default { title: 'Example/components/Modal' };
+export default {
+  title: 'Example/components/Modal',
+  component: ModalComponent,
+  argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+} as Meta;
+
+const Template: Story = (args) => {
+  const [open, setOpen] = useState<boolean>(false);
+  return (
+    <>
+      <ModalComponent
+        visible={open}
+        closeModal={() => setOpen(false)}
+        {...args}
+      />
+      <Button
+        onClick={() => setOpen(true)}
+        label="Testing Modal"
+        width="150px"
+      />
+    </>
+  );
+};
+
+const RelativeDiv = styled.div`
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  padding: 30px;
+`;
+
+export const testModal = Template.bind({});
+testModal.args = {
+  position: 'right',
+  slide: 'right',
+  children: (
+    <RelativeDiv>
+      <h1>Testing</h1>
+    </RelativeDiv>
+  ),
+};
 
 export const positionModal = () => {
   const [center, setCenter] = useState<boolean>(false);
@@ -17,12 +64,12 @@ export const positionModal = () => {
   const [right, setRight] = useState<boolean>(false);
   return (
     <>
-      <Modal visible={center} closeModal={() => setCenter(false)}>
+      <ModalComponent visible={center} closeModal={() => setCenter(false)}>
         <ModalBody>
           <h1>Center</h1>
         </ModalBody>
-      </Modal>
-      <Modal
+      </ModalComponent>
+      <ModalComponent
         visible={top}
         closeModal={() => setTop(false)}
         position="top"
@@ -31,8 +78,8 @@ export const positionModal = () => {
         <ModalBody>
           <h1>Top</h1>
         </ModalBody>
-      </Modal>
-      <Modal
+      </ModalComponent>
+      <ModalComponent
         visible={bottom}
         closeModal={() => setBottom(false)}
         position="bottom"
@@ -41,8 +88,8 @@ export const positionModal = () => {
         <ModalBody>
           <h1>Bottom</h1>
         </ModalBody>
-      </Modal>
-      <Modal
+      </ModalComponent>
+      <ModalComponent
         visible={left}
         closeModal={() => setLeft(false)}
         position="left"
@@ -51,8 +98,8 @@ export const positionModal = () => {
         <ModalBodyFull>
           <h1>Left</h1>
         </ModalBodyFull>
-      </Modal>
-      <Modal
+      </ModalComponent>
+      <ModalComponent
         visible={right}
         closeModal={() => setRight(false)}
         position="right"
@@ -61,7 +108,7 @@ export const positionModal = () => {
         <ModalBodyFull>
           <h1>Right</h1>
         </ModalBodyFull>
-      </Modal>
+      </ModalComponent>
       <ButtonBox>
         <CustomButton
           onClick={() => setCenter(true)}
