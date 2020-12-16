@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 import theme from 'layout/theme';
 import ButtonBase from 'components/ButtonBase';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export interface ButtonProps {
   label: string | React.ReactNode | JSX.Element;
@@ -11,9 +12,11 @@ export interface ButtonProps {
   disabled?: boolean;
   round?: boolean;
   color?: string;
-  onClick?: any;
   icon?: React.ReactNode | JSX.Element;
   position?: 'left' | 'right' | 'top' | 'bottom';
+  loading?: boolean;
+  children?: any;
+  onClick?: any;
   style?: any;
 }
 
@@ -25,12 +28,20 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   onClick,
   icon,
   position = 'left',
+  children,
+  loading,
   ...props
 }) => {
   return (
     <Button onClick={onClick} position={position} {...props}>
-      {icon && <div>{icon}</div>}
-      <div>{label}</div>
+      {loading ? (
+        <CircularProgress size={20} color="inherit" />
+      ) : (
+        <>
+          {icon && <div>{icon}</div>}
+          <div>{label}</div>
+        </>
+      )}
     </Button>
   );
 };
@@ -74,7 +85,6 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   color: ${theme.color.WHITE};
   border-radius: ${(props) => props.round && '50px'};
   flex-direction: ${({ position }) => changePosition(position)};
-
   :focus {
     outline: none;
   }

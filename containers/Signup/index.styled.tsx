@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import theme from "layout/theme";
 
-import theme from 'layout/theme';
-
-import ButtonComponent from 'components/Button';
-import InputComponent from 'components/Input';
+// components
+import ButtonComponent from "components/Button";
+import InputComponent from "components/Input";
 
 export const Nav = styled.div`
   width: 100%;
@@ -11,7 +11,6 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
 `;
-
 export const Container = styled.div`
   + div {
     display: flex;
@@ -29,15 +28,15 @@ export const Container = styled.div`
   width: 535px;
 
   /* Small PC */
-  ${(props) => props.theme.window.pc} {
+  @media screen and (max-width: 1299.98px) {
     width: 535px;
   }
   /* Tab */
-  ${(props) => props.theme.window.tab} {
+  @media screen and (max-width: 991.98px) {
     width: 345px;
   }
   /* Mobile */
-  ${(props) => props.theme.window.mobile} {
+  @media screen and (max-width: 767.98px) {
     width: calc(100% - 40px);
     padding: 0 20px;
   }
@@ -55,11 +54,11 @@ export const TextBox = styled.div`
   }
   height: 92px;
   /* Tab */
-  ${(props) => props.theme.window.tab} {
+  @media screen and (max-width: 991.98px) {
     height: 72px;
   }
   /* Mobile */
-  ${(props) => props.theme.window.mobile} {
+  @media screen and (max-width: 767.98px) {
     height: 72px;
   }
 `;
@@ -70,15 +69,15 @@ export const Input = styled(InputComponent)`
   margin-top: 70px;
 
   /* Small PC */
-  ${(props) => props.theme.window.pc} {
+  @media screen and (max-width: 1299.98px) {
     margin-top: 70px;
   }
   /* Tab */
-  ${(props) => props.theme.window.tab} {
+  @media screen and (max-width: 991.98px) {
     margin-top: 50px;
   }
   /* Mobile */
-  ${(props) => props.theme.window.mobile} {
+  @media screen and (max-width: 767.98px) {
     margin-top: 20px;
     margin-bottom: auto;
   }
@@ -98,15 +97,15 @@ export const Button = styled(ButtonComponent)`
   margin-top: 100px;
 
   /* Small PC */
-  ${(props) => props.theme.window.pc} {
+  @media screen and (max-width: 1299.98px) {
     margin-top: 100px;
   }
   /* Tab */
-  ${(props) => props.theme.window.tab} {
+  @media screen and (max-width: 991.98px) {
     margin-top: 80px;
   }
   /* Mobile */
-  ${(props) => props.theme.window.mobile} {
+  @media screen and (max-width: 767.98px) {
     margin-top: auto;
   }
 `;
@@ -115,4 +114,41 @@ export const ActionButton = styled(ButtonComponent)`
   width: 72px;
   height: 34px;
   font-size: 12px;
+`;
+
+interface AvatarProps {
+  src?: string;
+}
+
+export const AvatarBox = styled.div<AvatarProps>`
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  margin-bottom: 25px;
+  > div {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    background-image: url(${(props) => props.src});
+    background-position: center;
+    background-size: cover;
+  }
+  > span {
+    width: 20px;
+    height: 20px;
+    background-color: ${theme.color.PRIMARY};
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;

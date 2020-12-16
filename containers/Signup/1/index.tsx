@@ -1,15 +1,55 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Router from 'next/router';
 
+// components
 import * as T from 'components/Text';
 import ButtonBaseComponent from 'components/ButtonBase';
 import IconComponent from 'components/Icon';
 
 import { Container, Nav, TextBox, Input, Button } from '../index.styled';
 
-import { Props } from '../types';
+import { observer } from 'mobx-react-lite';
+import SignupStore from 'stores/Signup';
 
-const MainContainer: React.FC<Props> = () => {
+type Props = {
+  fixed?: boolean;
+  style?: any;
+};
+
+const Signup1Container: React.FC<Props> = observer(() => {
+  const [active, setActive] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const signupStore = useContext(SignupStore);
+  useEffect(() => {
+    console.log('token : ', signupStore.access);
+    if (signupStore.phone.length > 10) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [signupStore.phone]);
+
+  const next = () => {
+    console.log(setLoading);
+    // if (!loading) {
+    //   setLoading(true);
+    //   setTimeout(() => {
+    //     signupStore
+    //       .sendSMS()
+    //       .then((res: any) => {
+    //         if (res.status < 300) {
+    //           signupStore.count = 180;
+    //           Router.push('/signup/2');
+    //         }
+    //       })
+    //       .catch((e: any) => {
+    //         const error = e.response.data;
+    //         signupStore.phoneError = error?.non_field_errors || error?.phone;
+    //       })
+    //       .finally(() => () => setLoading(false));
+    //   }, 800);
+    // }
+  };
   return (
     <Container>
       <Nav>
@@ -28,15 +68,19 @@ const MainContainer: React.FC<Props> = () => {
         name="phone"
         label="핸드폰번호"
         placeholder="핸드폰 번호 입력('-'제외)"
+        value={signupStore.phone}
+        onChange={signupStore.setPhone}
+        errorText={signupStore.phoneError}
       />
       <Button
         label="다음"
         round
-        disabled={false}
-        onClick={() => Router.push('/signup/2')}
+        loading={loading}
+        disabled={!active || signupStore.phoneError != ''}
+        onClick={next}
       />
     </Container>
   );
-};
+});
 
-export default MainContainer;
+export default Signup1Container;

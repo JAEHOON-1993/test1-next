@@ -5,8 +5,12 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import theme from 'layout/theme';
 import Button, { ButtonProps } from 'components/Button';
 import Icon from 'components/Icon';
-import NaverLogin from 'components/Button/Social/NaverLogin';
-import KakaoLogin from 'components/Button/Social/KakaoLogin';
+
+import NaverLogin from 'components/Social/NaverLogin';
+import KakaoLogin from 'components/Social/KakaoLogin';
+import GoogleLogin from 'components/Social/GoogleLogin';
+import FacebookLogin from 'components/Social/FacebookLogin';
+import AppleLogin from 'components/Social/AppleLogin';
 
 export default {
   title: 'Example/components/Button',
@@ -86,22 +90,18 @@ const ButtonBox = styled.div`
   margin-bottom: 10px;
 `;
 
-export const SocialButtons = () => {
+export const socialButton = () => {
   return (
     <>
       <SocialBox>
         <h1>
           Social Login <small>[Default]</small>
         </h1>
-        <NaverLogin />
         <KakaoLogin />
-      </SocialBox>
-      <SocialBox>
-        <h1>
-          Social Login <small>[Round]</small>
-        </h1>
-        <NaverLogin round />
-        <KakaoLogin round />
+        <NaverLogin />
+        <FacebookLogin />
+        <GoogleLogin />
+        <AppleLogin />
       </SocialBox>
     </>
   );

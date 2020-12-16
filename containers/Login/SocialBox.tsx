@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import KakaoLogin from 'components/Button/Social/KakaoLogin';
-import NaverLogin from 'components/Button/Social/NaverLogin';
+import KakaoLogin from 'components/Social/KakaoLogin';
+import NaverLogin from 'components/Social/NaverLogin';
 
 interface Props {
   fixed?: boolean;
