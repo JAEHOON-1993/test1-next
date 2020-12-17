@@ -8,7 +8,7 @@ interface Props {
   backgroundColor?: string;
   borderColor?: string;
   color?: string;
-  space?: 'start' | 'end';
+  start?: boolean;
 }
 
 export const Hr = styled.div`
@@ -30,7 +30,7 @@ export const Icon = styled.img`
       left: 0px;
     `}
   ${(props) =>
-    props.space &&
+    props.start &&
     css`
       position: absolute;
       left: 24px;

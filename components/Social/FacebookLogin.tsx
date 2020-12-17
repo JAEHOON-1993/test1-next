@@ -27,7 +27,7 @@ const FacebookLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#1877f3'}
       round={round}
       onClick={() => Router.replace(FACEBOOK_LOGIN_URL)}
-      icon={<Icon round={round} src={FACEBOOK_LOGO} space="start" />}
+      icon={<Icon round={round} src={FACEBOOK_LOGO} start />}
     />
   );
 };

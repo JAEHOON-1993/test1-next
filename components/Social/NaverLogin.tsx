@@ -23,7 +23,7 @@ const NaverLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#20cf5d'}
       round={round}
       onClick={() => Router.replace(NAVER_LOGIN_URL)}
-      icon={<Icon round={round} src={NAVER_LOGO} space="start" />}
+      icon={<Icon round={round} src={NAVER_LOGO} start />}
     ></Button>
   );
 };

@@ -31,7 +31,7 @@ const KakaoLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#ffde32'}
       round={round}
       onClick={() => Router.replace(KAKAO_LOGIN_URL)}
-      icon={<Icon src={KAKAO_LOGO} space="start" />}
+      icon={<Icon src={KAKAO_LOGO} start />}
     />
   );
 };

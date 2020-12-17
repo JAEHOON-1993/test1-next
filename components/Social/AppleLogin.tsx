@@ -25,7 +25,7 @@ const AppleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#000'}
       round={round}
       onClick={() => Router.replace(APPLE_LOGIN_URL)}
-      icon={<Icon round={round} src={APPLE_LOGO} space="start" />}
+      icon={<Icon round={round} src={APPLE_LOGO} start />}
     />
   );
 };

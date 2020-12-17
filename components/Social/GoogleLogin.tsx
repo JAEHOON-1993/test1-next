@@ -28,7 +28,7 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#ddd'}
       round={round}
       onClick={() => Router.replace(GOOGLE_LOGIN_URL)}
-      icon={<Icon round={round} src={GOOGLE_LOGO} space="start" />}
+      icon={<Icon round={round} src={GOOGLE_LOGO} start />}
     />
   );
 };
