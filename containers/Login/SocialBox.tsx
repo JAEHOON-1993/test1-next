@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import KakaoLogin from 'components/Social/KakaoLogin';
 import NaverLogin from 'components/Social/NaverLogin';
+import GoogleLogin from 'components/Social/GoogleLogin';
+import FacebookLogin from 'components/Social/FacebookLogin';
+import AppleLogin from 'components/Social/AppleLogin';
 
 interface Props {
   fixed?: boolean;
@@ -14,6 +17,9 @@ const SocialBoxContainer: React.FC<Props> = () => {
     <SocialBox>
       <KakaoLogin />
       <NaverLogin />
+      <GoogleLogin />
+      <FacebookLogin />
+      <AppleLogin />
     </SocialBox>
   );
 };

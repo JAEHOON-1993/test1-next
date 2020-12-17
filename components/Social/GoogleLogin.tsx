@@ -6,7 +6,7 @@ import * as T from 'components/Text';
 import { Button, Icon } from './Social.styled';
 import { GOOGLE_LOGIN_URL } from './_settings';
 
-const GOOGLE_LOGO = '/images/google_logo.png';
+const GOOGLE_LOGO = '/images/socialLogin/google_logo.jpg';
 
 interface Props {
   round?: boolean;
@@ -19,14 +19,16 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
     <Button
       {...props}
       label={
-        <T.Text style={{ color: theme.color.GRAY5 }}>Google로 로그인</T.Text>
+        <T.Text style={{ color: theme.color.GRAY5 }}>
+          구글계정으로 로그인
+        </T.Text>
       }
       style={{ color: theme.color.GRAY5 }}
       backgroundColor={'#FFF'}
       borderColor={'#ddd'}
       round={round}
       onClick={() => Router.replace(GOOGLE_LOGIN_URL)}
-      icon={<Icon round={round} src={GOOGLE_LOGO} />}
+      icon={<Icon round={round} src={GOOGLE_LOGO} space="start" />}
     />
   );
 };

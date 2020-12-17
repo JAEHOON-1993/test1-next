@@ -6,7 +6,7 @@ import { Button, Icon } from './Social.styled';
 
 import { APPLE_LOGIN_URL } from './_settings';
 
-const FACEBOOK_LOGO = '/images/facebook_logo.png';
+const APPLE_LOGO = '/images/socialLogin/apple_logo.png';
 
 interface Props {
   round?: boolean;
@@ -25,7 +25,7 @@ const AppleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#000'}
       round={round}
       onClick={() => Router.replace(APPLE_LOGIN_URL)}
-      icon={<Icon round={round} src={FACEBOOK_LOGO} />}
+      icon={<Icon round={round} src={APPLE_LOGO} space="start" />}
     />
   );
 };

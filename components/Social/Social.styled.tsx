@@ -1,13 +1,14 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import ButtonComponent from "components/Button";
-import theme from "layout/theme";
+import ButtonComponent from 'components/Button';
+import theme from 'layout/theme';
 
 interface Props {
   round?: boolean;
   backgroundColor?: string;
   borderColor?: string;
   color?: string;
+  space?: 'start' | 'end';
 }
 
 export const Hr = styled.div`
@@ -19,14 +20,21 @@ export const Hr = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 48px;
-  height: 48px;
+  width: 47px;
+  height: 47px;
   border-radius: 24px;
   ${(props: Props) =>
     props.round &&
     css`
       position: absolute;
       left: 0px;
+    `}
+  ${(props) =>
+    props.space &&
+    css`
+      position: absolute;
+      left: 24px;
+      top: 0;
     `}
 `;
 

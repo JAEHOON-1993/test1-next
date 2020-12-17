@@ -30,6 +30,8 @@ const Signup1Container: React.FC<Props> = observer(() => {
   }, [signupStore.phone]);
 
   const next = () => {
+    // TO DO
+    // API 연동
     console.log(setLoading);
     // if (!loading) {
     //   setLoading(true);

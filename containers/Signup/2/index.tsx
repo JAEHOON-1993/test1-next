@@ -47,6 +47,8 @@ const Signup2Container: React.FC<Props> = observer(() => {
   }, [signupStore.code]);
 
   const resend = () => {
+    // TO DO
+    // API 연동
     console.log(setSendLoading);
     // if (!sendLoading) {
     //   setSendLoading(true);
@@ -70,6 +72,8 @@ const Signup2Container: React.FC<Props> = observer(() => {
 
   const next = () => {
     if (!loading) {
+      // TO DO
+      // API 연동
       setLoading(true);
       // setTimeout(() => {
       //   signupStore
