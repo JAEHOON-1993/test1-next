@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import styled, { css } from 'styled-components';
 
@@ -12,7 +12,7 @@ interface Props {
   noHeader?: boolean;
   centered?: boolean;
   transparent?: boolean;
-  children?: ReactNode;
+  children?: React.ReactNode;
   title?: string;
 }
 
