@@ -2,6 +2,8 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import Head from 'next/head';
 import styled, { css } from 'styled-components';
 
+import useHeight from 'utils/useHeight';
+
 import Nav from 'components/Nav';
 // import Footer from "./Footer";
 
@@ -22,15 +24,8 @@ const Layout = ({
   transparent,
   title = '똑똑한개발자',
 }: Props) => {
-  const [height, setHeight] = useState(0);
-  useEffect(() => {
-    const updateSize = () => {
-      setHeight(window.innerHeight);
-    };
-    updateSize();
-    window.addEventListener('resize', updateSize);
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+  const height = useHeight();
+
   return (
     <div>
       <Head>

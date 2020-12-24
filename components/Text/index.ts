@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 type Props = {
   sm?: boolean;
   lg?: boolean;
-  bold?: string;
+  bold?: boolean;
   color?: string;
 };
 
@@ -12,7 +12,7 @@ export const Title = styled.h1<Props>`
   font-size: 15px;
   line-height: 1.53;
   letter-spacing: -0.15px;
-  font-weight: ${(props) => props.bold && props.bold};
+  font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -65,7 +65,7 @@ export const Text = styled.p<Props>`
   font-size: 15px;
   line-height: 1.53;
   letter-spacing: -0.15px;
-  font-weight: ${(props) => props.bold && props.bold};
+  font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -119,7 +119,7 @@ export const Button = styled.p<Props>`
   font-size: 15px;
   line-height: 1.53;
   letter-spacing: -0.15px;
-  font-weight: ${(props) => props.bold && props.bold};
+  font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -141,7 +141,7 @@ export const ButtonSmall = styled.p<Props>`
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: -0.12px;
-  font-weight: ${(props) => props.bold && props.bold};
+  font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -162,7 +162,7 @@ export const Caption = styled.p<Props>`
   font-size: 10px;
   line-height: 1.6;
   letter-spacing: -0.1px;
-  font-weight: ${(props) => props.bold && props.bold};
+  font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.color && props.color};
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
