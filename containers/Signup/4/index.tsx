@@ -1,6 +1,5 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import Router from 'next/router';
-import { observer } from 'mobx-react-lite';
 
 import SignupStore from 'stores/Signup';
 
@@ -17,8 +16,7 @@ interface Props {
   style?: any;
 }
 
-const Signup4Container: React.FC<Props> = observer(() => {
-  const signupStore = useContext(SignupStore);
+const Signup4Container: React.FC<Props> = () => {
   const inputRef = useRef<any>(null);
   const handleImageChange = (e: any) => {
     e.preventDefault();
@@ -27,7 +25,7 @@ const Signup4Container: React.FC<Props> = observer(() => {
     let file = e.target.files[0];
 
     reader.onloadend = () => {
-      signupStore.image = { file: file, preview: reader.result };
+      SignupStore.image = { file: file, preview: reader.result };
     };
     reader.readAsDataURL(file);
   };
@@ -51,7 +49,7 @@ const Signup4Container: React.FC<Props> = observer(() => {
       <AvatarBox
         onClick={() => inputRef.current.click()}
         src={
-          signupStore.image.preview ? signupStore.image.preview : DEFAULT_IMAGE
+          SignupStore.image.preview ? SignupStore.image.preview : DEFAULT_IMAGE
         }
       >
         <div />
@@ -59,10 +57,10 @@ const Signup4Container: React.FC<Props> = observer(() => {
           <Icon name="plus" color="#fff" />
         </span>
       </AvatarBox>
-      <T.Text>{signupStore.nickname}</T.Text>
-      <Button label="완료" round onClick={signupStore.register} />
+      <T.Text>{SignupStore.nickname}</T.Text>
+      <Button label="완료" round onClick={SignupStore.register} />
     </Container>
   );
-});
+};
 
 export default Signup4Container;

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
+import RouterStore from 'stores/Router';
 
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
 import ScrollToTop from 'components/ScrollToTop';
+import MobileRouter from 'components/Layout/MobileRouter';
+
 import theme from 'layout/theme';
 
 import GlobalStyle from 'layout/reset';
@@ -19,23 +23,69 @@ declare global {
   }
 }
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
-      />
-    </Head>
-    <ScrollToTop>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <title>로켓메이커스</title>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ScrollToTop>
-  </>
-);
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const [isPush, setIsPush] = useState(false)
+  const [isPop, setIsPop] = useState(false)
+  const [load, setLoad] = useState(true)
+  // useEffect(() => {
+  //   // 뒤로가기
+  //   const beforePopState = ({url, as, options} : any) => {
+  //     // console.log('beforePopState : ', url);
+  //     // console.log('beforePopState as : ', as);
+  //     // console.log('beforePopState options : ', options);
+  //     RouterStore.push(as, as, "right");
+  //     return false
+  //   }
+    
+  //   // 다음 페이지 이동
+  //   const routeChangeStart = async () => {
+  //     // console.log(`beforeHistoryChange`);
+  //     await setIsPush(true);
+  //     setTimeout(() => {
+  //       setLoad(false);
+  //     }, 500)
+  //   }
+  //   const routeChangeComplete = async () => {
+  //     // console.log(`routeChangeComplete`);
+  //     // await setLoad(true);
+  
+  //     await setIsPop(false);
+  //     setTimeout(() => {
+  //       setLoad(true);
+  //       setIsPush(false);
+  //     }, 500)
+  //   }
+
+  //   Router.beforePopState(beforePopState);
+  //   // Router.events.on('routeChangeStart', routeChangeStart);
+  //   Router.events.on('beforeHistoryChange', routeChangeStart);
+  //   Router.events.on('routeChangeComplete', routeChangeComplete);
+  //   return () => {
+  //     // Router.events.off('routeChangeStart', routeChangeStart);
+  //     Router.events.off('beforeHistoryChange', routeChangeStart);
+  //     Router.events.off('routeChangeComplete', routeChangeComplete);
+  //   }
+  // }, [Router]);
+
+  return (
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+      </Head>
+        <ScrollToTop>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <MobileRouter>
+              <Component {...pageProps} />
+            </MobileRouter>
+          </ThemeProvider>
+        </ScrollToTop>
+    </>
+  );
+};
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   let pageProps = {};
@@ -46,3 +96,5 @@ MyApp.getInitialProps = async ({ Component, ctx }: any) => {
 };
 
 export default MyApp;
+
+

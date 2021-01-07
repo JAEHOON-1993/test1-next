@@ -11,7 +11,7 @@ const IndexPage = () => {
     console.log('id : ', id);
   }, [router]);
   return (
-    <Layout title="똑똑한개발자" pageName=" " transparent>
+    <Layout title="똑똑한개발자" pageName=" " transparent noBorder>
       <IndoorDetailContainer />
     </Layout>
   );

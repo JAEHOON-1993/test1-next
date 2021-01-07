@@ -41,7 +41,7 @@ interface styleProps {
 
 const Dim = styled.div`
   position: fixed;
-  z-index: 9999;
+  z-index: 98;
   top: 0;
   bottom: 0;
   left: 0;
@@ -62,7 +62,7 @@ const Dim = styled.div`
 `;
 
 const Modal = styled.div<styleProps>`
-  z-index: 10000;
+  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;

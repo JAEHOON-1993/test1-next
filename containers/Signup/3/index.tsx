@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Router from 'next/router';
-import { observer } from 'mobx-react-lite';
 
 import SignupStore from 'stores/Signup';
 
@@ -15,10 +14,9 @@ interface Props {
   style?: any;
 }
 
-const Signup3Container: React.FC<Props> = observer(() => {
-  const signupStore = useContext(SignupStore);
+const Signup3Container: React.FC<Props> = () => {
   const next = () => {
-    if (!signupStore.nicknameLoading) {
+    if (!SignupStore.nicknameLoading) {
       Router.push('/signup/4');
     }
   };
@@ -36,21 +34,21 @@ const Signup3Container: React.FC<Props> = observer(() => {
         name="phone"
         label="닉네임"
         placeholder="영문, 국문, 숫자만 입력 가능"
-        errorText={signupStore.nicknameError}
-        value={signupStore.nickname}
-        onChange={signupStore.setNickname}
+        errorText={SignupStore.nicknameError}
+        value={SignupStore.nickname}
+        onChange={SignupStore.setNickname}
       />
       <Button
         label="다음"
         round
-        loading={signupStore.nicknameLoading}
+        loading={SignupStore.nicknameLoading}
         disabled={
-          signupStore.nickname.length < 3 || signupStore.nicknameError != ''
+          SignupStore.nickname.length < 3 || SignupStore.nicknameError != ''
         }
         onClick={next}
       />
     </Container>
   );
-});
+};
 
 export default Signup3Container;

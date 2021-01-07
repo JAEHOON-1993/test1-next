@@ -66,14 +66,14 @@ export const NavWrap = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: calc(100% - 150px);
+      width: 100%;
       height: 100px;
       padding: 0 75px;
       background: transparent;
       border: 0;
 
       @media screen and (max-width: 767.98px) {
-        width: calc(100% - 32px);
+        width: 100%;
         height: 130px;
         padding: 0 16px;
       }

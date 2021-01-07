@@ -16,7 +16,6 @@ import {
   ActionButton,
 } from '../index.styled';
 
-import { observer } from 'mobx-react-lite';
 import SignupStore from 'stores/Signup';
 
 type Props = {
@@ -24,27 +23,26 @@ type Props = {
   style?: any;
 };
 
-const Signup2Container: React.FC<Props> = observer(() => {
-  const signupStore = useContext(SignupStore);
+const Signup2Container: React.FC<Props> = () => {
   const [sendLoading, setSendLoading] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
-      if (signupStore.count > 0) {
-        signupStore.count -= 1;
+      if (SignupStore.count > 0) {
+        SignupStore.count -= 1;
       }
     }, 1000);
-  }, [signupStore.count]);
+  }, [SignupStore.count]);
 
   useEffect(() => {
-    if (signupStore.code.length > 5) {
+    if (SignupStore.code.length > 5) {
       setActive(true);
     } else {
       setActive(false);
     }
-  }, [signupStore.code]);
+  }, [SignupStore.code]);
 
   const resend = () => {
     // TO DO
@@ -53,15 +51,15 @@ const Signup2Container: React.FC<Props> = observer(() => {
     // if (!sendLoading) {
     //   setSendLoading(true);
     //   setTimeout(() => {
-    //     signupStore
+    //     SignupStore
     //       .sendSMS()
     //       .then(() => {
-    //         signupStore.count = 180;
+    //         SignupStore.count = 180;
     //       })
     //       .catch((e: any) => {
     //         const error = e.response.data;
     //         if (error.phone) {
-    //           signupStore.phoneError = error.phone;
+    //           SignupStore.phoneError = error.phone;
     //           Router.push('/signup/1');
     //         }
     //       })
@@ -76,20 +74,20 @@ const Signup2Container: React.FC<Props> = observer(() => {
       // API 연동
       setLoading(true);
       // setTimeout(() => {
-      //   signupStore
+      //   SignupStore
       //     .confirmSMS()
       //     .then((res: any) => {
-      //       signupStore.phoneToken = res.data.phone_token;
+      //       SignupStore.phoneToken = res.data.phone_token;
       //       Router.push('/signup/3');
       //     })
       //     .catch((e: any) => {
       //       const error = e.response.data;
-      //       signupStore.code = '';
+      //       SignupStore.code = '';
       //       if (error.phone) {
-      //         signupStore.phoneError = error.phone;
+      //         SignupStore.phoneError = error.phone;
       //         Router.push('/signup/1');
       //       }
-      //       signupStore.codeError = error?.non_field_errors || error?.code;
+      //       SignupStore.codeError = error?.non_field_errors || error?.code;
       //     })
       //     .finally(() => setSendLoading(false));
       // }, 800);
@@ -110,12 +108,12 @@ const Signup2Container: React.FC<Props> = observer(() => {
         name="code"
         label="인증번호"
         placeholder="인증번호 입력"
-        value={signupStore.code}
-        onChange={signupStore.setCode}
-        errorText={signupStore.codeError}
+        value={SignupStore.code}
+        onChange={SignupStore.setCode}
+        errorText={SignupStore.codeError}
         action={
-          signupStore.count > 0 ? (
-            <ActionButton label={formatTimer(signupStore.count)} disabled />
+          SignupStore.count > 0 ? (
+            <ActionButton label={formatTimer(SignupStore.count)} disabled />
           ) : (
             <ActionButton
               label="재전송"
@@ -134,6 +132,6 @@ const Signup2Container: React.FC<Props> = observer(() => {
       />
     </Container>
   );
-});
+};
 
 export default Signup2Container;

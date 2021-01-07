@@ -22,7 +22,7 @@ export const Hr = styled.div`
 export const Icon = styled.img`
   width: 47px;
   height: 47px;
-  border-radius: 24px;
+  border-radius: 13px;
   ${(props: Props) =>
     props.round &&
     css`
@@ -33,7 +33,7 @@ export const Icon = styled.img`
     props.start &&
     css`
       position: absolute;
-      left: 24px;
+      left: 13px;
       top: 0;
     `}
 `;
@@ -55,6 +55,7 @@ export const Button = styled(ButtonComponent)`
     padding-top: 3px;
     width: 100%;
     text-align: center;
+    margin-left: 5%;
   }
   :focus {
     outline: none;

@@ -1,12 +1,16 @@
-import { observable, action } from 'mobx';
+import { makeAutoObservable } from 'mobx';
+
 
 class Count {
-  @observable number: number = 0;
+  number: number = 0;
 
-  @action increase = () => {
+  constructor() {
+    makeAutoObservable(this);
+  }
+  increase = () => {
     this.number++;
   };
-  @action decrease = () => {
+  decrease = () => {
     this.number--;
   };
 }

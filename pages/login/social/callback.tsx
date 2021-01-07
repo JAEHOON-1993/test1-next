@@ -8,13 +8,10 @@ import { useRouter } from 'next/router';
 // console.log(location.search);
 //=> '?foo=bar'
 
-import { observer } from 'mobx-react-lite';
 // import SignupStore from 'stores/Signup';
 
-const SocialCallbackPage = observer(() => {
+const SocialCallbackPage = () => {
   const router = useRouter();
-  // const signupStore = useContext(SignupStore);
-
   useEffect(() => {
     const qs = router.query;
     if (qs.error) {
@@ -27,12 +24,12 @@ const SocialCallbackPage = observer(() => {
     //     StorageSetToken(access, refresh);
     //     Router.push("/");
     //   } else {
-    //     signupStore.access = access;
+    //     SignupStore.access = access;
     //     Router.push("/signup/1");
     //   }
     // });
   });
   return null;
-});
+};
 
 export default SocialCallbackPage;

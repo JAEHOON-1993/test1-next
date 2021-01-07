@@ -18,7 +18,7 @@ const NaverLoginComponent: React.FC<Props> = ({ round, ...props }) => {
   return (
     <Button
       {...props}
-      label={<T.Text style={{ color: '#fff' }}>네이버로 로그인</T.Text>}
+      label={<T.Text style={{ color: '#fff' }}>네이버 계정으로 로그인</T.Text>}
       backgroundColor={'#20cf5d'}
       borderColor={'#20cf5d'}
       round={round}

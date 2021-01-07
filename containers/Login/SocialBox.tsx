@@ -17,8 +17,8 @@ const SocialBoxContainer: React.FC<Props> = () => {
     <SocialBox>
       <KakaoLogin />
       <NaverLogin />
-      <GoogleLogin />
       <FacebookLogin />
+      <GoogleLogin />
       <AppleLogin />
     </SocialBox>
   );

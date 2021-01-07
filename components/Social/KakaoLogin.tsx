@@ -24,7 +24,7 @@ const KakaoLoginComponent: React.FC<Props> = ({ round, ...props }) => {
             color: '#000',
           }}
         >
-          카카오계정으로 로그인
+          카카오 계정으로 로그인
         </T.Text>
       }
       backgroundColor={'#ffde32'}

@@ -1,27 +1,30 @@
-import { createContext } from 'react';
+import { makeAutoObservable } from 'mobx';
 // import Router from 'next/router';
-import { observable, action } from 'mobx';
 // import * as AuthAPI from 'api/Auth';
 
 class Signup {
-  @observable access: string = '';
+  access: string = '';
 
-  @observable phone: string = '';
-  @observable phoneToken: string = '';
-  @observable phoneError: string = '';
+  phone: string = '';
+  phoneToken: string = '';
+  phoneError: string = '';
 
-  @observable code: string = '';
-  @observable codeError: string = '';
+  code: string = '';
+  codeError: string = '';
 
-  @observable count: number = 180;
+  count: number = 180;
 
-  @observable nickname: string = '';
-  @observable nicknameLoading: boolean = false;
-  @observable nicknameError: string = '';
+  nickname: string = '';
+  nicknameLoading: boolean = false;
+  nicknameError: string = '';
 
-  @observable image: any = { file: null, preview: null };
+  image: any = { file: null, preview: null };
 
-  @action setPhone = (e: any) => {
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  setPhone = (e: any) => {
     var reg = /^\d+$/;
     if (e.target.value && !reg.test(e.target.value)) {
       this.phoneError = '숫자만 입력해주세요';
@@ -31,7 +34,7 @@ class Signup {
     }
   };
 
-  @action setCode = (e: any) => {
+  setCode = (e: any) => {
     var reg = /^\d+$/;
     const value = e.target.value;
     if (value && !reg.test(value)) {
@@ -44,7 +47,7 @@ class Signup {
     }
   };
 
-  @action setNickname = (e: any) => {
+  setNickname = (e: any) => {
     const value = e.target.value;
     this.nickname = e.target.value;
     this.nicknameError = '';
@@ -68,7 +71,7 @@ class Signup {
     }
   };
 
-  @action sendSMS = () => {
+  sendSMS = () => {
     const data = {
       phone: this.phone,
     };
@@ -76,7 +79,7 @@ class Signup {
     // return AuthAPI.phoneVerifier(data);
   };
 
-  @action confirmSMS = () => {
+  confirmSMS = () => {
     const data = {
       phone: this.phone,
       code: this.code,
@@ -85,7 +88,7 @@ class Signup {
     // return AuthAPI.phoneConfirm(data);
   };
 
-  @action register = async () => {
+  register = async () => {
     const formdata = new FormData();
     formdata.append('phone', this.phone);
     formdata.append('phone_token', this.phoneToken);
@@ -105,4 +108,4 @@ class Signup {
   };
 }
 const signupStore = new Signup();
-export default createContext(signupStore);
+export default signupStore

@@ -12,15 +12,15 @@ interface Props {
 const ContentContainer: React.FC<Props> = () => {
   return (
     <ContentBox>
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
-      <Card onClick={() => Router.push('/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
+      <Card onClick={() => Router.push('/outdoor/[id]', '/outdoor/1')} />
     </ContentBox>
   );
 };

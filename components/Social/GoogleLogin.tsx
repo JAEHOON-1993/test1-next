@@ -19,9 +19,7 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
     <Button
       {...props}
       label={
-        <T.Text style={{ color: theme.color.GRAY5 }}>
-          구글계정으로 로그인
-        </T.Text>
+        <T.Text style={{ color: theme.color.GRAY4 }}>Google로 로그인</T.Text>
       }
       style={{ color: theme.color.GRAY5 }}
       backgroundColor={'#FFF'}

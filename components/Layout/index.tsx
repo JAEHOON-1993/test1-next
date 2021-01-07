@@ -10,6 +10,7 @@ import Nav from 'components/Nav';
 interface Props {
   pageName?: string;
   noHeader?: boolean;
+  noBorder?: boolean;
   centered?: boolean;
   transparent?: boolean;
   children?: React.ReactNode;
@@ -20,6 +21,7 @@ const Layout = ({
   pageName,
   children,
   noHeader,
+  noBorder,
   centered,
   transparent,
   title = '똑똑한개발자',
@@ -33,7 +35,7 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && <Nav pageName={pageName} transparent={transparent} />}
+      {!noHeader && <Nav pageName={pageName} transparent={transparent} noBorder={noBorder} />}
       <Body height={height} noHeader={noHeader} centered={centered}>
         {children}
       </Body>

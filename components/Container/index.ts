@@ -29,7 +29,7 @@ const Container = styled.div<ContainerProps>`
   }
   /* Mobile */
   ${theme.window.mobile} {
-    width: calc(100% - 40px);
+    width: 100%;
     padding: 0 20px;
     ${(props) =>
       props.mobileNoPadding &&

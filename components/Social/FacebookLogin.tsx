@@ -20,7 +20,7 @@ const FacebookLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       {...props}
       label={
         <T.Text style={{ color: theme.color.WHITE }}>
-          페이스북으로 로그인
+          Facebook으로 로그인
         </T.Text>
       }
       backgroundColor={'#1877f3'}
