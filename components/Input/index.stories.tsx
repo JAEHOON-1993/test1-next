@@ -7,20 +7,26 @@ import Button from 'components/Button';
 export default {
   title: 'Example/components/Input',
   component: Input,
-  argTypes: {
-    action: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const Template: Story<Props> = (args) => <Input {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Caption *',
+  label: 'Title *',
   placeholder: 'placeholder',
-  action: <Button width="100px" label="재전송" />,
+  action: <Button width="100px" label="전송" />,
+};
+
+export const OnlyInput = Template.bind({});
+OnlyInput.args = {
+  label: '이름',
+  placeholder: '이름을 입력해주세요',
+};
+
+export const HasError = Default.bind({});
+HasError.args = {
+  label: '이메일',
+  error: true,
+  errorText: '가입된 이메일이 존재하지 않습니다.',
 };

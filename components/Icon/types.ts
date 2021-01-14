@@ -4,6 +4,7 @@ export interface Props {
   className?: any;
   width?: string;
   height?: string;
+  onClick?: () => void;
 }
 
 export interface WithFillProps extends Props {

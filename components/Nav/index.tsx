@@ -12,18 +12,14 @@ interface Props {
   style?: any;
 }
 
-const Nav: React.FC<Props> = ({ pageName, noBorder, transparent }) => {
+const Nav: React.FC<Props> = ({ noBorder, transparent }) => {
   return (
     <>
       <PCView>
         <PCNav />
       </PCView>
       <MobileView>
-        <MobileNav
-          noBorder={noBorder}
-          pageName={pageName}
-          transparent={transparent}
-        />
+        <MobileNav noBorder={noBorder} transparent={transparent} />
       </MobileView>
     </>
   );

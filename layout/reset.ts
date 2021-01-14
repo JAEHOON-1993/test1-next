@@ -63,6 +63,7 @@ const GlobalStyle = createGlobalStyle`
     transition: 0.08s;
   } */
   input {
+    border: none;
     ::-webkit-outer-spin-button,
     ::-webkit-inner-spin-button {
       -webkit-appearance: none;

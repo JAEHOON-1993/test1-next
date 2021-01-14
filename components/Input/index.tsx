@@ -2,7 +2,6 @@ import React, { useState, ReactNode, Ref } from 'react';
 import styled, { css } from 'styled-components';
 
 import * as T from 'components/Text';
-import theme from 'layout/theme';
 
 export interface Props {
   label?: string;
@@ -22,6 +21,8 @@ export interface Props {
   errorText?: string;
   value?: any;
   action?: any;
+  isNullValue?: boolean;
+  isReadOnly?: boolean;
 }
 
 const InputComponent: React.FC<Props> = ({
@@ -32,7 +33,10 @@ const InputComponent: React.FC<Props> = ({
   disabled,
   InputProps,
   action,
+  error,
   errorText,
+  isNullValue,
+  isReadOnly,
   ...props
 }) => {
   const [text, setText] = useState<string>('');
@@ -51,7 +55,11 @@ const InputComponent: React.FC<Props> = ({
   };
   return (
     <div {...props}>
-      {label && <Label>{label}</Label>}
+      {label && (
+        <Label sm isNullValue={isNullValue} hasError={error}>
+          {label}
+        </Label>
+      )}
       <FlexBox>
         <InputBox>
           <Input
@@ -63,9 +71,16 @@ const InputComponent: React.FC<Props> = ({
             onChange={changeHandler}
             onFocus={onFocus}
             onBlur={onBlur}
+            isNullValue={isNullValue}
+            readOnly={isReadOnly}
+            hasError={error}
           />
           <Hr focused={focused} />
-          {errorText && <ErrorText sm>{errorText}</ErrorText>}
+          {errorText && (
+            <ErrorText sm as="div">
+              {errorText}
+            </ErrorText>
+          )}
         </InputBox>
         {action && <ActionBox>{action}</ActionBox>}
       </FlexBox>
@@ -85,36 +100,67 @@ const FlexBox = styled.div`
   justify-content: center;
   width: 100%;
 `;
+
 const InputBox = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   position: relative;
   width: 100%;
 `;
-const Label = styled(T.Caption)`
-  color: ${theme.color.PRIMARY};
+
+const Label = styled(T.Text)<{ isNullValue?: boolean; hasError?: boolean }>`
+  color: ${(props) => props.theme.color.PRIMARY};
+
+  ${(props) =>
+    props.isNullValue &&
+    css`
+      color: ${(props) => props.theme.color.GRAY3};
+      > span {
+        color: ${(props) => props.theme.color.GRAY3};
+      }
+    `}
+  ${(props) =>
+    props.hasError &&
+    css`
+      color: ${(props) => props.theme.color.WARNING};
+    `}
 `;
-const Input = styled.input`
+
+const Input = styled.input<{ isNullValue?: boolean; hasError?: boolean }>`
   all: unset;
   height: 50px;
   width: 100%;
-  border-bottom: 1.5px solid ${theme.color.GRAY3};
+  border-bottom: 1.5px solid ${(props) => props.theme.color.GRAY3};
 
   font-size: 15px;
   line-height: 1.53;
   letter-spacing: -0.15px;
   /* Tab */
-  ${theme.window.tab} {
+  ${(props) => props.theme.window.tab} {
     font-size: 14px;
     line-height: 1.57;
     letter-spacing: -0.14px;
   }
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.16px;
   }
+
+  ${(props) =>
+    props.isNullValue &&
+    css`
+      > input:disabled {
+        border-bottom: 1px solid ${(props) => props.theme.color.GRAY3};
+        background: none;
+      }
+    `}
+  ${(props) =>
+    props.hasError &&
+    css`
+      border-bottom: 1px solid ${(props) => props.theme.color.WARNING};
+    `}
 `;
 
 const ActionBox = styled.div`
@@ -126,7 +172,7 @@ const Hr = styled.div`
   transition: 0.2s ease;
   width: 0%;
   height: 1.5px;
-  background-color: ${theme.color.PRIMARY};
+  background-color: ${(props) => props.theme.color.PRIMARY};
   position: absolute;
   ${(props: styleProp) =>
     props.focused &&
@@ -134,8 +180,8 @@ const Hr = styled.div`
       width: 100%;
     `}
 `;
+
 const ErrorText = styled(T.Text)`
-  color: ${theme.color.PRIMARY};
-  position: absolute;
-  right: 0;
+  color: ${(props) => props.theme.color.WARNING};
+  margin: 10px 0;
 `;

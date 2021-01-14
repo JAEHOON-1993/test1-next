@@ -34,6 +34,8 @@ export default {
           'box',
           'message',
           'arrow-right',
+          'prev-page-arrow',
+          'next-page-arrow',
         ],
       },
     },
@@ -158,6 +160,16 @@ truck.args = {
   name: 'truck',
 };
 
+export const prevPageArrow = Template.bind({});
+prevPageArrow.args = {
+  name: 'prev-page-arrow',
+};
+
+export const nextPageArrow = Template.bind({});
+nextPageArrow.args = {
+  name: 'next-page-arrow',
+};
+
 export const all = () => {
   return (
     <div style={{ display: 'flex', padding: '30px' }}>
@@ -234,6 +246,15 @@ export const all = () => {
         </div>
         <div>
           <Icon name="truck" /> Truck
+        </div>
+      </FlexWrap>
+
+      <FlexWrap>
+        <div>
+          <Icon name="prev-page-arrow" /> PrevPageArrow
+        </div>
+        <div>
+          <Icon name="next-page-arrow" /> NextPageArrow
         </div>
       </FlexWrap>
     </div>

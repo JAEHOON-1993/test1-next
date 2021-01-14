@@ -59,7 +59,6 @@ const ripple = keyframes`
 `;
 
 const Button = styled.button`
-  all: unset;
   position: relative;
   cursor: pointer;
   overflow: hidden;

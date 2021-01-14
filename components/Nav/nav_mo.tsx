@@ -7,7 +7,6 @@ import Icon from 'components/Icon';
 import {
   NavWrap,
   CustomContainer,
-  PageName,
   Logo,
   MobileLeftBox,
   MobileRightBox,
@@ -15,7 +14,6 @@ import {
 } from './nav.styled';
 
 interface Props {
-  pageName?: string;
   fixed?: boolean;
   transparent?: boolean;
   noBorder?: boolean;
@@ -25,13 +23,11 @@ interface Props {
 const NO_BACK_PATH = ['/', '/chat', '/cart', '/mypage'];
 const SEARCH_PATH = ['/', '/indoor', '/outdoor'];
 
-const Nav: React.FC<Props> = ({ pageName, transparent, noBorder }) => {
+const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
   const router = useRouter();
   const [path, setPath] = useState<string>('/');
   const [fixed, setFixed] = useState<boolean>(false);
   useEffect(() => {
-    setPath(router.pathname);
-    console.log('router.pathname : ', router.pathname);
     console.log(NO_BACK_PATH.indexOf(path));
     console.log(SEARCH_PATH.indexOf(path));
   }, [router]);
@@ -62,14 +58,7 @@ const Nav: React.FC<Props> = ({ pageName, transparent, noBorder }) => {
               />
             </MobileRightBox>
           )}
-          {pageName ? (
-            <PageName lg>{pageName}</PageName>
-          ) : (
-            <Logo
-              onClick={() => router.push('/')}
-              src="/icons/logo_black.png"
-            />
-          )}
+          <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
           <MobileLeftBox>
             {SEARCH_PATH.indexOf(path) > -1 && (
               <Icon

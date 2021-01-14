@@ -33,9 +33,6 @@ const Texts: React.FC<Props> = () => {
         <T.ButtonSmall color={theme.color.SECONDARY}>
           Small with Color
         </T.ButtonSmall>
-        <T.Caption>Caption</T.Caption>
-        <T.Caption bold>Caption with Very Thin Bold</T.Caption>
-        <T.Caption color={theme.color.INFO}>Caption with Color</T.Caption>
       </TextBox>
     </>
   );

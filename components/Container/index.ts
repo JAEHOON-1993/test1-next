@@ -3,40 +3,28 @@
  * @Component
  * @module components.Container
  */
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import theme from 'layout/theme';
 
 interface ContainerProps {
-  mobileNoPadding?: boolean;
+  padding?: string;
 }
 
 const Container = styled.div<ContainerProps>`
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 924px;
+  margin: 0 auto;
+  padding: ${(props) => props.padding && props.padding};
 
-  /* Large PC */
-  width: 1250px;
+  // large pc
+  // width: 1250px;
 
-  /* Small PC */
-  ${theme.window.pc} {
-    width: 950px;
-  }
   /* Tab */
   ${theme.window.tab} {
-    width: 720px;
+    width: 750px;
   }
   /* Mobile */
   ${theme.window.mobile} {
     width: 100%;
-    padding: 0 20px;
-    ${(props) =>
-      props.mobileNoPadding &&
-      css`
-        width: 100%;
-        padding: 0px;
-      `}
   }
 `;
 

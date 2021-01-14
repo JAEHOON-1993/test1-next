@@ -15,7 +15,6 @@ import {
 } from './nav.styled';
 
 type Props = {
-  pageName?: string;
   fixed?: boolean;
   style?: any;
 };

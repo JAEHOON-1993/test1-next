@@ -22,6 +22,11 @@ import TruckIcon from './Truck';
 import BoxIcon from './Box';
 import MessageIcon from './Message';
 import ArrowRightIcon from './ArrowRight';
+import NextPageArrow from './NextPageArrow';
+import PrevPageArrow from './PrevPageArrow';
+import CardIcon from 'components/ColorIcon/Card';
+import CashIcon from 'components/ColorIcon/Cash';
+import EstimateIcon from './Estimate';
 
 export type IconName =
   | 'success'
@@ -46,7 +51,13 @@ export type IconName =
   | 'truck'
   | 'box'
   | 'message'
-  | 'arrow-right';
+  | 'arrow-right'
+  | 'prev-page-arrow'
+  | 'next-page-arrow'
+  | 'inquiry'
+  | 'cash'
+  | 'card'
+  | 'estimate';
 
 export interface IconProps {
   onClick?: any;
@@ -116,6 +127,16 @@ const Icon: React.FC<IconProps> = ({
       return <MessageIcon {...props} />;
     case 'arrow-right':
       return <ArrowRightIcon {...props} />;
+    case 'prev-page-arrow':
+      return <PrevPageArrow {...props} />;
+    case 'next-page-arrow':
+      return <NextPageArrow {...props} />;
+    case 'card':
+      return <CardIcon {...props} />;
+    case 'estimate':
+      return <EstimateIcon {...props} />;
+    case 'cash':
+      return <CashIcon {...props} />;
   }
   return null;
 };

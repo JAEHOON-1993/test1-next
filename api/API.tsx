@@ -8,8 +8,9 @@ import * as AuthAPI from './Auth';
 
 // import isRefreshTokenExpired from "utils/isRefreshTokenExpired";
 
-const refreshURL = 'https://api.the-cult.co.kr/api/v1/mall/refresh';
-const SERVER_URL = 'https://api.the-cult.co.kr/api/v1';
+const SERVER_URL = 'https://api.the-cult.co.kr';
+// const LOCAL_URL = 'http://10.1.178.73:8000'
+const refreshURL = `${SERVER_URL}/api/v1/user/refresh`;
 
 const Axios = axios.create({
   baseURL: SERVER_URL,
