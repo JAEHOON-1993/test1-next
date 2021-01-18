@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import theme from 'layout/theme';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 
 interface CardProps {
   children?: any;

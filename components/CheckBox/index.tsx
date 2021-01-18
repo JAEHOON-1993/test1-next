@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import theme from 'layout/theme';
 
-import Icon from 'components/Icon';
-import * as T from 'components/Text';
+import SystemIcon from 'components/Icons/SystemIcon';
+import * as T from 'components/TypoGraphy';
 
 export interface CheckboxProps {
   checked: boolean;
@@ -18,7 +18,7 @@ export interface CheckboxProps {
 const CheckBox: React.FC<CheckboxProps> = ({ checked, children, ...props }) => {
   return (
     <CheckWrap {...props}>
-      <Icon name="check-box" fill={checked} color={theme.color.PRIMARY} />
+      <SystemIcon name="checkbox" fill={checked} color={theme.color.PRIMARY} />
       {typeof children === 'string' ? (
         <CheckLabel>{children}</CheckLabel>
       ) : (

@@ -5,7 +5,7 @@ import theme from 'layout/theme';
 import useWindowSize from 'utils/useWindowSize';
 
 import Container from 'components/Container';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 
 interface Props {
   noMobile?: boolean;

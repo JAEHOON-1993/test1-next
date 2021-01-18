@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 
 import theme from 'layout/theme';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import { Button, Icon } from './Social.styled';
 import { GOOGLE_LOGIN_URL } from './_settings';
 

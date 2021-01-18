@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import theme from 'layout/theme';
 
-import PrevPageArrow from 'components/Icon/PrevPageArrow';
-import NextPageArrow from 'components/Icon/NextPageArrow';
+import PrevPageArrow from 'components/Icons/SystemIcon/PrevPageArrow';
+import NextPageArrow from 'components/Icons/SystemIcon/NextPageArrow';
 
 interface Props {
   count?: number;

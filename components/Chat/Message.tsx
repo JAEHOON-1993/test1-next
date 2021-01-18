@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import theme from 'layout/theme';
 import { MessageFormatTime } from 'utils/format';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 
 interface CardProps {
   data: any;

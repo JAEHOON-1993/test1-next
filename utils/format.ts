@@ -1,4 +1,4 @@
-export const intcomma = (x: number | string) => {
+export const intComma = (x: number | string) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 

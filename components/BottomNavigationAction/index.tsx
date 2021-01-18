@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import * as T from 'components/Text';
-import Icon, { IconName } from 'components/Icon';
+import * as T from 'components/TypoGraphy';
+import SystemIcon, { IconName } from 'components/Icons/SystemIcon';
 import ButtonBase from 'components/ButtonBase';
 
 interface Props {
@@ -34,7 +34,9 @@ const BottomNavigationAction: React.FC<Props> = ({
   };
   return (
     <Item {...props} onClick={clickHandler}>
-      {icon && <Icon color={theme.color.PRIMARY} fill={active} name={icon} />}
+      {icon && (
+        <SystemIcon color={theme.color.PRIMARY} fill={active} name={icon} />
+      )}
       <T.Text sm>{label}</T.Text>
     </Item>
   );

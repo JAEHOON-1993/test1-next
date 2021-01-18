@@ -1,6 +1,6 @@
 import React from 'react';
 import Router from 'next/router';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import theme from 'layout/theme';
 import { Button, Icon } from './Social.styled';
 

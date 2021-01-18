@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import theme from 'layout/theme';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
   NavWrap,
@@ -27,8 +27,8 @@ const Nav: React.FC<Props> = () => {
         <CustomContainer>
           <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
           <MobileLeftBox>
-            <Icon name="search" color={theme.color.GRAY5} />
-            <Icon
+            <SystemIcon name="search" color={theme.color.GRAY5} />
+            <SystemIcon
               name="qr"
               color={theme.color.GRAY5}
               onClick={() => router.push('/qr')}

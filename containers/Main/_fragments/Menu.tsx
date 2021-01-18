@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import theme from 'layout/theme';
 
-import ColorIcon from 'components/ColorIcon';
-import * as T from 'components/Text';
+import ColorIcon from 'components/Icons/ColorIcon';
+import * as T from 'components/TypoGraphy';
 
 import { Props } from '../types';
 
