@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import theme from 'layout/theme';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
   NavWrap,
@@ -50,8 +50,8 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
         <CustomContainer>
           {NO_BACK_PATH.indexOf(path) < 0 && (
             <MobileRightBox onClick={router.back}>
-              <Icon
-                name="arrow-left"
+              <SystemIcon
+                name="arrowLeft"
                 color={
                   transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
                 }
@@ -61,7 +61,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
           <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
           <MobileLeftBox>
             {SEARCH_PATH.indexOf(path) > -1 && (
-              <Icon
+              <SystemIcon
                 onClick={() => router.push('/search')}
                 style={{ margin: 0 }}
                 name="search"
@@ -70,7 +70,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
                 }
               />
             )}
-            {path === '/' && <Icon name="qr" color={theme.color.GRAY5} />}
+            {path === '/' && <SystemIcon name="qr" color={theme.color.GRAY5} />}
           </MobileLeftBox>
         </CustomContainer>
       </NavWrap>

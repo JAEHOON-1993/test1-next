@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import theme from 'layout/theme';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import Tabs from 'components/Tabs';
 
 interface Props {

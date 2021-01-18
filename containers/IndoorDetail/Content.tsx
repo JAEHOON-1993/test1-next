@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import { intcomma } from 'utils/format';
+import { intComma } from 'utils/format';
 
 import Select from 'components/Select';
 import Button from 'components/Button';
 import Rate from 'components/Rate';
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 
 interface Props {
   fixed?: boolean;
@@ -47,9 +47,9 @@ const ContentContainer: React.FC<Props> = () => {
           </RateBox>
           <DiscountBox>
             <T.Title lg>18%</T.Title>
-            <T.Text>{intcomma(3800)}</T.Text>
+            <T.Text>{intComma(3800)}</T.Text>
           </DiscountBox>
-          <Name lg>{intcomma(3800)}원</Name>
+          <Name lg>{intComma(3800)}원</Name>
           <Hr />
           <ShippingBox>
             <div>
@@ -58,7 +58,7 @@ const ContentContainer: React.FC<Props> = () => {
                 조건에 따라 추가비용 발생 가능
               </T.Text>
             </div>
-            <T.Text color={theme.color.GRAY5}>{intcomma(3000)}원</T.Text>
+            <T.Text color={theme.color.GRAY5}>{intComma(3000)}원</T.Text>
           </ShippingBox>
           <Hr />
           <CutsomSelect

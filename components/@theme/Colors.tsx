@@ -20,7 +20,42 @@ const Colors: React.FC<Props> = () => {
           <p>SECONDARY</p>
           <p>{theme.color.SECONDARY}</p>
         </Color>
+        <Color color={theme.color.TERTIARY}>
+          <div />
+          <p>TERTIARY</p>
+          <p>{theme.color.TERTIARY}</p>
+        </Color>
+        <Color color={theme.color.POINT}>
+          <div />
+          <p>POINT</p>
+          <p>{theme.color.POINT}</p>
+        </Color>
       </ColorBox>
+      <br />
+      <h1>Sub Color</h1>
+      <ColorBox>
+        <Color color={theme.color.PRIMARYSUB}>
+          <div />
+          <p>PRIMARYSUB</p>
+          <p>{theme.color.PRIMARYSUB}</p>
+        </Color>
+        <Color color={theme.color.SECONDARYSUB}>
+          <div />
+          <p>SECONDARYSUB</p>
+          <p>{theme.color.SECONDARYSUB}</p>
+        </Color>
+        <Color color={theme.color.TERTIARYSUB}>
+          <div />
+          <p>TERTIARYSUB</p>
+          <p>{theme.color.TERTIARYSUB}</p>
+        </Color>
+        <Color color={theme.color.POINTSUB}>
+          <div />
+          <p>POINTSUB</p>
+          <p>{theme.color.POINTSUB}</p>
+        </Color>
+      </ColorBox>
+      <br />
       <h1>Gray Scale</h1>
       <ColorBox>
         <Color color={theme.color.BLACK}>
@@ -59,33 +94,39 @@ const Colors: React.FC<Props> = () => {
           <p>{theme.color.GRAY0}</p>
         </Color>
         <Color color={theme.color.WHITE}>
-          <div style={{ border: `1px solid ${theme.color.GRAY3}` }} />
+          <div />
           <p>WHITE</p>
           <p>{theme.color.WHITE}</p>
         </Color>
       </ColorBox>
+      <br />
       <h1>Alert Color</h1>
       <ColorBox>
-        <Color color={theme.color.SUCCESS}>
-          <div />
-          <p>SUCCESS</p>
-          <p>{theme.color.SUCCESS}</p>
-        </Color>
-        <Color color={theme.color.DANGER}>
-          <div />
-          <p>DANGER</p>
-          <p>{theme.color.DANGER}</p>
-        </Color>
         <Color color={theme.color.WARNING}>
           <div />
           <p>WARNING</p>
           <p>{theme.color.WARNING}</p>
         </Color>
-        <Color color={theme.color.INFO}>
+        <Color color={theme.color.SUCCESS}>
           <div />
-          <p>INFO</p>
-          <p>{theme.color.INFO}</p>
+          <p>SUCCESS / INFO</p>
+          <p>{theme.color.SUCCESS}</p>
         </Color>
+      </ColorBox>
+      <br />
+      <h1>Gradient</h1>
+      <ColorBox>
+        <GradientColor
+          first={theme.color.PRIMARY}
+          second={theme.color.GRAY0}
+          to="right"
+        >
+          <div />
+          <p>Gradient 1</p>
+          <p>
+            right, {theme.color.PRIMARY}, {theme.color.GRAY0}
+          </p>
+        </GradientColor>
       </ColorBox>
     </>
   );
@@ -97,10 +138,16 @@ interface styleProps {
   color: string;
 }
 
+interface gradientProps {
+  first: string;
+  second: string;
+  to: string;
+}
 const ColorBox = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const Color = styled.div`
   margin-bottom: 10px;
   > div {
@@ -111,6 +158,27 @@ const Color = styled.div`
     margin-bottom: 10px;
     background-color: ${(props: styleProps) => props.color};
   }
+  > p {
+    :nth-of-type(1) {
+      margin: 0px;
+    }
+    :nth-of-type(2) {
+      margin: 0px;
+      color: ${theme.color.GRAY5};
+    }
+  }
+`;
+
+const GradientColor = styled.div<gradientProps>`
+  > div {
+    width: 300px;
+    height: 100px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: ${(props) =>
+      `linear-gradient(to ${props.to}, ${props.first}, ${props.second})`};
+  }
+
   > p {
     :nth-of-type(1) {
       margin: 0px;

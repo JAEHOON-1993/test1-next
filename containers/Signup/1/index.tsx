@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import Router from 'next/router';
 
 // components
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import ButtonBaseComponent from 'components/ButtonBase';
-import IconComponent from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import { Container, Nav, TextBox, Input, Button } from '../index.styled';
 
@@ -54,7 +54,7 @@ const Signup1Container: React.FC<Props> = () => {
     <Container>
       <Nav>
         <ButtonBaseComponent onClick={() => Router.push('/login')}>
-          <IconComponent name="arrow-left" color="#585858" />
+          <SystemIcon name="arrowLeft" />
         </ButtonBaseComponent>
       </Nav>
       <TextBox>

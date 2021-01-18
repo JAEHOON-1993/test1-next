@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import theme from 'layout/theme';
 
 import { Props } from './types';

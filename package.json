@@ -23,7 +23,6 @@
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-flip-toolkit": "^7.0.13",
-    "react-kakao-login": "^1.2.2",
     "react-select": "^3.1.0",
     "react-slick": "^0.27.13",
     "slick-carousel": "^1.8.1",

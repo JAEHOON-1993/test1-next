@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import { Card } from 'components/Card';
 import RatioBox from 'components/RatioBox';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 interface Props {
   children?: any;
@@ -24,7 +24,7 @@ const ContentCard: React.FC<Props> = (props) => {
         <b>18%</b> Price
       </PriceText>
       <RateBox>
-        <Icon name="star" color={theme.color.PRIMARY} />
+        <SystemIcon name="star" color={theme.color.PRIMARY} />
         <p>5.0</p>
       </RateBox>
     </CustomCard>

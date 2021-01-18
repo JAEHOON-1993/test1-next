@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import theme from 'layout/theme';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import { Card, CardHeader } from 'components/Card';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 interface Props {
   children?: any;
@@ -17,7 +17,7 @@ const OutlineCard: React.FC<Props> = (props) => {
     <AlertBox {...props}>
       <CardHeader
         title="주의사항"
-        action={<Icon name="alert" color={theme.color.PRIMARY} />}
+        action={<SystemIcon name="alert" color={theme.color.PRIMARY} />}
       />
       <T.Text sm>문제가 발생하는 경우 고객센터로 연락주시기 바랍니다.</T.Text>
     </AlertBox>

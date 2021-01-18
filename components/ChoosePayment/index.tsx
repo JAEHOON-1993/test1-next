@@ -4,8 +4,8 @@ import { observer } from 'mobx-react';
 
 import theme from 'layout/theme';
 
-import Icon from 'components/Icon';
-import { Title, Text } from 'components/Text';
+import SystemIcon from 'components/Icons/SystemIcon';
+import { Title, Text } from 'components/TypoGraphy';
 
 const ChoosePayment = observer(() => {
   const [type, setType] = useState<number>(0);
@@ -22,7 +22,7 @@ const ChoosePayment = observer(() => {
             setType(0);
           }}
         >
-          <Icon
+          <SystemIcon
             name="card"
             style={{
               fill: theme.color.PRIMARY,
@@ -38,7 +38,7 @@ const ChoosePayment = observer(() => {
             setType(1);
           }}
         >
-          <Icon
+          <SystemIcon
             name="cash"
             style={{
               fill: theme.color.PRIMARY,
@@ -54,7 +54,7 @@ const ChoosePayment = observer(() => {
             setType(2);
           }}
         >
-          <Icon
+          <SystemIcon
             name="inquiry"
             style={{
               fill: theme.color.PRIMARY,

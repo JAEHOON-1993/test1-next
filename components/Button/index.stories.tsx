@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import theme from 'layout/theme';
 import Button, { ButtonProps } from 'components/Button';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import NaverLogin from 'components/Social/NaverLogin';
 import KakaoLogin from 'components/Social/KakaoLogin';
@@ -39,7 +39,9 @@ DefaultWithIcon.args = {
   width: '200px',
   label: 'button',
   color: theme.color.PRIMARY,
-  icon: <Icon name="alert" style={{ fill: 'white', marginRight: '10px' }} />,
+  icon: (
+    <SystemIcon name="alert" style={{ fill: 'white', marginRight: '10px' }} />
+  ),
 };
 
 export const Outline = Template.bind({});

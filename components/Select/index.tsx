@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Select from 'react-select';
 
 import theme from 'layout/theme';
-import { Text } from 'components/Text';
+import { Text } from 'components/TypoGraphy';
 
 export const customStyles = {
   menu: (provided: any) => ({

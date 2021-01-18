@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import { intcomma } from 'utils/format';
+import { intComma } from 'utils/format';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import { Card, CardHeader } from 'components/Card';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 interface Props {
   children?: any;
@@ -18,21 +18,21 @@ const ItemCard: React.FC<Props> = (props) => {
     <ItemBox {...props}>
       <CardHeader
         subTitle="그레이 / 50 X 50 cm"
-        action={<Icon name="small-x" color={theme.color.GRAY4} />}
+        action={<SystemIcon name="close" color={theme.color.GRAY4} />}
       />
       <Footer>
         <ButtonBox>
           <div>
-            <Icon name="small-minus" color={theme.color.GRAY4} />
+            <SystemIcon name="smallMinus" color={theme.color.GRAY4} />
           </div>
           <div>
             <T.Text>{0}</T.Text>
           </div>
           <div>
-            <Icon name="small-plus" color={theme.color.GRAY4} />
+            <SystemIcon name="smallPlus" color={theme.color.GRAY4} />
           </div>
         </ButtonBox>
-        <T.Title>{intcomma(3200)}원</T.Title>
+        <T.Title>{intComma(3200)}원</T.Title>
       </Footer>
     </ItemBox>
   );

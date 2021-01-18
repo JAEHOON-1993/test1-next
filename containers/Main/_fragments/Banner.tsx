@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import theme from 'layout/theme';
 
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 
 import { Props } from '../types';
 

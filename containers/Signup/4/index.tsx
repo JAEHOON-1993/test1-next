@@ -3,9 +3,9 @@ import Router from 'next/router';
 
 import SignupStore from 'stores/Signup';
 
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import ButtonBaseComponent from 'components/ButtonBase';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import { Container, Nav, TextBox, Button, AvatarBox } from '../index.styled';
 
@@ -33,7 +33,7 @@ const Signup4Container: React.FC<Props> = () => {
     <Container style={{ display: 'flex' }}>
       <Nav>
         <ButtonBaseComponent onClick={() => Router.push('/signup/2')}>
-          <Icon name="arrow-left" color="#585858" />
+          <SystemIcon name="arrowLeft" />
         </ButtonBaseComponent>
       </Nav>
       <TextBox>
@@ -54,7 +54,7 @@ const Signup4Container: React.FC<Props> = () => {
       >
         <div />
         <span>
-          <Icon name="plus" color="#fff" />
+          <SystemIcon name="plus" color="#fff" />
         </span>
       </AvatarBox>
       <T.Text>{SignupStore.nickname}</T.Text>

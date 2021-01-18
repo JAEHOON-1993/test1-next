@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Text } from 'components/Text';
+import { Text } from 'components/TypoGraphy';
 
 interface styleProps {
   color?: string;

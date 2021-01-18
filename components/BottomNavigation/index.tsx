@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import { IconName } from 'components/Icon';
 
 interface Props {
   style?: any;
   children?: any;
   active?: number;
   setActive?: any;
-  icon?: IconName;
 }
 
 const BottomNavigation: React.FC<Props> = ({

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Router from 'next/router';
 // components
-import * as T from 'components/Text';
+import * as T from 'components/TypoGraphy';
 import ButtonBaseComponent from 'components/ButtonBase';
-import IconComponent from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 import { formatTimer } from 'utils/format';
 
@@ -98,7 +98,7 @@ const Signup2Container: React.FC<Props> = () => {
     <Container style={{ display: 'flex' }}>
       <Nav>
         <ButtonBaseComponent onClick={() => Router.push('/signup/1')}>
-          <IconComponent name="arrow-left" color="#585858" />
+          <SystemIcon name="arrowLeft" />
         </ButtonBaseComponent>
       </Nav>
       <TextBox>

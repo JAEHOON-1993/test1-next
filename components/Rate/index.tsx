@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from 'layout/theme';
-import Icon from 'components/Icon';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 interface Props {
   count?: number;
@@ -40,7 +40,7 @@ const Rate: React.FC<Props> = ({
   return (
     <RateBox {...props}>
       {data.map((item, idx) => {
-        return <Icon key={idx} name={item} color={theme.color.PRIMARY} />;
+        return <SystemIcon key={idx} name={item} color={theme.color.PRIMARY} />;
       })}
     </RateBox>
   );

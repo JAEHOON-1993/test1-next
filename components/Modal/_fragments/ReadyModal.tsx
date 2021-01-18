@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 import theme from 'layout/theme';
 import Modal, { ModalProps } from 'components/Modal';
-import SuccessIcon from 'components/Icon/Success';
+import SystemIcon from 'components/Icons/SystemIcon';
 
 const ReadyModal: React.FC<ModalProps> = ({ ...props }) => {
   return (
     <Modal {...props} slide="bottom">
       <ModalBody>
         <p>준비중입니다</p>
-        <SuccessIcon color={theme.color.PRIMARY} />
+        <SystemIcon name="check" color={theme.color.PRIMARY} />
         <p>
           빠른 시일 내에 서비스 준비 후<br />
           찾아뵙겠습니다.
