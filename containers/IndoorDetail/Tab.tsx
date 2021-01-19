@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 import * as T from 'components/TypoGraphy';
 import Tabs from 'components/Tabs';
 
@@ -50,10 +48,10 @@ const Tab = styled.div`
       margin-left: 3px;
     }
   }
-  ${theme.window.tab} {
+  ${(props) => props.theme.window.tab} {
     width: 200px;
   }
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     flex-direction: column;
     width: 110px;
     height: 65px;

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeConsumer } from 'styled-components';
 import { observer } from 'mobx-react';
-
-import theme from 'layout/theme';
 
 import SystemIcon from 'components/Icons/SystemIcon';
 import { Title, Text } from 'components/TypoGraphy';
@@ -11,61 +9,65 @@ const ChoosePayment = observer(() => {
   const [type, setType] = useState<number>(0);
 
   return (
-    <>
-      <SubTitleBox>
-        <Title bold>결제수단</Title>
-      </SubTitleBox>
-      <SelectBox>
-        <Select
-          active={type === 0}
-          onClick={() => {
-            setType(0);
-          }}
-        >
-          <SystemIcon
-            name="card"
-            style={{
-              fill: theme.color.PRIMARY,
-              width: '50px',
-              height: '50px',
-            }}
-          />
-          <Text>신용카드</Text>
-        </Select>
-        <Select
-          active={type === 1}
-          onClick={() => {
-            setType(1);
-          }}
-        >
-          <SystemIcon
-            name="cash"
-            style={{
-              fill: theme.color.PRIMARY,
-              width: '50px',
-              height: '50px',
-            }}
-          />
-          <Text>계좌이체</Text>
-        </Select>
-        <Select
-          active={type === 2}
-          onClick={() => {
-            setType(2);
-          }}
-        >
-          <SystemIcon
-            name="inquiry"
-            style={{
-              fill: theme.color.PRIMARY,
-              width: '50px',
-              height: '50px',
-            }}
-          />
-          <Text>신청만 진행 (후결제)</Text>
-        </Select>
-      </SelectBox>
-    </>
+    <ThemeConsumer>
+      {(theme) => (
+        <>
+          <SubTitleBox>
+            <Title bold>결제수단</Title>
+          </SubTitleBox>
+          <SelectBox>
+            <Select
+              active={type === 0}
+              onClick={() => {
+                setType(0);
+              }}
+            >
+              <SystemIcon
+                name="card"
+                style={{
+                  fill: theme.color.PRIMARY,
+                  width: '50px',
+                  height: '50px',
+                }}
+              />
+              <Text>신용카드</Text>
+            </Select>
+            <Select
+              active={type === 1}
+              onClick={() => {
+                setType(1);
+              }}
+            >
+              <SystemIcon
+                name="cash"
+                style={{
+                  fill: theme.color.PRIMARY,
+                  width: '50px',
+                  height: '50px',
+                }}
+              />
+              <Text>계좌이체</Text>
+            </Select>
+            <Select
+              active={type === 2}
+              onClick={() => {
+                setType(2);
+              }}
+            >
+              <SystemIcon
+                name="inquiry"
+                style={{
+                  fill: theme.color.PRIMARY,
+                  width: '50px',
+                  height: '50px',
+                }}
+              />
+              <Text>신청만 진행 (후결제)</Text>
+            </Select>
+          </SelectBox>
+        </>
+      )}
+    </ThemeConsumer>
   );
 });
 

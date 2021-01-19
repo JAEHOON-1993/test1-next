@@ -1,13 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const HamburgerIcon = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-  ...props
-}: Props) => {
+const HamburgerIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -18,13 +13,13 @@ const HamburgerIcon = ({
       viewBox="0 0 24 24"
     >
       <g id="그룹_37417" transform="translate(-489 -368)">
-        <path
+        <Path
           id="사각형_28746"
           d="M0 0H18V2.5H0z"
           fill={color}
           transform="translate(492 373)"
         />
-        <path
+        <Path
           id="사각형_29534"
           d="M0 0H18V2.5H0z"
           fill={color}
@@ -37,3 +32,7 @@ const HamburgerIcon = ({
 };
 
 export default HamburgerIcon;
+
+const Path = styled.path`
+  fill: ${(props) => props.theme.color.GRAY4};
+`;

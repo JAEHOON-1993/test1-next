@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import ButtonComponent from 'components/Button';
-import theme from 'layout/theme';
 
 interface Props {
   round?: boolean;
@@ -14,7 +13,7 @@ interface Props {
 export const Hr = styled.div`
   width: 1px;
   height: 26px;
-  background-color: ${theme.color.WHITE};
+  background-color: ${(props) => props.theme.color.WHITE};
   margin-left: 5px;
   margin-right: 15px;
 `;
@@ -64,7 +63,7 @@ export const Button = styled(ButtonComponent)`
     props.round &&
     css`
       border-radius: 100px;
-      background-color: ${theme.color.WHITE};
+      background-color: ${(props) => props.theme.color.WHITE};
       box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
       justify-content: center;
     `}

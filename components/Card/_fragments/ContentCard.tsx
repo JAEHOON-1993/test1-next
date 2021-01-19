@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import * as T from 'components/TypoGraphy';
 import { Card } from 'components/Card';
 import RatioBox from 'components/RatioBox';
@@ -14,20 +13,24 @@ interface Props {
 
 const ContentCard: React.FC<Props> = (props) => {
   return (
-    <CustomCard {...props}>
-      <RatioBox src="https://picsum.photos/200" />
-      <T.Text sm style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
-        Text Small
-      </T.Text>
-      <T.Title>Title</T.Title>
-      <PriceText>
-        <b>18%</b> Price
-      </PriceText>
-      <RateBox>
-        <SystemIcon name="star" color={theme.color.PRIMARY} />
-        <p>5.0</p>
-      </RateBox>
-    </CustomCard>
+    <ThemeConsumer>
+      {(theme) => (
+        <CustomCard {...props}>
+          <RatioBox src="https://picsum.photos/200" />
+          <T.Text sm style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
+            Text Small
+          </T.Text>
+          <T.Title>Title</T.Title>
+          <PriceText>
+            <b>18%</b> Price
+          </PriceText>
+          <RateBox>
+            <SystemIcon name="star" color={theme.color.PRIMARY} />
+            <p>5.0</p>
+          </RateBox>
+        </CustomCard>
+      )}
+    </ThemeConsumer>
   );
 };
 export default ContentCard;
@@ -56,7 +59,7 @@ const PriceText = styled.p`
   line-height: 1.45;
   letter-spacing: -0.2px;
   > b {
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
   }
 `;
 

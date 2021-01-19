@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 import * as T from 'components/TypoGraphy';
 import { Card, CardHeader } from 'components/Card';
 
@@ -25,23 +23,23 @@ export default ShippingCard;
 
 const ShippingBox = styled(Card)`
   border-radius: 5px;
-  border: 1px solid ${theme.color.PRIMARY};
-  background-color: ${theme.color.WHITE};
+  border: 1px solid ${(props) => props.theme.color.PRIMARY};
+  background-color: ${(props) => props.theme.color.WHITE};
   padding: 12px;
   h1,
   p {
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
   }
 `;
 
 const EditText = styled(T.Title)`
-  color: ${theme.color.BLACK} !important;
+  color: ${(props) => props.theme.color.BLACK} !important;
   white-space: nowrap;
   font-weight: normal;
   cursor: pointer;
 `;
 
 const Text = styled(T.Text)`
-  color: ${theme.color.GRAY4} !important;
+  color: ${(props) => props.theme.color.GRAY4} !important;
   margin-top: 5px;
 `;

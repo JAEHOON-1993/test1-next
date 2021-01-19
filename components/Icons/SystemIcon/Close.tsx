@@ -1,13 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const CloseIcon = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-  ...props
-}: Props) => {
+const CloseIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -18,20 +13,20 @@ const CloseIcon = ({
       viewBox="0 0 24 24"
     >
       <g id="icon-arrow" transform="translate(2.496 4.178)">
-        <path
+        <PathBox
           id="line"
           d="M0 0L19.799 0"
           fill="none"
-          stroke={theme.color.GRAY4}
+          stroke={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="rotate(45 .63 2.54)"
         />
-        <path
+        <PathBox
           id="line-2"
           d="M0 0L19.799 0"
           fill="none"
-          stroke={theme.color.GRAY4}
+          stroke={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="rotate(135 7.928 3.459)"
@@ -45,3 +40,7 @@ const CloseIcon = ({
 };
 
 export default CloseIcon;
+
+const PathBox = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

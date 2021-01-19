@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
 import Modal, { ModalProps } from 'components/Modal';
 
 const AddImageModal: React.FC<ModalProps> = ({ ...props }) => {
@@ -23,7 +22,7 @@ const AddImageModal: React.FC<ModalProps> = ({ ...props }) => {
 export default AddImageModal;
 
 const ModalBody = styled.div`
-  background-color: ${theme.color.WHITE};
+  background-color: ${(props) => props.theme.color.WHITE};
   width: 345px;
   height: 111px;
   border-radius: 10px;
@@ -33,15 +32,15 @@ const ModalBody = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
     :nth-of-type(1) {
-      border-bottom: 1px solid ${theme.color.GRAY4};
+      border-bottom: 1px solid ${(props) => props.theme.color.GRAY4};
     }
   }
 `;
 
 const CloseButton = styled.div`
-  background-color: ${theme.color.WHITE};
+  background-color: ${(props) => props.theme.color.WHITE};
   width: 345px;
   height: 55px;
   border-radius: 10px;
@@ -52,7 +51,7 @@ const CloseButton = styled.div`
   justify-content: center;
   cursor: pointer;
   > p {
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
     font-weight: bold;
   }
 `;

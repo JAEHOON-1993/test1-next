@@ -11,7 +11,7 @@ export interface ButtonProps {
   children?: any;
 }
 
-const ButtonComponent: React.FC<ButtonProps> = ({
+const ButtonBaseComponent: React.FC<ButtonProps> = ({
   children,
   onClick,
   ...props
@@ -38,14 +38,14 @@ const ButtonComponent: React.FC<ButtonProps> = ({
     }
   };
   return (
-    <Button ref={buttonRef} onClick={clickHandler} {...props}>
+    <ButtonBase ref={buttonRef} onClick={clickHandler} {...props}>
       {children}
       <span ref={rippleRef} />
-    </Button>
+    </ButtonBase>
   );
 };
 
-export default ButtonComponent;
+export default ButtonBaseComponent;
 
 interface styleProps {
   disabled?: boolean;
@@ -58,7 +58,7 @@ const ripple = keyframes`
   }
 `;
 
-const Button = styled.button`
+const ButtonBase = styled.button`
   position: relative;
   cursor: pointer;
   overflow: hidden;

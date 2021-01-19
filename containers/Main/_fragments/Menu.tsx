@@ -2,8 +2,6 @@ import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 import ColorIcon from 'components/Icons/ColorIcon';
 import * as T from 'components/TypoGraphy';
 
@@ -93,7 +91,7 @@ const Item = styled.div`
   align-items: center;
   justify-content: center;
   > div {
-    background-color: ${theme.color.GRAY2};
+    background-color: ${(props) => props.theme.color.GRAY2};
     width: 76px;
     height: 76px;
     display: flex;
@@ -103,7 +101,7 @@ const Item = styled.div`
     margin-bottom: 5px;
   }
   > p {
-    color: ${theme.color.GRAY4};
+    color: ${(props) => props.theme.color.GRAY4};
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {

@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import theme from 'layout/theme';
-
 import Container from 'components/Container';
 import * as T from 'components/TypoGraphy';
 
@@ -14,7 +12,7 @@ interface styleProps {
 
 export const PageName = styled(T.Text)`
   position: absolute;
-  color: ${theme.color.BLACK};
+  color: ${(props) => props.theme.color.BLACK};
   font-weight: bold;
 `;
 export const EmptyBox = styled.div`
@@ -25,20 +23,21 @@ export const EmptyBox = styled.div`
   }
 `;
 
-export const NavWrap = styled.div`
+export const NavWrap = styled.div<styleProps>`
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.BACKGROUND};
   z-index: 9999;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${(props) => props.theme.color.WHITE};
   /* Mobile */
   @media screen and (max-width: 767.98px) {
     height: 50px;
-    border-bottom: ${(props: styleProps) =>
-      props.noBorder ? '0px' : '1px solid #eee'};
+    border-bottom: ${(props) =>
+      props.noBorder ? '0px' : `1px solid ${props.theme.color.WHITE}`};
   }
-  ${(props: styleProps) =>
+
+  ${(props) =>
     props.transparent &&
     css`
       background: linear-gradient(
@@ -48,16 +47,15 @@ export const NavWrap = styled.div`
       );
 
       transition: 0.4s;
-      ${(props: styleProps) =>
-        props.fixed &&
-        css`
-          background: none;
-          background-color: #fff;
-        `}
+      ${props.fixed &&
+      css`
+        background: none;
+        background-color: ${props.theme.BACKGROUND};
+      `}
     `}
 
   /*QR Nav*/
-  ${(props: styleProps) =>
+  ${(props) =>
     props.isQR &&
     css`
       position: absolute;
@@ -138,7 +136,7 @@ export const MobileRightBox = styled.div`
 `;
 
 export const LeftBox = styled.div`
-  border-left: 1px solid ${theme.color.GRAY5};
+  border-left: 1px solid ${(props) => props.theme.color.GRAY5};
   margin-left: 20px;
   display: flex;
   /* Mobile */
@@ -149,7 +147,7 @@ export const LeftBox = styled.div`
     font-size: 15px;
     margin-left: 20px;
     text-decoration: none;
-    color: ${theme.color.GRAY5};
+    color: ${(props) => props.theme.color.GRAY5};
     font-weight: bold;
   }
 `;

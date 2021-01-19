@@ -45,10 +45,5 @@ const GradientWrap = styled.div<gradientStyleProps>`
   height: 100%;
   background: ${(props) =>
     `linear-gradient(to ${props.to}, ${props.first}, ${props.second})`};
-  /* ${(props) =>
-    props.setColor &&
-    css`
-      background: ${(props) =>
-        `linear-gradient(to ${props.setColor[0]}, ${props.setColor[1]}, ${props.setColor[2]})`};
-    `} */
+  color: #fff;
 `;

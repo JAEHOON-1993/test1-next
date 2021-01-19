@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import { intComma } from 'utils/format';
 
 import Select from 'components/Select';
@@ -27,68 +26,72 @@ const sizeOptions = [
 
 const ContentContainer: React.FC<Props> = () => {
   return (
-    <>
-      <ContentBox>
-        <Image src="https://picsum.photos/200" />
-        <Content>
-          <UserInfo>
-            <img src="/images/profile_default.png" />
-            <div>
-              <T.Title>ArchDica</T.Title>
-              <T.Text sm>아키디카 디지털 카탈로그</T.Text>
-            </div>
-          </UserInfo>
-          <Hr />
-          <Name lg>다용도 타일 카펫</Name>
-          <Hr />
-          <RateBox>
-            <Rate value={3.5} />
-            <T.Title>3.5</T.Title>
-          </RateBox>
-          <DiscountBox>
-            <T.Title lg>18%</T.Title>
-            <T.Text>{intComma(3800)}</T.Text>
-          </DiscountBox>
-          <Name lg>{intComma(3800)}원</Name>
-          <Hr />
-          <ShippingBox>
-            <div>
-              <T.Text>일반택배</T.Text>
-              <T.Text sm color={theme.color.GRAY5}>
-                조건에 따라 추가비용 발생 가능
-              </T.Text>
-            </div>
-            <T.Text color={theme.color.GRAY5}>{intComma(3000)}원</T.Text>
-          </ShippingBox>
-          <Hr />
-          <CutsomSelect
-            isSearchable={false}
-            options={options}
-            placeholder="색상"
-          />
-          <CutsomSelect
-            isSearchable={false}
-            options={sizeOptions}
-            placeholder="사이즈"
-          />
-          <PriceBox>
-            <T.Text>
-              총 수량 <b style={{ color: theme.color.PRIMARY }}>0</b> 개
-            </T.Text>
-            <div>
-              <T.Text>합계</T.Text>
-              <T.Title>0원</T.Title>
-            </div>
-          </PriceBox>
-          <ButtonBox>
-            <Button outline round label="견적상담" />
-            <Button outline round label="장바구니에 담기" />
-            <Button round label="지금 구매하기" />
-          </ButtonBox>
-          <MobileHr />
-        </Content>
-      </ContentBox>
-    </>
+    <ThemeConsumer>
+      {(theme) => (
+        <>
+          <ContentBox>
+            <Image src="https://picsum.photos/200" />
+            <Content>
+              <UserInfo>
+                <img src="/images/profile_default.png" />
+                <div>
+                  <T.Title>ArchDica</T.Title>
+                  <T.Text sm>아키디카 디지털 카탈로그</T.Text>
+                </div>
+              </UserInfo>
+              <Hr />
+              <Name lg>다용도 타일 카펫</Name>
+              <Hr />
+              <RateBox>
+                <Rate value={3.5} />
+                <T.Title>3.5</T.Title>
+              </RateBox>
+              <DiscountBox>
+                <T.Title lg>18%</T.Title>
+                <T.Text>{intComma(3800)}</T.Text>
+              </DiscountBox>
+              <Name lg>{intComma(3800)}원</Name>
+              <Hr />
+              <ShippingBox>
+                <div>
+                  <T.Text>일반택배</T.Text>
+                  <T.Text sm color={theme.color.GRAY5}>
+                    조건에 따라 추가비용 발생 가능
+                  </T.Text>
+                </div>
+                <T.Text color={theme.color.GRAY5}>{intComma(3000)}원</T.Text>
+              </ShippingBox>
+              <Hr />
+              <CutsomSelect
+                isSearchable={false}
+                options={options}
+                placeholder="색상"
+              />
+              <CutsomSelect
+                isSearchable={false}
+                options={sizeOptions}
+                placeholder="사이즈"
+              />
+              <PriceBox>
+                <T.Text>
+                  총 수량 <b style={{ color: theme.color.PRIMARY }}>0</b> 개
+                </T.Text>
+                <div>
+                  <T.Text>합계</T.Text>
+                  <T.Title>0원</T.Title>
+                </div>
+              </PriceBox>
+              <ButtonBox>
+                <Button outline round label="견적상담" />
+                <Button outline round label="장바구니에 담기" />
+                <Button round label="지금 구매하기" />
+              </ButtonBox>
+              <MobileHr />
+            </Content>
+          </ContentBox>
+        </>
+      )}
+    </ThemeConsumer>
   );
 };
 

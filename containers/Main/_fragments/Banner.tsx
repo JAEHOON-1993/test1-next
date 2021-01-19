@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 import RatioBox from 'components/RatioBox';
 import * as T from 'components/TypoGraphy';
 
@@ -42,12 +40,12 @@ const PageNumber = styled.div`
   width: 40px;
   height: 20px;
   border-radius: 10px;
-  background-color: #000a;
+  background-color: ${(props) => props.theme.BACKGROUND};
   display: flex;
   align-items: center;
   justify-content: center;
   > p {
-    color: ${theme.color.WHITE};
+    color: ${(props) => props.theme.color.WHITE};
   }
   /* Large PC */
   right: 20px;

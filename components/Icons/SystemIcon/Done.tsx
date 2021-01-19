@@ -1,13 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const DoneIcon = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-  ...props
-}: Props) => {
+const DoneIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -17,7 +12,7 @@ const DoneIcon = ({
       height={height}
       viewBox="0 0 24 24"
     >
-      <path
+      <Path
         fill="none"
         stroke={color}
         strokeLinecap="round"
@@ -32,3 +27,7 @@ const DoneIcon = ({
 };
 
 export default DoneIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

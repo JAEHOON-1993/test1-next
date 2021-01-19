@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 
-import theme from 'layout/theme';
 import useWindowSize from 'utils/useWindowSize';
 
 import Container from 'components/Container';
@@ -82,9 +81,9 @@ interface styleProps {
 
 const TabsBox = styled.div`
   z-index: 999;
-  border-bottom: 1px solid ${theme.color.GRAY1};
+  border-bottom: 1px solid ${(props) => props.theme.color.GRAY1};
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     > div {
       width: 100%;
       padding: 0px;
@@ -106,7 +105,7 @@ const List = styled.div`
     width: 0px;
   }
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     margin: auto;
   }
   ${(props: styleProps) =>
@@ -129,7 +128,7 @@ const Item = styled.div`
   ${(props: styleProps) =>
     props.active &&
     css`
-      color: ${theme.color.PRIMARY};
+      color: ${(props) => props.theme.color.PRIMARY};
     `}
 `;
 
@@ -140,5 +139,5 @@ const ActiveBar = styled.div`
   bottom: 0px;
   width: 57px;
   height: 3px;
-  background-color: ${theme.color.PRIMARY};
+  background-color: ${(props) => props.theme.color.PRIMARY};
 `;

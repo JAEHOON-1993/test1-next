@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { ThemeConsumer } from 'styled-components';
 import { useRouter } from 'next/router';
 
-import theme from 'layout/theme';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -45,37 +45,50 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
     };
   }, []);
   return (
-    <>
-      <NavWrap noBorder={noBorder} transparent={transparent} fixed={fixed}>
-        <CustomContainer>
-          {NO_BACK_PATH.indexOf(path) < 0 && (
-            <MobileRightBox onClick={router.back}>
-              <SystemIcon
-                name="arrowLeft"
-                color={
-                  transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
-                }
+    <ThemeConsumer>
+      {(theme) => (
+        <>
+          <NavWrap noBorder={noBorder} transparent={transparent} fixed={fixed}>
+            <CustomContainer>
+              {NO_BACK_PATH.indexOf(path) < 0 && (
+                <MobileRightBox onClick={router.back}>
+                  <SystemIcon
+                    name="arrowLeft"
+                    color={
+                      transparent && !fixed
+                        ? theme.color.WHITE
+                        : theme.color.GRAY5
+                    }
+                  />
+                </MobileRightBox>
+              )}
+              <Logo
+                onClick={() => router.push('/')}
+                src="/icons/logo_black.png"
               />
-            </MobileRightBox>
-          )}
-          <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
-          <MobileLeftBox>
-            {SEARCH_PATH.indexOf(path) > -1 && (
-              <SystemIcon
-                onClick={() => router.push('/search')}
-                style={{ margin: 0 }}
-                name="search"
-                color={
-                  transparent && !fixed ? theme.color.WHITE : theme.color.GRAY5
-                }
-              />
-            )}
-            {path === '/' && <SystemIcon name="qr" color={theme.color.GRAY5} />}
-          </MobileLeftBox>
-        </CustomContainer>
-      </NavWrap>
-      <EmptyBox />
-    </>
+              <MobileLeftBox>
+                {SEARCH_PATH.indexOf(path) > -1 && (
+                  <SystemIcon
+                    onClick={() => router.push('/search')}
+                    style={{ margin: 0 }}
+                    name="search"
+                    color={
+                      transparent && !fixed
+                        ? theme.color.WHITE
+                        : theme.color.GRAY5
+                    }
+                  />
+                )}
+                {path === '/' && (
+                  <SystemIcon name="qr" color={theme.color.GRAY5} />
+                )}
+              </MobileLeftBox>
+            </CustomContainer>
+          </NavWrap>
+          <EmptyBox />
+        </>
+      )}
+    </ThemeConsumer>
   );
 };
 

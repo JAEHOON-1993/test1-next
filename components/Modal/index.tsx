@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
 export interface ModalProps {
@@ -7,6 +7,9 @@ export interface ModalProps {
   slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   children?: any;
+  noDim?: boolean;
+  noTrans?: boolean;
+  dimOpacity?: string;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -15,10 +18,47 @@ const ModalComponent: React.FC<ModalProps> = ({
   position,
   closeModal,
   slide,
+  noDim,
+  dimOpacity,
   ...props
 }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const onBodyClick = (event: any) => {
+      if (ref.current && ref.current.contains(event.target)) {
+        return;
+      }
+      closeModal();
+    };
+
+    document.body.addEventListener('click', onBodyClick, { capture: true });
+    return () => {
+      document.body.removeEventListener('click', onBodyClick, {
+        capture: true,
+      });
+    };
+  }, []);
+
+  if (noDim) {
+    return (
+      <Modal
+        visible={visible}
+        slide={slide}
+        position={position}
+        ref={ref}
+        noDim={noDim}
+      >
+        {children}
+      </Modal>
+    );
+  }
   return (
-    <Dim {...props} visible={visible} onClick={closeModal}>
+    <Dim
+      {...props}
+      visible={visible}
+      onClick={closeModal}
+      dimOpacity={dimOpacity}
+    >
       <Modal
         visible={visible}
         slide={slide}
@@ -37,11 +77,13 @@ interface styleProps {
   visible?: boolean;
   slide?: 'top' | 'bottom' | 'right' | 'left' | undefined;
   position?: 'top' | 'bottom' | 'right' | 'left' | undefined;
+  noDim?: boolean;
+  dimOpacity?: string;
 }
 
-const Dim = styled.div`
+const Dim = styled.div<styleProps>`
   position: fixed;
-  z-index: 98;
+  z-index: 9999;
   top: 0;
   bottom: 0;
   left: 0;
@@ -51,9 +93,12 @@ const Dim = styled.div`
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) =>
+    props.dimOpacity
+      ? `rgba(0, 0, 0, ${props.dimOpacity})`
+      : 'rgba(0, 0, 0, 0.5)'};
   transition: 0.2s ease;
-  ${(props: styleProps) =>
+  ${(props) =>
     props.visible &&
     css`
       opacity: 1;
@@ -62,7 +107,6 @@ const Dim = styled.div`
 `;
 
 const Modal = styled.div<styleProps>`
-  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +114,25 @@ const Modal = styled.div<styleProps>`
   > div {
     transition: 0.2s ease;
   }
+
+  ${(props) =>
+    props.noDim &&
+    css`
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+      transition: 0.2s ease;
+      > div {
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      ${props.visible &&
+      css`
+        opacity: 1;
+        visibility: visible;
+      `}
+    `}
 
   ${(props) =>
     props.slide === 'top' &&
@@ -138,11 +201,10 @@ const Modal = styled.div<styleProps>`
       > div {
         position: absolute;
         top: -50px;
-        ${(props: styleProps) =>
-          props.visible &&
-          css`
-            top: 0px;
-          `}
+        ${props.visible &&
+        css`
+          top: 0px;
+        `}
       }
     `}
 
@@ -153,11 +215,10 @@ const Modal = styled.div<styleProps>`
       > div {
         position: absolute;
         bottom: -50px;
-        ${(props: styleProps) =>
-          props.visible &&
-          css`
-            bottom: 0px;
-          `}
+        ${props.visible &&
+        css`
+          bottom: 0px;
+        `}
       }
     `}
 
@@ -168,11 +229,10 @@ const Modal = styled.div<styleProps>`
       > div {
         position: absolute;
         right: -50px;
-        ${(props: styleProps) =>
-          props.visible &&
-          css`
-            right: 0px;
-          `}
+        ${props.visible &&
+        css`
+          right: 0px;
+        `}
       }
     `}
 
@@ -183,11 +243,10 @@ const Modal = styled.div<styleProps>`
       > div {
         position: absolute;
         left: -50px;
-        ${(props: styleProps) =>
-          props.visible &&
-          css`
-            left: 0px;
-          `}
+        ${props.visible &&
+        css`
+          left: 0px;
+        `}
       }
     `}
 `;

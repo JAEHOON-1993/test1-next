@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import theme from 'layout/theme';
 import Button, { ButtonProps } from 'components/Button';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -25,23 +24,52 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+export const AllButtons = () => {
+  return (
+    <ThemeConsumer>
+      {(theme) => (
+        <>
+          <h1>Default</h1>
+          <ButtonBox>
+            <Button label="Default" />
+            <Button label="Outline" outline />
+            <Button label="Disabled" disabled />
+          </ButtonBox>
+          <h1>Round</h1>
+          <ButtonBox>
+            <Button label="Default" round />
+            <Button label="Outline" round outline />
+            <Button label="Disabled" round disabled />
+          </ButtonBox>
+          <h1>Custom Color</h1>
+          <ButtonBox>
+            <Button label="Default" color={theme.color.SECONDARY} />
+            <Button label="Outline" color={theme.color.SECONDARY} outline />
+            <Button label="Disabled" color={theme.color.SECONDARY} disabled />
+          </ButtonBox>
+        </>
+      )}
+    </ThemeConsumer>
+  );
+};
+
+const Template: Story<ButtonProps> = (args) => (
+  <ThemeConsumer>{(theme) => <Button {...args} theme={theme} />}</ThemeConsumer>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   width: '200px',
   label: 'button',
-  color: theme.color.PRIMARY,
+  // color: theme.color.PRIMARY,
 };
 
 export const DefaultWithIcon = Template.bind({});
 DefaultWithIcon.args = {
   width: '200px',
   label: 'button',
-  color: theme.color.PRIMARY,
-  icon: (
-    <SystemIcon name="alert" style={{ fill: 'white', marginRight: '10px' }} />
-  ),
+  // color: theme.color.PRIMARY,
+  icon: <SystemIcon name="alarm" color="white" />,
 };
 
 export const Outline = Template.bind({});
@@ -56,31 +84,6 @@ Disabled.args = {
   disabled: true,
   width: '200px',
   label: 'Disabled',
-};
-
-export const AllButtons = () => {
-  return (
-    <>
-      <h1>Default</h1>
-      <ButtonBox>
-        <Button label="Default" />
-        <Button label="Outline" outline />
-        <Button label="Disabled" disabled />
-      </ButtonBox>
-      <h1>Round</h1>
-      <ButtonBox>
-        <Button label="Default" round />
-        <Button label="Outline" round outline />
-        <Button label="Disabled" round disabled />
-      </ButtonBox>
-      <h1>Custom Color</h1>
-      <ButtonBox>
-        <Button label="Default" color={theme.color.SECONDARY} />
-        <Button label="Outline" color={theme.color.SECONDARY} outline />
-        <Button label="Disabled" color={theme.color.SECONDARY} disabled />
-      </ButtonBox>
-    </>
-  );
 };
 
 const ButtonBox = styled.div`

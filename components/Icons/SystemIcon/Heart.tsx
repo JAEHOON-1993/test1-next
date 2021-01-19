@@ -1,12 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const HeartIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-}) => {
+const HeartIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +12,7 @@ const HeartIcon: React.FC<Props> = ({
     >
       <g>
         <g>
-          <path
+          <Path
             fill="none"
             stroke={color}
             d="M-80.023 514.255a.333.333 0 0 1-.209-.073c-.318-.255-7.791-6.282-8.908-9.849a6.042 6.042 0 0 1 .436-5.072 4.309 4.309 0 0 1 3.276-2.094 6.042 6.042 0 0 1 5.405 2.393 6.04 6.04 0 0 1 5.405-2.393 4.309 4.309 0 0 1 3.276 2.094 6.052 6.052 0 0 1 .43 5.089c-1.113 3.55-8.585 9.577-8.9 9.832a.333.333 0 0 1-.211.073z"
@@ -30,3 +26,7 @@ const HeartIcon: React.FC<Props> = ({
 };
 
 export default HeartIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

@@ -1,11 +1,11 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const TextDeleteIcon = ({
   width = 24,
   height = 24,
-  color = theme.color.GRAY4,
+  color,
   ...props
 }: Props) => {
   return (
@@ -19,7 +19,7 @@ const TextDeleteIcon = ({
     >
       <path id="사각형_1950" fill="none" d="M0 0H24V24H0z" />
       <g id="icon-arrow" transform="translate(10.607 8.985)">
-        <path
+        <Path
           id="line"
           d="M0 0L7.328 0"
           fill="none"
@@ -27,7 +27,7 @@ const TextDeleteIcon = ({
           strokeLinecap="round"
           transform="rotate(45 0 -.001)"
         />
-        <path
+        <Path
           id="line-2"
           d="M0 0L7.328 0"
           fill="none"
@@ -36,7 +36,7 @@ const TextDeleteIcon = ({
           transform="rotate(135 2.59 1.073)"
         />
       </g>
-      <path
+      <Path
         id="패스_264283"
         fill="none"
         stroke={color}
@@ -49,3 +49,7 @@ const TextDeleteIcon = ({
 };
 
 export default TextDeleteIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

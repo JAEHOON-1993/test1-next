@@ -12,7 +12,7 @@ export const all = () => {
   return (
     <Wrap>
       <SystemIconBox>
-        <SystemIcon name="add" />
+        <SystemIcon name="add" color="red" />
         <div>Add</div>
       </SystemIconBox>
 

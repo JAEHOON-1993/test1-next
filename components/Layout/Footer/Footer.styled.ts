@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import theme from 'layout/theme';
 
 export const FooterWrap = styled.div`
   padding: 20px 0px;
-  background-color: ${theme.color.PRIMARY};
+  background-color: ${(props) => props.theme.color.PRIMARY};
   min-height: 40px;
   display: flex;
   align-items: center;
@@ -53,7 +52,7 @@ export const Info = styled.div`
       display: inline-block;
       width: 1px;
       height: 8px;
-      background: ${theme.color.WHITE};
+      background: ${(props) => props.theme.color.WHITE};
       margin: 0 5px;
     }
   }
@@ -66,7 +65,7 @@ export const Info = styled.div`
     p,
     li {
       font-size: 10px;
-      color: ${theme.color.GRAY1};
+      color: ${(props) => props.theme.color.GRAY1};
       text-align: center;
     }
     li {
@@ -122,10 +121,10 @@ export const Social = styled.div`
     cursor: pointer;
     font-size: 10px;
     font-weight: bold;
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
     opacity: 0.8;
     border-radius: 60px;
-    background-color: ${theme.color.WHITE};
+    background-color: ${(props) => props.theme.color.WHITE};
     display: flex;
     justify-content: center;
     align-items: center;

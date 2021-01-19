@@ -35,7 +35,13 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && <Nav pageName={pageName} transparent={transparent} noBorder={noBorder} />}
+      {!noHeader && (
+        <Nav
+          pageName={pageName}
+          transparent={transparent}
+          noBorder={noBorder}
+        />
+      )}
       <Body height={height} noHeader={noHeader} centered={centered}>
         {children}
       </Body>
@@ -54,6 +60,7 @@ interface styleProps {
 
 const Body = styled.div`
   min-height: ${(props: styleProps) => `${props.height}px`};
+  background-color: ${(props) => props.theme.BACKGROUND};
   ${(props: styleProps) =>
     props.centered &&
     css`
@@ -66,5 +73,5 @@ const Body = styled.div`
       ${(props) => props.theme.window.mobile} {
         min-height: ${(props: styleProps) => `${props.height - 50}px`};
       }
-    `}
+    `};
 `;

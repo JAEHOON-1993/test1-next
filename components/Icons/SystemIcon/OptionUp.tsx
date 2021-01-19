@@ -1,12 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const OptionUpIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-}) => {
+const OptionUpIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,13 +12,13 @@ const OptionUpIcon: React.FC<Props> = ({
       viewBox="0 0 24 24"
     >
       <g id="구성_요소_86" transform="rotate(180 10.5 9)">
-        <path
+        <Path
           id="패스_949"
           fill="none"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2px"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2px"
           d="M2031.4 1274.507l6.509 5.591 6.74-5.591"
           transform="translate(-2028.821 -1271.179)"
         />
@@ -44,3 +40,7 @@ const OptionUpIcon: React.FC<Props> = ({
 };
 
 export default OptionUpIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

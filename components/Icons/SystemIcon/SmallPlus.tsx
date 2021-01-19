@@ -1,9 +1,9 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const SmallPlusIcon: React.FC<Props> = ({
-  color = theme.color.GRAY4,
+  color,
   width = 24,
   height = 24,
   ...props
@@ -17,13 +17,13 @@ const SmallPlusIcon: React.FC<Props> = ({
       height={height}
       viewBox="0 0 24 24"
     >
-      <path
+      <Path
         id="사각형_28968"
         d="M0 0H9V1H0z"
         fill={color}
         transform="translate(8 12)"
       />
-      <path
+      <Path
         id="사각형_28969"
         d="M0 0H9V1H0z"
         fill={color}
@@ -35,3 +35,7 @@ const SmallPlusIcon: React.FC<Props> = ({
 };
 
 export default SmallPlusIcon;
+
+const Path = styled.path`
+  fill: ${(props) => props.theme.color.GRAY4};
+`;

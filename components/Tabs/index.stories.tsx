@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import Tabs from 'components/Tabs';
 
 export default {
@@ -34,9 +34,13 @@ const CATEGORIES = [
 ];
 
 const Template: Story = (args) => (
-  <div style={{ backgroundColor: theme.color.WHITE }}>
-    <Tabs {...args} />
-  </div>
+  <ThemeConsumer>
+    {(theme) => (
+      <div style={{ backgroundColor: theme.color.WHITE }}>
+        <Tabs {...args} />
+      </div>
+    )}
+  </ThemeConsumer>
 );
 
 export const Default = Template.bind({});

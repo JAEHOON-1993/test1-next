@@ -1,12 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const SettingIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-}) => {
+const SettingIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +15,7 @@ const SettingIcon: React.FC<Props> = ({
       <g id="그룹_461" transform="translate(2 2)">
         <g id="그룹_460">
           <g id="그룹_459">
-            <path
+            <StrokeProps
               id="패스_1002"
               fill="none"
               stroke={color}
@@ -29,7 +25,8 @@ const SettingIcon: React.FC<Props> = ({
             />
           </g>
         </g>
-        <g
+        <StrokeProps
+          as="g"
           id="타원_456"
           fill="none"
           stroke={color}
@@ -37,10 +34,14 @@ const SettingIcon: React.FC<Props> = ({
         >
           <circle cx="3.966" cy="3.966" r="3.966" stroke="none" />
           <circle cx="3.966" cy="3.966" r="3.466" fill="none" />
-        </g>
+        </StrokeProps>
       </g>
     </svg>
   );
 };
 
 export default SettingIcon;
+
+const StrokeProps = styled.path`
+  stroke: ${(props) => props.theme.color.BLACK};
+`;
