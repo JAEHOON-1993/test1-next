@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -18,6 +18,7 @@ const CloseIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           d="M0 0L19.799 0"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="rotate(45 .63 2.54)"
@@ -27,6 +28,7 @@ const CloseIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           d="M0 0L19.799 0"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="rotate(135 7.928 3.459)"
@@ -41,6 +43,16 @@ const CloseIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
 
 export default CloseIcon;
 
-const PathBox = styled.path`
+interface style {
+  colored?: string;
+}
+
+const PathBox = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

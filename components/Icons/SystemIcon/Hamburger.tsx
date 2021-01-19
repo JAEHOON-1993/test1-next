@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -17,12 +17,14 @@ const HamburgerIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           id="사각형_28746"
           d="M0 0H18V2.5H0z"
           fill={color}
+          colored={color}
           transform="translate(492 373)"
         />
         <Path
           id="사각형_29534"
           d="M0 0H18V2.5H0z"
           fill={color}
+          colored={color}
           transform="translate(492 384)"
         />
       </g>
@@ -32,7 +34,16 @@ const HamburgerIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
 };
 
 export default HamburgerIcon;
+interface style {
+  colored?: string;
+}
 
-const Path = styled.path`
+const Path = styled.path<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

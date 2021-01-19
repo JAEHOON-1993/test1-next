@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -23,6 +23,7 @@ const PlusIcon = ({ color, width = 24, height = 24, ...props }: Props) => {
       <g>
         <Path
           fill={color}
+          colored={color}
           d="M848.164 498.446h6.169v2.2h-6.169v6.385h-2.232v-6.385h-6.169v-2.2h6.169v-6.417h2.232z"
           transform="translate(-834.764 -488.028)"
         />
@@ -33,6 +34,16 @@ const PlusIcon = ({ color, width = 24, height = 24, ...props }: Props) => {
 
 export default PlusIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

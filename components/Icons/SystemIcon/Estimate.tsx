@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -19,24 +19,28 @@ const EstimateIcon = ({ color, width = 24, height = 24, ...props }: Props) => {
             id="패스_264606"
             d="M35.787 16.133v-2.962a.942.942 0 0 0-.942-.942H.942a.942.942 0 0 0-.942.942v19.338a.942.942 0 0 0 .942.942h33.9a.942.942 0 0 0 .942-.942v-4.121l5.462-5.462a.943.943 0 0 0 0-1.333zM33.9 28v3.568H1.886V14.115H33.9v2.41a.949.949 0 0 0 .276.666l5.071 5.071-5.071 5.071A.935.935 0 0 0 33.9 28"
             fill={color}
+            colored={color}
             transform="translate(0 -12.229)"
           />
           <Path
             id="패스_264607"
             d="M6.533 16.1a3.184 3.184 0 1 0 3.183 3.185A3.187 3.187 0 0 0 6.533 16.1m1.3 3.185a1.3 1.3 0 1 1-1.3-1.3 1.3 1.3 0 0 1 1.3 1.3"
             fill={color}
+            colored={color}
             transform="translate(3.077 -8.674)"
           />
           <Path
             id="패스_264608"
             d="M10.425 16.1a3.184 3.184 0 1 0 3.185 3.185 3.187 3.187 0 0 0-3.185-3.185m1.3 3.185a1.3 1.3 0 1 1-1.3-1.3 1.3 1.3 0 0 1 1.3 1.3"
             fill={color}
+            colored={color}
             transform="translate(6.652 -8.674)"
           />
           <Path
             id="패스_264609"
             d="M14.318 16.1a3.184 3.184 0 1 0 3.182 3.185 3.187 3.187 0 0 0-3.182-3.185m1.3 3.185a1.3 1.3 0 1 1-1.3-1.3 1.3 1.3 0 0 1 1.3 1.3"
             fill={color}
+            colored={color}
             transform="translate(10.227 -8.674)"
           />
         </g>
@@ -47,6 +51,16 @@ const EstimateIcon = ({ color, width = 24, height = 24, ...props }: Props) => {
 
 export default EstimateIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

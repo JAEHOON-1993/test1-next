@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -18,6 +18,7 @@ const ArrowRightIcon: React.FC<Props> = ({
       <Path
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
@@ -30,6 +31,16 @@ const ArrowRightIcon: React.FC<Props> = ({
 
 export default ArrowRightIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

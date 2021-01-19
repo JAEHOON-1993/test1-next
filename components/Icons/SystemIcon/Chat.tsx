@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -15,6 +15,7 @@ const ChatIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
       <Path
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M576.547 363.361c-5.883 0-10.652 3.987-10.652 8.9a7.883 7.883 0 0 0 1.823 4.983l-1.7 3.895 4.147-1.751a12.029 12.029 0 0 0 6.387 1.778c5.883 0 10.652-3.987 10.652-8.905s-4.774-8.9-10.657-8.9z"
@@ -27,6 +28,16 @@ const ChatIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
 
 export default ChatIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

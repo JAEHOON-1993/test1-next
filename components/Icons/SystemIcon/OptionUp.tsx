@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -16,6 +16,7 @@ const OptionUpIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
           id="패스_949"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2px"
@@ -41,6 +42,15 @@ const OptionUpIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default OptionUpIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

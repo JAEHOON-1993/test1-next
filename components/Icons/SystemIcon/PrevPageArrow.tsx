@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -23,6 +23,7 @@ const PrevPageArrow = ({
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
@@ -33,6 +34,7 @@ const PrevPageArrow = ({
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
@@ -44,6 +46,15 @@ const PrevPageArrow = ({
 
 export default PrevPageArrow;
 
-const Path = styled.path`
-  stroke: ${(props) => props.theme.color.BLACK};
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
+  stroke: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

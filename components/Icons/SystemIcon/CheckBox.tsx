@@ -1,4 +1,4 @@
-import styled, { ThemeConsumer } from 'styled-components';
+import styled, { ThemeConsumer, css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -24,7 +24,13 @@ const CheckBoxIcon = ({
             height={height}
             viewBox="0 0 30 30"
           >
-            <RectBox width="30" height="30" fill={color} rx="4" />
+            <RectBox
+              width="30"
+              height="30"
+              fill={color}
+              colored={color}
+              rx="4"
+            />
             <path
               fill="none"
               stroke={theme.color.WHITE}
@@ -61,6 +67,16 @@ const CheckBoxIcon = ({
 
 export default CheckBoxIcon;
 
-const RectBox = styled.rect`
+interface style {
+  colored?: string;
+}
+
+const RectBox = styled.rect<style>`
   fill: ${(props) => props.theme.color.PRIMARY};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

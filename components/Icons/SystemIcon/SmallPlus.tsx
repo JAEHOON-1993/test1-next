@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -21,12 +21,14 @@ const SmallPlusIcon: React.FC<Props> = ({
         id="사각형_28968"
         d="M0 0H9V1H0z"
         fill={color}
+        colored={color}
         transform="translate(8 12)"
       />
       <Path
         id="사각형_28969"
         d="M0 0H9V1H0z"
         fill={color}
+        colored={color}
         transform="rotate(90 2.5 10.5)"
       />
       <path id="사각형_28970" fill="none" d="M0 0H25V25H0z" />
@@ -36,6 +38,16 @@ const SmallPlusIcon: React.FC<Props> = ({
 
 export default SmallPlusIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

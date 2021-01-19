@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -17,6 +17,7 @@ const BackIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
           id="icon-arrow"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="translate(1 2)"
@@ -39,6 +40,16 @@ const BackIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default BackIcon;
 
-const GProps = styled.g`
+interface style {
+  colored?: string;
+}
+
+const GProps = styled.g<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

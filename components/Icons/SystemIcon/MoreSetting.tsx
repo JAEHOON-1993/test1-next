@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -24,6 +24,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 139)"
         />
         <Circle
@@ -32,6 +33,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 146)"
         />
         <Circle
@@ -40,6 +42,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 153)"
         />
       </g>
@@ -50,6 +53,15 @@ const MoreSettingIcon = ({
 
 export default MoreSettingIcon;
 
-const Circle = styled.circle`
+interface style {
+  colored?: string;
+}
+
+const Circle = styled.circle<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

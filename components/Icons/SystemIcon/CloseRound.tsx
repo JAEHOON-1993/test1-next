@@ -1,4 +1,4 @@
-import styled, { ThemeConsumer } from 'styled-components';
+import styled, { ThemeConsumer, css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -25,6 +25,7 @@ const CloseRoundIcon = ({
             cy="10"
             r="10"
             fill={color}
+            colored={color}
             transform="translate(2 2)"
           />
           <g id="그룹_37420" transform="rotate(45 -.017 17.193)">
@@ -56,6 +57,16 @@ const CloseRoundIcon = ({
 
 export default CloseRoundIcon;
 
-const Circle = styled.circle`
+interface style {
+  colored?: string;
+}
+
+const Circle = styled.circle<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -17,6 +17,7 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
         id="타원_455"
         fill="none"
         stroke={color}
+        colored={color}
         strokeWidth="1.5px"
         transform="translate(2 2)"
       >
@@ -27,6 +28,7 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
         id="선_228"
         fill="none"
         stroke={color}
+        colored={color}
         stroke-linecap="round"
         strokeWidth="2px"
         d="M0 0L6 6"
@@ -38,6 +40,16 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default SearchIcon;
 
-const StrokeProps = styled.path`
+interface style {
+  colored?: string;
+}
+
+const StrokeProps = styled.path<style>`
   stroke: ${(props) => props.theme.color.BLACK};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;
