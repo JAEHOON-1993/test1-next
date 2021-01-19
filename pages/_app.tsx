@@ -4,16 +4,14 @@ import Router from 'next/router';
 import RouterStore from 'stores/Router';
 
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
 
 import ScrollToTop from 'components/ScrollToTop';
 import MobileRouter from 'components/Layout/MobileRouter';
 
-import theme from 'layout/theme';
-
-import GlobalStyle from 'layout/reset';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import StyledProvider from 'components/StyledProvider';
 
 React.useLayoutEffect = React.useEffect;
 
@@ -23,10 +21,11 @@ declare global {
   }
 }
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [isPush, setIsPush] = useState(false)
-  const [isPop, setIsPop] = useState(false)
-  const [load, setLoad] = useState(true)
+const MyApp = ({ Component, pageProps }: AppProps, { mobxStore }: any) => {
+  const [isPush, setIsPush] = useState(false);
+  const [isPop, setIsPop] = useState(false);
+  const [load, setLoad] = useState(true);
+
   // useEffect(() => {
   //   // 뒤로가기
   //   const beforePopState = ({url, as, options} : any) => {
@@ -36,7 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   //     RouterStore.push(as, as, "right");
   //     return false
   //   }
-    
+
   //   // 다음 페이지 이동
   //   const routeChangeStart = async () => {
   //     // console.log(`beforeHistoryChange`);
@@ -48,7 +47,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   //   const routeChangeComplete = async () => {
   //     // console.log(`routeChangeComplete`);
   //     // await setLoad(true);
-  
+
   //     await setIsPop(false);
   //     setTimeout(() => {
   //       setLoad(true);
@@ -75,14 +74,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
         />
       </Head>
-        <ScrollToTop>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <MobileRouter>
-              <Component {...pageProps} />
-            </MobileRouter>
-          </ThemeProvider>
-        </ScrollToTop>
+      <ScrollToTop>
+        <StyledProvider>
+          <MobileRouter>
+            <Component {...pageProps} />
+          </MobileRouter>
+        </StyledProvider>
+      </ScrollToTop>
     </>
   );
 };
@@ -96,5 +94,3 @@ MyApp.getInitialProps = async ({ Component, ctx }: any) => {
 };
 
 export default MyApp;
-
-

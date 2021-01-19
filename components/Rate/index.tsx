@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 interface Props {
@@ -23,7 +22,7 @@ const Rate: React.FC<Props> = ({
   const n = Math.abs(value); // Change to positive
   const decimal = n - Math.floor(n);
   const newValue = n - decimal;
-  var data = [];
+  var data: any[] = [];
   if (decimal > 0) {
     data = [
       ...Array(newValue).fill('star'),
@@ -38,11 +37,17 @@ const Rate: React.FC<Props> = ({
   }
 
   return (
-    <RateBox {...props}>
-      {data.map((item, idx) => {
-        return <SystemIcon key={idx} name={item} color={theme.color.PRIMARY} />;
-      })}
-    </RateBox>
+    <ThemeConsumer>
+      {(theme) => (
+        <RateBox {...props}>
+          {data.map((item, idx) => {
+            return (
+              <SystemIcon key={idx} name={item} color={theme.color.PRIMARY} />
+            );
+          })}
+        </RateBox>
+      )}
+    </ThemeConsumer>
   );
 };
 

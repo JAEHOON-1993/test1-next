@@ -1,8 +1,12 @@
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../layout/reset';
-import theme from '../layout/theme';
+import GlobalStyle from 'layout/reset';
+import { light, dark } from 'layout/theme';
+
+import themeStore from 'stores/Theme';
 
 const withThemeProvider = (Story) => {
+  const { currentTheme } = themeStore;
+  const theme = currentTheme === 'light' ? light : dark;
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

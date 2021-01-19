@@ -13,6 +13,7 @@ export const Title = styled.h1<Props>`
   line-height: 1.53;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
+  color: ${(props) => props.theme.color.BLACK};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -66,6 +67,7 @@ export const Text = styled.p<Props>`
   line-height: 1.53;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
+  color: ${(props) => props.theme.color.BLACK};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -121,6 +123,7 @@ export const Button = styled.p<Props>`
   line-height: 1.53;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
+  color: ${(props) => props.theme.color.BLACK};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {
@@ -143,6 +146,7 @@ export const ButtonSmall = styled.p<Props>`
   line-height: 1.5;
   letter-spacing: -0.12px;
   font-weight: ${(props) => props.bold && 'bold'};
+  color: ${(props) => props.theme.color.BLACK};
   color: ${(props) => props.color && props.color};
   /* Tab */
   ${(props) => props.theme.window.tab} {

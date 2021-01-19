@@ -1,8 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import theme from 'layout/theme';
-import ButtonBase from 'components/ButtonBase';
+import ButtonBase from 'components/Button/ButtonBase';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export interface ButtonProps {
@@ -80,9 +79,9 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   width: ${(props) => props.width && props.width};
   border: 0px;
   background-color: ${(props) =>
-    props.color ? props.color : theme.color.PRIMARY};
-  border-radius: ${theme.radius}px;
-  color: ${theme.color.WHITE};
+    props.color ? props.color : props.theme.color.PRIMARY};
+  border-radius: ${(props) => props.theme.radius}px;
+  color: ${(props) => props.theme.color.WHITE};
   border-radius: ${(props) => props.round && '50px'};
   flex-direction: ${({ position }) => changePosition(position)};
   :focus {
@@ -91,22 +90,21 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   ${(props) =>
     props.outline &&
     css`
-      background-color: ${theme.color.WHITE};
+      background-color: ${(props) => props.theme.theme.color.WHITE};
       border: 1px solid
-        ${(props: ButtonStyleProps) =>
-          props.color ? props.color : theme.color.PRIMARY};
-      color: ${(props: ButtonStyleProps) =>
-        props.color ? props.color : theme.color.PRIMARY};
+        ${(props) => (props.color ? props.color : props.theme.color.PRIMARY)};
+      color: ${(props) =>
+        props.color ? props.color : props.theme.color.PRIMARY};
       span {
-        background-color: ${(props: ButtonStyleProps) =>
-          props.color ? `${props.color}77` : `${theme.color.PRIMARY}77`};
+        background-color: ${(props) =>
+          props.color ? `${props.color}77` : `${props.theme.color.PRIMARY}77`};
       }
     `}
   ${(props) =>
     props.disabled &&
     css`
-      background-color: ${theme.color.GRAY3};
+      background-color: ${(props) => props.theme.color.GRAY3};
       border: 0px;
-      color: ${theme.color.WHITE};
+      color: ${(props) => props.theme.color.WHITE};
     `};
 `;

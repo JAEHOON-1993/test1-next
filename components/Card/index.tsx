@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import theme from 'layout/theme';
 import * as T from 'components/TypoGraphy';
 
 interface CardProps {
@@ -13,8 +12,8 @@ export const Card: React.FC<CardProps> = ({ children, ...props }) => {
 };
 
 const CardComponent = styled.div`
-  background-color: ${theme.color.WHITE};
-  border-radius: ${theme.radius};
+  background-color: ${(props) => props.theme.color.WHITE};
+  border-radius: ${(props) => props.theme.radius};
   padding: 10px 20px;
   max-width: 375px;
 `;
@@ -49,30 +48,35 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
   );
 };
 
+interface cardStyleProps {
+  avatar: any;
+  thumbnail: any;
+}
+
 const CardHeaderComponent = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const CardHeaderImage = styled.div`
+const CardHeaderImage = styled.div<cardStyleProps>`
   background-size: cover;
   background-position: center;
-  ${(props: CardHeaderProps) =>
+  ${(props) =>
     props.thumbnail &&
     css`
       width: 60px;
       height: 60px;
       border-radius: 5px;
-      background-image: url(${(props: CardHeaderProps) => props.thumbnail});
+      background-image: url(${props.thumbnail});
     `}
-  ${(props: CardHeaderProps) =>
+  ${(props) =>
     props.avatar &&
     css`
       width: 50px;
       height: 50px;
       margin: 4px 0px;
       border-radius: 25px;
-      background-image: url(${(props: CardHeaderProps) => props.avatar});
+      background-image: url(${props.avatar});
     `}
 `;
 

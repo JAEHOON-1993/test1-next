@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Router from 'next/router';
 // components
 import * as T from 'components/TypoGraphy';
-import ButtonBaseComponent from 'components/ButtonBase';
+import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import { formatTimer } from 'utils/format';

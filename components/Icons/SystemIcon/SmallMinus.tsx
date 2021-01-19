@@ -1,9 +1,9 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const SmallMinusIcon: React.FC<Props> = ({
-  color = theme.color.GRAY4,
+  color,
   width = 24,
   height = 24,
   ...props
@@ -16,10 +16,14 @@ const SmallMinusIcon: React.FC<Props> = ({
       height={height}
       viewBox="0 0 24 24"
     >
-      <path fill={color} d="M0 0H9V1H0z" transform="translate(8 12)" />
+      <Path fill={color} d="M0 0H9V1H0z" transform="translate(8 12)" />
       <path fill="none" d="M0 0H25V25H0z" />
     </svg>
   );
 };
 
 export default SmallMinusIcon;
+
+const Path = styled.path`
+  fill: ${(props) => props.theme.color.GRAY4};
+`;

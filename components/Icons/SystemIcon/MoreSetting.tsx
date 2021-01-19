@@ -1,11 +1,11 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const MoreSettingIcon = ({
   width = 24,
   height = 24,
-  color = theme.color.GRAY4,
+  color,
   ...props
 }: Props) => {
   return (
@@ -18,7 +18,7 @@ const MoreSettingIcon = ({
       viewBox="0 0 24 24"
     >
       <g id="그룹_751" transform="translate(-316 -136)">
-        <circle
+        <Circle
           id="타원_462"
           cx="1.5"
           cy="1.5"
@@ -26,7 +26,7 @@ const MoreSettingIcon = ({
           fill={color}
           transform="translate(333 139)"
         />
-        <circle
+        <Circle
           id="타원_463"
           cx="1.5"
           cy="1.5"
@@ -34,7 +34,7 @@ const MoreSettingIcon = ({
           fill={color}
           transform="translate(333 146)"
         />
-        <circle
+        <Circle
           id="타원_464"
           cx="1.5"
           cy="1.5"
@@ -49,3 +49,7 @@ const MoreSettingIcon = ({
 };
 
 export default MoreSettingIcon;
+
+const Circle = styled.circle`
+  fill: ${(props) => props.theme.color.GRAY4};
+`;

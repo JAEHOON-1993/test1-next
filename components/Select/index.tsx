@@ -3,61 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Select from 'react-select';
 
-import theme from 'layout/theme';
 import { Text } from 'components/TypoGraphy';
-
-export const customStyles = {
-  menu: (provided: any) => ({
-    ...provided,
-    margin: 0,
-    top: 'calc(100% - 2px)',
-    boxShadow: 'none',
-    border: `1px solid ${theme.color.GRAY2}`,
-    borderTop: 0,
-  }),
-  menuList: (provided: any) => ({
-    ...provided,
-    padding: 0,
-    borderTop: `1px solid ${theme.color.PRIMARY}`,
-  }),
-
-  option: (provided: any, state: any) => ({
-    ...provided,
-    height: 50,
-    display: 'flex',
-    alignItems: 'center',
-    borderTop: `1px solid ${theme.color.GRAY1}`,
-    color: state.isSelected ? theme.color.PRIMARY : theme.color.BLACK,
-    backgroundColor: state.isSelected
-      ? theme.color.PRIMARYSUB
-      : theme.color.GRAY0,
-  }),
-  control: (_: any) => ({
-    display: 'flex',
-    alignItems: 'center',
-    borderBottom: `1px solid ${theme.color.PRIMARY}`,
-    height: 50,
-  }),
-  indicatorSeparator: () => ({
-    display: 'none',
-  }),
-  valueContainer: () => ({
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '16px',
-  }),
-  placeholder: () => ({ color: theme.color.GRAY3 }),
-  indicatorsContainer: () => ({
-    padding: 0,
-  }),
-  singleValue: (provided: any, state: any) => {
-    const opacity = state.isDisabled ? 1 : 1;
-    const transition = 'opacity 300ms';
-    const color = theme.color.BLACK;
-    return { ...provided, opacity, transition, color };
-  },
-};
 
 interface Props {
   options?: { value: string; label: string }[];
@@ -97,7 +43,7 @@ const SelectComponent: React.FC<Props> = ({
       </Label>
       <CustomSelect
         {...props}
-        styles={customStyles}
+        classNamePrefix={'Select'}
         onChange={handleChange}
         defaultValue={defaultValue}
         inputValue={inputValue}
@@ -125,6 +71,65 @@ const CustomSelect = styled(Select)`
     width: 24px;
     height: 24px;
     color: ${(props) => props.theme.color.PRIMARY};
+  }
+
+  & .Select {
+    &__control {
+      display: flex;
+      align-items: center;
+      /* border-bottom: 1px solid ${(props) => props.theme.color.PRIMARY}; */
+      height: 50;
+    }
+
+    &__menu {
+      margin: 0;
+      top: calc(100% - 2px);
+      box-shadow: 'none';
+      border: 1px solid ${(props) => props.theme.color.GRAY2};
+      border-top: 0;
+      &-list {
+        padding: 0;
+        border-top: 1px solid ${(props) => props.theme.color.PRIMARY};
+      }
+    }
+
+    &__option {
+      height: 50;
+      display: 'flex';
+      align-items: 'center';
+      border-top: 1px solid ${(props) => props.theme.color.GRAY1};
+      color: ${(props) => props.theme.color.BLACK};
+      background-color: ${(props) => props.theme.color.GRAY0};
+      &--is-selected {
+        color: ${(props) => props.theme.color.PRIMARY};
+        background-color: ${(props) => props.theme.color.PRIMARYSUB};
+      }
+    }
+
+    &__value-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+    &__single-value {
+      color: ${(props) => props.theme.color.BLACK};
+      opacity: 1;
+      transition: opacity 300ms;
+      &--is-disabled {
+        opacity: 0;
+      }
+    }
+
+    &__placeholder {
+      color: ${(props) => props.theme.color.GRAY3};
+    }
+
+    &__indicator {
+      &-separator {
+        display: none;
+      }
+    }
   }
 `;
 

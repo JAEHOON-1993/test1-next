@@ -1,12 +1,7 @@
-import theme from 'layout/theme';
-
+import styled from 'styled-components';
 import { Props } from './types';
 
-const BookmarkIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-}) => {
+const BookmarkIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +10,7 @@ const BookmarkIcon: React.FC<Props> = ({
       viewBox="0 0 24 24"
     >
       <path fill="none" d="M0 0H24V24H0z" />
-      <path
+      <Path
         fill="none"
         stroke={color}
         stroke-miterlimit="10"
@@ -27,3 +22,7 @@ const BookmarkIcon: React.FC<Props> = ({
 };
 
 export default BookmarkIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

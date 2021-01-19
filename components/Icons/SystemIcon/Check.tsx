@@ -1,15 +1,15 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const CheckIcon: React.FC<Props> = ({
   width = 24,
   height = 24,
-  color = theme.color.GRAY4,
+  color,
   ...props
 }) => {
   return (
-    <svg
+    <SVGBox
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
@@ -29,8 +29,15 @@ const CheckIcon: React.FC<Props> = ({
         d="M-478.529 1321.969l4.689 5.917 6.933-9.737"
         transform="translate(484.372 -1310.638)"
       />
-    </svg>
+    </SVGBox>
   );
 };
 
 export default CheckIcon;
+
+const SVGBox = styled.svg`
+  g,
+  path {
+    stroke: ${(props) => props.theme.color.GRAY4};
+  }
+`;

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import * as T from 'components/TypoGraphy';
-import theme from 'layout/theme';
 
 import PrevPageArrow from 'components/Icons/SystemIcon/PrevPageArrow';
 import NextPageArrow from 'components/Icons/SystemIcon/NextPageArrow';
@@ -87,7 +86,7 @@ const PageButton = styled.button<styleProps>`
   ${(props) =>
     props.isActive &&
     css`
-      color: ${theme.color.PRIMARY};
+      color: ${(props) => props.theme.color.PRIMARY};
       text-decoration: underline;
     `}
   > p {

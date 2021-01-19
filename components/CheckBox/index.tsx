@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import theme from 'layout/theme';
+import styled, { ThemeConsumer } from 'styled-components';
 
 import SystemIcon from 'components/Icons/SystemIcon';
 import * as T from 'components/TypoGraphy';
@@ -17,14 +15,22 @@ export interface CheckboxProps {
 
 const CheckBox: React.FC<CheckboxProps> = ({ checked, children, ...props }) => {
   return (
-    <CheckWrap {...props}>
-      <SystemIcon name="checkbox" fill={checked} color={theme.color.PRIMARY} />
-      {typeof children === 'string' ? (
-        <CheckLabel>{children}</CheckLabel>
-      ) : (
-        children
+    <ThemeConsumer>
+      {(theme) => (
+        <CheckWrap {...props}>
+          <SystemIcon
+            name="checkbox"
+            fill={checked}
+            color={theme.color.PRIMARY}
+          />
+          {typeof children === 'string' ? (
+            <CheckLabel>{children}</CheckLabel>
+          ) : (
+            children
+          )}
+        </CheckWrap>
       )}
-    </CheckWrap>
+    </ThemeConsumer>
   );
 };
 
@@ -41,5 +47,5 @@ const CheckWrap = styled.div`
 `;
 const CheckLabel = styled(T.Text)`
   margin-left: 5px;
-  color: ${theme.color.GRAY4};
+  color: ${(props) => props.theme.color.GRAY4};
 `;

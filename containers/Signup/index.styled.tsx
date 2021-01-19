@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import theme from "layout/theme";
+import styled from 'styled-components';
 
 // components
-import ButtonComponent from "components/Button";
-import InputComponent from "components/Input";
+import ButtonComponent from 'components/Button';
+import InputComponent from 'components/Input';
 
 export const Nav = styled.div`
   width: 100%;
@@ -49,7 +48,7 @@ export const TextBox = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   > p {
-    color: ${theme.color.GRAY5};
+    color: ${(props) => props.theme.color.GRAY5};
     line-height: 1.8;
   }
   height: 92px;
@@ -137,7 +136,7 @@ export const AvatarBox = styled.div<AvatarProps>`
   > span {
     width: 20px;
     height: 20px;
-    background-color: ${theme.color.PRIMARY};
+    background-color: ${(props) => props.theme.color.PRIMARY};
     border-radius: 10px;
     display: flex;
     align-items: center;

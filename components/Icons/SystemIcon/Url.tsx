@@ -1,12 +1,8 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
-const UrlIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color = theme.color.GRAY4,
-}) => {
+const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +13,7 @@ const UrlIcon: React.FC<Props> = ({
     >
       <g id="그룹_698" transform="translate(-244 -166.087)">
         <g id="icon-share" transform="translate(256.454 171)">
-          <path
+          <Path
             id="path-2"
             d="M264.1 175.284V171l-6.633 6.633"
             fill="none"
@@ -27,7 +23,7 @@ const UrlIcon: React.FC<Props> = ({
             strokeWidth="1.5px"
             transform="translate(-257.466 -171)"
           />
-          <path
+          <Path
             id="line"
             d="M0 0L4.285 0"
             fill="none"
@@ -38,7 +34,7 @@ const UrlIcon: React.FC<Props> = ({
             transform="translate(2.349)"
           />
         </g>
-        <path
+        <Path
           id="패스_1191"
           d="M263.087 178.7v6.383H249V171h6.374"
           fill="none"
@@ -54,3 +50,7 @@ const UrlIcon: React.FC<Props> = ({
 };
 
 export default UrlIcon;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.GRAY4};
+`;

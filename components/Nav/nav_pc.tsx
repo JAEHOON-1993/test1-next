@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import theme from 'layout/theme';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -27,12 +26,8 @@ const Nav: React.FC<Props> = () => {
         <CustomContainer>
           <Logo onClick={() => router.push('/')} src="/icons/logo_black.png" />
           <MobileLeftBox>
-            <SystemIcon name="search" color={theme.color.GRAY5} />
-            <SystemIcon
-              name="qr"
-              color={theme.color.GRAY5}
-              onClick={() => router.push('/qr')}
-            />
+            <SystemIcon name="search" />
+            <SystemIcon name="qr" onClick={() => router.push('/qr')} />
           </MobileLeftBox>
           <LeftBox>
             <Link href="/cart">장바구니</Link>

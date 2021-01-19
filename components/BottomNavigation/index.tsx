@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 interface Props {
   style?: any;
   children?: any;
@@ -35,16 +33,14 @@ const BottomNavigation: React.FC<Props> = ({
 export default BottomNavigation;
 
 const Container = styled.div`
-  background-color: #fff;
-  height: 57px;
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-
-  border-top: 1px solid ${theme.color.GRAY1};
-
-  display: none;
+  height: 57px;
+  background-color: ${(props) => props.theme.BACKGROUND};
+  border-top: 1px solid ${(props) => props.theme.color.GRAY1};
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     display: flex;

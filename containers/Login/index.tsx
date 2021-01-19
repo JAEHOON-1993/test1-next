@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import theme from 'layout/theme';
-
 import SocialBoxContainer from './SocialBox';
 
 interface Props {
@@ -64,7 +62,7 @@ const TextBox = styled.div`
   justify-content: center;
   text-align: center;
   > p {
-    color: ${theme.color.GRAY5};
+    color: ${(props) => props.theme.color.GRAY5};
     line-height: 1.8;
   }
   /* Mobile */

@@ -1,22 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import Modal, { ModalProps } from 'components/Modal';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 const ReadyModal: React.FC<ModalProps> = ({ ...props }) => {
   return (
-    <Modal {...props} slide="bottom">
-      <ModalBody>
-        <p>준비중입니다</p>
-        <SystemIcon name="check" color={theme.color.PRIMARY} />
-        <p>
-          빠른 시일 내에 서비스 준비 후<br />
-          찾아뵙겠습니다.
-        </p>
-      </ModalBody>
-    </Modal>
+    <ThemeConsumer>
+      {(theme) => (
+        <Modal {...props} slide="bottom">
+          <ModalBody>
+            <p>준비중입니다</p>
+            <SystemIcon name="check" color={theme.color.PRIMARY} />
+            <p>
+              빠른 시일 내에 서비스 준비 후<br />
+              찾아뵙겠습니다.
+            </p>
+          </ModalBody>
+        </Modal>
+      )}
+    </ThemeConsumer>
   );
 };
 
@@ -35,11 +38,11 @@ const ModalBody = styled.div`
   > p {
     :nth-of-type(1) {
       font-weight: bold;
-      color: ${theme.color.PRIMARY};
+      color: ${(props) => props.theme.color.PRIMARY};
     }
     :nth-of-type(2) {
       text-align: center;
-      color: ${theme.color.GRAY5};
+      color: ${(props) => props.theme.color.GRAY5};
     }
   }
 `;

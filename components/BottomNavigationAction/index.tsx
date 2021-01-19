@@ -1,16 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import theme from 'layout/theme';
 import * as T from 'components/TypoGraphy';
-import SystemIcon, { IconName } from 'components/Icons/SystemIcon';
-import ButtonBase from 'components/ButtonBase';
+import SystemIcon from 'components/Icons/SystemIcon';
+import ButtonBase from 'components/Button/ButtonBase';
 
 interface Props {
   id?: number;
   value?: string;
   label?: string;
-  icon?: IconName;
   active?: boolean;
   setActive?: any;
   onClick?: any;
@@ -33,12 +31,16 @@ const BottomNavigationAction: React.FC<Props> = ({
     }
   };
   return (
-    <Item {...props} onClick={clickHandler}>
-      {icon && (
-        <SystemIcon color={theme.color.PRIMARY} fill={active} name={icon} />
+    <ThemeConsumer>
+      {(theme) => (
+        <Item {...props} onClick={clickHandler}>
+          {icon && (
+            <SystemIcon color={theme.color.PRIMARY} fill={active} name={icon} />
+          )}
+          <T.Text sm>{label}</T.Text>
+        </Item>
       )}
-      <T.Text sm>{label}</T.Text>
-    </Item>
+    </ThemeConsumer>
   );
 };
 
@@ -52,6 +54,6 @@ const Item = styled(ButtonBase)`
   justify-content: center;
   > p {
     margin-top: 2px;
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
   }
 `;

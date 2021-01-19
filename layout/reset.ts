@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
+    
   }
   ol, ul {
     list-style: none;

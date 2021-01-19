@@ -1,11 +1,11 @@
-import theme from 'layout/theme';
+import styled from 'styled-components';
 
 import { Props } from './types';
 
 const PrevPageArrow = ({
   width = '22px',
   height = '22px',
-  color = theme.color.BLACK,
+  color,
   ...props
 }: Props) => {
   return (
@@ -18,24 +18,24 @@ const PrevPageArrow = ({
       {...props}
     >
       <path id="사각형_1950" fill="none" d="M0 0H22V22H0z" />
-      <path
+      <Path
         id="패스_1343"
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
         stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="2px"
+        strokeWidth="2px"
         transform="translate(208.329 4436.61)"
       />
-      <path
+      <Path
         id="패스_264774"
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
         stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="2px"
+        strokeWidth="2px"
         transform="translate(201.329 4436.61)"
       />
     </svg>
@@ -43,3 +43,7 @@ const PrevPageArrow = ({
 };
 
 export default PrevPageArrow;
+
+const Path = styled.path`
+  stroke: ${(props) => props.theme.color.BLACK};
+`;
