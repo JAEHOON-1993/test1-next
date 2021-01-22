@@ -1,30 +1,35 @@
-import styled, { ThemeConsumer } from 'styled-components';
+import styled, { ThemeConsumer, css } from 'styled-components';
 
 import { Props } from './types';
 
 interface checkBoxProps extends Props {
-  fill?: boolean;
+  isFilled?: boolean;
 }
 
 const CheckBoxIcon = ({
   color,
-  fill,
-  width = 24,
-  height = 24,
+  isFilled,
+  size = 24,
   ...props
 }: checkBoxProps) => {
-  if (fill) {
+  if (isFilled) {
     return (
       <ThemeConsumer>
         {(theme) => (
           <svg
             {...props}
             xmlns="http://www.w3.org/2000/svg"
-            width={width}
-            height={height}
+            width={size}
+            height={size}
             viewBox="0 0 30 30"
           >
-            <RectBox width="30" height="30" fill={color} rx="4" />
+            <RectBox
+              width="30"
+              height="30"
+              fill={color}
+              colored={color}
+              rx="4"
+            />
             <path
               fill="none"
               stroke={theme.color.WHITE}
@@ -45,8 +50,8 @@ const CheckBoxIcon = ({
         <svg
           {...props}
           xmlns="http://www.w3.org/2000/svg"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 30 30"
         >
           <g fill={theme.color.WHITE} stroke={theme.color.GRAY4}>
@@ -61,6 +66,16 @@ const CheckBoxIcon = ({
 
 export default CheckBoxIcon;
 
-const RectBox = styled.rect`
+interface style {
+  colored?: string;
+}
+
+const RectBox = styled.rect<style>`
   fill: ${(props) => props.theme.color.PRIMARY};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

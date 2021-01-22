@@ -2,7 +2,7 @@ import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const BoxIcon: React.FC<Props> = ({ width = 100, height = 100, ...props }) => {
+const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -10,8 +10,8 @@ const BoxIcon: React.FC<Props> = ({ width = 100, height = 100, ...props }) => {
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="popup_icon_2_100"
-          width={width}
-          height={width}
+          width={size}
+          height={size}
           viewBox="0 0 100 100"
         >
           <path id="사각형_1944" d="M0 0H100V100H0z" fill="none" />

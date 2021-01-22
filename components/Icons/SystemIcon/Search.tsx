@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const SearchIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="search_icon"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <path id="사각형_1956" d="M0 0H24V24H0z" fill="none" />
@@ -17,6 +17,7 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
         id="타원_455"
         fill="none"
         stroke={color}
+        colored={color}
         strokeWidth="1.5px"
         transform="translate(2 2)"
       >
@@ -27,6 +28,7 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
         id="선_228"
         fill="none"
         stroke={color}
+        colored={color}
         stroke-linecap="round"
         strokeWidth="2px"
         d="M0 0L6 6"
@@ -38,6 +40,16 @@ const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default SearchIcon;
 
-const StrokeProps = styled.path`
+interface style {
+  colored?: string;
+}
+
+const StrokeProps = styled.path<style>`
   stroke: ${(props) => props.theme.color.BLACK};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

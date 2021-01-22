@@ -3,10 +3,10 @@ import CardIcon from './Card';
 import PaperIcon from './Paper';
 import PhoneIcon from './Phone';
 
+export type nameProps = 'box' | 'card' | 'paper' | 'phone';
 interface Props {
-  name: 'box' | 'card' | 'paper' | 'phone';
-  width?: string;
-  height?: string;
+  name: nameProps;
+  size?: string | number;
   style?: any;
 }
 

@@ -1,7 +1,6 @@
 export interface Props {
   color?: string;
   style?: any;
-  width?: string | number;
-  height?: string | number;
+  size?: string | number;
   onClick?: () => void;
 }

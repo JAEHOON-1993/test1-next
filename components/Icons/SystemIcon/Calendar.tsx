@@ -1,8 +1,8 @@
-import styled, { ThemeConsumer } from 'styled-components';
+import styled, { css, ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
+const CalendarIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -10,8 +10,8 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="calendar_icon_24"
-          width="24"
-          height="24"
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
         >
           <path id="사각형_1956" d="M0 0H24V24H0z" fill="none" />
@@ -21,6 +21,7 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
               id="사각형_2089"
               fill="none"
               stroke={color}
+              colored={color}
               strokeWidth="1.5px"
               transform="translate(306 57)"
             >
@@ -51,7 +52,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(313 64)"
                 />
               </g>
-              <StrokeFillProps id="사각형_2097" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2097"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -63,7 +69,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(313 68)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2101" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2101"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -75,7 +86,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(313 72)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2096" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2096"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -87,7 +103,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(309 68)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2100" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2100"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -99,7 +120,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(309 72)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2093" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2093"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -111,7 +137,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(321 64)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2099" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2099"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -123,7 +154,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(321 68)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2095" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2095"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -135,7 +171,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(317 64)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2098" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2098"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -147,7 +188,12 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
                   transform="translate(317 68)"
                 />
               </StrokeFillProps>
-              <StrokeFillProps id="사각형_2102" stroke={color} fill={color}>
+              <StrokeFillProps
+                id="사각형_2102"
+                stroke={color}
+                colored={color}
+                fill={color}
+              >
                 <path
                   d="M0 0H2V2H0z"
                   stroke="none"
@@ -165,6 +211,7 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
               d="M0 0L0 3.5"
               fill="none"
               stroke={color}
+              colored={color}
               strokeWidth="1.5px"
               strokeLinecap="round"
               transform="translate(309.5 56)"
@@ -174,6 +221,7 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
               d="M0 0L0 3.5"
               fill="none"
               stroke={color}
+              colored={color}
               strokeWidth="1.5px"
               strokeLinecap="round"
               transform="translate(322.5 56)"
@@ -187,11 +235,28 @@ const CalendarIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
 
 export default CalendarIcon;
 
-const StrokeFillProps = styled.g`
+interface style {
+  colored?: string;
+}
+
+const StrokeFillProps = styled.g<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
   fill: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+      fill: ${props.colored};
+    `}
 `;
 
-const StrokeProps = styled.path`
+const StrokeProps = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const AddIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
+const AddIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="add_icon_24"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="그룹_690" transform="translate(-3142.531 -2494.531)">

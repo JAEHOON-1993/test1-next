@@ -1,20 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const MoreSettingIcon = ({
-  width = 24,
-  height = 24,
-  color,
-  ...props
-}: Props) => {
+const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="구성_요소_186_4"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="그룹_751" transform="translate(-316 -136)">
@@ -24,6 +19,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 139)"
         />
         <Circle
@@ -32,6 +28,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 146)"
         />
         <Circle
@@ -40,6 +37,7 @@ const MoreSettingIcon = ({
           cy="1.5"
           r="1.5"
           fill={color}
+          colored={color}
           transform="translate(333 153)"
         />
       </g>
@@ -50,6 +48,15 @@ const MoreSettingIcon = ({
 
 export default MoreSettingIcon;
 
-const Circle = styled.circle`
+interface style {
+  colored?: string;
+}
+
+const Circle = styled.circle<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

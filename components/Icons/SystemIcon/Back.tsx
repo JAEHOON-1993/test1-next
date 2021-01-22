@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const BackIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const BackIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="back_icon_24"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="Arrow" transform="translate(3 3)">
@@ -17,6 +17,7 @@ const BackIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
           id="icon-arrow"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="translate(1 2)"
@@ -39,6 +40,16 @@ const BackIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default BackIcon;
 
-const GProps = styled.g`
+interface style {
+  colored?: string;
+}
+
+const GProps = styled.g<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

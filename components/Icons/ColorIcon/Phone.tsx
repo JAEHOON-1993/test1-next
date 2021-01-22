@@ -2,11 +2,7 @@ import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const PhoneIcon: React.FC<Props> = ({
-  width = '50',
-  height = '50',
-  ...props
-}) => {
+const PhoneIcon: React.FC<Props> = ({ size = 50, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -14,8 +10,8 @@ const PhoneIcon: React.FC<Props> = ({
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="kakao_link_icon_50"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 50 50"
         >
           <defs>

@@ -54,7 +54,7 @@ export const AllButtons = () => {
 };
 
 const Template: Story<ButtonProps> = (args) => (
-  <ThemeConsumer>{(theme) => <Button {...args} theme={theme} />}</ThemeConsumer>
+  <ThemeConsumer>{(theme) => <Button {...args} />}</ThemeConsumer>
 );
 
 export const Default = Template.bind({});

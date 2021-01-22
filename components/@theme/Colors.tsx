@@ -3,6 +3,8 @@ import styled, { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
+import GradientComponent from 'components/Gradient';
+
 const Colors: React.FC<Props> = () => {
   return (
     <ThemeConsumer>
@@ -115,19 +117,20 @@ const Colors: React.FC<Props> = () => {
           </ColorBox>
           <br />
           <h1>Gradient</h1>
-          <ColorBox>
-            <GradientColor
+          <GradientColorBox>
+            <GradientComponent
               first={theme.color.PRIMARY}
               second={theme.color.GRAY0}
               to="right"
-            >
+            />
+            <>
               <div />
               <p>Gradient 1</p>
               <p>
                 right, {theme.color.PRIMARY}, {theme.color.GRAY0}
               </p>
-            </GradientColor>
-          </ColorBox>
+            </>
+          </GradientColorBox>
         </>
       )}
     </ThemeConsumer>
@@ -148,6 +151,16 @@ interface gradientProps {
 const ColorBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+`;
+
+const GradientColorBox = styled(ColorBox)`
+  width: 300px;
+  height: 100px;
+  > div {
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 const Color = styled.div<styleProps>`
@@ -171,23 +184,23 @@ const Color = styled.div<styleProps>`
   }
 `;
 
-const GradientColor = styled.div<gradientProps>`
-  > div {
-    width: 300px;
-    height: 100px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background: ${(props) =>
-      `linear-gradient(to ${props.to}, ${props.first}, ${props.second})`};
-  }
+// const GradientColor = styled.div<gradientProps>`
+//   > div {
+//     width: 300px;
+//     height: 100px;
+//     border-radius: 4px;
+//     margin-bottom: 10px;
+//     background: ${(props) =>
+//       `linear-gradient(to ${props.to}, ${props.first}, ${props.second})`};
+//   }
 
-  > p {
-    :nth-of-type(1) {
-      margin: 0px;
-    }
-    :nth-of-type(2) {
-      margin: 0px;
-      color: ${(props) => props.theme.color.GRAY5};
-    }
-  }
-`;
+//   > p {
+//     :nth-of-type(1) {
+//       margin: 0px;
+//     }
+//     :nth-of-type(2) {
+//       margin: 0px;
+//       color: ${(props) => props.theme.color.GRAY5};
+//     }
+//   }
+// `;

@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const UrlIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="url_icon_24"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="그룹_698" transform="translate(-244 -166.087)">
@@ -18,6 +18,7 @@ const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
             d="M264.1 175.284V171l-6.633 6.633"
             fill="none"
             stroke={color}
+            colored={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5px"
@@ -28,6 +29,7 @@ const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
             d="M0 0L4.285 0"
             fill="none"
             stroke={color}
+            colored={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5px"
@@ -39,6 +41,7 @@ const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
           d="M263.087 178.7v6.383H249V171h6.374"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5px"
@@ -51,6 +54,16 @@ const UrlIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
 
 export default UrlIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

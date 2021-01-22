@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const ImageIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
+const ImageIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="그룹_712" transform="translate(-896.815 -171.613)">
@@ -16,6 +16,7 @@ const ImageIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           id="사각형_1982"
           fill="none"
           stroke={color}
+          colored={color}
           transform="translate(898.815 176.613)"
         >
           <rect width="20" height="15" stroke="none" rx="3" />
@@ -27,6 +28,7 @@ const ImageIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           cy="2.249"
           r="2.249"
           fill={color}
+          colored={color}
           transform="translate(912.001 179.355)"
         />
         <FillProps
@@ -34,6 +36,7 @@ const ImageIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
           id="패스_1196"
           d="M919.093 208.527l-.815 1.411a.551.551 0 0 1-.954 0l-2.589-4.484a.55.55 0 0 0-.953 0l-4.292 7.435a.55.55 0 0 0 .477.826h12.121a.55.55 0 0 0 .477-.826l-2.518-4.362a.55.55 0 0 0-.954 0z"
           fill={color}
+          colored={color}
           transform="translate(-7.965 -22.576)"
         />
       </g>
@@ -44,10 +47,24 @@ const ImageIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
 
 export default ImageIcon;
 
-const StrokeProps = styled.g`
+interface style {
+  colored?: string;
+}
+
+const StrokeProps = styled.g<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;
 
-const FillProps = styled.circle`
+const FillProps = styled.circle<style>`
   fill: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      fill: ${props.colored};
+    `}
 `;

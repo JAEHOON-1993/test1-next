@@ -2,21 +2,15 @@ import React from 'react';
 
 import { Props } from './types';
 
-const ChatIcon: React.FC<Props> = ({
-  color,
-  fill,
-  width = 24,
-  height = 24,
-  ...props
-}) => {
+const ChatIcon: React.FC<Props> = ({ color, fill, size = 24, ...props }) => {
   if (fill) {
     return (
       <svg
         {...props}
         xmlns="http://www.w3.org/2000/svg"
         id="chat_select"
-        width={width}
-        height={height}
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
       >
         <path id="사각형_1961" fill="none" d="M0 0H24V24H0z" />
@@ -52,8 +46,8 @@ const ChatIcon: React.FC<Props> = ({
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="chat_default"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <defs>

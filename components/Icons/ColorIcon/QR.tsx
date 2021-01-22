@@ -1,7 +1,7 @@
 import { ThemeConsumer } from 'styled-components';
 import { Props } from './types';
 
-const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
+const QRIcon: React.FC<Props> = ({ size = 50, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -9,8 +9,8 @@ const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="QR_icon_50"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 50 50"
         >
           <defs>
@@ -42,7 +42,7 @@ const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
                     d="M11.214.75h-5.5A4.984 4.984 0 0 0 .75 5.72v5.494"
                     fill="none"
                     strokeWidth="1.7px"
-                    stroke="#000"
+                    stroke={theme.color.BLACK}
                     strokeMiterlimit="10"
                     transform="translate(.296 .296)"
                   />
@@ -51,7 +51,7 @@ const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
                     d="M26.714 11.214V5.72A4.984 4.984 0 0 0 21.746.75h-5.5"
                     fill="none"
                     strokeWidth="1.7px"
-                    stroke="#000"
+                    stroke={theme.color.BLACK}
                     strokeMiterlimit="10"
                     transform="translate(6.422 .296)"
                   />
@@ -60,7 +60,7 @@ const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
                     d="M16.25 26.714h5.5a4.984 4.984 0 0 0 4.968-4.97V16.25"
                     fill="none"
                     strokeWidth="1.7px"
-                    stroke="#000"
+                    stroke={theme.color.BLACK}
                     strokeMiterlimit="10"
                     transform="translate(6.422 6.422)"
                   />
@@ -69,7 +69,7 @@ const QRIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
                     d="M.75 16.25v5.494a4.984 4.984 0 0 0 4.968 4.97h5.5"
                     fill="none"
                     strokeWidth="1.7px"
-                    stroke="#000"
+                    stroke={theme.color.BLACK}
                     strokeMiterlimit="10"
                     transform="translate(.296 6.422)"
                   />

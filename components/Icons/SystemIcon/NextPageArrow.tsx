@@ -1,19 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const NextPageArrow = ({
-  width = '22px',
-  height = '22px',
-  color,
-  ...props
-}: Props) => {
+const NextPageArrow = ({ size = 22, color, ...props }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="next_page_arrow"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 22 22"
       {...props}
     >
@@ -23,6 +18,7 @@ const NextPageArrow = ({
         d="M-196.5-4421.433l4.082-4.386-4.082-4.06"
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
@@ -33,6 +29,7 @@ const NextPageArrow = ({
         d="M-196.5-4421.433l4.082-4.386-4.082-4.06"
         fill="none"
         stroke={color}
+        colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
@@ -44,6 +41,15 @@ const NextPageArrow = ({
 
 export default NextPageArrow;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;

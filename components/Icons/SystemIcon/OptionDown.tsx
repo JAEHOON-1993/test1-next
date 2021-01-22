@@ -1,18 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const OptionDownIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color,
-}) => {
+const OptionDownIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="option_down_24"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="구성_요소_86" transform="translate(3 6)">
@@ -20,6 +16,7 @@ const OptionDownIcon: React.FC<Props> = ({
           id="패스_949"
           fill="none"
           stroke={color}
+          colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2px"
@@ -40,6 +37,15 @@ const OptionDownIcon: React.FC<Props> = ({
 
 export default OptionDownIcon;
 
-const Path = styled.path`
+interface style {
+  colored?: string;
+}
+
+const Path = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
 `;
