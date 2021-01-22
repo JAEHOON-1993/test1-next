@@ -5,6 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import ModalComponent from 'components/Modal';
 import ReadyModal from 'components/Modal/_fragments/ReadyModal';
 import AddImageModal from 'components/Modal/_fragments/AddImageModal';
+import ScrollModal from 'components/Modal/_fragments/ScrollModal';
 import Container from 'components/Container';
 import Button from 'components/Button';
 
@@ -12,6 +13,18 @@ export default {
   title: 'Example/components/Modal',
   component: ModalComponent,
   argTypes: {
+    position: {
+      control: {
+        type: 'inline-radio',
+        options: ['top', 'bottom', 'right', 'left', 'center'],
+      },
+    },
+    slide: {
+      control: {
+        type: 'inline-radio',
+        options: ['top', 'bottom', 'right', 'left', 'center'],
+      },
+    },
     children: {
       table: {
         disable: true,
@@ -188,3 +201,31 @@ export const addImageModal = () => {
     </>
   );
 };
+
+export const scrollModal = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+  return (
+    <ScrollModalWrap>
+      <ScrollModal
+        visible={visible}
+        closeModal={() => setVisible(false)}
+        slide="bottom"
+        position="bottom"
+        noDim
+      />
+      <Button
+        width="150px"
+        onClick={() => setVisible(true)}
+        label="Scroll Modal"
+      />
+    </ScrollModalWrap>
+  );
+};
+
+const ScrollModalWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+`;

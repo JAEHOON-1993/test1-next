@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { observer } from 'mobx-react';
 
 import Layout from 'components/Layout';
 
@@ -10,7 +11,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const AboutPage: React.FC<Props> = () => {
+const AboutPage: React.FC<Props> = observer(() => {
   const router = useRouter();
   return (
     <Layout title="About | Next.js + TypeScript Example">

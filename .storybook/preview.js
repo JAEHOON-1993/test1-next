@@ -69,6 +69,6 @@ export const parameters = {
   },
   viewport: {
     viewports: customViewports,
-    defaultViewport: 'someDefault',
+    // defaultViewport: 'pc',
   },
 };

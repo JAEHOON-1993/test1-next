@@ -14,7 +14,7 @@ const PhoneIcon = ({ size = 50, ...props }: Props) => {
           viewBox="0 0 50 50"
         >
           <defs>
-            <clipPath id="clip-path">
+            <clipPath id="clipPath">
               <path
                 id="사각형_28931"
                 d="M0 0H18.766V36.334H0z"
@@ -23,7 +23,7 @@ const PhoneIcon = ({ size = 50, ...props }: Props) => {
             </clipPath>
           </defs>
           <g id="그룹_37293" transform="translate(16 6.395)">
-            <g id="그룹_37292" clip-path="url(#clip-path)">
+            <g id="그룹_37292" clipPath="url(#clipPath)">
               <path
                 id="패스_264654"
                 d="M16.943 0H1.822A1.824 1.824 0 0 0 0 1.822v32.69a1.824 1.824 0 0 0 1.822 1.822h15.121a1.824 1.824 0 0 0 1.822-1.822V1.822A1.824 1.824 0 0 0 16.943 0M1.437 28.659H17.33v5.853a.387.387 0 0 1-.386.386H1.822a.386.386 0 0 1-.386-.386zM17.33 4.54H1.437V1.822a.386.386 0 0 1 .386-.386h15.12a.387.387 0 0 1 .386.386zM1.437 5.976H17.33v21.246H1.437z"

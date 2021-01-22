@@ -1,11 +1,9 @@
 import React from 'react';
-import styled, { ThemeConsumer } from 'styled-components';
+import styled from 'styled-components';
 
 import * as T from 'components/TypoGraphy';
-import SystemIcon from 'components/Icons/SystemIcon';
+import TabBarIcon, { nameProps } from 'components/Icons/TabBarIcon';
 import ButtonBase from 'components/Button/ButtonBase';
-
-import { nameProps } from 'components/Icons/SystemIcon';
 
 interface Props {
   id?: number;
@@ -17,7 +15,7 @@ interface Props {
   onClick?: any;
 }
 
-const BottomNavigationAction: React.FC<Props> = ({
+const BottomNavigationItem: React.FC<Props> = ({
   value,
   label,
   icon,
@@ -34,24 +32,14 @@ const BottomNavigationAction: React.FC<Props> = ({
     }
   };
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Item {...props} onClick={clickHandler}>
-          {icon && (
-            <SystemIcon
-              color={theme.color.PRIMARY}
-              isFilled={active}
-              name={icon}
-            />
-          )}
-          <T.Text sm>{label}</T.Text>
-        </Item>
-      )}
-    </ThemeConsumer>
+    <Item {...props} onClick={clickHandler}>
+      {icon && <TabBarIcon fill={active} name={icon} />}
+      <T.Text sm>{label}</T.Text>
+    </Item>
   );
 };
 
-export default BottomNavigationAction;
+export default BottomNavigationItem;
 
 const Item = styled(ButtonBase)`
   width: 100%;

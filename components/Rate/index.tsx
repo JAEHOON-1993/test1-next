@@ -26,13 +26,13 @@ const Rate: React.FC<Props> = ({
   if (decimal > 0) {
     data = [
       ...Array(newValue).fill('star'),
-      'star-half',
-      ...Array(count - newValue - 1).fill('star-o'),
+      'starHalf',
+      ...Array(count - newValue - 1).fill('starEmpty'),
     ];
   } else {
     data = [
       ...Array(newValue).fill('star'),
-      ...Array(count - newValue).fill('star-o'),
+      ...Array(count - newValue).fill('starEmpty'),
     ];
   }
 

@@ -66,7 +66,7 @@ export type nameProps =
   | 'wrongPassword';
 
 interface Props {
-  name: nameProps;
+  name: nameProps | string;
   size?: string | number;
   style?: any;
 }

@@ -22,7 +22,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1634.162h-8.2a.463.463 0 1 1 0-.926h8.2a.463.463 0 0 1 0 .926z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1633.236)"
                 />
               </g>
@@ -32,7 +32,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1636.588h-8.2a.463.463 0 1 1 0-.926h8.2a.463.463 0 0 1 0 .926z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1635.662)"
                 />
               </g>
@@ -42,7 +42,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1639.013h-8.2a.462.462 0 1 1 0-.925h8.2a.462.462 0 0 1 0 .925z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1638.088)"
                 />
               </g>
@@ -52,7 +52,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1641.439h-8.2a.462.462 0 1 1 0-.925h8.2a.462.462 0 1 1 0 .925z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1640.514)"
                 />
               </g>
@@ -62,7 +62,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1643.865h-8.2a.463.463 0 1 1 0-.926h8.2a.463.463 0 0 1 0 .926z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1642.939)"
                 />
               </g>
@@ -72,7 +72,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1469.843 1646.29h-8.2a.462.462 0 1 1 0-.925h8.2a.462.462 0 0 1 0 .925z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1461.177 -1645.365)"
                 />
               </g>
@@ -84,7 +84,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1472.285 1652.6H1460.1a.463.463 0 0 1-.462-.463v-18.969a.462.462 0 1 1 .925 0v18.507h11.264v-18.507a.462.462 0 1 1 .925 0v18.969a.463.463 0 0 1-.467.463z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1459.634 -1632.71)"
                 />
               </g>
@@ -94,7 +94,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1460.608 1634.146a.463.463 0 0 1-.462-.462 1.994 1.994 0 0 0-1.991-1.991.463.463 0 0 1 0-.925 2.919 2.919 0 0 1 2.916 2.916.463.463 0 0 1-.463.462z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1457.692 -1630.768)"
                 />
               </g>
@@ -104,7 +104,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1455.805 1648.322a2.92 2.92 0 0 1-2.916-2.916v-15.275a1.991 1.991 0 0 0-3.982 0v8.134h3.02a.462.462 0 0 1 0 .925h-3.482a.463.463 0 0 1-.462-.462v-8.6a2.916 2.916 0 1 1 5.832 0v15.275a1.991 1.991 0 0 0 3.982 0v-10.783a2.919 2.919 0 0 1 2.916-2.916.463.463 0 0 1 0 .925 1.993 1.993 0 0 0-1.991 1.991v10.786a2.919 2.919 0 0 1-2.917 2.916z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1447.982 -1627.215)"
                 />
               </g>
@@ -114,7 +114,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1472.8 1634.146a.463.463 0 0 1-.462-.462 1.994 1.994 0 0 0-1.991-1.991h-12.188a.463.463 0 0 1 0-.925h12.188a2.919 2.919 0 0 1 2.916 2.916.463.463 0 0 1-.463.462z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1457.692 -1630.768)"
                 />
               </g>
@@ -124,7 +124,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1459.89 1644.114h-5.62a.463.463 0 0 1 0-.925h5.62a.463.463 0 1 1 0 .925z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1453.808 -1643.189)"
                 />
               </g>
@@ -134,7 +134,7 @@ const ReceiptIcon = ({ size = 50, ...props }: Props) => {
                   d="M1465.108 1630.594a.461.461 0 0 1-.462-.463 1.993 1.993 0 0 0-1.991-1.99h-12.268a.463.463 0 0 1 0-.926h12.268a2.92 2.92 0 0 1 2.916 2.916.462.462 0 0 1-.463.463z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1449.924 -1627.215)"
                 />
               </g>

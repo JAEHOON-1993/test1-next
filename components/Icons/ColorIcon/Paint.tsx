@@ -16,7 +16,7 @@ const PaintIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           viewBox="0 0 50 50"
         >
           <defs>
-            <clipPath id="clip-path">
+            <clipPath id="clipPath">
               <path
                 id="사각형_28760"
                 d="M0 0H36.58V34.722H0z"
@@ -39,7 +39,7 @@ const PaintIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             transform="translate(10 36)"
           />
           <g id="그룹_36713" transform="translate(7 7.432)">
-            <g id="그룹_36712" clipPath="url(#clip-path)">
+            <g id="그룹_36712" clipPath="url(#clipPath)">
               <path
                 id="패스_264354"
                 d="M31.586 34.722H2.348a.653.653 0 0 1-.654-.654V.654A.653.653 0 0 1 2.348 0h29.238a.654.654 0 0 1 .654.654v33.415a.654.654 0 0 1-.654.654M3 33.417h27.934V1.307H3z"

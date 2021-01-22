@@ -15,7 +15,7 @@ const PaperIcon: React.FC<Props> = ({ size = 100, ...props }) => {
           viewBox="0 0 100 100"
         >
           <defs>
-            <clipPath id="clip-path">
+            <clipPath id="clipPath">
               <path
                 id="사각형_28951"
                 d="M0 0H48.906V52.52H0z"
@@ -53,7 +53,7 @@ const PaperIcon: React.FC<Props> = ({ size = 100, ...props }) => {
           <g id="그룹_37316" transform="translate(31.549 26.867)">
             <g
               id="그룹_37315"
-              clip-path="url(#clip-path)"
+              clipPath="url(#clipPath)"
               transform="translate(-.001)"
             >
               <path

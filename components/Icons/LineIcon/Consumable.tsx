@@ -53,7 +53,7 @@ const ConsumableIcon = ({ size = 50, ...props }: Props) => {
             id="타원_465"
             fill="none"
             stroke={theme.color.PRIMARY}
-            stroke-width="1.5px"
+            strokeWidth="1.5px"
             transform="translate(21 19)"
           >
             <circle cx="6.5" cy="6.5" r="6.5" stroke="none" />
@@ -63,8 +63,8 @@ const ConsumableIcon = ({ size = 50, ...props }: Props) => {
             id="패스_1288"
             fill="none"
             stroke={theme.color.PRIMARY}
-            stroke-linecap="round"
-            stroke-width="1.5px"
+            strokeLinecap="round"
+            strokeWidth="1.5px"
             d="M2123.252 5343.79l2.649 2.426h3.813"
             transform="translate(-2098.516 -5320.596)"
           />

@@ -16,14 +16,14 @@ interface Props {
 }
 
 const MobileRouter = ({ children }: Props) => {
-  const { direction, routing, setRouting, push } = RouterStore;
+  const { direction, routing, setRouting } = RouterStore;
 
   useEffect(() => {
     // 뒤로가기
     const beforePopState = ({ url, as, options }: any) => {
-      // console.log('beforePopState : ', url);
-      // console.log('beforePopState as : ', as);
-      // console.log('beforePopState options : ', options);
+      console.log('beforePopState : ', url);
+      console.log('beforePopState as : ', as);
+      console.log('beforePopState options : ', options);
       setRouting('right');
       // push(as, as, "right");
       return false;

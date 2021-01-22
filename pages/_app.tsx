@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
-import RouterStore from 'stores/Router';
+// import Router from 'next/router';
+// import RouterStore from 'stores/Router';
 
 import { AppProps } from 'next/app';
 
@@ -21,10 +21,10 @@ declare global {
   }
 }
 
-const MyApp = ({ Component, pageProps }: AppProps, { mobxStore }: any) => {
-  const [isPush, setIsPush] = useState(false);
-  const [isPop, setIsPop] = useState(false);
-  const [load, setLoad] = useState(true);
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  // const [isPush, setIsPush] = useState(false);
+  // const [isPop, setIsPop] = useState(false);
+  // const [load, setLoad] = useState(true);
 
   // useEffect(() => {
   //   // 뒤로가기

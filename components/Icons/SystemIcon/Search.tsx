@@ -29,7 +29,7 @@ const SearchIcon: React.FC<Props> = ({ size = 24, color }) => {
         fill="none"
         stroke={color}
         colored={color}
-        stroke-linecap="round"
+        strokeLinecap="round"
         strokeWidth="2px"
         d="M0 0L6 6"
         transform="translate(15.5 15.5)"

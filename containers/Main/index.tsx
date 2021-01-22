@@ -7,7 +7,7 @@ import BannerContainer from './_fragments/Banner';
 import MenuContainer from './_fragments/Menu';
 
 import BottomNavigation from 'components/BottomNavigation';
-import BottomNavigationAction from 'components/BottomNavigationAction';
+import BottomNavigationAction from 'components/BottomNavigation/BottomNavigationItem';
 
 import { Props } from './types';
 
@@ -24,7 +24,7 @@ const MobileBottomNav = () => {
       <BottomNavigationAction label="장바구니" icon="shopping" />
       <BottomNavigationAction
         label="마이페이지"
-        icon="mypage"
+        icon="myPage"
         onClick={() => Router.push('/login')}
       />
     </BottomNavigation>

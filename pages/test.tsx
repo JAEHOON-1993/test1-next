@@ -27,7 +27,7 @@ const IndexPage = observer(() => {
           <SystemIcon name="chat" />
           <div style={{ height: '50px', margin: '10px 0' }}>
             <GradientComponent
-              to="right"
+              position="to right"
               first={theme.color.PRIMARY}
               second={theme.color.POINT}
             >

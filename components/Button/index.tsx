@@ -90,14 +90,15 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   ${(props) =>
     props.outline &&
     css`
-      background-color: ${(props) => props.theme.theme.color.WHITE};
+      background-color: ${(props) => props.theme.color.WHITE};
       border: 1px solid
         ${(props) => (props.color ? props.color : props.theme.color.PRIMARY)};
       color: ${(props) =>
         props.color ? props.color : props.theme.color.PRIMARY};
-      span {
+
+      > span {
         background-color: ${(props) =>
-          props.color ? `${props.color}77` : `${props.theme.color.PRIMARY}77`};
+          props.color ? props.color : props.theme.color.PRIMARY};
       }
     `}
   ${(props) =>

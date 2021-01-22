@@ -27,6 +27,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
   const router = useRouter();
   const [path, setPath] = useState<string>('/');
   const [fixed, setFixed] = useState<boolean>(false);
+  console.log('나중에 수정', setPath);
   useEffect(() => {
     console.log(NO_BACK_PATH.indexOf(path));
     console.log(SEARCH_PATH.indexOf(path));
