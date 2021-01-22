@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const SearchIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const SearchIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="search_icon"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <path id="사각형_1956" d="M0 0H24V24H0z" fill="none" />

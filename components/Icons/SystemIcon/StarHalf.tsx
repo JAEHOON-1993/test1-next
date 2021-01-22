@@ -3,33 +3,22 @@ import styled, { ThemeConsumer, css } from 'styled-components';
 import { Props } from './types';
 
 interface starProps extends Props {
-  size?: 'small' | 'medium' | 'large';
+  star?: 'small' | 'medium' | 'large';
 }
 
-const setWidth = (size: string) => {
-  if (size === 'small') {
+const setSize = (star: string) => {
+  if (star === 'small') {
     return '14px';
-  } else if (size === 'medium') {
-    return '17.8px';
-  } else if (size === 'large') {
-    return '31.9px';
-  }
-};
-
-const setHeight = (size: string) => {
-  if (size === 'small') {
-    return '14px';
-  } else if (size === 'medium') {
-    return '17px';
-  } else if (size === 'large') {
-    return '30.5px';
+  } else if (star === 'medium') {
+    return '16px';
+  } else if (star === 'large') {
+    return '30px';
   }
 };
 
 const StarHalfIcon = ({
-  size = 'medium',
-  width = setWidth(size),
-  height = setHeight(size),
+  star = 'medium',
+  size = setSize(star),
   color,
   ...props
 }: starProps) => {
@@ -40,8 +29,8 @@ const StarHalfIcon = ({
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="구성_요소_186_4"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 31.982 30.52"
         >
           <g>
@@ -71,7 +60,7 @@ interface style {
 }
 
 const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
+  fill: ${(props) => props.theme.color.PRIMARY};
 
   ${(props) =>
     props.colored &&

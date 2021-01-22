@@ -21,7 +21,6 @@ import AddProfileIcon from './AddProfile';
 import CalendarIcon from './Calendar';
 import ChatIcon from './Chat';
 import CheckIcon from './Check';
-import PasswordIcon from './Password';
 import LikeIcon from './Like';
 import QRCodeIcon from './QRCode';
 import TextDeleteIcon from './TextDelete';
@@ -42,66 +41,60 @@ import CloseIcon from './Close';
 import SmallPlusIcon from './SmallPlus';
 import SmallMinusIcon from './SmallMinus';
 import PlusIcon from './Plus';
-import InquiryIcon from './Inquiry';
-import CardIcon from './Card';
-import CashIcon from './Cash';
-import EstimateIcon from './Estimate';
+import InvalidIcon from './Invalid';
+
+export type nameProps =
+  | 'add'
+  | 'addProfile'
+  | 'alarm'
+  | 'alarmNew'
+  | 'arrowRight'
+  | 'arrowLeft'
+  | 'back'
+  | 'bookmark'
+  | 'bookmarkColored'
+  | 'calender'
+  | 'chat'
+  | 'check'
+  | 'checkbox'
+  | 'close'
+  | 'closeRound'
+  | 'delete'
+  | 'done'
+  | 'facebook'
+  | 'heart'
+  | 'heartColored'
+  | 'hamburger'
+  | 'image'
+  | 'invalid'
+  | 'kakao'
+  | 'like'
+  | 'moreSetting'
+  | 'naver'
+  | 'optionDown'
+  | 'optionUp'
+  | 'qr'
+  | 'smallMinus'
+  | 'smallPlus'
+  | 'search'
+  | 'setting'
+  | 'share'
+  | 'star'
+  | 'starHalf'
+  | 'starEmpty'
+  | 'textDelete'
+  | 'url'
+  | 'write'
+  | 'nextPageArrow'
+  | 'prevPageArrow'
+  | 'plus';
 
 interface Props {
-  name:
-    | 'add'
-    | 'addProfile'
-    | 'alarm'
-    | 'alarmNew'
-    | 'arrowRight'
-    | 'arrowLeft'
-    | 'back'
-    | 'bookmark'
-    | 'bookmarkColored'
-    | 'card'
-    | 'cash'
-    | 'calender'
-    | 'chat'
-    | 'check'
-    | 'checkbox'
-    | 'close'
-    | 'closeRound'
-    | 'delete'
-    | 'done'
-    | 'estimate'
-    | 'facebook'
-    | 'heart'
-    | 'heartColored'
-    | 'hamburger'
-    | 'inquiry'
-    | 'image'
-    | 'kakao'
-    | 'like'
-    | 'moreSetting'
-    | 'naver'
-    | 'optionDown'
-    | 'optionUp'
-    | 'password'
-    | 'qr'
-    | 'smallMinus'
-    | 'smallPlus'
-    | 'search'
-    | 'setting'
-    | 'share'
-    | 'star'
-    | 'starHalf'
-    | 'starEmpty'
-    | 'textDelete'
-    | 'url'
-    | 'write'
-    | 'nextPageArrow'
-    | 'prevPageArrow'
-    | 'plus';
-  width?: string;
-  height?: string;
+  name: nameProps;
+  size?: string | number;
   color?: string;
   style?: any;
-  size?: 'small' | 'medium' | 'large';
+  star?: 'small' | 'medium' | 'large';
   fill?: boolean;
   onClick?: () => void;
 }
@@ -133,10 +126,6 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <BookmarkIcon {...props} />;
     case 'bookmarkColored':
       return <BookmarkColoredIcon {...props} />;
-    case 'card':
-      return <CardIcon {...props} />;
-    case 'cash':
-      return <CashIcon {...props} />;
     case 'calender':
       return <CalendarIcon {...props} />;
     case 'chat':
@@ -153,8 +142,6 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <DeleteIcon {...props} />;
     case 'done':
       return <DoneIcon {...props} />;
-    case 'estimate':
-      return <EstimateIcon {...props} />;
     case 'facebook':
       return <FacebookIcon {...props} />;
     case 'hamburger':
@@ -163,10 +150,10 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <HeartIcon {...props} />;
     case 'heartColored':
       return <HeartColoredIcon {...props} />;
-    case 'inquiry':
-      return <InquiryIcon {...props} />;
     case 'image':
       return <ImageIcon {...props} />;
+    case 'invalid':
+      return <InvalidIcon {...props} />;
     case 'kakao':
       return <KakaoIcon {...props} />;
     case 'like':
@@ -179,8 +166,6 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <OptionDownIcon {...props} />;
     case 'optionUp':
       return <OptionUpIcon {...props} />;
-    case 'password':
-      return <PasswordIcon {...props} />;
     case 'qr':
       return <QRCodeIcon {...props} />;
     case 'search':

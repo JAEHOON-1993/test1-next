@@ -6,13 +6,7 @@ interface checkBoxProps extends Props {
   fill?: boolean;
 }
 
-const CheckBoxIcon = ({
-  color,
-  fill,
-  width = 24,
-  height = 24,
-  ...props
-}: checkBoxProps) => {
+const CheckBoxIcon = ({ color, fill, size = 24, ...props }: checkBoxProps) => {
   if (fill) {
     return (
       <ThemeConsumer>
@@ -20,8 +14,8 @@ const CheckBoxIcon = ({
           <svg
             {...props}
             xmlns="http://www.w3.org/2000/svg"
-            width={width}
-            height={height}
+            width={size}
+            height={size}
             viewBox="0 0 30 30"
           >
             <RectBox
@@ -51,8 +45,8 @@ const CheckBoxIcon = ({
         <svg
           {...props}
           xmlns="http://www.w3.org/2000/svg"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 30 30"
         >
           <g fill={theme.color.WHITE} stroke={theme.color.GRAY4}>

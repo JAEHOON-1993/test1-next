@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const WriteIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const WriteIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="write_icon_24"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <g id="그룹_698" transform="translate(-421.858 -1335.248)">

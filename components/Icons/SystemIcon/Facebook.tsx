@@ -1,18 +1,13 @@
 import { Props } from './types';
 
-const FacebookIcon = ({
-  width = 25,
-  height = 24,
-  color = '#1877f3',
-  ...props
-}: Props) => {
+const FacebookIcon = ({ size = 24, color = '#1877f3', ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="facebook"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 25 24"
     >
       <g>

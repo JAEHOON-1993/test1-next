@@ -2,18 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const NextPageArrow = ({
-  width = '22px',
-  height = '22px',
-  color,
-  ...props
-}: Props) => {
+const NextPageArrow = ({ size = 22, color, ...props }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="next_page_arrow"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 22 22"
       {...props}
     >

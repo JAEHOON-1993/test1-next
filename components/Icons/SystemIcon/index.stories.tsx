@@ -2,7 +2,6 @@ import styled, { ThemeConsumer } from 'styled-components';
 import { Meta } from '@storybook/react/types-6-0';
 
 import SystemIcon from 'components/Icons/SystemIcon';
-import AddIcon from './Add';
 
 export default {
   title: 'Example/components/Icons/SystemIcon',
@@ -14,9 +13,10 @@ export const all = () => {
     <ThemeConsumer>
       {(theme) => (
         <Wrap>
+          <AlphaBetically>[ A ]</AlphaBetically>
           <SystemIconBox>
-            <SystemIcon name="add" />
-            <div>Add</div>
+            <SystemIcon name="add" color={theme.color.POINT} />
+            <div>Add (point color)</div>
           </SystemIconBox>
 
           <SystemIconBox>
@@ -42,11 +42,11 @@ export const all = () => {
             <div>ArrowLeft</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ B ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="back" />
             <div>Back</div>
           </SystemIconBox>
-
           <SystemIconBox>
             <SystemIcon name="bookmark" />
             <div>Bookmark</div>
@@ -56,22 +56,7 @@ export const all = () => {
             <div>BookmarkColored</div>
           </SystemIconBox>
 
-          <SystemIconBox>
-            <SystemIcon name="cash" />
-            <div>Cash</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="card" />
-            <div>card</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="inquiry" />
-            <div>Inquiry</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="estimate" />
-            <div>Estimate</div>
-          </SystemIconBox>
+          <AlphaBetically>[ C ]</AlphaBetically>
 
           <SystemIconBox>
             <SystemIcon name="calender" />
@@ -106,6 +91,7 @@ export const all = () => {
             <div>CloseRound</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ D ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="delete" />
             <div>Delete</div>
@@ -116,11 +102,13 @@ export const all = () => {
             <div>Done</div>
           </SystemIconBox>
 
-          <SystemIconBox>
-            <SystemIcon name="facebook" />
-            <div>Facebook</div>
-          </SystemIconBox>
+          {/* <AlphaBetically>[ E ]</AlphaBetically> */}
 
+          {/* <AlphaBetically>[ F ]</AlphaBetically> */}
+
+          {/* <AlphaBetically>[ G ]</AlphaBetically> */}
+
+          <AlphaBetically>[ H ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="hamburger" />
             <div>Hamburger</div>
@@ -135,31 +123,37 @@ export const all = () => {
             <div>HeartColored</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ I ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="image" />
             <div>Image</div>
           </SystemIconBox>
-
           <SystemIconBox>
-            <SystemIcon name="kakao" />
-            <div>Kakao</div>
+            <SystemIcon name="invalid" />
+            <div>Invalid</div>
           </SystemIconBox>
 
+          {/* <AlphaBetically>[ J ]</AlphaBetically> */}
+          {/* <AlphaBetically>[ K ]</AlphaBetically> */}
+
+          <AlphaBetically>[ L ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="like" />
             <div>Like</div>
           </SystemIconBox>
-
+          <AlphaBetically>[ M ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="moreSetting" />
             <div>MoreSetting</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ N ]</AlphaBetically>
           <SystemIconBox>
-            <SystemIcon name="naver" />
-            <div>Naver</div>
+            <SystemIcon name="nextPageArrow" />
+            <div>nextPageArrow</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ O ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="optionUp" />
             <div>OptionUp</div>
@@ -169,16 +163,26 @@ export const all = () => {
             <div>OptionDown</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ P ]</AlphaBetically>
           <SystemIconBox>
-            <SystemIcon name="password" />
-            <div>Password</div>
+            <SystemIcon name="plus" />
+            <div>Plus</div>
           </SystemIconBox>
 
+          <SystemIconBox>
+            <SystemIcon name="prevPageArrow" />
+            <div>prevPageArrow</div>
+          </SystemIconBox>
+
+          <AlphaBetically>[ Q ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="qr" />
-            <div>QRCode</div>
+            <div>QR</div>
           </SystemIconBox>
 
+          {/* <AlphaBetically>[ R ]</AlphaBetically> */}
+
+          <AlphaBetically>[ S ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="search" />
             <div>Search</div>
@@ -195,15 +199,24 @@ export const all = () => {
           </SystemIconBox>
 
           <SystemIconBox>
-            <SystemIcon name="star" size="large" />
+            <SystemIcon name="smallPlus" />
+            <div>SmallPlus</div>
+          </SystemIconBox>
+          <SystemIconBox>
+            <SystemIcon name="smallMinus" />
+            <div>SmallMinus</div>
+          </SystemIconBox>
+
+          <SystemIconBox>
+            <SystemIcon name="star" star="large" />
             <div>Star (large)</div>
           </SystemIconBox>
           <SystemIconBox>
-            <SystemIcon name="starHalf" size="large" />
+            <SystemIcon name="starHalf" star="large" />
             <div>StarHalf (large)</div>
           </SystemIconBox>
           <SystemIconBox>
-            <SystemIcon name="starEmpty" size="large" />
+            <SystemIcon name="starEmpty" star="large" />
             <div>StarEmpty (large)</div>
           </SystemIconBox>
 
@@ -221,53 +234,56 @@ export const all = () => {
           </SystemIconBox>
 
           <SystemIconBox>
-            <SystemIcon name="star" size="small" />
+            <SystemIcon name="star" star="small" />
             <div>star (small)</div>
           </SystemIconBox>
           <SystemIconBox>
-            <SystemIcon name="starHalf" size="small" />
+            <SystemIcon name="starHalf" star="small" />
             <div>starHalf (small)</div>
           </SystemIconBox>
           <SystemIconBox>
-            <SystemIcon name="starEmpty" size="small" />
+            <SystemIcon name="starEmpty" star="small" />
             <div>starEmpty (small)</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ T ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="textDelete" />
             <div>TextDelete</div>
           </SystemIconBox>
 
+          <AlphaBetically>[ U ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="url" />
             <div>Url</div>
           </SystemIconBox>
 
+          {/* <AlphaBetically>[ V ]</AlphaBetically> */}
+
+          <AlphaBetically>[ W ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="write" />
             <div>Write</div>
           </SystemIconBox>
 
+          {/* <AlphaBetically>[ X ]</AlphaBetically> */}
+          {/* <AlphaBetically>[ Y ]</AlphaBetically> */}
+          {/* <AlphaBetically>[ Z ]</AlphaBetically> */}
+
+          <AlphaBetically>[ Social ]</AlphaBetically>
           <SystemIconBox>
-            <SystemIcon name="prevPageArrow" />
-            <div>prevPageArrow</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="nextPageArrow" />
-            <div>nextPageArrow</div>
+            <SystemIcon name="kakao" />
+            <div>Kakao</div>
           </SystemIconBox>
 
           <SystemIconBox>
-            <SystemIcon name="plus" />
-            <div>Plus</div>
+            <SystemIcon name="naver" />
+            <div>Naver</div>
           </SystemIconBox>
+
           <SystemIconBox>
-            <SystemIcon name="smallPlus" />
-            <div>SmallPlus</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="smallMinus" />
-            <div>SmallMinus</div>
+            <SystemIcon name="facebook" />
+            <div>Facebook</div>
           </SystemIconBox>
         </Wrap>
       )}
@@ -276,11 +292,29 @@ export const all = () => {
 };
 
 const Wrap = styled.div`
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 900px;
+`;
+
+const AlphaBetically = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
 `;
 
 const SystemIconBox = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
+
+  > div {
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
 `;

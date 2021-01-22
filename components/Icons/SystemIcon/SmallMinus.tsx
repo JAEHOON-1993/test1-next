@@ -2,18 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const SmallMinusIcon: React.FC<Props> = ({
-  color,
-  width = 24,
-  height = 24,
-  ...props
-}) => {
+const SmallMinusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <Path

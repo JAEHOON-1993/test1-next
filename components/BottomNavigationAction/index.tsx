@@ -5,10 +5,13 @@ import * as T from 'components/TypoGraphy';
 import SystemIcon from 'components/Icons/SystemIcon';
 import ButtonBase from 'components/Button/ButtonBase';
 
+import { nameProps } from 'components/Icons/SystemIcon';
+
 interface Props {
   id?: number;
   value?: string;
   label?: string;
+  icon?: nameProps;
   active?: boolean;
   setActive?: any;
   onClick?: any;

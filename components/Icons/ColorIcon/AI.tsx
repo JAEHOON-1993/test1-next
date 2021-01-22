@@ -4,7 +4,7 @@ import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const AIIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
+const AIIcon: React.FC<Props> = ({ size = 50, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -12,8 +12,8 @@ const AIIcon: React.FC<Props> = ({ width = '50', height = '50', ...props }) => {
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="AI_icon2"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 50 50"
         >
           <defs>

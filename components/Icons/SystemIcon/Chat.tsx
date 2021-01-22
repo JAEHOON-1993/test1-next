@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const ChatIcon = ({ width = 24, height = 24, color, ...props }: Props) => {
+const ChatIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="구성_요소_186_4"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <Path

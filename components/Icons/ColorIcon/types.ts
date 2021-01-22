@@ -1,5 +1,4 @@
 export interface Props {
-  width?: string;
-  height?: string;
+  size?: string | number;
   style?: any;
 }

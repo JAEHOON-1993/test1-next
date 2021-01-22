@@ -1,7 +1,7 @@
 import { ThemeConsumer } from 'styled-components';
 import { Props } from './types';
 
-const CardIcon: React.FC<Props> = ({ width = 100, height = 100, ...props }) => {
+const CardIcon: React.FC<Props> = ({ size = 100, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -9,8 +9,8 @@ const CardIcon: React.FC<Props> = ({ width = 100, height = 100, ...props }) => {
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="popup_icon_1_100"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 100 100"
         >
           <path

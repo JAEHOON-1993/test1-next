@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { nameProps } from 'components/Icons/SystemIcon';
+
 interface Props {
   style?: any;
   children?: any;
   active?: number;
   setActive?: any;
+  icon?: nameProps;
 }
 
 const BottomNavigation: React.FC<Props> = ({

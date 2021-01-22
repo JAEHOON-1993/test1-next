@@ -1,12 +1,7 @@
 import styled, { css, ThemeConsumer } from 'styled-components';
 import { Props } from './types';
 
-const AddProfileIcon: React.FC<Props> = ({
-  width = 24,
-  height = 24,
-  color,
-  ...props
-}) => {
+const AddProfileIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -14,8 +9,8 @@ const AddProfileIcon: React.FC<Props> = ({
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="add_profile_icon_20"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
         >
           <FillProps

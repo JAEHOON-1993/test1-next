@@ -13,7 +13,6 @@ interface Props {
 const StyledProvider = observer(({ children }: Props) => {
   const { currentTheme } = ThemeStore;
 
-  console.log('currentTheme', currentTheme);
   const theme = currentTheme === 'light' ? light : dark;
   return (
     <ThemeProvider theme={theme}>

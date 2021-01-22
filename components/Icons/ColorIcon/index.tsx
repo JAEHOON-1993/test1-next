@@ -10,21 +10,21 @@ import Wallet from './Wallet';
 import BagIcon from './Bag';
 import QRIcon from './QR';
 
+export type nameProps =
+  | 'add'
+  | 'ai'
+  | 'bag'
+  | 'bed'
+  | 'fix'
+  | 'home'
+  | 'paint'
+  | 'phone'
+  | 'qr'
+  | 'search'
+  | 'wallet';
 interface Props {
-  name:
-    | 'add'
-    | 'ai'
-    | 'bag'
-    | 'bed'
-    | 'fix'
-    | 'home'
-    | 'paint'
-    | 'phone'
-    | 'qr'
-    | 'search'
-    | 'wallet';
-  width?: string;
-  height?: string;
+  name: nameProps;
+  size?: string | number;
   style?: any;
 }
 

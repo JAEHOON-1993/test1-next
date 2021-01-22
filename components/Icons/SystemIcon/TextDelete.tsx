@@ -2,19 +2,14 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const TextDeleteIcon = ({
-  width = 24,
-  height = 24,
-  color,
-  ...props
-}: Props) => {
+const TextDeleteIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="text_delete"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
     >
       <path id="사각형_1950" fill="none" d="M0 0H24V24H0z" />

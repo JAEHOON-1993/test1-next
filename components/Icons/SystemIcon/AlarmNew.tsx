@@ -2,14 +2,14 @@ import styled, { ThemeConsumer, css } from 'styled-components';
 
 import { Props } from './types';
 
-const AlarmNewIcon: React.FC<Props> = ({ width = 24, height = 24, color }) => {
+const AlarmNewIcon: React.FC<Props> = ({ size = 24, color }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
         >
           <Path

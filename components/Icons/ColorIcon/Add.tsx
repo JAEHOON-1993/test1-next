@@ -3,11 +3,7 @@ import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const AddIcon: React.FC<Props> = ({
-  width = '50',
-  height = '50',
-  ...props
-}) => {
+const AddIcon: React.FC<Props> = ({ size = 50, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -15,8 +11,8 @@ const AddIcon: React.FC<Props> = ({
           {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="icon6_50"
-          width={width}
-          height={height}
+          width={size}
+          height={size}
           viewBox="0 0 50 50"
         >
           <defs>
