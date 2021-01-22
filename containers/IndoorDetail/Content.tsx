@@ -15,13 +15,13 @@ interface Props {
 }
 
 const options = [
-  { value: 1, label: '그레이' },
-  { value: 2, label: '아이보리' },
-  { value: 3, label: '블루' },
+  { value: '1', label: '그레이' },
+  { value: '2', label: '아이보리' },
+  { value: '3', label: '블루' },
 ];
 const sizeOptions = [
-  { value: 50, label: '50 X 50 cm' },
-  { value: 80, label: '80 X 80 cm' },
+  { value: '50', label: '50 X 50 cm' },
+  { value: '80', label: '80 X 80 cm' },
 ];
 
 const ContentContainer: React.FC<Props> = () => {
@@ -62,12 +62,12 @@ const ContentContainer: React.FC<Props> = () => {
                 <T.Text color={theme.color.GRAY5}>{intComma(3000)}원</T.Text>
               </ShippingBox>
               <Hr />
-              <CutsomSelect
+              <CustomSelect
                 isSearchable={false}
                 options={options}
                 placeholder="색상"
               />
-              <CutsomSelect
+              <CustomSelect
                 isSearchable={false}
                 options={sizeOptions}
                 placeholder="사이즈"
@@ -103,7 +103,7 @@ const ContentBox = styled.div`
   /* Large PC */
   margin-top: 36px;
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     margin-top: 100%;
     flex-direction: column;
   }
@@ -113,7 +113,7 @@ const Content = styled.div`
   width: calc(50% - 15px);
   margin-left: 30px;
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     margin-top: 0px;
     margin-left: 0px;
     width: 100%;
@@ -123,7 +123,7 @@ const Image = styled(RatioBox)`
   border-radius: 0px;
   width: calc(50% - 15px) !important;
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     position: absolute;
     width: 100% !important;
     top: 0px;
@@ -148,10 +148,10 @@ const Name = styled(T.Title)`
 const Hr = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${theme.color.GRAY1};
+  background-color: ${(props) => props.theme.color.GRAY1};
   margin: 13px 0px;
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     width: calc(100% + 40px);
     margin-left: -20px;
   }
@@ -159,11 +159,11 @@ const Hr = styled.div`
 const MobileHr = styled.div`
   width: 100%;
   height: 9px;
-  background-color: ${theme.color.GRAY1};
+  background-color: ${(props) => props.theme.color.GRAY1};
   margin: 13px 0px;
   display: none;
   /* Mobile */
-  ${theme.window.mobile} {
+  ${(props) => props.theme.window.mobile} {
     display: block;
     width: calc(100% + 40px);
     margin-left: -20px;
@@ -184,13 +184,13 @@ const DiscountBox = styled.div`
   align-items: center;
   margin-bottom: 5px;
   > h1 {
-    color: ${theme.color.PRIMARY};
+    color: ${(props) => props.theme.color.PRIMARY};
     font-weight: bold;
     margin-right: 10px;
   }
   > p {
     text-decoration: line-through;
-    color: ${theme.color.GRAY5};
+    color: ${(props) => props.theme.color.GRAY5};
   }
 `;
 
@@ -200,7 +200,7 @@ const ShippingBox = styled.div`
   justify-content: space-between;
 `;
 
-const CutsomSelect = styled(Select)`
+const CustomSelect = styled(Select)`
   margin-bottom: 7px;
 `;
 
@@ -224,7 +224,7 @@ const ButtonBox = styled.div`
   > button {
     width: calc((100% - 10px) / 3);
   }
-  ${theme.window.pc} {
+  ${(props) => props.theme.window.pc} {
     > button {
       width: calc((100% - 10px) / 2);
       :nth-of-type(3) {

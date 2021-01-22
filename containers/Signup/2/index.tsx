@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 // components
 import * as T from 'components/TypoGraphy';

@@ -17,7 +17,7 @@ const CashIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           viewBox="0 0 50 50"
         >
           <defs>
-            <clipPath id="clip-path">
+            <clipPath id="clipPath">
               <path
                 id="사각형_28930"
                 d="M0 0H35.64V38.252H0z"
@@ -27,7 +27,7 @@ const CashIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           </defs>
           <path id="사각형_1955" fill="none" d="M0 0H50V50H0z" />
           <g id="그룹_37291" transform="translate(7.361 6.253)">
-            <g id="그룹_37290" clip-path="url(#clip-path)">
+            <g id="그룹_37290" clipPath="url(#clipPath)">
               <path
                 id="패스_264651"
                 d="M13.919 16.212a11.465 11.465 0 1 0 11.464 11.465 11.478 11.478 0 0 0-11.464-11.465m0 21.51a10.045 10.045 0 1 1 10.045-10.045 10.057 10.057 0 0 1-10.045 10.045"

@@ -14,7 +14,7 @@ const QRIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           viewBox="0 0 50 50"
         >
           <defs>
-            <clipPath id="clip-path">
+            <clipPath id="clipPath">
               <path
                 id="사각형_28797"
                 fill="none"
@@ -36,7 +36,7 @@ const QRIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           <g id="그룹_36733" transform="translate(8.152 8.045)">
             <g id="그룹_36758" transform="translate(-.167 -.06)">
               <g id="그룹_36759">
-                <g id="그룹_36758-2" clip-path="url(#clip-path)">
+                <g id="그룹_36758-2" clipPath="url(#clipPath)">
                   <path
                     id="패스_264436"
                     d="M11.214.75h-5.5A4.984 4.984 0 0 0 .75 5.72v5.494"

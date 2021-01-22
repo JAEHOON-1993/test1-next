@@ -53,22 +53,20 @@ export const AllButtons = () => {
   );
 };
 
-const Template: Story<ButtonProps> = (args) => (
-  <ThemeConsumer>{(theme) => <Button {...args} />}</ThemeConsumer>
-);
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   width: '200px',
   label: 'button',
-  // color: theme.color.PRIMARY,
+  color: '#4575F5',
 };
 
 export const DefaultWithIcon = Template.bind({});
 DefaultWithIcon.args = {
   width: '200px',
   label: 'button',
-  // color: theme.color.PRIMARY,
+  color: '#4575F5',
   icon: <SystemIcon name="alarm" color="white" />,
 };
 
@@ -88,9 +86,10 @@ Disabled.args = {
 
 const ButtonBox = styled.div`
   display: flex;
+  flex-direction: column;
   > button {
     width: 300px;
-    margin-right: 8px;
+    margin-bottom: 10px;
   }
   margin-bottom: 10px;
 `;

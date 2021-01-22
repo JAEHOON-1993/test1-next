@@ -17,7 +17,7 @@ const InvalidIcon = ({ size = 24, color, ...props }: Props) => {
         fill="none"
         stroke={color}
         colored={color}
-        stroke-width="1.5px"
+        strokeWidth="1.5px"
       >
         <circle cx="12" cy="12" r="12" stroke="none" />
         <circle cx="12" cy="12" r="11.25" fill="none" />

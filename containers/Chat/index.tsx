@@ -5,7 +5,7 @@ import Container from 'components/Container';
 import ContentContainer from './Content';
 import Tabs from 'components/Tabs';
 import BottomNavigation from 'components/BottomNavigation';
-import BottomNavigationAction from 'components/BottomNavigationAction';
+import BottomNavigationItem from 'components/BottomNavigation/BottomNavigationItem';
 
 type Props = {
   fixed?: boolean;
@@ -28,16 +28,16 @@ const MobileBottomNav = () => {
   const [active, setActive] = useState(0);
   return (
     <BottomNavigation setActive={setActive} active={active}>
-      <BottomNavigationAction
+      <BottomNavigationItem
         label="홈"
         icon="home"
         onClick={() => Router.push('/')}
       />
-      <BottomNavigationAction label="채팅" icon="chat" />
-      <BottomNavigationAction label="장바구니" icon="shopping" />
-      <BottomNavigationAction
+      <BottomNavigationItem label="채팅" icon="chat" />
+      <BottomNavigationItem label="장바구니" icon="shopping" />
+      <BottomNavigationItem
         label="마이페이지"
-        icon="mypage"
+        icon="myPage"
         onClick={() => Router.push('/login')}
       />
     </BottomNavigation>

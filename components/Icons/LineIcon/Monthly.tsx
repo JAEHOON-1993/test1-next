@@ -23,7 +23,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1844.99 745.436h-24.46a.405.405 0 0 1-.406-.4v-18.968a.405.405 0 0 1 .406-.4h24.46a.405.405 0 0 1 .406.4v18.963a.405.405 0 0 1-.406.405zm-24.055-.811h23.65v-18.151h-23.65z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1820.124 -725.663)"
                 />
               </g>
@@ -33,7 +33,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1832.76 733.215h-2.255a.405.405 0 0 1-.406-.406v-2.255a.406.406 0 0 1 .406-.406h2.255a.405.405 0 0 1 .406.406v2.255a.405.405 0 0 1-.406.406zm-1.85-.811h1.443v-1.444h-1.443z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1830.099 -730.149)"
                 />
               </g>
@@ -43,7 +43,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1836.8 733.215h-2.255a.405.405 0 0 1-.4-.406v-2.255a.405.405 0 0 1 .4-.406h2.255a.406.406 0 0 1 .406.406v2.255a.405.405 0 0 1-.406.406zm-1.848-.811h1.444v-1.444h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1834.145 -730.149)"
                 />
               </g>
@@ -53,7 +53,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1840.85 733.215h-2.25a.405.405 0 0 1-.406-.406v-2.255a.406.406 0 0 1 .406-.406h2.255a.406.406 0 0 1 .406.406v2.255a.405.405 0 0 1-.411.406zm-1.85-.815h1.443v-1.444H1839z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1838.189 -730.149)"
                 />
               </g>
@@ -63,7 +63,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1824.668 737.292h-2.254a.405.405 0 0 1-.406-.4v-2.256a.405.405 0 0 1 .406-.4h2.254a.405.405 0 0 1 .406.4v2.256a.405.405 0 0 1-.406.4zm-1.849-.811h1.444v-1.444h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1822.008 -734.226)"
                 />
               </g>
@@ -73,7 +73,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1828.713 737.292h-2.255a.405.405 0 0 1-.406-.4v-2.256a.405.405 0 0 1 .406-.4h2.255a.405.405 0 0 1 .406.4v2.256a.405.405 0 0 1-.406.4zm-1.849-.811h1.444v-1.444h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1826.053 -734.226)"
                 />
               </g>
@@ -83,7 +83,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1832.76 737.292h-2.255a.405.405 0 0 1-.406-.4v-2.256a.405.405 0 0 1 .406-.4h2.255a.405.405 0 0 1 .406.4v2.256a.405.405 0 0 1-.406.4zm-1.85-.811h1.443v-1.444h-1.443z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1830.099 -734.226)"
                 />
               </g>
@@ -93,7 +93,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1836.8 737.292h-2.255a.405.405 0 0 1-.4-.4v-2.256a.405.405 0 0 1 .4-.4h2.255a.405.405 0 0 1 .406.4v2.256a.405.405 0 0 1-.406.4zm-1.848-.811h1.444v-1.444h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1834.145 -734.226)"
                 />
               </g>
@@ -103,7 +103,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1840.85 737.292h-2.25a.405.405 0 0 1-.406-.4v-2.256a.405.405 0 0 1 .406-.4h2.255a.405.405 0 0 1 .406.4v2.256a.405.405 0 0 1-.411.4zm-1.849-.811h1.443v-1.444H1839z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1838.189 -734.226)"
                 />
               </g>
@@ -113,7 +113,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1824.668 741.368h-2.254a.406.406 0 0 1-.406-.406v-2.255a.405.405 0 0 1 .406-.406h2.254a.406.406 0 0 1 .406.406v2.255a.406.406 0 0 1-.406.406zm-1.849-.812h1.444v-1.443h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1822.008 -738.302)"
                 />
               </g>
@@ -123,7 +123,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1828.713 741.368h-2.255a.406.406 0 0 1-.406-.406v-2.255a.406.406 0 0 1 .406-.406h2.255a.405.405 0 0 1 .406.406v2.255a.406.406 0 0 1-.406.406zm-1.849-.812h1.444v-1.443h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1826.053 -738.302)"
                 />
               </g>
@@ -133,7 +133,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1832.76 741.368h-2.255a.406.406 0 0 1-.406-.406v-2.255a.406.406 0 0 1 .406-.406h2.255a.405.405 0 0 1 .406.406v2.255a.406.406 0 0 1-.406.406zm-1.85-.812h1.443v-1.443h-1.443z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1830.099 -738.302)"
                 />
               </g>
@@ -143,7 +143,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1836.8 741.368h-2.255a.406.406 0 0 1-.4-.406v-2.255a.405.405 0 0 1 .4-.406h2.255a.406.406 0 0 1 .406.406v2.255a.406.406 0 0 1-.406.406zm-1.848-.812h1.444v-1.443h-1.444z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1834.145 -738.302)"
                 />
               </g>
@@ -155,7 +155,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1822.54 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 1 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1822.134 -724.301)"
                 />
               </g>
@@ -165,7 +165,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1824.55 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 1 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1824.144 -724.301)"
                 />
               </g>
@@ -175,7 +175,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1826.56 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 1 1 .812 0v2.936a.405.405 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1826.154 -724.301)"
                 />
               </g>
@@ -185,7 +185,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1828.569 728.049a.405.405 0 0 1-.4-.406v-2.936a.405.405 0 1 1 .811 0v2.936a.406.406 0 0 1-.411.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1828.165 -724.301)"
                 />
               </g>
@@ -195,7 +195,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1830.58 728.049a.405.405 0 0 1-.405-.406v-2.936a.405.405 0 1 1 .811 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1830.175 -724.301)"
                 />
               </g>
@@ -205,7 +205,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1832.59 728.049a.405.405 0 0 1-.405-.406v-2.936a.405.405 0 1 1 .811 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1832.185 -724.301)"
                 />
               </g>
@@ -215,7 +215,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1834.6 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 0 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1834.194 -724.301)"
                 />
               </g>
@@ -225,7 +225,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1836.611 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 1 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1836.205 -724.301)"
                 />
               </g>
@@ -235,7 +235,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1838.621 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 0 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1838.215 -724.301)"
                 />
               </g>
@@ -245,7 +245,7 @@ const MonthlyIcon = ({ size = 50, ...props }: Props) => {
                   d="M1840.631 728.049a.406.406 0 0 1-.406-.406v-2.936a.406.406 0 0 1 .812 0v2.936a.406.406 0 0 1-.406.406z"
                   fill={theme.color.PRIMARY}
                   stroke={theme.color.PRIMARY}
-                  stroke-width="0.5px"
+                  strokeWidth="0.5px"
                   transform="translate(-1840.225 -724.301)"
                 />
               </g>

@@ -1,30 +1,36 @@
 import React, { useState } from 'react';
 
 import BottomNavigation from 'components/BottomNavigation';
-import BottomNavigationAction from 'components/BottomNavigationAction';
+import BottomNavigationItem from 'components/BottomNavigation/BottomNavigationItem';
 
 export default { title: 'Example/components/BottomNavigation' };
 
-export const BottomNavigation1 = () => {
+export const BottomNavigationWithText = () => {
   const [active, setActive] = useState(0);
   return (
-    <BottomNavigation setActive={setActive} active={active}>
-      <BottomNavigationAction label="home" icon="home" />
-      <BottomNavigationAction label="chat" icon="chat" />
-      <BottomNavigationAction label="mypage" icon="mypage" />
-      <BottomNavigationAction label="shopping" icon="shopping" />
-    </BottomNavigation>
+    <>
+      Mobile에서 확인 가능합니다.
+      <BottomNavigation setActive={setActive} active={active}>
+        <BottomNavigationItem label="home" icon="home" />
+        <BottomNavigationItem label="chat" icon="chat" />
+        <BottomNavigationItem label="mypage" icon="myPage" />
+        <BottomNavigationItem label="shopping" icon="shopping" />
+      </BottomNavigation>
+    </>
   );
 };
 
-export const BottomNavigation2 = () => {
+export const BottomNavigationJustIcon = () => {
   const [active, setActive] = useState(0);
   return (
-    <BottomNavigation setActive={setActive} active={active}>
-      <BottomNavigationAction icon="home" />
-      <BottomNavigationAction icon="chat" />
-      <BottomNavigationAction icon="mypage" />
-      <BottomNavigationAction icon="shopping" />
-    </BottomNavigation>
+    <>
+      Mobile에서 확인 가능합니다.
+      <BottomNavigation setActive={setActive} active={active}>
+        <BottomNavigationItem icon="home" />
+        <BottomNavigationItem icon="chat" />
+        <BottomNavigationItem icon="myPage" />
+        <BottomNavigationItem icon="shopping" />
+      </BottomNavigation>
+    </>
   );
 };

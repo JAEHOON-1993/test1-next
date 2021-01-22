@@ -90,12 +90,12 @@ export type nameProps =
   | 'plus';
 
 interface Props {
-  name: nameProps;
+  name: nameProps | string;
   size?: string | number;
   color?: string;
   style?: any;
   star?: 'small' | 'medium' | 'large';
-  isFilled?: boolean;
+  fill?: boolean;
   onClick?: () => void;
 }
 

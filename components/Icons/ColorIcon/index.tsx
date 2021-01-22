@@ -23,7 +23,7 @@ export type nameProps =
   | 'search'
   | 'wallet';
 interface Props {
-  name: nameProps;
+  name: nameProps | string;
   size?: string | number;
   style?: any;
 }

@@ -121,7 +121,7 @@ const Colors: React.FC<Props> = () => {
             <GradientComponent
               first={theme.color.PRIMARY}
               second={theme.color.GRAY0}
-              to="right"
+              position="to right"
             />
             <>
               <div />
@@ -143,11 +143,6 @@ interface styleProps {
   color: string;
 }
 
-interface gradientProps {
-  first: string;
-  second: string;
-  to: string;
-}
 const ColorBox = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -184,6 +179,11 @@ const Color = styled.div<styleProps>`
   }
 `;
 
+// interface gradientProps {
+//   first: string;
+//   second: string;
+//   position: string;
+// }
 // const GradientColor = styled.div<gradientProps>`
 //   > div {
 //     width: 300px;

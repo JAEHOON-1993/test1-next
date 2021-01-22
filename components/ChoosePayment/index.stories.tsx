@@ -2,16 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from 'components/Container';
-import Rate from 'components/Rate';
+import ChoosePayment from 'components/ChoosePayment';
 
-export default { title: 'Example/components/Rate' };
+export default { title: 'Example/components/ChoosePayment' };
+
+const paymentData = [
+  { id: 0, label: '신용카드', icon: 'card' },
+  { id: 1, label: '계좌이체', icon: 'cash' },
+  { id: 2, label: '후결제', icon: 'inquiry' },
+];
 
 export const ratioImage = () => (
   <CustomContainer>
-    <Rate />
-    <Rate value={1} />
-    <Rate value={3.5} />
-    <Rate value={5} />
+    <ChoosePayment paymentData={paymentData} />
   </CustomContainer>
 );
 
