@@ -95,7 +95,7 @@ interface Props {
   color?: string;
   style?: any;
   star?: 'small' | 'medium' | 'large';
-  fill?: boolean;
+  isFilled?: boolean;
   onClick?: () => void;
 }
 

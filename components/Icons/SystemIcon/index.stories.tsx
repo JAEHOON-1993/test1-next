@@ -78,7 +78,7 @@ export const all = () => {
             <div>Checkbox</div>
           </SystemIconBox>
           <SystemIconBox>
-            <SystemIcon name="checkbox" fill />
+            <SystemIcon name="checkbox" isFilled />
             <div>Checkbox (fill)</div>
           </SystemIconBox>
 

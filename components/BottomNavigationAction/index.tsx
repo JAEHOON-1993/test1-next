@@ -38,7 +38,11 @@ const BottomNavigationAction: React.FC<Props> = ({
       {(theme) => (
         <Item {...props} onClick={clickHandler}>
           {icon && (
-            <SystemIcon color={theme.color.PRIMARY} fill={active} name={icon} />
+            <SystemIcon
+              color={theme.color.PRIMARY}
+              isFilled={active}
+              name={icon}
+            />
           )}
           <T.Text sm>{label}</T.Text>
         </Item>
