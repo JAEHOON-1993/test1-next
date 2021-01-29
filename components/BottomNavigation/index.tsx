@@ -42,7 +42,7 @@ const Container = styled.div`
   left: 0;
   right: 0;
   height: 57px;
-  background-color: ${(props) => props.theme.BACKGROUND};
+  background-color: ${(props) => props.theme.background.PRIMARY};
   border-top: 1px solid ${(props) => props.theme.color.GRAY1};
   /* Mobile */
   ${(props) => props.theme.window.mobile} {

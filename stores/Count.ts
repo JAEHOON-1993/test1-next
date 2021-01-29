@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class CountStore {
+class Count {
   number: number = 0;
 
   constructor() {
@@ -14,4 +14,5 @@ class CountStore {
   };
 }
 
+const CountStore = new Count();
 export default CountStore;

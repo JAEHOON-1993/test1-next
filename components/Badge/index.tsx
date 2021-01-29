@@ -45,11 +45,10 @@ const BadgeWrap = styled.div<styleProps>`
       border: 1px solid ${(props) => props.theme.color.PRIMARY};
       background-color: ${(props) => props.theme.color.WHITE};
 
-      ${(props) =>
-        props.color &&
-        css`
-          color: ${props.color};
-          border: 1px solid ${props.color};
-        `}
+      ${props.color &&
+      css`
+        color: ${props.color};
+        border: 1px solid ${props.color};
+      `}
     `}
 `;

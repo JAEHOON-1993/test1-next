@@ -40,7 +40,7 @@ const PageNumber = styled.div`
   width: 40px;
   height: 20px;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.BACKGROUND};
+  background-color: ${(props) => props.theme.background.PRIMARY};
   display: flex;
   align-items: center;
   justify-content: center;

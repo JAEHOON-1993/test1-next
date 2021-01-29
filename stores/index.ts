@@ -1,9 +1,9 @@
-import CounterStore from './Count';
+// import CounterStore from './Count';
 
 class RootStore {
-  count: CounterStore;
+  // count: CounterStore;
   constructor() {
-    this.count = new CounterStore();
+    // this.count = new CounterStore();
   }
 }
 

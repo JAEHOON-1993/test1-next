@@ -27,7 +27,7 @@ export const NavWrap = styled.div<styleProps>`
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: ${(props) => props.theme.BACKGROUND};
+  background-color: ${(props) => props.theme.background.PRIMARY};
   z-index: 9999;
   border-bottom: 1px solid ${(props) => props.theme.color.WHITE};
   /* Mobile */
@@ -50,7 +50,7 @@ export const NavWrap = styled.div<styleProps>`
       ${props.fixed &&
       css`
         background: none;
-        background-color: ${props.theme.BACKGROUND};
+        background-color: ${props.theme.background.PRIMARY};
       `}
     `}
 
