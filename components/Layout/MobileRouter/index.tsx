@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import Router from 'next/router';
 import RouterStore, { DirectionProps } from 'stores/Router';
 
+import { observer } from 'mobx-react';
+
 // import Footer from "./Footer";
 
 interface Props {
@@ -15,20 +17,28 @@ interface Props {
   title?: string;
 }
 
-const MobileRouter = ({ children }: Props) => {
-  const { direction, routing, setRouting } = RouterStore;
+const MobileRouter = observer(({ children }: Props) => {
+  const { direction, routing, push } = RouterStore;
 
   useEffect(() => {
     // 뒤로가기
     const beforePopState = ({ url, as, options }: any) => {
       console.log('beforePopState : ', url);
-      console.log('beforePopState as : ', as);
       console.log('beforePopState options : ', options);
-      setRouting('right');
-      // push(as, as, "right");
+      // setRouting('right');
+      push(as, as, 'right');
       return false;
     };
     Router.beforePopState(beforePopState);
+
+    // const routeChangeComplete = async (url) => {
+    //   // TODO Router push...
+    //   console.log('routeChangeComplete : ', url);
+    // };
+    // Router.events.on('routeChangeComplete', routeChangeComplete);
+    // return () => {
+    //   Router.events.off('routeChangeComplete', routeChangeComplete);
+    // };
   }, [Router]);
 
   useEffect(() => {
@@ -41,7 +51,7 @@ const MobileRouter = ({ children }: Props) => {
       {children}
     </Animation>
   );
-};
+});
 
 export default MobileRouter;
 
@@ -55,27 +65,25 @@ const Animation = styled.div<AnimationProps>`
   left: 0px;
   right: 0;
   width: 100%;
+  transition: margin-left 0.4s;
+
   ${(props) => props.theme.window.mobile} {
     ${(props) =>
-      props.routing
-        ? `
-      ${
-        props.direction === 'left' &&
-        css`
-          margin-left: -100%;
-          transition: margin-left 0.4;
-        `
-      }
-      ${
-        props.direction === 'right' &&
-        css`
-          margin-left: 100%;
-          transition: margin-left 0.4;
-        `
-      }
-    `
-        : css`
-            margin-left: 0%;
-          `}
+      !props.routing &&
+      css`
+        margin-left: 0%;
+      `}
+    ${(props) =>
+      props.routing &&
+      props.direction === 'right' &&
+      css`
+        margin-left: 100%;
+      `}
+      ${(props) =>
+      props.routing &&
+      props.direction === 'left' &&
+      css`
+        margin-left: -100%;
+      `}
   }
 `;
