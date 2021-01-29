@@ -155,7 +155,13 @@ export const all = () => {
         <LineIcon name="tools" />
         <div>Tools</div>
       </LineIconBox>
-      {/* <AlphaBetically>[ U ]</AlphaBetically> */}
+
+      <AlphaBetically>[ U ]</AlphaBetically>
+      <LineIconBox>
+        <LineIcon name="user" />
+        <div>User</div>
+      </LineIconBox>
+
       {/* <AlphaBetically>[ V ]</AlphaBetically> */}
       <AlphaBetically>[ W ]</AlphaBetically>
       <LineIconBox>

@@ -3,16 +3,11 @@ import styled, { ThemeConsumer, css } from 'styled-components';
 import { Props } from './types';
 
 interface checkBoxProps extends Props {
-  isFilled?: boolean;
+  fill?: boolean;
 }
 
-const CheckBoxIcon = ({
-  color,
-  isFilled,
-  size = 24,
-  ...props
-}: checkBoxProps) => {
-  if (isFilled) {
+const CheckBoxIcon = ({ color, fill, size = 24, ...props }: checkBoxProps) => {
+  if (fill) {
     return (
       <ThemeConsumer>
         {(theme) => (

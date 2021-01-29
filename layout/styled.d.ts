@@ -1,9 +1,13 @@
 import 'styled-components';
 
-// and extend them!
 declare module 'styled-components' {
   export interface DefaultTheme {
-    background: string;
+    background: {
+      PRIMARY: string;
+      SECONDARY: string;
+      TERTIARY: string;
+    };
+    MODAL_BACKGROUND: string;
     color: {
       PRIMARY: string;
       SECONDARY: string;
@@ -24,11 +28,13 @@ declare module 'styled-components' {
       WARNING: string;
       WARNINGSUB: string;
       SUCCESS: string;
-      GRADIENT_1_BOTTOM: string;
-      GRADIENT_1_RIGHT: string;
+      GRADIENT0: string;
+      GRADIENT1: string;
+      GRADIENT2: string;
     };
     radius: number;
     window: {
+      smallMobile: string;
       mobile: string;
       tab: string;
       pc: string;

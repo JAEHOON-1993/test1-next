@@ -30,6 +30,7 @@ import FootPrintIcon from './FootPrint';
 import DestinationIcon from './Destination';
 import WrongPasswordIcon from './WrongPassword';
 import PhoneIcon from './Phone';
+import UserIcon from './User';
 
 export type nameProps =
   | 'box'
@@ -63,12 +64,14 @@ export type nameProps =
   | 'person'
   | 'personCycling'
   | 'phone'
-  | 'wrongPassword';
+  | 'wrongPassword'
+  | 'user';
 
 interface Props {
   name: nameProps | string;
   size?: string | number;
   style?: any;
+  color?: string;
 }
 
 /**
@@ -142,6 +145,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
       return <ToolsIcon {...props} />;
     case 'wrongPassword':
       return <WrongPasswordIcon {...props} />;
+    case 'user':
+      return <UserIcon {...props} />;
   }
   return null;
 };

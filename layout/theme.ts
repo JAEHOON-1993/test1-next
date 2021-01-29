@@ -2,6 +2,7 @@
 import { DefaultTheme } from 'styled-components';
 
 const size = {
+  smallMobile: 350,
   mobile: 767.98,
   tab: 991.98,
   pc: 1299.98,
@@ -9,24 +10,30 @@ const size = {
 
 const gradientsColor = {
   light: {
-    PRIMARY: '#3479EA',
-    POINT_1: '#74BAF5',
+    PRIMARY: '#4575F5',
+    PRIMARYSUB: '#C3DCFF',
+    POINT_1: '#83B0ED',
     POINT_2: '#364FC7',
   },
   dark: {
-    PRIMARY: '#3479EA',
-    POINT_1: '#69BAFF',
+    PRIMARY: '#4575F5',
+    PRIMARYSUB: '#B1CCEF',
+    POINT_1: '#69A5F5',
     POINT_2: '#2744CC',
   },
 };
 
 export const light: DefaultTheme = {
-  BACKGROUND: '#ffffff',
+  background: {
+    PRIMARY: '#ffffff',
+    SECONDARY: '#FAFAFA',
+    TERTIARY: '#F0F0F0',
+  },
   MODAL_BACKGROUND: '#ffffff',
   color: {
-    PRIMARY: '#3479EA',
+    PRIMARY: '#4575F5',
     SECONDARY: '#3F4CB2',
-    TERTIARY: '#0c1f6f',
+    TERTIARY: '#0C1F6F',
     POINT: '#f77721',
     PRIMARYSUB: '#C3DCFF',
     SECONDARYSUB: '#98a9f0',
@@ -43,12 +50,13 @@ export const light: DefaultTheme = {
     WARNING: '#FF6060',
     WARNINGSUB: '#FFE2E2',
     SUCCESS: '#4575f5',
-    TEST: gradientsColor.light.PRIMARY,
-    GRADIENT_1_BOTTOM: `linear-gradient(to bottom, ${gradientsColor.light.PRIMARY}, ${gradientsColor.light.POINT_1})`,
-    GRADIENT_1_RIGHT: `linear-gradient(to right, ${gradientsColor.light.POINT_2}, ${gradientsColor.light.PRIMARY})`,
+    GRADIENT0: `linear-gradient(to right, ${gradientsColor.light.PRIMARY}, ${gradientsColor.light.PRIMARYSUB})`,
+    GRADIENT1: `linear-gradient(to right, ${gradientsColor.light.POINT_1}, ${gradientsColor.light.PRIMARY})`,
+    GRADIENT2: `linear-gradient(to bottom, ${gradientsColor.light.PRIMARY}, ${gradientsColor.light.POINT_2})`,
   },
   radius: 4,
   window: {
+    smallMobile: `@media screen and (max-width: ${size.smallMobile}px)`,
     mobile: `@media screen and (max-width: ${size.mobile}px)`,
     tab: `@media screen and (max-width: ${size.tab}px)`,
     pc: `@media screen and (max-width: ${size.pc}px)`,
@@ -56,33 +64,39 @@ export const light: DefaultTheme = {
 };
 
 export const dark: DefaultTheme = {
-  BACKGROUND: '#363636',
+  background: {
+    PRIMARY: '#363636',
+    SECONDARY: '#2B2B2B',
+    TERTIARY: '#1A1A1A',
+  },
   MODAL_BACKGROUND: '#444444',
   color: {
     PRIMARY: '#176FFF',
     SECONDARY: '#3F4CB2',
     TERTIARY: '#0c1f6f',
-    POINT: '#f77721',
-    PRIMARYSUB: '#96B9E5',
-    SECONDARYSUB: '#98a9f0',
-    TERTIARYSUB: '#6f85e3',
-    POINTSUB: '#ffcab2',
+    POINT: '#FF7215',
+    PRIMARYSUB: '#B1CCEF',
+    SECONDARYSUB: '#8D9DE0',
+    TERTIARYSUB: '#687CD8',
+    POINTSUB: '#F2B9A0',
     BLACK: '#FFFFFF',
     GRAY5: '#EBEBEB',
     GRAY4: '#BEBEBE',
     GRAY3: '#A7A7A7',
     GRAY2: '#808080',
-    GRAY1: '#1D1D1D',
+    GRAY1: '#585858',
     GRAY0: '#535353',
     WHITE: '#444444',
     WARNING: '#FF6060',
     WARNINGSUB: '#EFC2C2',
-    SUCCESS: '#4575f5',
-    GRADIENT_1_BOTTOM: `linear-gradient(to bottom, ${gradientsColor.dark.PRIMARY}, ${gradientsColor.dark.POINT_1})`,
-    GRADIENT_1_RIGHT: `linear-gradient(to right, ${gradientsColor.dark.POINT_2}, ${gradientsColor.dark.PRIMARY})`,
+    SUCCESS: '#336BFF',
+    GRADIENT0: `linear-gradient(to right, ${gradientsColor.dark.PRIMARY}, ${gradientsColor.dark.PRIMARYSUB})`,
+    GRADIENT1: `linear-gradient(to right, ${gradientsColor.dark.POINT_1}, ${gradientsColor.dark.PRIMARY})`,
+    GRADIENT2: `linear-gradient(to bottom, ${gradientsColor.dark.PRIMARY}, ${gradientsColor.dark.POINT_2})`,
   },
   radius: 4,
   window: {
+    smallMobile: `@media screen and (max-width: ${size.smallMobile}px)`,
     mobile: `@media screen and (max-width: ${size.mobile}px)`,
     tab: `@media screen and (max-width: ${size.tab}px)`,
     pc: `@media screen and (max-width: ${size.pc}px)`,

@@ -42,6 +42,15 @@ export const all = () => {
             <div>ArrowLeft</div>
           </SystemIconBox>
 
+          <SystemIconBox>
+            <SystemIcon name="answerCorrect" />
+            <div>answerCorrect</div>
+          </SystemIconBox>
+          <SystemIconBox>
+            <SystemIcon name="answerFalse" />
+            <div>answerFalse</div>
+          </SystemIconBox>
+
           <AlphaBetically>[ B ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="back" />
@@ -133,6 +142,11 @@ export const all = () => {
             <div>Invalid</div>
           </SystemIconBox>
 
+          <SystemIconBox>
+            <SystemIcon name="info" />
+            <div>Info</div>
+          </SystemIconBox>
+
           {/* <AlphaBetically>[ J ]</AlphaBetically> */}
           {/* <AlphaBetically>[ K ]</AlphaBetically> */}
 
@@ -148,6 +162,12 @@ export const all = () => {
           </SystemIconBox>
 
           <AlphaBetically>[ N ]</AlphaBetically>
+
+          <SystemIconBox>
+            <SystemIcon name="newDot" />
+            <div>NewDot</div>
+          </SystemIconBox>
+
           <SystemIconBox>
             <SystemIcon name="nextPageArrow" />
             <div>nextPageArrow</div>
@@ -199,12 +219,22 @@ export const all = () => {
           </SystemIconBox>
 
           <SystemIconBox>
+            <SystemIcon name="sound" />
+            <div>Sound</div>
+          </SystemIconBox>
+
+          <SystemIconBox>
             <SystemIcon name="smallPlus" />
             <div>SmallPlus</div>
           </SystemIconBox>
           <SystemIconBox>
             <SystemIcon name="smallMinus" />
             <div>SmallMinus</div>
+          </SystemIconBox>
+
+          <SystemIconBox>
+            <SystemIcon name="smallAnswerDisabled" />
+            <div>SmallAnswerDisabled</div>
           </SystemIconBox>
 
           <SystemIconBox>

@@ -10,6 +10,8 @@ const Colors: React.FC<Props> = () => {
     <ThemeConsumer>
       {(theme) => (
         <>
+          <div></div>
+
           <h1>Brand Color</h1>
           <ColorBox>
             <Color color={theme.color.PRIMARY}>
@@ -116,21 +118,30 @@ const Colors: React.FC<Props> = () => {
             </Color>
           </ColorBox>
           <br />
-          <h1>Gradient</h1>
-          <GradientColorBox>
-            <GradientComponent
-              first={theme.color.PRIMARY}
-              second={theme.color.GRAY0}
-              position="to right"
-            />
-            <>
-              <div />
-              <p>Gradient 1</p>
-              <p>
-                right, {theme.color.PRIMARY}, {theme.color.GRAY0}
-              </p>
-            </>
-          </GradientColorBox>
+          <GradientWrap>
+            <div>
+              <h1>Gradient (with GradientComponent)</h1>
+              <GradientColorBox>
+                <GradientComponent
+                  first={theme.color.PRIMARY}
+                  second={theme.color.GRAY0}
+                  position="to right"
+                />
+                <>
+                  <div />
+                  <p>Custom: </p>
+                  <p>
+                    right, {theme.color.PRIMARY}, {theme.color.GRAY0}
+                  </p>
+                </>
+              </GradientColorBox>
+            </div>
+            <div>
+              <h1>Gradient (with theme props)</h1>
+              <GradientBox />
+              <div style={{ marginTop: '10px' }}>GRADIENT0</div>
+            </div>
+          </GradientWrap>
         </>
       )}
     </ThemeConsumer>
@@ -179,28 +190,17 @@ const Color = styled.div<styleProps>`
   }
 `;
 
-// interface gradientProps {
-//   first: string;
-//   second: string;
-//   position: string;
-// }
-// const GradientColor = styled.div<gradientProps>`
-//   > div {
-//     width: 300px;
-//     height: 100px;
-//     border-radius: 4px;
-//     margin-bottom: 10px;
-//     background: ${(props) =>
-//       `linear-gradient(to ${props.to}, ${props.first}, ${props.second})`};
-//   }
+const GradientWrap = styled.div`
+  display: flex;
 
-//   > p {
-//     :nth-of-type(1) {
-//       margin: 0px;
-//     }
-//     :nth-of-type(2) {
-//       margin: 0px;
-//       color: ${(props) => props.theme.color.GRAY5};
-//     }
-//   }
-// `;
+  > div {
+    margin-right: 10px;
+  }
+`;
+
+const GradientBox = styled.div`
+  width: 200px;
+  height: 100px;
+  border-radius: 5px;
+  background: ${(props) => props.theme.color.GRADIENT0};
+`;

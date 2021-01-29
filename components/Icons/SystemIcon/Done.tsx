@@ -14,7 +14,6 @@ const DoneIcon = ({ size = 24, color, ...props }: Props) => {
     >
       <Path
         fill="none"
-        stroke={color}
         colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"

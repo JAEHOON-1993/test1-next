@@ -62,7 +62,7 @@ export const parameters = {
   backgrounds: {
     default: 'gray',
     values: [
-      { name: 'gray', value: '#f2f2f2' },
+      { name: 'gray', value: '#fafafa' },
       { name: 'white', value: '#fff' },
       { name: 'dark', value: '#101214' },
     ],
