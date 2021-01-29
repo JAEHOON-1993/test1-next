@@ -19,10 +19,12 @@ interface Props {
 
 const MobileRouter = observer(({ children }: Props) => {
   const { direction, routing, push } = RouterStore;
-
+  
+  console.log('')
   useEffect(() => {
     // 뒤로가기
     const beforePopState = ({ url, as, options }: any) => {
+      console.log('================== 뒤로가기: POP');
       console.log('beforePopState : ', url);
       console.log('beforePopState options : ', options);
       // setRouting('right');
@@ -31,14 +33,15 @@ const MobileRouter = observer(({ children }: Props) => {
     };
     Router.beforePopState(beforePopState);
 
-    // const routeChangeComplete = async (url) => {
-    //   // TODO Router push...
-    //   console.log('routeChangeComplete : ', url);
-    // };
-    // Router.events.on('routeChangeComplete', routeChangeComplete);
-    // return () => {
-    //   Router.events.off('routeChangeComplete', routeChangeComplete);
-    // };
+    const routeChangeComplete = async ({ url }: any) => {
+      console.log('================== 앞으로가기: PUSH');
+      // TODO Router push...
+      console.log('routeChangeComplete : ', url);
+    };
+    Router.events.on('routeChangeComplete', routeChangeComplete);
+    return () => {
+      Router.events.off('routeChangeComplete', routeChangeComplete);
+    };
   }, [Router]);
 
   useEffect(() => {

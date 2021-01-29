@@ -40,8 +40,14 @@ import CheckBoxIcon from './CheckBox';
 import CloseIcon from './Close';
 import SmallPlusIcon from './SmallPlus';
 import SmallMinusIcon from './SmallMinus';
+import SmallAnswerDisable from './SmallAnswerDisable';
 import PlusIcon from './Plus';
 import InvalidIcon from './Invalid';
+import AnswerCorrect from './AnswerCorrect';
+import AnswerFalse from './AnswerFalse';
+import SoundIcon from './Sound';
+import NewDotIcon from './NewDot';
+import InfoIcon from './Info';
 
 export type nameProps =
   | 'add'
@@ -67,18 +73,22 @@ export type nameProps =
   | 'hamburger'
   | 'image'
   | 'invalid'
+  | 'info'
   | 'kakao'
   | 'like'
   | 'moreSetting'
+  | 'newDot'
   | 'naver'
   | 'optionDown'
   | 'optionUp'
   | 'qr'
   | 'smallMinus'
   | 'smallPlus'
+  | 'smallAnswerDisabled'
   | 'search'
   | 'setting'
   | 'share'
+  | 'sound'
   | 'star'
   | 'starHalf'
   | 'starEmpty'
@@ -87,7 +97,9 @@ export type nameProps =
   | 'write'
   | 'nextPageArrow'
   | 'prevPageArrow'
-  | 'plus';
+  | 'plus'
+  | 'answerCorrect'
+  | 'answerFalse';
 
 interface Props {
   name: nameProps | string;
@@ -154,12 +166,16 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <ImageIcon {...props} />;
     case 'invalid':
       return <InvalidIcon {...props} />;
+    case 'info':
+      return <InfoIcon {...props} />;
     case 'kakao':
       return <KakaoIcon {...props} />;
     case 'like':
       return <LikeIcon {...props} />;
     case 'moreSetting':
       return <MoreSettingIcon {...props} />;
+    case 'newDot':
+      return <NewDotIcon {...props} />;
     case 'naver':
       return <NaverIcon {...props} />;
     case 'optionDown':
@@ -174,6 +190,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <SettingIcon {...props} />;
     case 'share':
       return <ShareIcon {...props} />;
+    case 'sound':
+      return <SoundIcon {...props} />;
     case 'star':
       return <StarIcon {...props} />;
     case 'starHalf':
@@ -194,8 +212,14 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <SmallPlusIcon {...props} />;
     case 'smallMinus':
       return <SmallMinusIcon {...props} />;
+    case 'smallAnswerDisabled':
+      return <SmallAnswerDisable {...props} />;
     case 'plus':
       return <PlusIcon {...props} />;
+    case 'answerCorrect':
+      return <AnswerCorrect {...props} />;
+    case 'answerFalse':
+      return <AnswerFalse {...props} />;
   }
   return null;
 };

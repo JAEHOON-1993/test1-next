@@ -30,6 +30,7 @@ import FootPrintIcon from './FootPrint';
 import DestinationIcon from './Destination';
 import WrongPasswordIcon from './WrongPassword';
 import PhoneIcon from './Phone';
+import UserIcon from './User';
 
 export type nameProps =
   | 'box'
@@ -63,16 +64,18 @@ export type nameProps =
   | 'person'
   | 'personCycling'
   | 'phone'
-  | 'wrongPassword';
+  | 'wrongPassword'
+  | 'user';
 
 interface Props {
   name: nameProps | string;
   size?: string | number;
   style?: any;
+  color?: string;
 }
 
 /**
- * LineIcon은 PRIMARY 색상으로만 이루어졌으며, 색상 변경이 불가합니다.
+ * LineIcon은 PRIMARY 색상으로만 이루어졌으며, 색상 변경이 가능합니다.
  *
  * 기본 크기는 50 x 50 입니다.
  */
@@ -142,6 +145,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
       return <ToolsIcon {...props} />;
     case 'wrongPassword':
       return <WrongPasswordIcon {...props} />;
+    case 'user':
+      return <UserIcon {...props} />;
   }
   return null;
 };

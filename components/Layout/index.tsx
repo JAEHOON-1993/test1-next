@@ -60,7 +60,7 @@ interface styleProps {
 
 const Body = styled.div`
   min-height: ${(props: styleProps) => `${props.height}px`};
-  background-color: ${(props) => props.theme.BACKGROUND};
+  background-color: ${(props) => props.theme.background.PRIMARY};
   ${(props: styleProps) =>
     props.centered &&
     css`

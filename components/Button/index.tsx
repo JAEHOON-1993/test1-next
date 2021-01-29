@@ -91,14 +91,13 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
     props.outline &&
     css`
       background-color: ${(props) => props.theme.color.WHITE};
-      border: 1px solid
-        ${(props) => (props.color ? props.color : props.theme.color.PRIMARY)};
-      color: ${(props) =>
-        props.color ? props.color : props.theme.color.PRIMARY};
+      border: 1px solid ${props.color ? props.color : props.theme.color.PRIMARY};
+      color: ${props.color ? props.color : props.theme.color.PRIMARY};
 
       > span {
-        background-color: ${(props) =>
-          props.color ? props.color : props.theme.color.PRIMARY};
+        background-color: ${props.color
+          ? props.color
+          : props.theme.color.PRIMARY};
       }
     `}
   ${(props) =>

@@ -13,6 +13,9 @@ interface Props {
   styleTags2: any;
 }
 
+const GOOGLE_ANALYTICS_ID = 'G-0L1YSV5CKF';
+const GOOGLE_TAG_MANAGER_ID = 'GTM-WRP2HWZ';
+
 export default class MyDocument extends Document<Props> {
   static async getInitialProps({ renderPage }: any) {
     const sheet = new ServerStyleSheet();
@@ -24,14 +27,29 @@ export default class MyDocument extends Document<Props> {
     const styleTags2 = sheet2.getStyleElement();
     return { ...page, styleTags, styleTags2 };
   }
-  setGoogleTags() {
+  setGoogleAnalytics() {
     return {
       __html: `        
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-155067425-1');
+        gtag('config', '${GOOGLE_ANALYTICS_ID}');
       `,
+    };
+  }
+  setGoogleTagManager() {
+    return {
+      __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','${GOOGLE_TAG_MANAGER_ID}');`,
+    };
+  }
+  setGoogleTagManagerBody() {
+    return {
+      __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
     };
   }
   render() {
@@ -68,15 +86,19 @@ export default class MyDocument extends Document<Props> {
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
           {/* Google Analytics */}
-          <script
-            type="text/javascript"
-            src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
-          />
-          <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+          {/* <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+          ></script> */}
+          {/* <script dangerouslySetInnerHTML={this.setGoogleAnalytics()} /> */}
+          {/* Google Tag Manager */}
+          {/* <script dangerouslySetInnerHTML={this.setGoogleTagManager()} /> */}
           {this.props.styleTags}
           {this.props.styleTags2}
         </Head>
         <body>
+          {/* Google Tag Manager */}
+          {/* <noscript dangerouslySetInnerHTML={this.setGoogleTagManagerBody()} /> */}
           <Main />
           <NextScript />
         </body>

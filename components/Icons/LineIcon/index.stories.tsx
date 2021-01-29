@@ -19,12 +19,12 @@ export const all = () => {
       </LineIconBox>
       <AlphaBetically>[ C ]</AlphaBetically>
       <LineIconBox>
-        <LineIcon name="card" />
-        <div>Card</div>
-      </LineIconBox>
-      <LineIconBox>
         <LineIcon name="camera" />
         <div>Camera</div>
+      </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="card" />
+        <div>Card</div>
       </LineIconBox>
       <LineIconBox>
         <LineIcon name="cash" />
@@ -44,12 +44,12 @@ export const all = () => {
         <div>Delivery</div>
       </LineIconBox>
       <LineIconBox>
-        <LineIcon name="destination" />
-        <div>Destination</div>
-      </LineIconBox>
-      <LineIconBox>
         <LineIcon name="design" />
         <div>Design</div>
+      </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="destination" />
+        <div>Destination</div>
       </LineIconBox>
       <AlphaBetically>[ E ]</AlphaBetically>
       <LineIconBox>
@@ -66,16 +66,16 @@ export const all = () => {
         <div>Fashion</div>
       </LineIconBox>
       <LineIconBox>
+        <LineIcon name="finance" />
+        <div>Finance</div>
+      </LineIconBox>
+      <LineIconBox>
         <LineIcon name="food" />
         <div>Food</div>
       </LineIconBox>
       <LineIconBox>
         <LineIcon name="footPrint" />
         <div>FootPrint</div>
-      </LineIconBox>
-      <LineIconBox>
-        <LineIcon name="finance" />
-        <div>Finance</div>
       </LineIconBox>
       {/* <AlphaBetically>[ G ]</AlphaBetically> */}
       <AlphaBetically>[ H ]</AlphaBetically>
@@ -123,10 +123,7 @@ export const all = () => {
         <LineIcon name="password" />
         <div>Password</div>
       </LineIconBox>
-      <LineIconBox>
-        <LineIcon name="pet" />
-        <div>Pet</div>
-      </LineIconBox>
+
       <LineIconBox>
         <LineIcon name="person" />
         <div>Person</div>
@@ -134,6 +131,10 @@ export const all = () => {
       <LineIconBox>
         <LineIcon name="personCycling" />
         <div>PersonCycling</div>
+      </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="pet" />
+        <div>Pet</div>
       </LineIconBox>
       <LineIconBox>
         <LineIcon name="phone" />
@@ -155,7 +156,13 @@ export const all = () => {
         <LineIcon name="tools" />
         <div>Tools</div>
       </LineIconBox>
-      {/* <AlphaBetically>[ U ]</AlphaBetically> */}
+
+      <AlphaBetically>[ U ]</AlphaBetically>
+      <LineIconBox>
+        <LineIcon name="user" />
+        <div>User</div>
+      </LineIconBox>
+
       {/* <AlphaBetically>[ V ]</AlphaBetically> */}
       <AlphaBetically>[ W ]</AlphaBetically>
       <LineIconBox>
