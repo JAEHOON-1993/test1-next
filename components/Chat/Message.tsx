@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { MessageFormatTime } from 'utils/format';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 interface CardProps {
   data: any;

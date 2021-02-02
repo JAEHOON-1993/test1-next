@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Select from 'react-select';
 
-import { Text } from 'components/TypoGraphy';
+import { Text } from 'components/Typography';
 
 interface Props {
   options?: { value: string; label: string }[];

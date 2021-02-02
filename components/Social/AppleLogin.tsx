@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 import { Button, TempoIcon } from './Social.styled';
 

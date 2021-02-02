@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 // components
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -16,33 +16,33 @@ import {
   ActionButton,
 } from '../index.styled';
 
-import SignupStore from 'stores/Signup';
+import SignUpStore from 'stores/SignUp';
 
 type Props = {
   fixed?: boolean;
   style?: any;
 };
 
-const Signup2Container: React.FC<Props> = () => {
+const SignUp2Container: React.FC<Props> = () => {
   const [sendLoading, setSendLoading] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
-      if (SignupStore.count > 0) {
-        SignupStore.count -= 1;
+      if (SignUpStore.count > 0) {
+        SignUpStore.count -= 1;
       }
     }, 1000);
-  }, [SignupStore.count]);
+  }, [SignUpStore.count]);
 
   useEffect(() => {
-    if (SignupStore.code.length > 5) {
+    if (SignUpStore.code.length > 5) {
       setActive(true);
     } else {
       setActive(false);
     }
-  }, [SignupStore.code]);
+  }, [SignUpStore.code]);
 
   const resend = () => {
     // TO DO
@@ -51,15 +51,15 @@ const Signup2Container: React.FC<Props> = () => {
     // if (!sendLoading) {
     //   setSendLoading(true);
     //   setTimeout(() => {
-    //     SignupStore
+    //     SignUpStore
     //       .sendSMS()
     //       .then(() => {
-    //         SignupStore.count = 180;
+    //         SignUpStore.count = 180;
     //       })
     //       .catch((e: any) => {
     //         const error = e.response.data;
     //         if (error.phone) {
-    //           SignupStore.phoneError = error.phone;
+    //           SignUpStore.phoneError = error.phone;
     //           Router.push('/signup/1');
     //         }
     //       })
@@ -74,20 +74,20 @@ const Signup2Container: React.FC<Props> = () => {
       // API 연동
       setLoading(true);
       // setTimeout(() => {
-      //   SignupStore
+      //   SignUpStore
       //     .confirmSMS()
       //     .then((res: any) => {
-      //       SignupStore.phoneToken = res.data.phone_token;
+      //       SignUpStore.phoneToken = res.data.phone_token;
       //       Router.push('/signup/3');
       //     })
       //     .catch((e: any) => {
       //       const error = e.response.data;
-      //       SignupStore.code = '';
+      //       SignUpStore.code = '';
       //       if (error.phone) {
-      //         SignupStore.phoneError = error.phone;
+      //         SignUpStore.phoneError = error.phone;
       //         Router.push('/signup/1');
       //       }
-      //       SignupStore.codeError = error?.non_field_errors || error?.code;
+      //       SignUpStore.codeError = error?.non_field_errors || error?.code;
       //     })
       //     .finally(() => setSendLoading(false));
       // }, 800);
@@ -108,12 +108,12 @@ const Signup2Container: React.FC<Props> = () => {
         name="code"
         label="인증번호"
         placeholder="인증번호 입력"
-        value={SignupStore.code}
-        onChange={SignupStore.setCode}
-        errorText={SignupStore.codeError}
+        value={SignUpStore.code}
+        onChange={SignUpStore.setCode}
+        errorText={SignUpStore.codeError}
         action={
-          SignupStore.count > 0 ? (
-            <ActionButton label={formatTimer(SignupStore.count)} disabled />
+          SignUpStore.count > 0 ? (
+            <ActionButton label={formatTimer(SignUpStore.count)} disabled />
           ) : (
             <ActionButton
               label="재전송"
@@ -134,4 +134,4 @@ const Signup2Container: React.FC<Props> = () => {
   );
 };
 
-export default Signup2Container;
+export default SignUp2Container;

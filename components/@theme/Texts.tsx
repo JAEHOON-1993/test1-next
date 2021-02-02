@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css, ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 import { Props } from './types';
 

@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import Router from 'next/router';
 
-import SignupStore from 'stores/Signup';
+import SignUpStore from 'stores/SignUp';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -16,7 +16,7 @@ interface Props {
   style?: any;
 }
 
-const Signup4Container: React.FC<Props> = () => {
+const SignUp4Container: React.FC<Props> = () => {
   const inputRef = useRef<any>(null);
   const handleImageChange = (e: any) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Signup4Container: React.FC<Props> = () => {
     let file = e.target.files[0];
 
     reader.onloadend = () => {
-      SignupStore.image = { file: file, preview: reader.result };
+      SignUpStore.image = { file: file, preview: reader.result };
     };
     reader.readAsDataURL(file);
   };
@@ -49,7 +49,7 @@ const Signup4Container: React.FC<Props> = () => {
       <AvatarBox
         onClick={() => inputRef.current.click()}
         src={
-          SignupStore.image.preview ? SignupStore.image.preview : DEFAULT_IMAGE
+          SignUpStore.image.preview ? SignUpStore.image.preview : DEFAULT_IMAGE
         }
       >
         <div />
@@ -57,10 +57,10 @@ const Signup4Container: React.FC<Props> = () => {
           <SystemIcon name="plus" color="#fff" />
         </span>
       </AvatarBox>
-      <T.Text>{SignupStore.nickname}</T.Text>
-      <Button label="완료" round onClick={SignupStore.register} />
+      <T.Text>{SignUpStore.nickname}</T.Text>
+      <Button label="완료" round onClick={SignUpStore.register} />
     </Container>
   );
 };
 
-export default Signup4Container;
+export default SignUp4Container;

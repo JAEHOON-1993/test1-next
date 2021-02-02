@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import { Card } from 'components/Card';
 import RatioBox from 'components/RatioBox';
 import SystemIcon from 'components/Icons/SystemIcon';

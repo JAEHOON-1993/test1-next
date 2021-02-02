@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 // import Router from 'next/router';
 // import * as AuthAPI from 'api/Auth';
 
-class Signup {
+class SignUp {
   access: string = '';
 
   phone: string = '';
@@ -107,5 +107,5 @@ class Signup {
     //   });
   };
 }
-const signupStore = new Signup();
-export default signupStore
+const signUpStore = new SignUp();
+export default signUpStore;

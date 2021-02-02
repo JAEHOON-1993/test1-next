@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import RouterStore from 'stores/Router';
 
 import ColorIcon from 'components/Icons/ColorIcon';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 import { Props } from '../types';
 

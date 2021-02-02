@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 import themeStore from 'stores/Theme';
 import SystemIcon from 'components/Icons/SystemIcon';
 
-import { Title, Text } from 'components/TypoGraphy';
+import { Title, Text } from 'components/Typography';
 import GradientComponent from 'components/Gradient';
 import ModalComponent from 'components/Modal';
 import { useState } from 'react';

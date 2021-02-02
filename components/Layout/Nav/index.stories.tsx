@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import Nav from 'components/Nav';
+import Nav from 'components/Layout/Nav';
 
 export default {
   title: 'Example/components/Nav',

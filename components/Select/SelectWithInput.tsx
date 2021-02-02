@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Creatable from 'react-select/creatable';
 
-import { Text } from 'components/TypoGraphy';
+import { Text } from 'components/Typography';
 
 interface Props {
   width?: string;

@@ -1,7 +1,7 @@
 import React, { useState, ReactNode, Ref } from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 export interface Props {
   label?: string;

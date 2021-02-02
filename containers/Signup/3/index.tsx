@@ -1,9 +1,9 @@
 import React from 'react';
 import Router from 'next/router';
 
-import SignupStore from 'stores/Signup';
+import SignUpStore from 'stores/SignUp';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -14,9 +14,9 @@ interface Props {
   style?: any;
 }
 
-const Signup3Container: React.FC<Props> = () => {
+const SignUp3Container: React.FC<Props> = () => {
   const next = () => {
-    if (!SignupStore.nicknameLoading) {
+    if (!SignUpStore.nicknameLoading) {
       Router.push('/signup/4');
     }
   };
@@ -34,16 +34,16 @@ const Signup3Container: React.FC<Props> = () => {
         name="phone"
         label="닉네임"
         placeholder="영문, 국문, 숫자만 입력 가능"
-        errorText={SignupStore.nicknameError}
-        value={SignupStore.nickname}
-        onChange={SignupStore.setNickname}
+        errorText={SignUpStore.nicknameError}
+        value={SignUpStore.nickname}
+        onChange={SignUpStore.setNickname}
       />
       <Button
         label="다음"
         round
-        loading={SignupStore.nicknameLoading}
+        loading={SignUpStore.nicknameLoading}
         disabled={
-          SignupStore.nickname.length < 3 || SignupStore.nicknameError != ''
+          SignUpStore.nickname.length < 3 || SignUpStore.nicknameError != ''
         }
         onClick={next}
       />
@@ -51,4 +51,4 @@ const Signup3Container: React.FC<Props> = () => {
   );
 };
 
-export default Signup3Container;
+export default SignUp3Container;

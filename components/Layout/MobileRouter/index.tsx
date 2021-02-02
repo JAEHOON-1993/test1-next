@@ -77,7 +77,6 @@ const Animation = styled.div<AnimationProps>`
         left: -100%;
       `}
 
-      // 없어져야 하는 순간
       ${(props) =>
       props.routing &&
       props.direction === null &&

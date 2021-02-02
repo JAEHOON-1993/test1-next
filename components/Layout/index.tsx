@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 import useHeight from 'utils/useHeight';
 
-import Nav from 'components/Nav';
+import Nav from 'components/Layout/Nav';
 // import Footer from "./Footer";
 
 interface Props {

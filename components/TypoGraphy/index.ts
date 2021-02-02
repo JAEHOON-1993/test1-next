@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 type Props = {
   sm?: boolean;
   lg?: boolean;
+  xlg?: boolean;
   bold?: boolean;
   color?: string;
 };
@@ -27,6 +28,20 @@ export const Title = styled.h1<Props>`
     line-height: 1.5;
     letter-spacing: -0.16px;
   }
+
+  ${(props) =>
+    props.xlg &&
+    css`
+      font-size: 35px;
+      line-height: 52px;
+      letter-spacing: -0.35px;
+      ${(props) => props.theme.window.tab} {
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: -0.26px;
+      }
+    `}
+
   ${(props) =>
     props.lg &&
     css`
@@ -82,6 +97,13 @@ export const Text = styled.p<Props>`
     letter-spacing: -0.16px;
   }
 
+  ${(props) =>
+    props.xlg &&
+    css`
+      font-size: 26px;
+      line-height: 38px;
+      letter-spacing: -0.26px;
+    `}
   ${(props) =>
     props.lg &&
     css`

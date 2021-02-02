@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { observer } from 'mobx-react';
 
 import Button from 'components/Button';
-import { Text } from 'components/TypoGraphy';
+import { Text } from 'components/Typography';
 
 interface uploadFileProps {
   title: string | JSX.Element;

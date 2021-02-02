@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import { Button, Icon } from './Social.styled';
 
 import { NAVER_LOGIN_URL } from './_settings';
