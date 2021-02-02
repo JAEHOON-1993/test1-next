@@ -8,13 +8,13 @@ const SITE_TITLE = 'SITE_TITLE';
 const SITE_DESCRIPTION = 'SITE_DESCRIPTION';
 const SITE_IMAGE = 'SITE_IMAGE';
 
+const GOOGLE_ANALYTICS_ID = 'G-0L1YSV5CKF';
+const GOOGLE_TAG_MANAGER_ID = 'GTM-WRP2HWZ';
+
 interface Props {
   styleTags: any;
   styleTags2: any;
 }
-
-const GOOGLE_ANALYTICS_ID = 'G-0L1YSV5CKF';
-const GOOGLE_TAG_MANAGER_ID = 'GTM-WRP2HWZ';
 
 export default class MyDocument extends Document<Props> {
   static async getInitialProps({ renderPage }: any) {

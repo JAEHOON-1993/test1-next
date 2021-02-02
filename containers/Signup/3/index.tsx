@@ -14,7 +14,7 @@ interface Props {
   style?: any;
 }
 
-const Signup3Container: React.FC<Props> = () => {
+const SignUp3Container: React.FC<Props> = () => {
   const next = () => {
     if (!SignUpStore.nicknameLoading) {
       Router.push('/signup/4');
@@ -51,4 +51,4 @@ const Signup3Container: React.FC<Props> = () => {
   );
 };
 
-export default Signup3Container;
+export default SignUp3Container;

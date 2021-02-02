@@ -23,7 +23,7 @@ type Props = {
   style?: any;
 };
 
-const Signup2Container: React.FC<Props> = () => {
+const SignUp2Container: React.FC<Props> = () => {
   const [sendLoading, setSendLoading] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
@@ -134,4 +134,4 @@ const Signup2Container: React.FC<Props> = () => {
   );
 };
 
-export default Signup2Container;
+export default SignUp2Container;
