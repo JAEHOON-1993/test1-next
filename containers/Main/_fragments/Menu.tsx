@@ -2,6 +2,8 @@ import React from 'react';
 import Router from 'next/router';
 import styled from 'styled-components';
 
+import RouterStore from 'stores/Router';
+
 import ColorIcon from 'components/Icons/ColorIcon';
 import * as T from 'components/TypoGraphy';
 
@@ -33,7 +35,7 @@ const itemsData = [
 const MenuContainer: React.FC<Props> = () => {
   return (
     <Menu>
-      <Item onClick={() => Router.push('/indoor')}>
+      <Item onClick={() => RouterStore.push('/indoor')}>
         <div>
           <ColorIcon name="bed" />
         </div>

@@ -315,6 +315,11 @@ export const all = () => {
             <SystemIcon name="facebook" />
             <div>Facebook</div>
           </SystemIconBox>
+
+          <SystemIconBox>
+            <SystemIcon name="google" />
+            <div>Google</div>
+          </SystemIconBox>
         </Wrap>
       )}
     </ThemeConsumer>

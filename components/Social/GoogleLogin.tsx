@@ -6,8 +6,6 @@ import * as T from 'components/TypoGraphy';
 import { Button, Icon } from './Social.styled';
 import { GOOGLE_LOGIN_URL } from './_settings';
 
-const GOOGLE_LOGO = '/images/socialLogin/google_logo.jpg';
-
 interface Props {
   round?: boolean;
   style?: any;
@@ -30,7 +28,7 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           borderColor={'#ddd'}
           round={round}
           onClick={() => Router.replace(GOOGLE_LOGIN_URL)}
-          icon={<Icon round={round} src={GOOGLE_LOGO} start />}
+          icon={<Icon round={round} name="google" start />}
         />
       )}
     </ThemeConsumer>

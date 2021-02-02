@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { ThemeConsumer } from 'styled-components';
 import { useRouter } from 'next/router';
 
+import RouterStore from 'stores/Router';
+
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -27,10 +29,10 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
   const router = useRouter();
   const [path, setPath] = useState<string>('/');
   const [fixed, setFixed] = useState<boolean>(false);
-  console.log('나중에 수정', setPath);
+  // console.log('나중에 수정', setPath);
   useEffect(() => {
-    console.log(NO_BACK_PATH.indexOf(path));
-    console.log(SEARCH_PATH.indexOf(path));
+    // console.log(NO_BACK_PATH.indexOf(path));
+    // console.log(SEARCH_PATH.indexOf(path));
   }, [router]);
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {
@@ -64,7 +66,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
                 </MobileRightBox>
               )}
               <Logo
-                onClick={() => router.push('/')}
+                onClick={() => RouterStore.push('/')}
                 src="/icons/logo_black.png"
               />
               <MobileLeftBox>

@@ -7,8 +7,6 @@ import * as T from 'components/TypoGraphy';
 import { Button, Icon } from './Social.styled';
 import { FACEBOOK_LOGIN_URL } from './_settings';
 
-const FACEBOOK_LOGO = '/images/socialLogin/facebook_logo.png';
-
 interface Props {
   round?: boolean;
   style?: any;
@@ -30,7 +28,7 @@ const FacebookLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           borderColor={'#1877f3'}
           round={round}
           onClick={() => Router.replace(FACEBOOK_LOGIN_URL)}
-          icon={<Icon round={round} src={FACEBOOK_LOGO} start />}
+          icon={<Icon name="facebook" start round={round} color="#fff" />}
         />
       )}
     </ThemeConsumer>

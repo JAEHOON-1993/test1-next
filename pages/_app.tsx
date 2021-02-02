@@ -22,50 +22,6 @@ declare global {
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // const [isPush, setIsPush] = useState(false);
-  // const [isPop, setIsPop] = useState(false);
-  // const [load, setLoad] = useState(true);
-
-  // useEffect(() => {
-  //   // 뒤로가기
-  //   const beforePopState = ({url, as, options} : any) => {
-  //     // console.log('beforePopState : ', url);
-  //     // console.log('beforePopState as : ', as);
-  //     // console.log('beforePopState options : ', options);
-  //     RouterStore.push(as, as, "right");
-  //     return false
-  //   }
-
-  //   // 다음 페이지 이동
-  //   const routeChangeStart = async () => {
-  //     // console.log(`beforeHistoryChange`);
-  //     await setIsPush(true);
-  //     setTimeout(() => {
-  //       setLoad(false);
-  //     }, 500)
-  //   }
-  //   const routeChangeComplete = async () => {
-  //     // console.log(`routeChangeComplete`);
-  //     // await setLoad(true);
-
-  //     await setIsPop(false);
-  //     setTimeout(() => {
-  //       setLoad(true);
-  //       setIsPush(false);
-  //     }, 500)
-  //   }
-
-  //   Router.beforePopState(beforePopState);
-  //   // Router.events.on('routeChangeStart', routeChangeStart);
-  //   Router.events.on('beforeHistoryChange', routeChangeStart);
-  //   Router.events.on('routeChangeComplete', routeChangeComplete);
-  //   return () => {
-  //     // Router.events.off('routeChangeStart', routeChangeStart);
-  //     Router.events.off('beforeHistoryChange', routeChangeStart);
-  //     Router.events.off('routeChangeComplete', routeChangeComplete);
-  //   }
-  // }, [Router]);
-
   return (
     <>
       <Head>

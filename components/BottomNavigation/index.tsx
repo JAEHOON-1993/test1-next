@@ -37,7 +37,7 @@ export default BottomNavigation;
 
 const Container = styled.div`
   display: none;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
