@@ -8,7 +8,7 @@ import SystemIcon from 'components/Icons/SystemIcon';
 
 import { Container, Nav, TextBox, Input, Button } from '../index.styled';
 
-import SignupStore from 'stores/Signup';
+import SignUpStore from 'stores/SignUp';
 
 type Props = {
   fixed?: boolean;
@@ -19,13 +19,13 @@ const Signup1Container: React.FC<Props> = () => {
   const [active, setActive] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
-    console.log('token : ', SignupStore.access);
-    if (SignupStore.phone.length > 10) {
+    // console.log('token : ', SignUpStore.access);
+    if (SignUpStore.phone.length > 10) {
       setActive(true);
     } else {
       setActive(false);
     }
-  }, [SignupStore.phone]);
+  }, [SignUpStore.phone]);
 
   const next = () => {
     // TO DO
@@ -34,17 +34,17 @@ const Signup1Container: React.FC<Props> = () => {
     // if (!loading) {
     //   setLoading(true);
     //   setTimeout(() => {
-    //     SignupStore
+    //     SignUpStore
     //       .sendSMS()
     //       .then((res: any) => {
     //         if (res.status < 300) {
-    //           SignupStore.count = 180;
+    //           SignUpStore.count = 180;
     //           Router.push('/signup/2');
     //         }
     //       })
     //       .catch((e: any) => {
     //         const error = e.response.data;
-    //         SignupStore.phoneError = error?.non_field_errors || error?.phone;
+    //         SignUpStore.phoneError = error?.non_field_errors || error?.phone;
     //       })
     //       .finally(() => () => setLoading(false));
     //   }, 800);
@@ -68,15 +68,15 @@ const Signup1Container: React.FC<Props> = () => {
         name="phone"
         label="핸드폰번호"
         placeholder="핸드폰 번호 입력('-'제외)"
-        value={SignupStore.phone}
-        onChange={SignupStore.setPhone}
-        errorText={SignupStore.phoneError}
+        value={SignUpStore.phone}
+        onChange={SignUpStore.setPhone}
+        errorText={SignUpStore.phoneError}
       />
       <Button
         label="다음"
         round
         loading={loading}
-        disabled={!active || SignupStore.phoneError != ''}
+        disabled={!active || SignUpStore.phoneError != ''}
         onClick={next}
       />
     </Container>

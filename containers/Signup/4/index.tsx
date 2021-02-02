@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Router from 'next/router';
 
-import SignupStore from 'stores/Signup';
+import SignupStore from 'stores/SignUp';
 
 import * as T from 'components/TypoGraphy';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
