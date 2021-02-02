@@ -33,7 +33,7 @@ const MobileBottomNav = () => {
 
 const MainContainer: React.FC<Props> = () => {
   return (
-    <Container>
+    <Container height={'calc(100vh - 100px)'} position="relative">
       <TitleContainer />
       <BannerContainer />
       <MenuContainer />

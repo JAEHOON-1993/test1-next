@@ -6,8 +6,6 @@ import { Button, Icon } from './Social.styled';
 
 import { NAVER_LOGIN_URL } from './_settings';
 
-const NAVER_LOGO = '/images/socialLogin/naver_logo.png';
-
 interface Props {
   round?: boolean;
   style?: any;
@@ -23,7 +21,7 @@ const NaverLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       borderColor={'#20cf5d'}
       round={round}
       onClick={() => Router.replace(NAVER_LOGIN_URL)}
-      icon={<Icon round={round} src={NAVER_LOGO} start />}
+      icon={<Icon round={round} name="naver" start color="#fff" />}
     ></Button>
   );
 };

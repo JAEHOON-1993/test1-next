@@ -4,7 +4,7 @@ import { ThemeConsumer } from 'styled-components';
 
 import * as T from 'components/TypoGraphy';
 
-import { Button, Icon } from './Social.styled';
+import { Button, TempoIcon } from './Social.styled';
 
 import { APPLE_LOGIN_URL } from './_settings';
 
@@ -29,7 +29,7 @@ const AppleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           borderColor={'#000'}
           round={round}
           onClick={() => Router.replace(APPLE_LOGIN_URL)}
-          icon={<Icon round={round} src={APPLE_LOGO} start />}
+          icon={<TempoIcon round={round} src={APPLE_LOGO} start />}
         />
       )}
     </ThemeConsumer>

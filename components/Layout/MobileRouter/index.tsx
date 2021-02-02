@@ -18,39 +18,22 @@ interface Props {
 }
 
 const MobileRouter = observer(({ children }: Props) => {
-  const { direction, routing, push } = RouterStore;
-  
-  console.log('')
+  const { direction, newPageDirection, routing, pop } = RouterStore;
+
   useEffect(() => {
-    // 뒤로가기
-    const beforePopState = ({ url, as, options }: any) => {
-      console.log('================== 뒤로가기: POP');
-      console.log('beforePopState : ', url);
-      console.log('beforePopState options : ', options);
-      // setRouting('right');
-      push(as, as, 'right');
+    const onPopPage = ({ url }: any) => {
+      pop(url);
       return false;
     };
-    Router.beforePopState(beforePopState);
-
-    const routeChangeComplete = async ({ url }: any) => {
-      console.log('================== 앞으로가기: PUSH');
-      // TODO Router push...
-      console.log('routeChangeComplete : ', url);
-    };
-    Router.events.on('routeChangeComplete', routeChangeComplete);
-    return () => {
-      Router.events.off('routeChangeComplete', routeChangeComplete);
-    };
+    Router.beforePopState(onPopPage);
   }, [Router]);
 
-  useEffect(() => {
-    console.log('direction : ', direction);
-    console.log('routing : ', routing);
-  }, [direction, routing, Router]);
-
   return (
-    <Animation direction={direction} routing={routing}>
+    <Animation
+      direction={direction}
+      routing={routing}
+      newPageDirection={newPageDirection}
+    >
       {children}
     </Animation>
   );
@@ -60,6 +43,7 @@ export default MobileRouter;
 
 interface AnimationProps {
   direction: DirectionProps;
+  newPageDirection: DirectionProps;
   routing: boolean;
 }
 const Animation = styled.div<AnimationProps>`
@@ -68,25 +52,57 @@ const Animation = styled.div<AnimationProps>`
   left: 0px;
   right: 0;
   width: 100%;
-  transition: margin-left 0.4s;
+  /* max-width: 600px;
+  margin: 0 auto; */
+  transition: left 0.4s;
 
   ${(props) => props.theme.window.mobile} {
     ${(props) =>
       !props.routing &&
       css`
-        margin-left: 0%;
+        left: 0%;
       `}
+
     ${(props) =>
       props.routing &&
       props.direction === 'right' &&
       css`
-        margin-left: 100%;
+        left: 100%;
       `}
+
       ${(props) =>
       props.routing &&
       props.direction === 'left' &&
       css`
-        margin-left: -100%;
+        left: -100%;
+      `}
+
+      // 없어져야 하는 순간
+      ${(props) =>
+      props.routing &&
+      props.direction === null &&
+      props.newPageDirection !== null &&
+      css`
+        display: none;
+        transition: none;
+      `}
+
+      ${(props) =>
+      props.routing &&
+      props.direction === null &&
+      props.newPageDirection === 'right' &&
+      css`
+        display: block;
+        left: -100%;
+      `}
+
+      ${(props) =>
+      props.routing &&
+      props.direction === null &&
+      props.newPageDirection === 'left' &&
+      css`
+        display: block;
+        left: 100%;
       `}
   }
 `;

@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 import ButtonComponent from 'components/Button';
 
+import SystemIcon from 'components/Icons/SystemIcon';
+
 interface Props {
   round?: boolean;
   backgroundColor?: string;
@@ -18,7 +20,7 @@ export const Hr = styled.div`
   margin-right: 15px;
 `;
 
-export const Icon = styled.img`
+export const TempoIcon = styled.img`
   width: 47px;
   height: 47px;
   border-radius: 13px;
@@ -33,7 +35,26 @@ export const Icon = styled.img`
     css`
       position: absolute;
       left: 13px;
-      top: 0;
+      top: 10px;
+    `}
+`;
+
+export const Icon = styled(SystemIcon)`
+  /* width: 47px;
+  height: 47px; */
+  border-radius: 13px;
+  ${(props: Props) =>
+    props.round &&
+    css`
+      position: absolute;
+      left: 0px;
+    `}
+  ${(props) =>
+    props.start &&
+    css`
+      position: absolute;
+      left: 13px;
+      top: 10px;
     `}
 `;
 

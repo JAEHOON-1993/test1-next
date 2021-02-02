@@ -48,6 +48,7 @@ import AnswerFalse from './AnswerFalse';
 import SoundIcon from './Sound';
 import NewDotIcon from './NewDot';
 import InfoIcon from './Info';
+import GoogleIcon from './Google';
 
 export type nameProps =
   | 'add'
@@ -68,6 +69,7 @@ export type nameProps =
   | 'delete'
   | 'done'
   | 'facebook'
+  | 'google'
   | 'heart'
   | 'heartColored'
   | 'hamburger'
@@ -156,6 +158,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <DoneIcon {...props} />;
     case 'facebook':
       return <FacebookIcon {...props} />;
+    case 'google':
+      return <GoogleIcon {...props} />;
     case 'hamburger':
       return <HamburgerIcon {...props} />;
     case 'heart':

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import Card from 'components/Card/_fragments/ContentCard';
 
+import RouterStore from 'stores/Router';
+
 interface Props {
   fixed?: boolean;
   style?: any;
@@ -12,8 +14,8 @@ interface Props {
 const ContentContainer: React.FC<Props> = () => {
   return (
     <ContentBox>
-      <Card onClick={() => Router.push('/indoor/[id]', '/indoor/1')} />
-      <Card onClick={() => Router.push('/indoor/[id]', '/indoor/1')} />
+      <Card onClick={() => RouterStore.push('/indoor/[id]', '/indoor/1')} />
+      <Card onClick={() => RouterStore.push('/indoor/[id]', '/indoor/1')} />
       <Card onClick={() => Router.push('/indoor/[id]', '/indoor/1')} />
       <Card onClick={() => Router.push('/indoor/[id]', '/indoor/1')} />
       <Card onClick={() => Router.push('/indoor/[id]', '/indoor/1')} />
