@@ -7,7 +7,7 @@ import Select from 'components/Select';
 import Button from 'components/Button';
 import Rate from 'components/Rate';
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 interface Props {
   fixed?: boolean;

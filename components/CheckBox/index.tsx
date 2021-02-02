@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 
 import SystemIcon from 'components/Icons/SystemIcon';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 export interface CheckboxProps {
   checked: boolean;

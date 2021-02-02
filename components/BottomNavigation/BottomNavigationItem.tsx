@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import TabBarIcon, { nameProps } from 'components/Icons/TabBarIcon';
 import ButtonBase from 'components/Button/ButtonBase';
 

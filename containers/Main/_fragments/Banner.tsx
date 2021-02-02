@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 import { Props } from '../types';
 

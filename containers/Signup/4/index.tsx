@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 import SignupStore from 'stores/SignUp';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 

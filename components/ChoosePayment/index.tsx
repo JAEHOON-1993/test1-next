@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { observer } from 'mobx-react';
 
 import LineIcon from 'components/Icons/LineIcon';
-import { Text } from 'components/TypoGraphy';
+import { Text } from 'components/Typography';
 
 interface Props {
   paymentData: {

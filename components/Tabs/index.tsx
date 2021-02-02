@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import useWindowSize from 'utils/useWindowSize';
 
 import Container from 'components/Container';
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 interface Props {
   noMobile?: boolean;

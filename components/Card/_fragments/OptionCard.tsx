@@ -3,7 +3,7 @@ import styled, { ThemeConsumer } from 'styled-components';
 
 import { intComma } from 'utils/format';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 import { Card, CardHeader } from 'components/Card';
 import SystemIcon from 'components/Icons/SystemIcon';
 

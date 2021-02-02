@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Text } from 'components/TypoGraphy';
+import { Text } from 'components/Typography';
 import CheckBox from 'components/CheckBox';
 
 interface Props {

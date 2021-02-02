@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/TypoGraphy';
+import * as T from 'components/Typography';
 
 import PrevPageArrow from 'components/Icons/SystemIcon/PrevPageArrow';
 import NextPageArrow from 'components/Icons/SystemIcon/NextPageArrow';
