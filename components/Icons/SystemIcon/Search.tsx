@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const SearchIcon: React.FC<Props> = ({ size = 24, color }) => {
+const SearchIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="search_icon"
       width={size}

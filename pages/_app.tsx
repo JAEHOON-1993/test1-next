@@ -1,7 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-// import Router from 'next/router';
-// import RouterStore from 'stores/Router';
 
 import { AppProps } from 'next/app';
 

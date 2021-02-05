@@ -14,20 +14,20 @@ class RouterStore {
     makeAutoObservable(this);
   }
 
-  pop = (url: string) => {
+  pop = (url: string, as?: string) => {
     // console.log('----RouterStore 뒤로가기!');
     this.direction = 'right';
     this.routing = true;
 
     setTimeout(() => {
-      Router.push(url);
+      Router.push(url, as === null ? url : as);
       this.routing = false;
       this.direction = null;
       this.loadNextPage('right');
     }, 300);
   };
 
-  push = (url: string, as: string = url) => {
+  push = (url: string, as: string) => {
     // console.log('----RouterStore 앞으로 가기!');
     this.direction = 'left';
     this.routing = true;

@@ -2,11 +2,12 @@ import styled, { ThemeConsumer, css } from 'styled-components';
 
 import { Props } from './types';
 
-const AlarmNewIcon: React.FC<Props> = ({ size = 24, color }) => {
+const AlarmNewIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
         <svg
+          {...props}
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}

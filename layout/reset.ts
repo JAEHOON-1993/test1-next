@@ -33,6 +33,15 @@ const GlobalStyle = createGlobalStyle`
     -ms-touch-action: manipulation; 
     touch-action: manipulation; 
   }
+  html {
+    overflow: hidden;
+  }
+  body {
+    overflow: auto;
+    user-select: none;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: none;
+  }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
