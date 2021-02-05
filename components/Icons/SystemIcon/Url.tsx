@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
-const UrlIcon: React.FC<Props> = ({ size = 24, color }) => {
+const UrlIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       id="url_icon_24"
       width={size}

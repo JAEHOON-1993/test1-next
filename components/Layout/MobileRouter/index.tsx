@@ -5,24 +5,16 @@ import RouterStore, { DirectionProps } from 'stores/Router';
 
 import { observer } from 'mobx-react';
 
-// import Footer from "./Footer";
-
 interface Props {
-  pageName?: string;
-  noHeader?: boolean;
-  noBorder?: boolean;
-  centered?: boolean;
-  transparent?: boolean;
   children?: React.ReactNode;
-  title?: string;
 }
 
 const MobileRouter = observer(({ children }: Props) => {
   const { direction, newPageDirection, routing, pop } = RouterStore;
 
   useEffect(() => {
-    const onPopPage = ({ url }: any) => {
-      pop(url);
+    const onPopPage = ({ url, as }: any) => {
+      pop(url, as);
       return false;
     };
     Router.beforePopState(onPopPage);
