@@ -33,6 +33,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
   useEffect(() => {
     // console.log(NO_BACK_PATH.indexOf(path));
     // console.log(SEARCH_PATH.indexOf(path));
+    setPath(router.pathname);
   }, [router]);
   const listener = () => {
     if (document.body.getBoundingClientRect().top === 0) {

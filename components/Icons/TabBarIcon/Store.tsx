@@ -20,7 +20,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 fill={theme.color.PRIMARY}
                 stroke={theme.color.WHITE}
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 stroke-miterlimit="10"
                 d="M-409.9 1673v9.081h-17.94v-9.07"
                 transform="translate(-20.853 -150.151)"
@@ -30,7 +30,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 fill={theme.color.PRIMARY}
                 stroke={theme.color.WHITE}
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 d="M-429.431 1522.593l-1.206-6.739h-18.183l-1.206 6.739a3.46 3.46 0 0 0 3.456 3.456 3.461 3.461 0 0 0 3.42-2.959 3.461 3.461 0 0 0 3.42 2.959 3.461 3.461 0 0 0 3.424-2.991 3.461 3.461 0 0 0 3.424 2.991 3.46 3.46 0 0 0 3.456-3.456z"
                 transform="translate(0 -.333)"
               />
@@ -73,7 +73,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               fill="none"
               stroke={theme.color.PRIMARY}
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               d="M-409.9 1673v6.951h-17.94v-6.943"
               transform="translate(-20.853 -148.022)"
@@ -83,7 +83,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               fill="none"
               stroke={theme.color.PRIMARY}
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               d="M-429.431 1522.593l-1.206-6.739h-18.183l-1.206 6.739a3.46 3.46 0 0 0 3.456 3.456 3.461 3.461 0 0 0 3.42-2.959 3.461 3.461 0 0 0 3.42 2.959 3.461 3.461 0 0 0 3.424-2.991 3.461 3.461 0 0 0 3.424 2.991 3.46 3.46 0 0 0 3.456-3.456z"
               transform="translate(0 -.333)"
             />

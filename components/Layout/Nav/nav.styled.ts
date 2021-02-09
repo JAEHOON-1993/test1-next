@@ -126,12 +126,15 @@ export const MobileLeftBox = styled.div`
 export const MobileRightBox = styled.div`
   display: none;
   margin-right: auto;
+  opacity: 0;
   > svg {
     cursor: pointer;
   }
   /* Mobile */
   @media screen and (max-width: 767.98px) {
     display: block;
+    opacity: 1;
+    transition: 0.4s;
   }
 `;
 

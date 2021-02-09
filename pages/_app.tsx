@@ -5,6 +5,7 @@ import { AppProps } from 'next/app';
 
 import ScrollToTop from 'components/ScrollToTop';
 import MobileRouter from 'components/Layout/MobileRouter';
+import Stack from 'components/Navigation/Stack';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -30,9 +31,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ScrollToTop>
         <StyledProvider>
-          <MobileRouter>
+          {/* <MobileRouter>
             <Component {...pageProps} />
-          </MobileRouter>
+          </MobileRouter> */}
+          <Stack component={<Component {...pageProps} />} />
         </StyledProvider>
       </ScrollToTop>
     </>
@@ -41,6 +43,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   let pageProps = {};
+  console.log('Component : ', Component);
+  console.log('ctx : ', ctx);
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
