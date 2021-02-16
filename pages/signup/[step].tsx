@@ -11,7 +11,7 @@ const IndexPage = () => {
   const [step, setStep] = useState<any>(0);
   useEffect(() => {
     const { step } = router.query;
-    console.log(step);
+    // console.log(step);
     setStep(step);
   }, [router]);
   return (

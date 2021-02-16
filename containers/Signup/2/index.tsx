@@ -47,7 +47,7 @@ const SignUp2Container: React.FC<Props> = () => {
   const resend = () => {
     // TO DO
     // API 연동
-    console.log(setSendLoading);
+    // console.log(setSendLoading);
     // if (!sendLoading) {
     //   setSendLoading(true);
     //   setTimeout(() => {

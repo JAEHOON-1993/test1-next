@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef, useImperativeHandle } from 'react';
-import Router from 'next/router';
 import styled, { css } from 'styled-components';
 
 import StackStore from 'stores/Stack';
-import { observer } from 'mobx-react';
 
 interface PageProps {
   load: boolean;
   pop: boolean;
-  ref: any;
+  left?: string;
+  ref?: any;
 }
+
 const Page = styled.div<PageProps>`
   z-index: 99;
   position: absolute;
@@ -27,13 +27,46 @@ const Page = styled.div<PageProps>`
     props.pop &&
     css`
       transition: left 0.4s;
-      left: 100%;
+      left: 0%;
     `}
 `;
 interface Props {
   children: any;
-  // ref: any;
+  pageRef?: any;
+  left?: string;
 }
+
+const PageComponent = React.forwardRef(({ children, ...props }: Props, ref) => {
+  const { stack } = StackStore;
+  const pageRef = useRef<any>(null);
+  const [load, setLoad] = useState<boolean>(false);
+  const [pop, setPop] = useState<boolean>(false);
+
+  // console.log('ref', ref);
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      // setLoad(false);
+      setPop(true);
+      pageRef?.current.focus();
+    },
+  }));
+
+  useEffect(() => {
+    setLoad(true);
+  }, []);
+
+  useEffect(() => {}, [stack]);
+
+  // console.log('page ref', ref);
+  return (
+    <Page {...props} ref={pageRef} load={load} pop={pop}>
+      {children}
+    </Page>
+  );
+});
+
+export default PageComponent;
 
 // const PageComponent: React.FC<Props> = observer(({ children }) => {
 //   const pageRef = useRef<any>(null);
@@ -57,27 +90,3 @@ interface Props {
 //     </Page>
 //   );
 // });
-
-const PageComponent = React.forwardRef(({ children, ...props }: Props, ref) => {
-  const { stack } = StackStore;
-  const pageRef = useRef<any>(null);
-  const [load, setLoad] = useState<boolean>(false);
-  const [pop, setPop] = useState<boolean>(false);
-
-  useImperativeHandle(ref, () => ({
-    focus: () => {
-      pageRef.current.focus();
-    },
-  }));
-  useEffect(() => {
-    setLoad(true);
-  }, []);
-  useEffect(() => {}, [stack]);
-  return (
-    <Page {...props} ref={pageRef} load={load} pop={pop}>
-      {children}
-    </Page>
-  );
-});
-
-export default PageComponent;

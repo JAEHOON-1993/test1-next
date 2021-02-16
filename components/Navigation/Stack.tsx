@@ -17,12 +17,13 @@ const TransitionGroup = styled.div`
 `;
 
 const StackComponent: React.FC<Props> = observer((props: any) => {
-  // const pageRef = useRef(null);
+  const pageRef = useRef<any>(null);
   const { stack, setStack } = StackStore;
   const { component } = props;
   const getPage = (element: any) => {
-    return <Page>{element}</Page>;
+    return <Page ref={pageRef}>{element}</Page>;
   };
+
   useEffect(() => {
     if (isMobile) {
       setStack([...stack, getPage(component)]);
@@ -31,13 +32,18 @@ const StackComponent: React.FC<Props> = observer((props: any) => {
     }
   }, [component]);
 
+  // console.log('stack props', props);
+
   useEffect(() => {
     Router.beforePopState(({ url }) => {
       setTimeout(() => {
         window.history.pushState({}, url);
-        console.log('stack[stack.length - 1].ref : ', stack[stack.length - 1]);
-        console.log('stack[stack.length - 1].ref : ', stack[stack.length - 1]);
+        // console.log('pageRef.current.focus ==>', pageRef?.current?.focus());
+        // console.log('pop stack', stack[stack.length - 2].ref.current);
+
+        // console.log('stack[stack.length - 1].ref : ', stack[stack.length - 1]);
         if (stack.length > 1) {
+          stack[stack.length - 2].ref.current.focus();
           stack.pop();
         }
       }, 400);
