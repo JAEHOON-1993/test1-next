@@ -30,7 +30,7 @@ const SignUp1Container: React.FC<Props> = () => {
   const next = () => {
     // TO DO
     // API 연동
-    console.log(setLoading);
+    // console.log(setLoading);
     // if (!loading) {
     //   setLoading(true);
     //   setTimeout(() => {

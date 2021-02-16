@@ -10,6 +10,7 @@ class StackStore {
   }
 
   setStack = (data: any) => {
+    console.log('stackStore', data);
     this.stack = data;
   };
 }
