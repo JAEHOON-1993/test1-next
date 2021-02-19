@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import Container from 'components/Container';
-import * as T from 'components/Typography';
+import * as T from 'components/Typo';
 
 interface styleProps {
   transparent?: boolean;

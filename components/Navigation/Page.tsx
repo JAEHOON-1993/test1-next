@@ -23,10 +23,11 @@ const Page = styled.div<PageProps>`
       left: 0%;
     `}
   ${(props) =>
-    props.load &&
+    // props.load &&
     props.pop &&
     css`
       transition: left 0.4s;
+
       left: 0%;
     `}
 `;
@@ -45,10 +46,14 @@ const PageComponent = React.forwardRef(({ children, ...props }: Props, ref) => {
   // console.log('ref', ref);
 
   useImperativeHandle(ref, () => ({
+    moveLeft: () => {
+      // console.log('pageRef?.current', pageRef?.current);
+      const page = pageRef.current;
+      page.style.left = '-50%';
+    },
     focus: () => {
-      // setLoad(false);
       setPop(true);
-      pageRef?.current.focus();
+      // pageRef?.current.focus();
     },
   }));
 
@@ -59,6 +64,7 @@ const PageComponent = React.forwardRef(({ children, ...props }: Props, ref) => {
   useEffect(() => {}, [stack]);
 
   // console.log('page ref', ref);
+
   return (
     <Page {...props} ref={pageRef} load={load} pop={pop}>
       {children}
