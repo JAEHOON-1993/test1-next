@@ -43,6 +43,7 @@ const StackComponent: React.FC<Props> = observer((props: any) => {
 
         // console.log('stack[stack.length - 1].ref : ', stack[stack.length - 1]);
         if (stack.length > 1) {
+          // stack[stack.length - 2].ref.current.moveLeft();
           stack[stack.length - 2].ref.current.focus();
           stack.pop();
         }
