@@ -11,7 +11,7 @@ type Props = {
 export const Title = styled.h1<Props>`
   margin: 0px;
   font-size: 15px;
-  line-height: 1.53;
+  line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.theme.color.BLACK};
@@ -19,13 +19,13 @@ export const Title = styled.h1<Props>`
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
-    line-height: 1.57;
+    line-height: 22px;
     letter-spacing: -0.14px;
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 24px;
     letter-spacing: -0.16px;
   }
 
@@ -46,7 +46,7 @@ export const Title = styled.h1<Props>`
     props.lg &&
     css`
       font-size: 26px;
-      line-height: 42px;
+      line-height: 32px;
       letter-spacing: -0.26px;
       /* Tab & Mobile */
       ${(props) => props.theme.window.tab} {
@@ -59,18 +59,18 @@ export const Title = styled.h1<Props>`
     props.sm &&
     css`
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 18px;
       letter-spacing: -0.12px;
       /* Tab */
       ${(props) => props.theme.window.tab} {
         font-size: 10px;
-        line-height: 1.6;
+        line-height: 16px;
         letter-spacing: -0.1px;
       }
       /* Mobile */
       ${(props) => props.theme.window.mobile} {
         font-size: 12px;
-        line-height: 1.5;
+        line-height: 18px;
         letter-spacing: -0.12px;
       }
     `}
@@ -79,7 +79,7 @@ export const Title = styled.h1<Props>`
 export const Text = styled.p<Props>`
   margin: 0px;
   font-size: 15px;
-  line-height: 1.53;
+  line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.theme.color.BLACK};
@@ -87,13 +87,13 @@ export const Text = styled.p<Props>`
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
-    line-height: 1.57;
+    line-height: 22px;
     letter-spacing: -0.14px;
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 24px;
     letter-spacing: -0.16px;
   }
 
@@ -108,7 +108,7 @@ export const Text = styled.p<Props>`
     props.lg &&
     css`
       font-size: 26px;
-      line-height: 42px;
+      line-height: 32px;
       letter-spacing: -0.26px;
       /* Tab & Mobile */
       ${(props) => props.theme.window.tab} {
@@ -121,19 +121,19 @@ export const Text = styled.p<Props>`
     props.sm &&
     css`
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 18px;
       letter-spacing: -0.12px;
 
       /* Tab */
       ${(props) => props.theme.window.tab} {
         font-size: 10px;
-        line-height: 1.6;
+        line-height: 16px;
         letter-spacing: -0.1px;
       }
       /* Mobile */
       ${(props) => props.theme.window.mobile} {
         font-size: 12px;
-        line-height: 1.5;
+        line-height: 18px;
         letter-spacing: -0.12px;
       }
     `}
@@ -142,7 +142,7 @@ export const Text = styled.p<Props>`
 export const Button = styled.p<Props>`
   margin: 0px;
   font-size: 15px;
-  line-height: 1.53;
+  line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.theme.color.BLACK};
@@ -150,14 +150,14 @@ export const Button = styled.p<Props>`
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
-    line-height: 1.57;
+    line-height: 22px;
     letter-spacing: -0.14px;
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     font-size: 16px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 24px;
     letter-spacing: -0.16px;
   }
 `;
@@ -165,7 +165,7 @@ export const Button = styled.p<Props>`
 export const ButtonSmall = styled.p<Props>`
   margin: 0px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 18px;
   letter-spacing: -0.12px;
   font-weight: ${(props) => props.bold && 'bold'};
   color: ${(props) => props.theme.color.BLACK};
@@ -179,7 +179,7 @@ export const ButtonSmall = styled.p<Props>`
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 18px;
     letter-spacing: -0.12px;
   }
 `;

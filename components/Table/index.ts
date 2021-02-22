@@ -1,5 +1,4 @@
-import TableHeaderWrap from './Header/TableHeaderWrap';
+import TableHead from './_fragments/TableHead';
+import TableBody from './_fragments/TableBody';
 
-import TableBodyWrap from './Body/TableBodyWrap';
-
-export { TableHeaderWrap, TableBodyWrap };
+export { TableHead, TableBody };

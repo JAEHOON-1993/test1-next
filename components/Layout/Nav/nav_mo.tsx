@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ThemeConsumer } from 'styled-components';
 import { useRouter } from 'next/router';
 
-import RouterStore from 'stores/Router';
-
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -67,7 +65,7 @@ const Nav: React.FC<Props> = ({ transparent, noBorder }) => {
                 </MobileRightBox>
               )}
               <Logo
-                onClick={() => RouterStore.push('/')}
+                onClick={() => router.push('/')}
                 src="/icons/logo_black.png"
               />
               <MobileLeftBox>

@@ -1,20 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react/types-6-0';
 
-import Nav from 'components/Layout/Nav';
+import Nav_PC from './nav_pc';
+import Nav_Mobile from './nav_mo';
+import Nav_QR from './nav_qr';
 
 export default {
   title: 'Example/components/Nav',
-  component: Nav,
 } as Meta;
 
-const Template: Story = (args) => <Nav {...args} />;
+export const navPC = <Nav_PC />;
 
-export const NavPC = Template.bind({});
-NavPC.args = {};
+export const navMobile = <Nav_Mobile />;
 
-export const NavMobile = Template.bind({});
-NavMobile.args = {};
-
-export const NavQR = Template.bind({});
-NavQR.args = {};
+export const navQR = <Nav_QR />;
