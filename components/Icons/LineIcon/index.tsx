@@ -31,9 +31,14 @@ import DestinationIcon from './Destination';
 import WrongPasswordIcon from './WrongPassword';
 import PhoneIcon from './Phone';
 import UserIcon from './User';
+import BrushIcon from './Brush';
+import HeadphoneIcon from './Headphone';
+import MusicNoteIcon from './MusicNote';
+import WritePenIcon from './WritePen';
 
 export type nameProps =
   | 'box'
+  | 'brush'
   | 'card'
   | 'camera'
   | 'cash'
@@ -48,6 +53,7 @@ export type nameProps =
   | 'food'
   | 'footPrint'
   | 'finance'
+  | 'headphone'
   | 'health'
   | 'hobby'
   | 'house'
@@ -56,6 +62,7 @@ export type nameProps =
   | 'media'
   | 'mobility'
   | 'monthly'
+  | 'musicNote'
   | 'receipt'
   | 'socks'
   | 'tools'
@@ -65,6 +72,7 @@ export type nameProps =
   | 'personCycling'
   | 'phone'
   | 'wrongPassword'
+  | 'writePen'
   | 'user';
 
 interface Props {
@@ -83,6 +91,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
   switch (name) {
     case 'box':
       return <BoxIcon {...props} />;
+    case 'brush':
+      return <BrushIcon {...props} />;
     case 'card':
       return <CardIcon {...props} />;
     case 'camera':
@@ -111,6 +121,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
       return <FootPrintIcon {...props} />;
     case 'finance':
       return <FinanceIcon {...props} />;
+    case 'headphone':
+      return <HeadphoneIcon {...props} />;
     case 'health':
       return <HealthIcon {...props} />;
     case 'hobby':
@@ -127,6 +139,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
       return <MobilityIcon {...props} />;
     case 'monthly':
       return <MonthlyIcon {...props} />;
+    case 'musicNote':
+      return <MusicNoteIcon {...props} />;
     case 'password':
       return <PasswordIcon {...props} />;
     case 'pet':
@@ -145,6 +159,8 @@ const LineIcon: React.FC<Props> = ({ name, ...props }) => {
       return <ToolsIcon {...props} />;
     case 'wrongPassword':
       return <WrongPasswordIcon {...props} />;
+    case 'writePen':
+      return <WritePenIcon {...props} />;
     case 'user':
       return <UserIcon {...props} />;
   }

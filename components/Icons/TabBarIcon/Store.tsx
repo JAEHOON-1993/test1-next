@@ -21,7 +21,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 stroke={theme.color.WHITE}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 d="M-409.9 1673v9.081h-17.94v-9.07"
                 transform="translate(-20.853 -150.151)"
               />
@@ -74,7 +74,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               stroke={theme.color.PRIMARY}
               strokeLinecap="round"
               strokeLinejoin="round"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               d="M-409.9 1673v6.951h-17.94v-6.943"
               transform="translate(-20.853 -148.022)"
             />

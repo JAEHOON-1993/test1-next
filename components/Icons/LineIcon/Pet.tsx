@@ -15,7 +15,7 @@ const PetIcon = ({ size = 50, color, ...props }: Props) => {
       <StrokeProps
         fill="none"
         colored={color}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeWidth="1.5px"
         d="M1428.687 461.413a4.347 4.347 0 1 0-6.8 1.926l-12.152 9.962a4.082 4.082 0 0 0-.377-.6 4.236 4.236 0 1 0-2.845 6.9 4.346 4.346 0 1 0 6.8-1.926l12.152-9.962a4.106 4.106 0 0 0 .377.6 4.236 4.236 0 1 0 2.846-6.9z"
         transform="translate(-1399.301 -452.315)"

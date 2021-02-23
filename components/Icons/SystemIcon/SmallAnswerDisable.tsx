@@ -23,8 +23,8 @@ const SmallAnswerDisableIcon: React.FC<Props> = ({
           fill="none"
           stroke={color}
           colored={color}
-          stroke-linecap="round"
-          stroke-width="4px"
+          strokeLinecap="round"
+          strokeWidth="4px"
           d="M0 0L24 0"
           transform="rotate(45 2.904 27.424) rotate(135 8.729 4.445)"
         />

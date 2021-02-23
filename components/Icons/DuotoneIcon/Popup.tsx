@@ -2,17 +2,17 @@ import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
 
-const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
+const PopupIcon = ({ size = 100, ...props }: Props) => {
   return (
     <ThemeConsumer>
       {(theme) => (
         <svg
-          {...props}
           xmlns="http://www.w3.org/2000/svg"
-          id="popup_icon_2_100"
+          id="duotone_popup_icon_100"
           width={size}
           height={size}
           viewBox="0 0 100 100"
+          {...props}
         >
           <path id="사각형_1944" d="M0 0H100V100H0z" fill="none" />
           <g
@@ -39,6 +39,7 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
             <path
               id="line"
               d="M0 0L0 5.688"
+              fill="none"
               stroke={theme.color.PRIMARY}
               strokeWidth="2px"
               strokeLinecap="round"
@@ -48,6 +49,7 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
             <path
               id="line-2"
               d="M5.688 0L0 0"
+              fill="none"
               stroke={theme.color.PRIMARY}
               strokeWidth="2px"
               strokeLinecap="round"
@@ -59,6 +61,7 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
             <path
               id="line-3"
               d="M0 0L0 5.688"
+              fill="none"
               stroke={theme.color.PRIMARY}
               strokeWidth="2px"
               strokeLinecap="round"
@@ -68,6 +71,7 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
             <path
               id="line-4"
               d="M5.688 0L0 0"
+              fill="none"
               stroke={theme.color.PRIMARY}
               strokeWidth="2px"
               strokeLinecap="round"
@@ -76,12 +80,6 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
             />
           </g>
           <g id="그룹_432" transform="translate(17.925 27.838)">
-            <path
-              id="패스_986"
-              fill="#c3dcff"
-              d="M8.129 764.645l6.771 11.291L7 788.355l8.764 1.535-.86 18.788 25.968 6.774 22.581-6.774.677-19.86 6.1-.463-5.814-10.889 6.943-12.821L46.517 759l-6.774 11.29L31.839 759z"
-              transform="translate(-7 -758.033)"
-            />
             <g id="그룹_431" transform="translate(.836)">
               <g id="그룹_426" transform="translate(6.88 11.139)">
                 <g id="그룹_423">
@@ -149,4 +147,4 @@ const BoxIcon: React.FC<Props> = ({ size = 100, ...props }) => {
   );
 };
 
-export default BoxIcon;
+export default PopupIcon;

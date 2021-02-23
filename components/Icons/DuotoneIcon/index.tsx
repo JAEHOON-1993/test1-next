@@ -1,9 +1,17 @@
-import BoxIcon from './Box';
 import CardIcon from './Card';
 import PaperIcon from './Paper';
 import PhoneIcon from './Phone';
+import PeopleIcon from './People';
+import ClickIcon from './Click';
+import PopupIcon from './Popup';
 
-export type nameProps = 'box' | 'card' | 'paper' | 'phone';
+export type nameProps =
+  | 'card'
+  | 'click'
+  | 'paper'
+  | 'phone'
+  | 'people'
+  | 'popup';
 interface Props {
   name: nameProps;
   size?: string | number;
@@ -17,14 +25,18 @@ interface Props {
  */
 const DuotoneIcon: React.FC<Props> = ({ name, ...props }) => {
   switch (name) {
-    case 'box':
-      return <BoxIcon {...props} />;
     case 'card':
       return <CardIcon {...props} />;
+    case 'click':
+      return <ClickIcon {...props} />;
     case 'paper':
       return <PaperIcon {...props} />;
     case 'phone':
       return <PhoneIcon {...props} />;
+    case 'people':
+      return <PeopleIcon {...props} />;
+    case 'popup':
+      return <PopupIcon {...props} />;
   }
 
   return null;

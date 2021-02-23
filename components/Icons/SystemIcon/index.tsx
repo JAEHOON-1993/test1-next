@@ -49,6 +49,9 @@ import SoundIcon from './Sound';
 import NewDotIcon from './NewDot';
 import InfoIcon from './Info';
 import GoogleIcon from './Google';
+import MyPageIcon from './MyPage';
+import ArchiveBoxIcon from './ArchiveBox';
+import PaperClipIcon from './PaperClip';
 
 export type nameProps =
   | 'add'
@@ -101,7 +104,8 @@ export type nameProps =
   | 'prevPageArrow'
   | 'plus'
   | 'answerCorrect'
-  | 'answerFalse';
+  | 'answerFalse'
+  | 'paperClip';
 
 interface Props {
   name: nameProps | string;
@@ -130,6 +134,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <AlarmIcon {...props} />;
     case 'alarmNew':
       return <AlarmNewIcon {...props} />;
+    case 'archiveBox':
+      return <ArchiveBoxIcon {...props} />;
     case 'arrowRight':
       return <ArrowRightIcon {...props} />;
     case 'arrowLeft':
@@ -176,6 +182,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <KakaoIcon {...props} />;
     case 'like':
       return <LikeIcon {...props} />;
+    case 'myPage':
+      return <MyPageIcon {...props} />;
     case 'moreSetting':
       return <MoreSettingIcon {...props} />;
     case 'newDot':
@@ -218,6 +226,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <SmallMinusIcon {...props} />;
     case 'smallAnswerDisabled':
       return <SmallAnswerDisable {...props} />;
+    case 'paperClip':
+      return <PaperClipIcon {...props} />;
     case 'plus':
       return <PlusIcon {...props} />;
     case 'answerCorrect':

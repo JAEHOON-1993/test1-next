@@ -16,21 +16,26 @@ export const all = () => {
           <AlphaBetically>[ A ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="add" color={theme.color.POINT} />
-            <div>Add (point color)</div>
+            <div>add (point color)</div>
           </SystemIconBox>
 
           <SystemIconBox>
             <SystemIcon name="addProfile" />
-            <div>AddProfile</div>
+            <div>addProfile</div>
           </SystemIconBox>
 
           <SystemIconBox>
             <SystemIcon name="alarm" />
-            <div>Alarm</div>
+            <div>alarm</div>
           </SystemIconBox>
           <SystemIconBox>
             <SystemIcon name="alarmNew" />
             <div>AlarmNew</div>
+          </SystemIconBox>
+
+          <SystemIconBox>
+            <SystemIcon name="archiveBox" />
+            <div>archiveBox</div>
           </SystemIconBox>
 
           <SystemIconBox>
@@ -158,7 +163,11 @@ export const all = () => {
           <AlphaBetically>[ M ]</AlphaBetically>
           <SystemIconBox>
             <SystemIcon name="moreSetting" />
-            <div>MoreSetting</div>
+            <div>moreSetting</div>
+          </SystemIconBox>
+          <SystemIconBox>
+            <SystemIcon name="myPage" />
+            <div>myPage</div>
           </SystemIconBox>
 
           <AlphaBetically>[ N ]</AlphaBetically>
@@ -184,6 +193,11 @@ export const all = () => {
           </SystemIconBox>
 
           <AlphaBetically>[ P ]</AlphaBetically>
+          <SystemIconBox>
+            <SystemIcon name="paperClip" />
+            <div>paperClip</div>
+          </SystemIconBox>
+
           <SystemIconBox>
             <SystemIcon name="plus" />
             <div>Plus</div>
