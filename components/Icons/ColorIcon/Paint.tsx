@@ -26,7 +26,7 @@ const PaintIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           </defs>
           <path
             id="패스_264604"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             d="M946.67-6920.648v8.093l1.194 2.465 1.87 1.236h2.244l1.463-1.236 1.388-.8v2.8l1.8 1.268 2.513.894 2.152-.894 1.033-2.035v-11.794z"
             transform="translate(-927 6929)"
           />

@@ -18,7 +18,7 @@ const Wallet: React.FC<Props> = ({ size = 50, ...props }) => {
         >
           <path
             id="패스_264821"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             d="M-3997.771-16367.828l1.43-1.922 1.46-.66h8.932l1.382.66v5.431l-1.382 1.19h-8.932l-1.46-1.19-1.43-1.553z"
             transform="translate(4026 16397)"
           />
@@ -26,7 +26,7 @@ const Wallet: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28855"
             width="15"
             height="6"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="3"
             transform="rotate(90 -1 17)"
           />

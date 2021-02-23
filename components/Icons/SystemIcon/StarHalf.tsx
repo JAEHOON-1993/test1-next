@@ -40,7 +40,7 @@ const StarHalfIcon = ({
               opacity="0.58"
               transform="translate(-43.819 -150.975)"
             />
-            <Path
+            <FillProps
               fill={theme.color.PRIMARY}
               colored={color}
               d="M6.767 30.462a1.068 1.068 0 0 1-.818-.384 1.039 1.039 0 0 1-.23-.861l1.571-9.17a1.055 1.055 0 0 0-.3-.94l-6.664-6.5A1.062 1.062 0 0 1 .912 10.8l9.208-1.34a1.064 1.064 0 0 0 .8-.581L15.039.535A1.051 1.051 0 0 1 15.645 0v25.945a1.163 1.163 0 0 0-.147.064l-8.237 4.33a1.058 1.058 0 0 1-.494.123z"
@@ -59,8 +59,8 @@ interface style {
   colored?: string;
 }
 
-const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.PRIMARY};
+const FillProps = styled.path<style>`
+  fill: ${(props) => props.theme.color.ICON};
 
   ${(props) =>
     props.colored &&

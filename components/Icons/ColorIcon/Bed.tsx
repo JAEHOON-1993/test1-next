@@ -27,20 +27,20 @@ const BedIcon: React.FC<Props> = ({ size = 50, ...props }) => {
               id="사각형_28772"
               width="34"
               height="6"
-              fill={theme.color.PRIMARYSUB}
+              fill={theme.color.ICONSUB}
               rx="2"
               transform="translate(8 12)"
             />
             <path
               id="사각형_28769"
               d="M0 0H11V7H0z"
-              fill={theme.color.PRIMARY}
+              fill={theme.color.ICON}
               transform="translate(26 18)"
             />
             <path
               id="사각형_28768"
               d="M0 0H11V7H0z"
-              fill={theme.color.PRIMARY}
+              fill={theme.color.ICON}
               transform="translate(12 18)"
             />
             <path id="사각형_2047" fill="none" d="M0 0H50V50H0z" />

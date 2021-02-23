@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const MyPageIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -14,7 +13,8 @@ const MyPageIcon = ({ size = 24, color, ...props }: Props) => {
     >
       <path id="사각형_1940" fill="none" d="M0 0H24V24H0z" />
       <g id="그룹_983" transform="translate(-683.484 -35.883)">
-        <Circle
+        <StrokeProps
+          as="circle"
           id="타원_475"
           cx="4.275"
           cy="4.275"
@@ -27,8 +27,7 @@ const MyPageIcon = ({ size = 24, color, ...props }: Props) => {
           strokeWidth="1.5px"
           transform="translate(690.893 39.565)"
         />
-        <Circle
-          as="path"
+        <StrokeProps
           id="패스_1302"
           d="M696.392 56.052c-4.438 0-8.036 2.321-8.036 5.185h16.072c0-2.864-3.598-5.185-8.036-5.185z"
           fill="none"
@@ -45,17 +44,3 @@ const MyPageIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default MyPageIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Circle = styled.circle<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

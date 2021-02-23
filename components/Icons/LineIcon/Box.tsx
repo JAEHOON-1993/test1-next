@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const BoxIcon: React.FC<Props> = ({ size = 50, color, ...props }) => {
   return (
@@ -36,17 +35,3 @@ const BoxIcon: React.FC<Props> = ({ size = 50, color, ...props }) => {
 };
 
 export default BoxIcon;
-
-interface style {
-  colored?: string;
-}
-
-const FillProps = styled.path<style>`
-  fill: ${(props) => props.theme.color.PRIMARY};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

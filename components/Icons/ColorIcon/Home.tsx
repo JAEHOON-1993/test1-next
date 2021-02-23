@@ -20,7 +20,7 @@ const HomeIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28770"
             width="25"
             height="6"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="translate(14 38)"
           />

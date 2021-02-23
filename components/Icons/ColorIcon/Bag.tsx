@@ -17,20 +17,20 @@ const BagIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           <path
             id="사각형_30152"
             d="M0 0H5V2H0z"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             transform="translate(22 25)"
           />
           <path
             id="패스_264828"
             d="M-4036.281-16304.5v-7.107h15.6v6.586h-2.9v-4.107h-9.921v4.107z"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             transform="translate(4053 16320)"
           />
           <rect
             id="사각형_28855"
             width="13"
             height="6"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="3"
             transform="rotate(90 7.5 36.5)"
           />

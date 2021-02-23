@@ -77,7 +77,7 @@ const QRIcon: React.FC<Props> = ({ size = 50, ...props }) => {
               </g>
               <path
                 id="사각형_28786"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 d="M0 0H33.83V3.428H0z"
                 transform="translate(.167 15.473)"
               />

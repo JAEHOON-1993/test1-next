@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const BackIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
@@ -14,10 +13,10 @@ const BackIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
     >
       <g id="Arrow" transform="translate(3 3)">
         <path id="사각형_1950" d="M0 0H18V18H0z" fill="none" />
-        <GProps
+        <StrokeProps
+          as="g"
           id="icon-arrow"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
@@ -30,7 +29,7 @@ const BackIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
             transform="translate(-1281.487 -1163.709)"
           />
           <path id="line" d="M0 0L15.198 0" transform="translate(.855 6.772)" />
-        </GProps>
+        </StrokeProps>
       </g>
       <g id="검색">
         <path id="사각형_1956" d="M0 0H24V24H0z" fill="none" />
@@ -40,17 +39,3 @@ const BackIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default BackIcon;
-
-interface style {
-  colored?: string;
-}
-
-const GProps = styled.g<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

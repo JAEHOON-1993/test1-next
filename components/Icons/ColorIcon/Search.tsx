@@ -20,7 +20,7 @@ const SearchIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28785"
             width="3.988"
             height="13.292"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="1.994"
             transform="rotate(90 -2.867 29.143)"
           />
@@ -28,7 +28,7 @@ const SearchIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28784"
             width="4"
             height="14"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="translate(13 22)"
           />
@@ -60,7 +60,7 @@ const SearchIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           />
           <path
             id="패스_264422"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             d="M22.9 15.9v18.972l4.634-4.045L31.128 38l2.189-.913-3.13-7.287H36.1z"
             transform="translate(8.897 6.822)"
           />

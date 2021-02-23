@@ -19,14 +19,14 @@ const FixIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           <path
             id="패스_264419"
             d="M3281.811 258.2v2.626l.889 3.571 2.046 2.035 3.714.963h1.849l1.261-.491-4.619-4.853.532-1.862-2.217-1.5z"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             transform="translate(-3254.672 -222.15)"
           />
           <rect
             id="사각형_28777"
             width="8.568"
             height="5.712"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="rotate(-135.97 23.618 14.117)"
           />
@@ -34,7 +34,7 @@ const FixIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28778"
             width="8.568"
             height="5.712"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="rotate(-135.97 22.568 1.25)"
           />
@@ -42,7 +42,7 @@ const FixIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28775"
             width="25.702"
             height="4.284"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             rx="2"
             transform="rotate(-44.03 53.038 10.814)"
           />

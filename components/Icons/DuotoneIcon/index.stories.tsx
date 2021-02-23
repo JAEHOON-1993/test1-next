@@ -12,6 +12,11 @@ export const all = () => {
   return (
     <Wrap>
       <DuotoneIconBox>
+        <DuotoneIcon name="callPopup" />
+        <div>callPopup</div>
+      </DuotoneIconBox>
+
+      <DuotoneIconBox>
         <DuotoneIcon name="card" />
         <div>Card</div>
       </DuotoneIconBox>
@@ -19,6 +24,11 @@ export const all = () => {
       <DuotoneIconBox>
         <DuotoneIcon name="click" />
         <div>click</div>
+      </DuotoneIconBox>
+
+      <DuotoneIconBox>
+        <DuotoneIcon name="login" />
+        <div>login</div>
       </DuotoneIconBox>
 
       <DuotoneIconBox>

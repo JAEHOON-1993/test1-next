@@ -1,7 +1,7 @@
 import styled, { css, ThemeConsumer } from 'styled-components';
 import { Props } from './types';
 
-const AddProfileIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
+const AddProfileIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -13,14 +13,7 @@ const AddProfileIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
           height={size}
           viewBox="0 0 24 24"
         >
-          <FillProps
-            id="타원_455"
-            cx="12"
-            cy="12"
-            r="12"
-            fill={color}
-            colored={color}
-          />
+          <FillProps id="타원_455" cx="12" cy="12" r="12" colored={color} />
           <g id="그룹_904" transform="translate(6.275 6.273)">
             <path
               id="선_270"
@@ -54,7 +47,7 @@ interface style {
 }
 
 const FillProps = styled.circle<style>`
-  fill: ${(props) => props.theme.color.PRIMARY};
+  fill: ${(props) => props.theme.color.ICON};
 
   ${(props) =>
     props.colored &&

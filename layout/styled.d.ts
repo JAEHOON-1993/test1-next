@@ -10,12 +10,12 @@ declare module 'styled-components' {
     MODAL_BACKGROUND: string;
     color: {
       PRIMARY: string;
-      SECONDARY: string;
-      TERTIARY: string;
-      POINT: string;
       PRIMARYSUB: string;
+      SECONDARY: string;
       SECONDARYSUB: string;
+      TERTIARY: string;
       TERTIARYSUB: string;
+      POINT: string;
       POINTSUB: string;
       BLACK: string;
       GRAY5: string;
@@ -28,6 +28,8 @@ declare module 'styled-components' {
       WARNING: string;
       WARNINGSUB: string;
       SUCCESS: string;
+      ICON: string;
+      ICONSUB: string;
       GRADIENT0: string;
       GRADIENT1: string;
       GRADIENT2: string;

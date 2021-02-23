@@ -17,7 +17,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <g id="그룹_503" transform="translate(452.029 -1511.5)">
               <path
                 id="패스_1029"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 stroke={theme.color.WHITE}
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -27,7 +27,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               />
               <path
                 id="패스_1030"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 stroke={theme.color.WHITE}
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -71,7 +71,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <path
               id="패스_1029"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeMiterlimit="10"
@@ -81,7 +81,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <path
               id="패스_1030"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M-429.431 1522.593l-1.206-6.739h-18.183l-1.206 6.739a3.46 3.46 0 0 0 3.456 3.456 3.461 3.461 0 0 0 3.42-2.959 3.461 3.461 0 0 0 3.42 2.959 3.461 3.461 0 0 0 3.424-2.991 3.461 3.461 0 0 0 3.424 2.991 3.46 3.46 0 0 0 3.456-3.456z"
@@ -91,7 +91,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="선_231"
               d="M0 7.349L0.452 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeMiterlimit="10"
               transform="translate(-443.167 1515.5)"
             />
@@ -99,7 +99,7 @@ const StoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="선_232"
               d="M0.452 7.342L0 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeMiterlimit="10"
               transform="translate(-436.757 1515.5)"
             />

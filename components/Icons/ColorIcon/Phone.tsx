@@ -29,7 +29,7 @@ const PhoneIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28855"
             width="13"
             height="5"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             rx="2.5"
             transform="rotate(90 -6 21)"
           />

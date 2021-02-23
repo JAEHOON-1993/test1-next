@@ -118,9 +118,9 @@ interface Props {
 }
 
 /**
- * SystemColor의 기본 색상은 GRAY4이며, 색상은 BLACK, WHITE, PRIMARY로 변경 가능합니다.
+ * SystemColor의 기본 색상은 GRAY4이며, 색상은 BLACK, WHITE, ICON으로 변경 가능합니다.
  *
- * 색상이 채워진 아이콘의 기본 색상은 PRIMARY이며, 위와 동일한 색상으로 변경 가능합니다. (color="값")
+ * 색상이 채워진 아이콘의 기본 색상은 ICON이며, 위와 동일한 색상으로 변경 가능합니다. (color="값")
  *
  * 기본 크기는 24 x 24 입니다.
  */

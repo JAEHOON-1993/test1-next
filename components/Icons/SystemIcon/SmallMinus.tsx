@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const SmallMinusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
   return (
@@ -11,29 +10,10 @@ const SmallMinusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <Path
-        fill={color}
-        colored={color}
-        d="M0 0H9V1H0z"
-        transform="translate(8 12)"
-      />
+      <FillProps colored={color} d="M0 0H9V1H0z" transform="translate(8 12)" />
       <path fill="none" d="M0 0H25V25H0z" />
     </svg>
   );
 };
 
 export default SmallMinusIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

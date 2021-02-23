@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
-const UrlIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
+const UrlIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -14,22 +13,20 @@ const UrlIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
     >
       <g id="그룹_698" transform="translate(-244 -166.087)">
         <g id="icon-share" transform="translate(256.454 171)">
-          <Path
+          <StrokeProps
             id="path-2"
             d="M264.1 175.284V171l-6.633 6.633"
             fill="none"
-            stroke={color}
             colored={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5px"
             transform="translate(-257.466 -171)"
           />
-          <Path
+          <StrokeProps
             id="line"
             d="M0 0L4.285 0"
             fill="none"
-            stroke={color}
             colored={color}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -37,11 +34,10 @@ const UrlIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
             transform="translate(2.349)"
           />
         </g>
-        <Path
+        <StrokeProps
           id="패스_1191"
           d="M263.087 178.7v6.383H249V171h6.374"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -54,17 +50,3 @@ const UrlIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default UrlIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

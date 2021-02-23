@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const SmallAnswerDisableIcon: React.FC<Props> = ({
   color,
@@ -19,9 +18,8 @@ const SmallAnswerDisableIcon: React.FC<Props> = ({
         <path fill="none" d="M0 0H40V40H0z" />
       </g>
       <g>
-        <Path
+        <StrokeProps
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeWidth="4px"
@@ -34,17 +32,3 @@ const SmallAnswerDisableIcon: React.FC<Props> = ({
 };
 
 export default SmallAnswerDisableIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

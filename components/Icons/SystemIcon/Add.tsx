@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const AddIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -18,7 +17,6 @@ const AddIcon = ({ size = 24, color, ...props }: Props) => {
             id="선_229"
             d="M0 0L0 7.666"
             fill="none"
-            stroke={color}
             colored={color}
             strokeWidth="1.3px"
             strokeLinecap="round"
@@ -28,7 +26,6 @@ const AddIcon = ({ size = 24, color, ...props }: Props) => {
             id="선_230"
             d="M0 0L0 7.666"
             fill="none"
-            stroke={color}
             colored={color}
             strokeWidth="1.3px"
             strokeLinecap="round"
@@ -39,7 +36,6 @@ const AddIcon = ({ size = 24, color, ...props }: Props) => {
           as="g"
           id="사각형_1970"
           fill="none"
-          stroke={color}
           colored={color}
           strokeWidth="1.3px"
           transform="translate(3145.531 2496.531)"
@@ -61,17 +57,3 @@ const AddIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default AddIcon;
-
-interface style {
-  colored?: string;
-}
-
-const StrokeProps = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const PrevPageArrow = ({ size = 22, color, ...props }: Props) => {
   return (
@@ -13,22 +12,20 @@ const PrevPageArrow = ({ size = 22, color, ...props }: Props) => {
       {...props}
     >
       <path id="사각형_1950" fill="none" d="M0 0H22V22H0z" />
-      <Path
+      <StrokeProps
         id="패스_1343"
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
-        stroke={color}
         colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2px"
         transform="translate(208.329 4436.61)"
       />
-      <Path
+      <StrokeProps
         id="패스_264774"
         d="M-192.418-4421.433l-4.082-4.386 4.082-4.06"
         fill="none"
-        stroke={color}
         colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -40,16 +37,3 @@ const PrevPageArrow = ({ size = 22, color, ...props }: Props) => {
 };
 
 export default PrevPageArrow;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

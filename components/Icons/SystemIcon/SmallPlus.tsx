@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const SmallPlusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
   return (
@@ -12,17 +11,15 @@ const SmallPlusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <Path
+      <FillProps
         id="사각형_28968"
         d="M0 0H9V1H0z"
-        fill={color}
         colored={color}
         transform="translate(8 12)"
       />
-      <Path
+      <FillProps
         id="사각형_28969"
         d="M0 0H9V1H0z"
-        fill={color}
         colored={color}
         transform="rotate(90 2.5 10.5)"
       />
@@ -32,17 +29,3 @@ const SmallPlusIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
 };
 
 export default SmallPlusIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

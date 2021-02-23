@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const PaperClipIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -26,16 +25,3 @@ const PaperClipIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default PaperClipIcon;
-
-interface style {
-  colored?: string;
-}
-
-const StrokeProps = styled.path<style>`
-  stroke: ${(props) => props.theme.color.BLACK};
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

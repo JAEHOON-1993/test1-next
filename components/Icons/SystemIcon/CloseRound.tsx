@@ -1,6 +1,7 @@
-import styled, { ThemeConsumer, css } from 'styled-components';
+import { ThemeConsumer } from 'styled-components';
 
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const CloseRoundIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -14,12 +15,12 @@ const CloseRoundIcon = ({ size = 24, color, ...props }: Props) => {
           height={size}
           viewBox="0 0 24 24"
         >
-          <Circle
+          <FillProps
+            as="circle"
             id="타원_3184"
             cx="10"
             cy="10"
             r="10"
-            fill={color}
             colored={color}
             transform="translate(2 2)"
           />
@@ -51,17 +52,3 @@ const CloseRoundIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default CloseRoundIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Circle = styled.circle<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

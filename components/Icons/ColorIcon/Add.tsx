@@ -31,7 +31,7 @@ const AddIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28795"
             width="6"
             height="4"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="translate(17.5 34.5)"
           />
@@ -39,7 +39,7 @@ const AddIcon: React.FC<Props> = ({ size = 50, ...props }) => {
             id="사각형_28794"
             width="21"
             height="4"
-            fill={theme.color.PRIMARYSUB}
+            fill={theme.color.ICONSUB}
             rx="2"
             transform="rotate(90 1 19)"
           />
@@ -63,7 +63,7 @@ const AddIcon: React.FC<Props> = ({ size = 50, ...props }) => {
                 cx="9"
                 cy="9"
                 r="9"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 transform="translate(14 23.693)"
               />
               <path

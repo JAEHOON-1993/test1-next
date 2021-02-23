@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const CheckIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
@@ -30,17 +29,3 @@ const CheckIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default CheckIcon;
-
-interface style {
-  colored?: string;
-}
-
-const StrokeProps = styled.g<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

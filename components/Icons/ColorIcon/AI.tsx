@@ -42,7 +42,7 @@ const AIIcon: React.FC<Props> = ({ size = 50, ...props }) => {
           </g>
           <path
             id="패스_264700"
-            fill={theme.color.PRIMARY}
+            fill={theme.color.ICON}
             d="M-1857.5-6688.14l4.021-5.09 10.638 8.039-3.569 4.671z"
             transform="translate(1876.355 6727.668)"
           />

@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
-const HeartIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
+const HeartIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -13,9 +12,8 @@ const HeartIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
     >
       <g>
         <g>
-          <Path
+          <StrokeProps
             fill="none"
-            stroke={color}
             colored={color}
             d="M-80.023 514.255a.333.333 0 0 1-.209-.073c-.318-.255-7.791-6.282-8.908-9.849a6.042 6.042 0 0 1 .436-5.072 4.309 4.309 0 0 1 3.276-2.094 6.042 6.042 0 0 1 5.405 2.393 6.04 6.04 0 0 1 5.405-2.393 4.309 4.309 0 0 1 3.276 2.094 6.052 6.052 0 0 1 .43 5.089c-1.113 3.55-8.585 9.577-8.9 9.832a.333.333 0 0 1-.211.073z"
             transform="translate(92.503 -492.628) translate(-89.504 497.125) translate(89.503 -497.125)"
@@ -28,16 +26,3 @@ const HeartIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default HeartIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

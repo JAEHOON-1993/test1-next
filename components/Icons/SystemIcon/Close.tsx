@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const CloseIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -13,21 +12,19 @@ const CloseIcon = ({ size = 24, color, ...props }: Props) => {
       viewBox="0 0 24 24"
     >
       <g id="icon-arrow" transform="translate(2.496 4.178)">
-        <PathBox
+        <StrokeProps
           id="line"
           d="M0 0L19.799 0"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
           transform="rotate(45 .63 2.54)"
         />
-        <PathBox
+        <StrokeProps
           id="line-2"
           d="M0 0L19.799 0"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeWidth="2px"
@@ -42,17 +39,3 @@ const CloseIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default CloseIcon;
-
-interface style {
-  colored?: string;
-}
-
-const PathBox = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

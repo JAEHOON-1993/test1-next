@@ -1,5 +1,4 @@
 import { ThemeConsumer } from 'styled-components';
-
 import { Props } from './types';
 
 const ClickIcon = ({ size = 100 }: Props) => {
@@ -17,7 +16,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
           <g
             id="타원_445"
             fill="none"
-            stroke={theme.color.PRIMARY}
+            stroke={theme.color.ICON}
             strokeWidth="2px"
             transform="translate(82 45)"
           >
@@ -27,7 +26,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
           <g
             id="타원_446"
             fill="none"
-            stroke={theme.color.PRIMARY}
+            stroke={theme.color.ICON}
             strokeWidth="2px"
             transform="translate(13 20)"
           >
@@ -39,7 +38,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line"
               d="M0 0L0 5.688"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -49,7 +48,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line-2"
               d="M5.688 0L0 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -61,7 +60,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line-3"
               d="M0 0L0 5.688"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -71,7 +70,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line-4"
               d="M5.688 0L0 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -83,7 +82,7 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line-5"
               d="M0 0L0 5.688"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -93,24 +92,42 @@ const ClickIcon = ({ size = 100 }: Props) => {
               id="line-6"
               d="M5.688 0L0 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeWidth="2px"
               strokeLinecap="round"
               strokeLinejoin="round"
               transform="translate(0 2.844)"
             />
           </g>
+          <path
+            id="빼기_5"
+            d="M1390.16 9768.781h-14.187a4 4 0 0 0-3.083-3.43V9765a2 2 0 0 1 2-2h15.268a2 2 0 0 1 2 2v1.78a2 2 0 0 1-1.998 2.001z"
+            fill={theme.color.ICONSUB}
+            transform="translate(-1340 -9701.252)"
+          />
+          <path
+            id="빼기_6"
+            d="M1376.213 9783.129h-.291a4.008 4.008 0 0 0-3.3-3.165V9765a2 2 0 0 1 2-2h1.592a2 2 0 0 1 2 2v16.127a2 2 0 0 1-2.001 2.002z"
+            fill={theme.color.ICONSUB}
+            transform="translate(-1340 -9715.916)"
+          />
+          <path
+            id="패스_264422"
+            d="M22.9 15.9v27.5l6.718-5.864 5.206 10.392L38 46.605l-4.538-10.556h8.565z"
+            fill={theme.color.ICONSUB}
+            transform="translate(37.264 32.385)"
+          />
           <g id="그룹_872" transform="translate(26.746 27)">
             <path
               id="패스_1163"
               d="M2329.7 574.091v-24.883a5.376 5.376 0 0 0 3.643-2.966h25.605a5.376 5.376 0 0 0 3.643 2.966v9.73h2.423v-9.73a5.36 5.36 0 1 0-6.561-5.39h-24.618a5.359 5.359 0 1 0-6.56 5.39v24.882a5.36 5.36 0 1 0 6.427 6.427h19.8v-2.423h-19.8a5.364 5.364 0 0 0-4.002-4.003zm34.1-33.042a2.942 2.942 0 1 1-2.941 2.944 2.946 2.946 0 0 1 2.949-2.944zm-38.259 2.944a2.942 2.942 0 1 1 2.944 2.941 2.948 2.948 0 0 1-2.936-2.942zm2.944 38.257a2.942 2.942 0 1 1 2.941-2.944 2.948 2.948 0 0 1-2.934 2.944z"
-              fill={theme.color.PRIMARY}
+              fill={theme.color.ICON}
               transform="translate(-2323.125 -538.625)"
             />
             <path
               id="패스_1164"
               d="M2355.365 567.265l-20.42-22.51a1.024 1.024 0 0 0-1.119-.262 1.011 1.011 0 0 0-.648.95v30.166a1.017 1.017 0 0 0 .606.931 1 1 0 0 0 1.1-.188l5.839-5.442 4.39 9.084a1.012 1.012 0 0 0 .915.575.994.994 0 0 0 .419-.091l3.6-1.622a1.043 1.043 0 0 0 .536-.576 1 1 0 0 0-.032-.779l-3.968-8.631 8.032.1a1.032 1.032 0 0 0 .932-.6 1.017 1.017 0 0 0-.182-1.105zm-11.3.992l4.21 9.165-1.757.8-4.56-9.436a1.025 1.025 0 0 0-.721-.552.948.948 0 0 0-.2-.02.994.994 0 0 0-.687.275l-5.139 4.786v-25.198l17.083 18.827-7.271-.087a.984.984 0 0 0-.9.465 1.01 1.01 0 0 0-.062.976z"
-              fill={theme.color.PRIMARY}
+              fill={theme.color.ICON}
               transform="translate(-2300.694 -525.683)"
             />
           </g>

@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const ChatIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -12,9 +11,8 @@ const ChatIcon = ({ size = 24, color, ...props }: Props) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <Path
+      <StrokeProps
         fill="none"
-        stroke={color}
         colored={color}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,17 +25,3 @@ const ChatIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default ChatIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

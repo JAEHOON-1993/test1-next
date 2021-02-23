@@ -83,7 +83,7 @@ interface Props {
 }
 
 /**
- * LineIcon은 PRIMARY 색상으로만 이루어졌으며, 색상 변경이 가능합니다.
+ * LineIcon은 ICON 색상으로만 이루어졌으며, 색상 변경이 가능합니다.
  *
  * 기본 크기는 50 x 50 입니다.
  */

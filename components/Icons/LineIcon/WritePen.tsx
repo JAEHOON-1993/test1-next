@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const WritePenIcon = ({ size = 50, color, ...props }: Props) => {
   return (
@@ -59,17 +58,3 @@ const WritePenIcon = ({ size = 50, color, ...props }: Props) => {
 };
 
 export default WritePenIcon;
-
-interface style {
-  colored?: string;
-}
-
-const StrokeProps = styled.path<style>`
-  stroke: ${(props) => props.theme.color.PRIMARY};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;
