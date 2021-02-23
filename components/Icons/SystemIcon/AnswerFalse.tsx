@@ -13,7 +13,7 @@ const AnswerFalseIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
       viewBox="0 0 40 40"
     >
       <g id="icon-arrow" transform="translate(8.505 8)">
-        <Path
+        <StrokeProps
           id="line"
           d="M0 0L33.197 0"
           fill="none"
@@ -23,7 +23,7 @@ const AnswerFalseIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
           strokeWidth="4"
           transform="rotate(45 -.001 0)"
         />
-        <Path
+        <StrokeProps
           id="line-2"
           d="M0 0L33.197 0"
           fill="none"
@@ -47,7 +47,7 @@ interface style {
   colored?: string;
 }
 
-const Path = styled.path<style>`
+const StrokeProps = styled.path<style>`
   stroke: ${(props) => props.theme.color.WARNING};
 
   ${(props) =>

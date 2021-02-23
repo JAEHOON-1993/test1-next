@@ -12,7 +12,7 @@ const AnswerCorrectIcon: React.FC<Props> = ({ color, size = 24, ...props }) => {
       height={size}
       viewBox="0 0 100 100"
     >
-      <FilleProps
+      <FillProps
         fill={color}
         colored={color}
         d="M42 84A42.011 42.011 0 0 1 25.652 3.3a42.011 42.011 0 0 1 32.7 77.4A41.737 41.737 0 0 1 42 84zm0-73.715a31.616 31.616 0 1 0 12.345 2.492A31.516 31.516 0 0 0 42 10.285z"
@@ -29,8 +29,8 @@ interface style {
   colored?: string;
 }
 
-const FilleProps = styled.path<style>`
-  fill: ${(props) => props.theme.color.PRIMARY};
+const FillProps = styled.path<style>`
+  fill: ${(props) => props.theme.color.ICON};
 
   ${(props) =>
     props.colored &&

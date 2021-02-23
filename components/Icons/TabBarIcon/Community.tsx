@@ -18,7 +18,7 @@ const CommunityIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <g id="그룹_987" transform="translate(-708.939 -191.652)">
               <path
                 id="패스_1308"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 d="M727.555 196.652h-13.824a1.792 1.792 0 0 0-1.792 1.792v9.033a1.792 1.792 0 0 0 1.792 1.792h.169l-1.2 2.826 4.617-2.826h10.235a1.792 1.792 0 0 0 1.792-1.792v-9.033a1.792 1.792 0 0 0-1.789-1.792z"
               />
               <path
@@ -70,7 +70,7 @@ const CommunityIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="선_280"
               d="M0 0L10.672 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
               transform="translate(715.307 200.336)"
@@ -79,7 +79,7 @@ const CommunityIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="선_281"
               d="M0 0L10.672 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
               transform="translate(715.307 202.96)"
@@ -88,7 +88,7 @@ const CommunityIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="선_282"
               d="M0 0L10.672 0"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
               transform="translate(715.307 205.585)"
@@ -97,7 +97,7 @@ const CommunityIcon = ({ color, fill, size = 24, ...props }: Props) => {
               id="패스_1308"
               d="M727.555 196.652h-13.824a1.792 1.792 0 0 0-1.792 1.792v9.033a1.792 1.792 0 0 0 1.792 1.792h.169l-1.2 2.826 4.617-2.826h10.235a1.792 1.792 0 0 0 1.792-1.792v-9.033a1.792 1.792 0 0 0-1.789-1.792z"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               strokeLinecap="round"
               strokeLinejoin="round"
             />

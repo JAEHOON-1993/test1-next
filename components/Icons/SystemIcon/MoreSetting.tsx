@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -13,7 +12,8 @@ const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
       viewBox="0 0 24 24"
     >
       <g id="그룹_751" transform="translate(-316 -136)">
-        <Circle
+        <FillProps
+          as="circle"
           id="타원_462"
           cx="1.5"
           cy="1.5"
@@ -22,7 +22,8 @@ const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
           colored={color}
           transform="translate(333 139)"
         />
-        <Circle
+        <FillProps
+          as="circle"
           id="타원_463"
           cx="1.5"
           cy="1.5"
@@ -31,7 +32,8 @@ const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
           colored={color}
           transform="translate(333 146)"
         />
-        <Circle
+        <FillProps
+          as="circle"
           id="타원_464"
           cx="1.5"
           cy="1.5"
@@ -47,16 +49,3 @@ const MoreSettingIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default MoreSettingIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Circle = styled.circle<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

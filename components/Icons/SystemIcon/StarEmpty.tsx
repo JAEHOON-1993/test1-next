@@ -32,7 +32,7 @@ const StarEmptyIcon = ({
       viewBox="0 0 31.982 30.52"
     >
       <g>
-        <Path
+        <FillProps
           fill={color}
           d="M60.305 177.041l8.235 4.33a1.063 1.063 0 0 0 1.543-1.121l-1.573-9.17a1.064 1.064 0 0 1 .306-.941l6.663-6.494a1.063 1.063 0 0 0-.589-1.814l-9.208-1.338a1.064 1.064 0 0 1-.8-.582l-4.118-8.343a1.063 1.063 0 0 0-1.907 0l-4.118 8.343a1.064 1.064 0 0 1-.8.582l-9.208 1.338a1.063 1.063 0 0 0-.589 1.814l6.663 6.494a1.064 1.064 0 0 1 .306.941l-1.573 9.17a1.063 1.063 0 0 0 1.543 1.121l8.235-4.33a1.063 1.063 0 0 1 .989 0z"
           opacity="0.58"
@@ -45,6 +45,6 @@ const StarEmptyIcon = ({
 
 export default StarEmptyIcon;
 
-const Path = styled.path`
+const FillProps = styled.path`
   fill: ${(props) => props.theme.color.GRAY4};
 `;

@@ -18,13 +18,7 @@ const CheckBoxIcon = ({ color, fill, size = 24, ...props }: checkBoxProps) => {
             height={size}
             viewBox="0 0 30 30"
           >
-            <RectBox
-              width="30"
-              height="30"
-              fill={color}
-              colored={color}
-              rx="4"
-            />
+            <RectBox width="30" height="30" colored={color} rx="4" />
             <path
               fill="none"
               stroke={theme.color.WHITE}
@@ -66,7 +60,7 @@ interface style {
 }
 
 const RectBox = styled.rect<style>`
-  fill: ${(props) => props.theme.color.PRIMARY};
+  fill: ${(props) => props.theme.color.ICON};
 
   ${(props) =>
     props.colored &&

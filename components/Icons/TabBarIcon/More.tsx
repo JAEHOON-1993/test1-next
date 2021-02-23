@@ -21,7 +21,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 cx="2.5"
                 cy="2.5"
                 r="2.5"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 transform="translate(332 138)"
               />
               <circle
@@ -29,7 +29,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 cx="2.5"
                 cy="2.5"
                 r="2.5"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 transform="translate(332 145)"
               />
               <circle
@@ -37,7 +37,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 cx="2.5"
                 cy="2.5"
                 r="2.5"
-                fill={theme.color.PRIMARY}
+                fill={theme.color.ICON}
                 transform="translate(332 152)"
               />
             </g>
@@ -61,7 +61,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <g
               id="타원_462"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               transform="translate(332 138)"
             >
               <circle cx="2.5" cy="2.5" r="2.5" stroke="none" />
@@ -70,7 +70,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <g
               id="타원_463"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               transform="translate(332 145)"
             >
               <circle cx="2.5" cy="2.5" r="2.5" stroke="none" />
@@ -79,7 +79,7 @@ const MoreIcon = ({ color, fill, size = 24, ...props }: Props) => {
             <g
               id="타원_464"
               fill="none"
-              stroke={theme.color.PRIMARY}
+              stroke={theme.color.ICON}
               transform="translate(332 152)"
             >
               <circle cx="2.5" cy="2.5" r="2.5" stroke="none" />

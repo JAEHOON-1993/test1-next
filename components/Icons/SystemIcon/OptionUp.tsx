@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const OptionUpIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
@@ -13,10 +12,9 @@ const OptionUpIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
       viewBox="0 0 24 24"
     >
       <g id="구성_요소_86" transform="rotate(180 10.5 9)">
-        <Path
+        <StrokeProps
           id="패스_949"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -42,16 +40,3 @@ const OptionUpIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default OptionUpIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

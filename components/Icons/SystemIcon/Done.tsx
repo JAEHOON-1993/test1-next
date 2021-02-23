@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const DoneIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -12,7 +11,7 @@ const DoneIcon = ({ size = 24, color, ...props }: Props) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <Path
+      <StrokeProps
         fill="none"
         colored={color}
         strokeLinecap="round"
@@ -27,17 +26,3 @@ const DoneIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default DoneIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

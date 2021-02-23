@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const AlarmIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
@@ -11,7 +10,7 @@ const AlarmIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <Path
+      <FillProps
         fill={color}
         colored={color}
         stroke="rgba(0,0,0,0)"
@@ -24,17 +23,3 @@ const AlarmIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default AlarmIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

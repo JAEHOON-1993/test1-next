@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
 const SoundIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -17,7 +16,6 @@ const SoundIcon = ({ size = 24, color, ...props }: Props) => {
           id="패스_264898"
           d="M164.162 57.816a5.336 5.336 0 0 1 0 7.546"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -28,7 +26,6 @@ const SoundIcon = ({ size = 24, color, ...props }: Props) => {
           id="패스_264899"
           d="M22.15 34.079h-3.557a.593.593 0 0 1-.593-.593v-4.743a.593.593 0 0 1 .593-.593h3.557L27.486 24v14.229z"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -38,7 +35,6 @@ const SoundIcon = ({ size = 24, color, ...props }: Props) => {
           id="패스_264900"
           d="M142.948 79.029a2.371 2.371 0 0 1 0 3.354"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -52,17 +48,3 @@ const SoundIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default SoundIcon;
-
-interface style {
-  colored?: string;
-}
-
-const StrokeProps = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

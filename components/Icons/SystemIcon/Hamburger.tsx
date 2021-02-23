@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { FillProps } from './styled';
 
 const HamburgerIcon = ({ size = 24, color, ...props }: Props) => {
   return (
@@ -13,17 +12,15 @@ const HamburgerIcon = ({ size = 24, color, ...props }: Props) => {
       viewBox="0 0 24 24"
     >
       <g id="그룹_37417" transform="translate(-489 -368)">
-        <Path
+        <FillProps
           id="사각형_28746"
           d="M0 0H18V2.5H0z"
-          fill={color}
           colored={color}
           transform="translate(492 373)"
         />
-        <Path
+        <FillProps
           id="사각형_29534"
           d="M0 0H18V2.5H0z"
-          fill={color}
           colored={color}
           transform="translate(492 384)"
         />
@@ -34,16 +31,3 @@ const HamburgerIcon = ({ size = 24, color, ...props }: Props) => {
 };
 
 export default HamburgerIcon;
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  fill: ${(props) => props.theme.color.GRAY4};
-
-  ${(props) =>
-    props.colored &&
-    css`
-      fill: ${props.colored};
-    `}
-`;

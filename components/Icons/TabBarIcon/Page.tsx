@@ -20,7 +20,7 @@ const PageIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 <path
                   id="패스_264349"
                   d="M611.1 41.5v14.28s6.2-1.294 8.782 1.078V42.582C617.3 40.209 611.1 41.5 611.1 41.5z"
-                  fill={theme.color.PRIMARY}
+                  fill={theme.color.ICON}
                   transform="translate(-611.101 -41.151)"
                 />
               </g>
@@ -28,7 +28,7 @@ const PageIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 <path
                   id="패스_264351"
                   d="M811.2 41.5v14.28s-6.195-1.294-8.782 1.078V42.582c2.587-2.373 8.782-1.082 8.782-1.082z"
-                  fill={theme.color.PRIMARY}
+                  fill={theme.color.ICON}
                   transform="translate(-802.418 -41.151)"
                 />
               </g>
@@ -62,7 +62,7 @@ const PageIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 id="패스_264349"
                 d="M611.1 41.5v14.28s6.2-1.294 8.782 1.078V42.582C617.3 40.209 611.1 41.5 611.1 41.5z"
                 fill="none"
-                stroke={theme.color.PRIMARY}
+                stroke={theme.color.ICON}
                 strokeLinejoin="round"
                 strokeLinecap="round"
                 transform="translate(-611.101 -41.151)"
@@ -73,7 +73,7 @@ const PageIcon = ({ color, fill, size = 24, ...props }: Props) => {
                 id="패스_264351"
                 d="M811.2 41.5v14.28s-6.195-1.294-8.782 1.078V42.582c2.587-2.373 8.782-1.082 8.782-1.082z"
                 fill="none"
-                stroke={theme.color.PRIMARY}
+                stroke={theme.color.ICON}
                 strokeLinejoin="round"
                 strokeLinecap="round"
                 transform="translate(-802.418 -41.151)"

@@ -17,6 +17,11 @@ export const all = () => {
         <LineIcon name="box" />
         <div>Box</div>
       </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="brush" />
+        <div>brush</div>
+      </LineIconBox>
+
       <AlphaBetically>[ C ]</AlphaBetically>
       <LineIconBox>
         <LineIcon name="camera" />
@@ -80,6 +85,10 @@ export const all = () => {
       {/* <AlphaBetically>[ G ]</AlphaBetically> */}
       <AlphaBetically>[ H ]</AlphaBetically>
       <LineIconBox>
+        <LineIcon name="headphone" />
+        <div>headphone</div>
+      </LineIconBox>
+      <LineIconBox>
         <LineIcon name="health" />
         <div>Health</div>
       </LineIconBox>
@@ -91,6 +100,7 @@ export const all = () => {
         <LineIcon name="house" />
         <div>House</div>
       </LineIconBox>
+
       <AlphaBetically>[ I ]</AlphaBetically>
       <LineIconBox>
         <LineIcon name="inquiry" />
@@ -116,6 +126,11 @@ export const all = () => {
         <LineIcon name="monthly" />
         <div>Monthly</div>
       </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="musicNote" />
+        <div>musicNote</div>
+      </LineIconBox>
+
       {/* <AlphaBetically>[ N ]</AlphaBetically> */}
       {/* <AlphaBetically>[ O ]</AlphaBetically> */}
       <AlphaBetically>[ P ]</AlphaBetically>
@@ -169,6 +184,11 @@ export const all = () => {
         <LineIcon name="wrongPassword" />
         <div>WrongPassword</div>
       </LineIconBox>
+      <LineIconBox>
+        <LineIcon name="writePen" />
+        <div>writePen</div>
+      </LineIconBox>
+
       {/* <AlphaBetically>[ X ]</AlphaBetically> */}
       {/* <AlphaBetically>[ Y ]</AlphaBetically> */}
       {/* <AlphaBetically>[ Z ]</AlphaBetically> */}

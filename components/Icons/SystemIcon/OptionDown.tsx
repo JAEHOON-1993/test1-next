@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-
 import { Props } from './types';
+import { StrokeProps } from './styled';
 
-const OptionDownIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
+const OptionDownIcon = ({ size = 24, color, ...props }: Props) => {
   return (
     <svg
       {...props}
@@ -13,10 +12,9 @@ const OptionDownIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
       viewBox="0 0 24 24"
     >
       <g id="구성_요소_86" transform="translate(3 6)">
-        <Path
+        <StrokeProps
           id="패스_949"
           fill="none"
-          stroke={color}
           colored={color}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -37,16 +35,3 @@ const OptionDownIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
 };
 
 export default OptionDownIcon;
-
-interface style {
-  colored?: string;
-}
-
-const Path = styled.path<style>`
-  stroke: ${(props) => props.theme.color.GRAY4};
-  ${(props) =>
-    props.colored &&
-    css`
-      stroke: ${props.colored};
-    `}
-`;

@@ -24,7 +24,7 @@ interface Props {
 }
 
 /**
- * TabBarIcon은 PRIMARY 색상이며, 색상변경을 불가하며 outline만 가능합니다.
+ * TabBarIcon은 ICON 색상이며, 색상변경을 불가하며 outline만 가능합니다.
  *
  * 기본 크기는 24 x 24 입니다.
  */
