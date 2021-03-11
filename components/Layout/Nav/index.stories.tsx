@@ -9,8 +9,8 @@ export default {
   title: 'Example/components/Nav',
 } as Meta;
 
-export const navPC = <Nav_PC />;
+// export const navPC = <Nav_PC />;
 
-export const navMobile = <Nav_Mobile />;
+// export const navMobile = <Nav_Mobile />;
 
-export const navQR = <Nav_QR />;
+// export const navQR = <Nav_QR />;
