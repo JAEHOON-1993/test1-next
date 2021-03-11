@@ -160,26 +160,24 @@ export const Button = styled.p<Props>`
     line-height: 24px;
     letter-spacing: -0.16px;
   }
-`;
+  ${(props) =>
+    props.sm &&
+    css`
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: -0.12px;
 
-export const ButtonSmall = styled.p<Props>`
-  margin: 0px;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.12px;
-  font-weight: ${(props) => props.bold && 'bold'};
-  color: ${(props) => props.theme.color.BLACK};
-  color: ${(props) => props.color && props.color};
-  /* Tab */
-  ${(props) => props.theme.window.tab} {
-    font-size: 10px;
-    line-height: 1.6;
-    letter-spacing: -0.1px;
-  }
-  /* Mobile */
-  ${(props) => props.theme.window.mobile} {
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.12px;
-  }
+      /* Tab */
+      ${(props) => props.theme.window.tab} {
+        font-size: 10px;
+        line-height: 1.6;
+        letter-spacing: -0.1px;
+      }
+      /* Mobile */
+      ${(props) => props.theme.window.mobile} {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.12px;
+      }
+    `}
 `;

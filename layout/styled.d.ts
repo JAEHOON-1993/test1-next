@@ -30,6 +30,8 @@ declare module 'styled-components' {
       SUCCESS: string;
       ICON: string;
       ICONSUB: string;
+      GRADIENT_POINT_1: string;
+      GRADIENT_POINT_2: string;
       GRADIENT0: string;
       GRADIENT1: string;
       GRADIENT2: string;

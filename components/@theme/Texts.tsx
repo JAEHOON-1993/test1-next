@@ -29,11 +29,13 @@ const Texts: React.FC<Props> = () => {
             <T.Button>Button</T.Button>
             <T.Button bold>Button with Bold</T.Button>
             <T.Button color={theme.color.PRIMARY}>Button with Color</T.Button>
-            <T.ButtonSmall>Small</T.ButtonSmall>
-            <T.ButtonSmall bold>Small with Thin Bold</T.ButtonSmall>
-            <T.ButtonSmall color={theme.color.SECONDARY}>
+            <T.Button sm>Small</T.Button>
+            <T.Button sm bold>
+              Small with Thin Bold
+            </T.Button>
+            <T.Button sm color={theme.color.SECONDARY}>
               Small with Color
-            </T.ButtonSmall>
+            </T.Button>
           </TextBox>
         </>
       )}
