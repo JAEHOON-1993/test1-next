@@ -1,5 +1,5 @@
 import { Props } from './types';
-import { StrokeProps } from './styled';
+import { StrokeProps, GraphicsProps } from './styled';
 
 const CheckIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
   return (
@@ -10,10 +10,10 @@ const CheckIcon: React.FC<Props> = ({ size = 24, color, ...props }) => {
       height={size}
       viewBox="0 0 24 24"
     >
-      <StrokeProps fill="none" colored={color} strokeWidth="1.5px">
+      <GraphicsProps fill="none" colored={color} strokeWidth="1.5px">
         <rect width="24" height="24" stroke="none" rx="12" />
         <rect width="22.5" height="22.5" x=".75" y=".75" rx="11.25" />
-      </StrokeProps>
+      </GraphicsProps>
       <StrokeProps
         as="path"
         fill="none"

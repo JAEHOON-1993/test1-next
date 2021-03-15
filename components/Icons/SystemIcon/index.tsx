@@ -66,6 +66,7 @@ export type nameProps =
   | 'calender'
   | 'chat'
   | 'check'
+  | 'circleCheck'
   | 'checkbox'
   | 'close'
   | 'closeRound'
