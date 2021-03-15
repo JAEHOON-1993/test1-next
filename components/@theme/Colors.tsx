@@ -450,6 +450,18 @@ const Colors: React.FC<Props> = () => {
               <BackgroundText>20%</BackgroundText>
             </BackgroundColor>
           </BackgroundBox>
+          <Title>BUTTON TEXT COLOR</Title>
+          <BackgroundBox>
+            <BackgroundColor type="light">
+              <div
+                style={{ backgroundColor: light.color.BUTTON, opacity: 0.5 }}
+              />
+              <div className="text">
+                <p>{light.color.BUTTON}</p>
+              </div>
+              <BackgroundText>BUTTON</BackgroundText>
+            </BackgroundColor>
+          </BackgroundBox>
           <div style={{ height: 100 }} />
         </Warpper>
       )}
@@ -475,6 +487,7 @@ const FlexBox = styled.div`
 `;
 const Title = styled.h1`
   font-size: 16px;
+  font-weight: bold;
   line-height: 19px;
 
   color: #bebebe;

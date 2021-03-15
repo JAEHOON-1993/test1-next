@@ -5,7 +5,6 @@ import { AppProps } from 'next/app';
 
 import ScrollToTop from 'components/ScrollToTop';
 // import MobileRouter from 'components/Layout/MobileRouter';
-import Stack from 'components/Navigation/Stack';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -34,7 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           {/* <MobileRouter>
             <Component {...pageProps} />
           </MobileRouter> */}
-          <Stack component={<Component {...pageProps} />} />
+          <Component {...pageProps} />
         </StyledProvider>
       </ScrollToTop>
     </>
