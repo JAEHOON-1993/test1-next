@@ -2,6 +2,7 @@ import React, { useState, Ref, ReactNode } from 'react';
 import styled, { css, ThemeConsumer } from 'styled-components';
 
 import { Text } from 'components/Typography';
+import Button from 'components/Button';
 
 interface BoxInputProps {
   label?: string;
@@ -19,6 +20,7 @@ interface BoxInputProps {
     startAdornment?: ReactNode;
     endAdornment?: ReactNode;
   };
+  action?: any;
 }
 
 const BoxInput: React.FC<BoxInputProps> = ({
@@ -31,6 +33,7 @@ const BoxInput: React.FC<BoxInputProps> = ({
   errorRegex,
   errorText,
   isReadOnly,
+  action,
   //   ...props
 }) => {
   const [text, setText] = useState<string>('');
@@ -62,22 +65,29 @@ const BoxInput: React.FC<BoxInputProps> = ({
   return (
     <>
       {label && <Label hasError={checkError}>이름</Label>}
-      <InputBox
-        {...InputProps}
-        active={focused}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        disabled={disabled}
-        onChange={changeHandler}
-        readOnly={isReadOnly}
-        hasError={checkError}
-      />
-      {errorText && checkError && (
-        <ErrorText sm>이름을 정확하게 입력해주세요</ErrorText>
-      )}
+      <FlexBox>
+        <InputBox
+          {...InputProps}
+          active={focused}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          disabled={disabled}
+          onChange={changeHandler}
+          readOnly={isReadOnly}
+          hasError={checkError}
+        />
+        {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
+        {action && (
+          <ActionBox
+            width="84px"
+            style={{ height: '40px', borderRadius: 0 }}
+            label={action}
+          />
+        )}
+      </FlexBox>
     </>
   );
 };
@@ -88,6 +98,14 @@ interface BoxProps {
   active: boolean;
   hasError: boolean;
 }
+
+const FlexBox = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const InputBox = styled.input<BoxProps>`
   width: calc(100% - 40px);
@@ -131,4 +149,8 @@ const ErrorText = styled(Text)`
   color: ${(props) => props.theme.color.WARNING};
 
   margin-top: 10px;
+`;
+
+const ActionBox = styled(Button)`
+  margin-left: 10px;
 `;

@@ -37,5 +37,13 @@ export const BoxDefault = BoxTemplate.bind({});
 BoxDefault.args = {
   label: '이메일',
   errorRegex: /^[가-힣]{2,4}$/g,
-  errorText: '가입된 이메일이 존재하지 않습니다.',
+  errorText: '이름을 정확하게 입력해주세요',
+};
+
+export const BoxActive = BoxTemplate.bind({});
+BoxActive.args = {
+  label: '이메일',
+  errorRegex: /^[가-힣]{2,4}$/g,
+  errorText: '이름을 정확하게 입력해주세요',
+  action: '재전송',
 };
