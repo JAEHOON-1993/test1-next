@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
 import Input, { Props } from 'components/Input';
+import BoxInput from 'components/Input/BoxInput';
 import Button from 'components/Button';
 
 export default {
@@ -10,6 +11,7 @@ export default {
 } as Meta;
 
 const Template: Story<Props> = (args) => <Input {...args} />;
+const BoxTemplate: Story = (args) => <BoxInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -28,5 +30,12 @@ export const HasError = Default.bind({});
 HasError.args = {
   label: '이메일',
   error: true,
+  errorText: '가입된 이메일이 존재하지 않습니다.',
+};
+
+export const BoxDefault = BoxTemplate.bind({});
+BoxDefault.args = {
+  label: '이메일',
+  errorRegex: /^[가-힣]{2,4}$/g,
   errorText: '가입된 이메일이 존재하지 않습니다.',
 };
