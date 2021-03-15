@@ -15,6 +15,16 @@ export const FillProps = styled.path<style>`
     `}
 `;
 
+export const GraphicsProps = styled.g<style>`
+  stroke: ${(props) => props.theme.color.GRAY4};
+
+  ${(props) =>
+    props.colored &&
+    css`
+      stroke: ${props.colored};
+    `}
+`;
+
 export const StrokeProps = styled.path<style>`
   stroke: ${(props) => props.theme.color.GRAY4};
 
