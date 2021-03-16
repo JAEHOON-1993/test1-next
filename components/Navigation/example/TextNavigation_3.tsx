@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
@@ -7,9 +8,11 @@ import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
   Nav,
+  Dim,
   MenuList,
   Content,
   MenuButton,
+  DrawerHeader,
 } from 'components/Navigation/navigation.styled';
 
 const MENU_DATA = [
@@ -19,13 +22,18 @@ const MENU_DATA = [
   { name: '메뉴4', path: '/' },
 ];
 const NavigationComponent = () => {
+  const [drawer, setDrawer] = useState<boolean>(false);
+
   return (
     <ThemeConsumer>
       {(theme) => (
         <Nav>
           <Container>
             <Logo src="/images/logo.png" width={114} height={22} />
-            <MenuList isCenter>
+            <MenuList isCenter isOpen={drawer}>
+              <DrawerHeader>
+                <SystemIcon name="close" onClick={() => setDrawer(false)} />
+              </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
@@ -37,8 +45,8 @@ const NavigationComponent = () => {
               })}
             </MenuList>
             <Content>
-              <div className="mobile">
-                <MenuButton>
+              <div>
+                <MenuButton onClick={() => setDrawer(true)}>
                   <T.Button color={theme.color.BLACK} bold>
                     Menu
                   </T.Button>
@@ -46,6 +54,7 @@ const NavigationComponent = () => {
                 </MenuButton>
               </div>
             </Content>
+            <Dim isOpen={drawer} onClick={() => setDrawer(false)} />
           </Container>
         </Nav>
       )}

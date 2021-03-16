@@ -13,6 +13,7 @@ import {
   MenuList,
   Content,
   MenuButton,
+  DrawerHeader,
 } from 'components/Navigation/navigation.styled';
 
 const MENU_DATA = [
@@ -20,6 +21,7 @@ const MENU_DATA = [
   { name: '메뉴2', path: '/' },
 ];
 const NavigationComponent = () => {
+  const [isLogin, setIsLogin] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
   return (
     <ThemeConsumer>
@@ -28,6 +30,10 @@ const NavigationComponent = () => {
           <Container>
             <Logo src="/images/logo.png" width={114} height={22} />
             <MenuList isOpen={drawer}>
+              <DrawerHeader>
+                <User isLogin={isLogin} toLogin={() => setIsLogin(!isLogin)} />
+                <SystemIcon name="close" onClick={() => setDrawer(false)} />
+              </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
@@ -40,9 +46,9 @@ const NavigationComponent = () => {
             </MenuList>
             <Content>
               <div>
-                <User isLogin={true} />
+                <User isLogin={isLogin} toLogin={() => setIsLogin(!isLogin)} />
               </div>
-              <div className="mobile">
+              <div>
                 <MenuButton onClick={() => setDrawer(true)}>
                   <SystemIcon name="hamburger" />
                 </MenuButton>

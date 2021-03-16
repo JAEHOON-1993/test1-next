@@ -6,13 +6,27 @@ import { Logo } from 'components/Navigation/_fragments/Logo';
 
 interface NavProps {
   centerPoint?: 'pc' | 'tab' | 'mobile';
+  backgroundColor?: string;
 }
 export const Nav = styled.nav<NavProps>`
   height: 80px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${(props) => props.theme.color.GRAY1};
-  background-color: ${(props) => props.theme.color.WHITE};
+  ${(props) =>
+    props.backgroundColor
+      ? css`
+          background-color: ${props.backgroundColor};
+          ${MenuList} {
+            background-color: ${props.backgroundColor};
+          }
+        `
+      : css`
+          background-color: ${props.theme.color.WHITE};
+          ${MenuList} {
+            background-color: ${props.theme.color.WHITE};
+          }
+        `}
   > div {
     display: flex;
     flex-direction: row;
@@ -74,6 +88,109 @@ export const Nav = styled.nav<NavProps>`
   }
 `;
 
+interface MenuProps {
+  isDrawer?: boolean;
+}
+
+const MenuMobileCSS = css`
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px 16px;
+  width: 100%;
+  :nth-of-type(1) {
+    margin-top: 100px;
+  }
+`;
+
+export const Menu = styled.li<MenuProps>`
+  cursor: pointer;
+`;
+
+export const DrawerHeader = styled.div`
+  display: none;
+  height: 80px;
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  > svg {
+    cursor: pointer;
+  }
+`;
+export const Dim = styled.div<MenuListProps>`
+  z-index: 9;
+  transition: 0.4s;
+  position: fixed;
+  background-color: ${(props) => props.theme.color.BLACK};
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+`;
+
+const ContentCSS = css`
+  margin-left: auto;
+  /* > div {
+    display: none;
+  } */
+`;
+export const Content = styled.div`
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  > div {
+    :nth-of-type(1) {
+      display: flex;
+    }
+    :last-child {
+      display: none;
+    }
+  }
+
+  ${(props) => props.theme.window.tab} {
+    > div {
+      :nth-of-type(1) {
+        display: none;
+      }
+      :last-child {
+        display: flex;
+      }
+    }
+  }
+`;
+
+export const AbsoluteButton = styled(Button)`
+  padding: 0 26px !important;
+
+  ${(props) => props.theme.window.tab} {
+    position: fixed;
+    bottom: 30px;
+    width: 750px;
+    left: calc((100% - 750px) / 2);
+  }
+  ${(props) => props.theme.window.mobile} {
+    position: fixed;
+    bottom: 30px;
+    width: calc(100% - 30px);
+    left: 15px;
+  }
+`;
+
+export const MenuButton = styled.div`
+  cursor: pointer;
+  display: flex;
+  > p {
+    margin-right: 13px;
+  }
+`;
+
 interface MenuListProps {
   isOpen?: boolean;
   isCenter?: boolean;
@@ -107,151 +224,29 @@ export const MenuList = styled.ul<MenuListProps>`
       : css`
           margin-right: auto;
         `}
-
-  ${(props) =>
-    Children.count(props.children) > 3
-      ? css`
-          ~ ${Dim} {
-            visibility: hidden;
-            opacity: 0;
-          }
-          ${(props) => props.theme.window.tab} {
-            + ${Content} {
-              ${ContentCSS}
-            }
-            > li {
-              ${MenuMobileCSS}
-            }
-            ${MenuCSS}
-            ${props.isOpen &&
-            css`
-              right: 0;
-              ~ ${Dim} {
-                opacity: 0.5;
-                visibility: visible;
-              }
-            `};
-          }
-        `
-      : css`
-          ~ ${Dim} {
-            visibility: hidden;
-            opacity: 0;
-          }
-          ${(props) => props.theme.window.mobile} {
-            + ${Content} {
-              ${ContentCSS}
-            }
-            > li {
-              ${MenuMobileCSS}
-            }
-            ${MenuCSS}
-            ${props.isOpen &&
-            css`
-              right: 0;
-              ~ ${Dim} {
-                opacity: 0.5;
-                visibility: visible;
-              }
-            `};
-          }
-        `}
-`;
-
-interface MenuProps {
-  isDrawer?: boolean;
-}
-
-const MenuMobileCSS = css`
-  height: 60px;
-  display: flex;
-  align-items: center;
-  margin: 0px;
-  padding: 0px 15px;
-  width: 100%;
-  :nth-of-type(1) {
-    margin-top: 100px;
-  }
-`;
-
-export const Menu = styled.li<MenuProps>`
-  cursor: pointer;
-`;
-
-export const Dim = styled.div<MenuListProps>`
-  z-index: 9;
-  transition: 0.4s;
-  position: fixed;
-  background-color: ${(props) => props.theme.color.BLACK};
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-`;
-
-const ContentCSS = css`
-  margin-left: auto;
-  > div {
-    display: none;
-  }
-`;
-export const Content = styled.div`
-  width: 215px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  > div {
-    display: flex;
-  }
-  > .pc {
-    display: none;
-  }
-  > .tab {
-    display: none;
-  }
-  > .mobile {
-    display: none;
-  }
-
-  ${(props) => props.theme.window.pc} {
-    > .pc {
-      display: flex !important;
-    }
+  ~ ${Dim} {
+    visibility: hidden;
+    opacity: 0;
   }
   ${(props) => props.theme.window.tab} {
-    > .tab {
-      display: flex !important;
+    + ${Content} {
+      ${ContentCSS}
     }
-  }
-  ${(props) => props.theme.window.mobile} {
-    > .mobile {
-      display: flex !important;
+    > li {
+      ${MenuMobileCSS}
     }
-  }
-`;
-
-export const AbsoluteButton = styled(Button)`
-  padding: 0 26px !important;
-
-  ${(props) => props.theme.window.tab} {
-    position: fixed;
-    bottom: 30px;
-    width: 750px;
-    left: calc((100% - 750px) / 2);
-  }
-  ${(props) => props.theme.window.mobile} {
-    position: fixed;
-    bottom: 30px;
-    width: calc(100% - 30px);
-    left: 15px;
-  }
-`;
-
-export const MenuButton = styled.div`
-  cursor: pointer;
-  display: flex;
-  > p {
-    margin-right: 13px;
+    ${MenuCSS}
+    ${DrawerHeader} {
+      display: flex;
+    }
+    ${(props) =>
+      props.isOpen &&
+      css`
+        right: 0;
+        ~ ${Dim} {
+          opacity: 0.5;
+          visibility: visible;
+        }
+      `};
   }
 `;

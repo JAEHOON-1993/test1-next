@@ -39,7 +39,11 @@ const ButtonComponent: React.FC<ButtonProps> = ({
       ) : (
         <>
           {icon && <div>{icon}</div>}
-          <T.Button sm={sm}>{children}</T.Button>
+          {typeof children === 'string' || children instanceof String ? (
+            <T.Button sm={sm}>{children}</T.Button>
+          ) : (
+            children
+          )}
         </>
       )}
     </Button>
@@ -92,7 +96,7 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   ${(props) =>
     props.outline &&
     css`
-      background-color: ${(props) => props.theme.color.WHITE};
+      background-color: #0000;
       border: 1px solid ${props.color ? props.color : props.theme.color.PRIMARY};
       color: ${props.color ? props.color : props.theme.color.PRIMARY};
 

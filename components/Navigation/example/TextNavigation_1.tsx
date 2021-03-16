@@ -13,6 +13,7 @@ import {
   Menu,
   Content,
   MenuButton,
+  DrawerHeader,
 } from 'components/Navigation/navigation.styled';
 
 const MENU_DATA = [
@@ -32,6 +33,9 @@ const NavigationComponent = () => {
           <Container>
             <Logo src="/images/logo.png" width={114} height={22} />
             <MenuList isOpen={drawer}>
+              <DrawerHeader>
+                <SystemIcon name="close" />
+              </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
@@ -43,7 +47,7 @@ const NavigationComponent = () => {
               })}
             </MenuList>
             <Content>
-              <div className="tab">
+              <div>
                 <MenuButton onClick={() => setDrawer(true)}>
                   <SystemIcon name="hamburger" />
                 </MenuButton>

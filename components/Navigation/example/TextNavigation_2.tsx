@@ -44,7 +44,7 @@ const NavigationComponent = () => {
             </MenuList>
             <Content>
               <AbsoluteButton>앱 다운로드</AbsoluteButton>
-              <div className="mobile">
+              <div>
                 <MenuButton onClick={() => setDrawer(true)}>
                   <SystemIcon name="hamburger" />
                 </MenuButton>

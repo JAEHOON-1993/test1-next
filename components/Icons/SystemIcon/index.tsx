@@ -52,6 +52,7 @@ import GoogleIcon from './Google';
 import MyPageIcon from './MyPage';
 import ArchiveBoxIcon from './ArchiveBox';
 import PaperClipIcon from './PaperClip';
+import DropDownMenuIcon from './DropDownMenu';
 
 export type nameProps =
   | 'add'
@@ -106,7 +107,8 @@ export type nameProps =
   | 'plus'
   | 'answerCorrect'
   | 'answerFalse'
-  | 'paperClip';
+  | 'paperClip'
+  | 'dropDownMenu';
 
 interface Props {
   name: nameProps | string;
@@ -235,6 +237,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
       return <AnswerCorrect {...props} />;
     case 'answerFalse':
       return <AnswerFalse {...props} />;
+    case 'dropDownMenu':
+      return <DropDownMenuIcon {...props} />;
   }
   return null;
 };
