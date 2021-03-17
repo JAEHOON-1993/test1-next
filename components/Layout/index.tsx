@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 import useHeight from 'utils/useHeight';
 
-import Nav from 'components/Layout/Nav';
+import Navigation from 'components/Navigation';
 // import Footer from "./Footer";
 
 interface Props {
@@ -18,12 +18,9 @@ interface Props {
 }
 
 const Layout = ({
-  pageName,
   children,
   noHeader,
-  noBorder,
   centered,
-  transparent,
   title = '똑똑한개발자',
 }: Props) => {
   const height = useHeight();
@@ -35,13 +32,7 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && (
-        <Nav
-          pageName={pageName}
-          transparent={transparent}
-          noBorder={noBorder}
-        />
-      )}
+      {!noHeader && <Navigation />}
       <Body height={height} noHeader={noHeader} centered={centered}>
         {children}
       </Body>
