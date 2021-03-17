@@ -3,32 +3,43 @@
  * @Component
  * @module components.Container
  */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
-  padding?: string;
   height?: string;
   position?: string;
+  mobileNoPadding?: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
-  width: 924px;
-  margin: 0 auto;
-  padding: ${(props) => props.padding && props.padding};
-
   position: ${(props) => props.position && props.position};
   height: ${(props) => props.height && props.height};
 
-  // large pc
-  // width: 1250px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  /* Large PC */
+  width: 1280px;
 
+  /* Small PC */
+  ${(props) => props.theme.window.pc} {
+    width: 980px;
+  }
   /* Tab */
   ${(props) => props.theme.window.tab} {
     width: 750px;
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
-    width: 100%;
+    width: calc(100% - 32px);
+    padding-right: 16px;
+    padding-left: 16px;
+    ${(props) =>
+      props.mobileNoPadding &&
+      css`
+        width: 100%;
+        padding: 0px;
+      `}
   }
 `;
 

@@ -14,8 +14,7 @@ export const Title = styled.h1<Props>`
   line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
-  color: ${(props) => props.theme.color.BLACK};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : props.theme.color.BLACK)};
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
@@ -82,8 +81,7 @@ export const Text = styled.p<Props>`
   line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
-  color: ${(props) => props.theme.color.BLACK};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : props.theme.color.BLACK)};
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
@@ -145,8 +143,7 @@ export const Button = styled.p<Props>`
   line-height: 23px;
   letter-spacing: -0.15px;
   font-weight: ${(props) => props.bold && 'bold'};
-  color: ${(props) => props.theme.color.BLACK};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : props.theme.color.BUTTON)};
   /* Tab */
   ${(props) => props.theme.window.tab} {
     font-size: 14px;
@@ -156,7 +153,6 @@ export const Button = styled.p<Props>`
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
     font-size: 16px;
-    font-weight: bold;
     line-height: 24px;
     letter-spacing: -0.16px;
   }

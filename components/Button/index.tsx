@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import * as T from 'components/Typography';
 import ButtonBase from 'components/Button/ButtonBase';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export interface ButtonProps {
-  label: string | React.ReactNode | JSX.Element;
   width?: string;
+  sm?: boolean;
   outline?: boolean;
   disabled?: boolean;
   round?: boolean;
@@ -14,7 +15,7 @@ export interface ButtonProps {
   icon?: React.ReactNode | JSX.Element;
   position?: 'left' | 'right' | 'top' | 'bottom';
   loading?: boolean;
-  children?: any;
+  children?: string | React.ReactNode | JSX.Element;
   onClick?: any;
   style?: any;
 }
@@ -23,22 +24,26 @@ export interface ButtonProps {
  * 버튼 컴포넌트
  */
 const ButtonComponent: React.FC<ButtonProps> = ({
-  label,
   onClick,
   icon,
   position = 'left',
   children,
   loading,
+  sm,
   ...props
 }) => {
   return (
-    <Button onClick={onClick} position={position} {...props}>
+    <Button onClick={onClick} position={position} sm={sm} {...props}>
       {loading ? (
         <CircularProgress size={20} color="inherit" />
       ) : (
         <>
           {icon && <div>{icon}</div>}
-          <div>{label}</div>
+          {typeof children === 'string' || children instanceof String ? (
+            <T.Button sm={sm}>{children}</T.Button>
+          ) : (
+            children
+          )}
         </>
       )}
     </Button>
@@ -53,6 +58,7 @@ interface ButtonStyleProps {
   color?: string;
   disabled?: boolean;
   width?: string;
+  sm?: boolean;
   position?: 'left' | 'right' | 'top' | 'bottom';
 }
 
@@ -90,7 +96,7 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
   ${(props) =>
     props.outline &&
     css`
-      background-color: ${(props) => props.theme.color.WHITE};
+      background-color: #0000;
       border: 1px solid ${props.color ? props.color : props.theme.color.PRIMARY};
       color: ${props.color ? props.color : props.theme.color.PRIMARY};
 
@@ -107,4 +113,18 @@ const Button = styled(ButtonBase)<ButtonStyleProps>`
       border: 0px;
       color: ${(props) => props.theme.color.WHITE};
     `};
+  ${(props) =>
+    props.sm &&
+    css`
+      padding: 0px 10px;
+      ${(props) => props.theme.window.pc} {
+        height: 40px;
+      }
+      ${(props) => props.theme.window.tab} {
+        height: 38px;
+      }
+      ${(props) => props.theme.window.mobile} {
+        height: 40px;
+      }
+    `}
 `;
