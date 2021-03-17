@@ -8,6 +8,7 @@
 import { useState } from 'react';
 import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
+import Router from 'next/router';
 
 import { Title } from 'components/Typography';
 import Logo from 'components/Navigation/_fragments/Logo';
@@ -38,7 +39,12 @@ const NavigationComponent = () => {
       {(theme) => (
         <Nav centerPoint={centerPoint}>
           <Container>
-            <Logo src="/images/logo.png" width={114} height={22} />
+            <Logo
+              src="/images/logo.png"
+              width={114}
+              height={22}
+              onClick={() => Router.push('/')}
+            />
             <MenuList isOpen={drawer}>
               <DrawerHeader>
                 <SystemIcon name="close" />
