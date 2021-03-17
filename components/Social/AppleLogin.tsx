@@ -22,15 +22,14 @@ const AppleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       {(theme) => (
         <Button
           {...props}
-          label={
-            <T.Text style={{ color: theme.color.WHITE }}>Apple로 로그인</T.Text>
-          }
           backgroundColor={'#000'}
           borderColor={'#000'}
           round={round}
           onClick={() => Router.replace(APPLE_LOGIN_URL)}
           icon={<TempoIcon round={round} src={APPLE_LOGO} start />}
-        />
+        >
+          <T.Text style={{ color: theme.color.WHITE }}>Apple로 로그인</T.Text>
+        </Button>
       )}
     </ThemeConsumer>
   );

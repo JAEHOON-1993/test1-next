@@ -42,11 +42,9 @@ const Template: Story = (args) => {
         closeModal={() => setOpen(false)}
         {...args}
       />
-      <Button
-        onClick={() => setOpen(true)}
-        label="Testing Modal"
-        width="150px"
-      />
+      <Button onClick={() => setOpen(true)} width="150px">
+        Testing Modal
+      </Button>
     </>
   );
 };
@@ -123,17 +121,19 @@ export const positionModal = () => {
         </ModalBodyFull>
       </ModalComponent>
       <ButtonBox>
-        <CustomButton
-          onClick={() => setCenter(true)}
-          label="Center ReadyModal"
-        />
-        <CustomButton onClick={() => setTop(true)} label="Top ReadyModal" />
-        <CustomButton
-          onClick={() => setBottom(true)}
-          label="Bottom ReadyModal"
-        />
-        <CustomButton onClick={() => setLeft(true)} label="Left ReadyModal" />
-        <CustomButton onClick={() => setRight(true)} label="Right ReadyModal" />
+        <CustomButton onClick={() => setCenter(true)}>
+          Center ReadyModal
+        </CustomButton>
+        <CustomButton onClick={() => setTop(true)}>Top ReadyModal</CustomButton>
+        <CustomButton onClick={() => setBottom(true)}>
+          Bottom ReadyModal
+        </CustomButton>
+        <CustomButton onClick={() => setLeft(true)}>
+          Left ReadyModal
+        </CustomButton>
+        <CustomButton onClick={() => setRight(true)}>
+          Right ReadyModal
+        </CustomButton>
       </ButtonBox>
     </>
   );
@@ -175,11 +175,9 @@ export const readyModal = () => {
         closeModal={() => setVisible(false)}
         slide="bottom"
       />
-      <Button
-        width="150px"
-        onClick={() => setVisible(true)}
-        label="Ready Modal"
-      />
+      <Button width="150px" onClick={() => setVisible(true)}>
+        Ready Modal
+      </Button>
     </>
   );
 };
@@ -193,11 +191,9 @@ export const addImageModal = () => {
         closeModal={() => setVisible(false)}
         slide="bottom"
       />
-      <Button
-        width="150px"
-        onClick={() => setVisible(true)}
-        label="Add Image Modal"
-      />
+      <Button width="150px" onClick={() => setVisible(true)}>
+        Add Image Modal
+      </Button>
     </>
   );
 };
@@ -213,11 +209,9 @@ export const scrollModal = () => {
         position="bottom"
         noDim
       />
-      <Button
-        width="150px"
-        onClick={() => setVisible(true)}
-        label="Scroll Modal"
-      />
+      <Button width="150px" onClick={() => setVisible(true)}>
+        Scroll Modal
+      </Button>
     </ScrollModalWrap>
   );
 };

@@ -19,17 +19,16 @@ const FacebookLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       {(theme) => (
         <Button
           {...props}
-          label={
-            <T.Text style={{ color: theme.color.WHITE }}>
-              Facebook으로 로그인
-            </T.Text>
-          }
           backgroundColor={'#1877f3'}
           borderColor={'#1877f3'}
           round={round}
           onClick={() => Router.replace(FACEBOOK_LOGIN_URL)}
           icon={<Icon name="facebook" start round={round} color="#fff" />}
-        />
+        >
+          <T.Text style={{ color: theme.color.WHITE }}>
+            Facebook으로 로그인
+          </T.Text>
+        </Button>
       )}
     </ThemeConsumer>
   );

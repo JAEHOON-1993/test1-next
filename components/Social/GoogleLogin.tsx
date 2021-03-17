@@ -18,18 +18,15 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       {(theme) => (
         <Button
           {...props}
-          label={
-            <T.Text style={{ color: theme.color.GRAY4 }}>
-              Google로 로그인
-            </T.Text>
-          }
           style={{ color: theme.color.GRAY5 }}
           backgroundColor={'#FFF'}
           borderColor={'#ddd'}
           round={round}
           onClick={() => Router.replace(GOOGLE_LOGIN_URL)}
           icon={<Icon round={round} name="google" start />}
-        />
+        >
+          <T.Text style={{ color: theme.color.GRAY4 }}>Google로 로그인</T.Text>
+        </Button>
       )}
     </ThemeConsumer>
   );

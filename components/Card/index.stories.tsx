@@ -19,7 +19,7 @@ export const Cards = () => {
           avatar="https://picsum.photos/200"
           title="Title"
           subTitle="Sub Title"
-          action={<Button width="100px" label="Action" />}
+          action={<Button width="100px">Action</Button>}
         />
       </Card>
       <Card>

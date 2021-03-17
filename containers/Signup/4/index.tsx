@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Router from 'next/router';
 
-import SignUpStore from 'stores/SignUp';
+import SignUpStore from 'stores/Signup';
 
 import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
@@ -58,7 +58,9 @@ const SignUp4Container: React.FC<Props> = () => {
         </span>
       </AvatarBox>
       <T.Text>{SignUpStore.nickname}</T.Text>
-      <Button label="완료" round onClick={SignUpStore.register} />
+      <Button round onClick={SignUpStore.register}>
+        완료
+      </Button>
     </Container>
   );
 };

@@ -31,21 +31,29 @@ export const AllButtons = () => {
         <>
           <h1>Default</h1>
           <ButtonBox>
-            <Button label="Default" />
-            <Button label="Outline" outline />
-            <Button label="Disabled" disabled />
+            <Button>Default</Button>
+            <Button outline>Outline</Button>
+            <Button disabled>Disabled</Button>
           </ButtonBox>
           <h1>Round</h1>
           <ButtonBox>
-            <Button label="Default" round />
-            <Button label="Outline" round outline />
-            <Button label="Disabled" round disabled />
+            <Button round>Default</Button>
+            <Button round outline>
+              Outline
+            </Button>
+            <Button round disabled>
+              Disabled
+            </Button>
           </ButtonBox>
           <h1>Custom Color</h1>
           <ButtonBox>
-            <Button label="Default" color={theme.color.SECONDARY} />
-            <Button label="Outline" color={theme.color.SECONDARY} outline />
-            <Button label="Disabled" color={theme.color.SECONDARY} disabled />
+            <Button color={theme.color.SECONDARY}>Default</Button>
+            <Button outline color={theme.color.SECONDARY}>
+              Outline
+            </Button>
+            <Button disabled color={theme.color.SECONDARY}>
+              Disabled
+            </Button>
           </ButtonBox>
         </>
       )}
@@ -58,14 +66,14 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   width: '200px',
-  label: 'button',
+  children: 'button',
   color: '#4575F5',
 };
 
 export const DefaultWithIcon = Template.bind({});
 DefaultWithIcon.args = {
   width: '200px',
-  label: 'button',
+  children: 'button',
   color: '#4575F5',
   icon: <SystemIcon name="alarm" color="white" />,
 };
@@ -74,14 +82,14 @@ export const Outline = Template.bind({});
 Outline.args = {
   outline: true,
   width: '200px',
-  label: 'button',
+  children: 'button',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
   width: '200px',
-  label: 'Disabled',
+  children: 'Disabled',
 };
 
 const ButtonBox = styled.div`

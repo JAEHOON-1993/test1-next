@@ -50,7 +50,7 @@ const UploadFile = observer(
           </FileName>
           {button && (
             <ButtonBox onClick={() => inputRef.current.click()}>
-              <Button label="등록" width="83px" />
+              <Button width="83px">등록</Button>
               <input
                 type="file"
                 ref={inputRef}

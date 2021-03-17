@@ -8,7 +8,7 @@ import SystemIcon from 'components/Icons/SystemIcon';
 
 import { Container, Nav, TextBox, Input, Button } from '../index.styled';
 
-import SignUpStore from 'stores/SignUp';
+import SignUpStore from 'stores/Signup';
 
 type Props = {
   fixed?: boolean;
@@ -19,6 +19,7 @@ const SignUp1Container: React.FC<Props> = () => {
   const [active, setActive] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
+    setLoading(false);
     // console.log('token : ', SignUpStore.access);
     if (SignUpStore.phone.length > 10) {
       setActive(true);
@@ -73,12 +74,13 @@ const SignUp1Container: React.FC<Props> = () => {
         errorText={SignUpStore.phoneError}
       />
       <Button
-        label="다음"
         round
         loading={loading}
         disabled={!active || SignUpStore.phoneError != ''}
         onClick={next}
-      />
+      >
+        다음
+      </Button>
     </Container>
   );
 };

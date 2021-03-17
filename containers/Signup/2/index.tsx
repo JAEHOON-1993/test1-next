@@ -16,7 +16,7 @@ import {
   ActionButton,
 } from '../index.styled';
 
-import SignUpStore from 'stores/SignUp';
+import SignUpStore from 'stores/Signup';
 
 type Props = {
   fixed?: boolean;
@@ -29,6 +29,7 @@ const SignUp2Container: React.FC<Props> = () => {
   const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
+    setSendLoading(false);
     setTimeout(() => {
       if (SignUpStore.count > 0) {
         SignUpStore.count -= 1;
@@ -113,23 +114,19 @@ const SignUp2Container: React.FC<Props> = () => {
         errorText={SignUpStore.codeError}
         action={
           SignUpStore.count > 0 ? (
-            <ActionButton label={formatTimer(SignUpStore.count)} disabled />
+            <ActionButton disabled>
+              {formatTimer(SignUpStore.count)}
+            </ActionButton>
           ) : (
-            <ActionButton
-              label="재전송"
-              onClick={resend}
-              loading={sendLoading}
-            />
+            <ActionButton onClick={resend} loading={sendLoading}>
+              재전송
+            </ActionButton>
           )
         }
       />
-      <Button
-        label="다음"
-        round
-        disabled={!active}
-        loading={loading}
-        onClick={next}
-      />
+      <Button round disabled={!active} loading={loading} onClick={next}>
+        다음
+      </Button>
     </Container>
   );
 };

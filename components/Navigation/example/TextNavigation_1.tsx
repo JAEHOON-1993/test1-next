@@ -31,7 +31,12 @@ const NavigationComponent = () => {
       {(theme) => (
         <Nav centerPoint={centerPoint}>
           <Container>
-            <Logo src="/images/logo.png" width={114} height={22} />
+            <Logo
+              src="/images/logo.png"
+              width={114}
+              height={22}
+              onClick={() => console.log('onClick')}
+            />
             <MenuList isOpen={drawer}>
               <DrawerHeader>
                 <SystemIcon name="close" />

@@ -17,7 +17,7 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Title *',
   placeholder: 'placeholder',
-  action: <Button width="100px" label="전송" />,
+  action: <Button width="100px">전송</Button>,
 };
 
 export const OnlyInput = Template.bind({});

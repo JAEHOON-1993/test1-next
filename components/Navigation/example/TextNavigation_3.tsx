@@ -29,7 +29,12 @@ const NavigationComponent = () => {
       {(theme) => (
         <Nav>
           <Container>
-            <Logo src="/images/logo.png" width={114} height={22} />
+            <Logo
+              src="/images/logo.png"
+              width={114}
+              height={22}
+              onClick={() => console.log('onClick')}
+            />
             <MenuList isCenter isOpen={drawer}>
               <DrawerHeader>
                 <SystemIcon name="close" onClick={() => setDrawer(false)} />

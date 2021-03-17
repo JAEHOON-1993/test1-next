@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 
-import SignUpStore from 'stores/SignUp';
+import SignUpStore from 'stores/Signup';
 
 import * as T from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
@@ -39,14 +39,15 @@ const SignUp3Container: React.FC<Props> = () => {
         onChange={SignUpStore.setNickname}
       />
       <Button
-        label="다음"
         round
         loading={SignUpStore.nicknameLoading}
         disabled={
           SignUpStore.nickname.length < 3 || SignUpStore.nicknameError != ''
         }
         onClick={next}
-      />
+      >
+        다음
+      </Button>
     </Container>
   );
 };

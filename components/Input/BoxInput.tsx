@@ -80,10 +80,9 @@ const BoxInput: React.FC<BoxInputProps> = ({
           hasError={checkError}
         />
         {action && (
-          <ActionBox
-            style={{ width: 84, height: 40, borderRadius: 0 }}
-            label={action}
-          />
+          <ActionBox style={{ width: 84, height: 40, borderRadius: 0 }}>
+            {action}
+          </ActionBox>
         )}
       </InputBox>
       {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}

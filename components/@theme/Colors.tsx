@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css, ThemeConsumer } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Props } from './types';
 
@@ -8,464 +8,452 @@ import GradientComponent from 'components/Gradient';
 
 const Colors: React.FC<Props> = () => {
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Warpper>
-          <FlexBox>
-            <div>
-              <Title>BRAND COLORS</Title>
-              <ColorBox>
-                <Color>
-                  <ColorText>PRIMARY</ColorText>
-                  <div className="text">
-                    <p>{light.color.PRIMARY}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.PRIMARY }} />
-                  <div style={{ backgroundColor: dark.color.PRIMARY }} />
-                  <div className="text">
-                    <p>{dark.color.PRIMARY}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>SECONDARY</ColorText>
-                  <div className="text">
-                    <p>{light.color.SECONDARY}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.SECONDARY }} />
-                  <div style={{ backgroundColor: dark.color.SECONDARY }} />
-                  <div className="text">
-                    <p>{dark.color.SECONDARY}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>TERTIARY</ColorText>
-                  <div className="text">
-                    <p>{light.color.TERTIARY}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.TERTIARY }} />
-                  <div style={{ backgroundColor: dark.color.TERTIARY }} />
-                  <div className="text">
-                    <p>{dark.color.TERTIARY}</p>
-                  </div>
-                </Color>
-              </ColorBox>
-            </div>
-            <div>
-              <Title>BRAND SUB COLORS</Title>
-              <ColorBox>
-                <Color>
-                  <ColorText>
-                    PRIMARY
-                    <br />
-                    SUB
-                  </ColorText>
-                  <div className="text">
-                    <p>{light.color.PRIMARYSUB}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.PRIMARYSUB }} />
-                  <div style={{ backgroundColor: dark.color.PRIMARYSUB }} />
-                  <div className="text">
-                    <p>{dark.color.PRIMARYSUB}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>
-                    SECONDARY
-                    <br />
-                    SUB
-                  </ColorText>
-                  <div className="text">
-                    <p>{light.color.SECONDARYSUB}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.SECONDARYSUB }} />
-                  <div style={{ backgroundColor: dark.color.SECONDARYSUB }} />
-                  <div className="text">
-                    <p>{dark.color.SECONDARYSUB}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>
-                    TERTIARY
-                    <br />
-                    SUB
-                  </ColorText>
-                  <div className="text">
-                    <p>{light.color.TERTIARYSUB}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.TERTIARYSUB }} />
-                  <div style={{ backgroundColor: dark.color.TERTIARYSUB }} />
-                  <div className="text">
-                    <p>{dark.color.TERTIARYSUB}</p>
-                  </div>
-                </Color>
-              </ColorBox>
-            </div>
-          </FlexBox>
-
-          <FlexBox>
-            <div>
-              <Title>POINT COLORS</Title>
-              <ColorBox>
-                <Color>
-                  <ColorText>POINT</ColorText>
-                  <div className="text">
-                    <p>{light.color.POINT}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.POINT }} />
-                  <div style={{ backgroundColor: dark.color.POINT }} />
-                  <div className="text">
-                    <p>{dark.color.POINT}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>
-                    POINT
-                    <br />
-                    SUB
-                  </ColorText>
-                  <div className="text">
-                    <p>{light.color.POINTSUB}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.POINTSUB }} />
-                  <div style={{ backgroundColor: dark.color.POINTSUB }} />
-                  <div className="text">
-                    <p>{dark.color.POINTSUB}</p>
-                  </div>
-                </Color>
-                <Color style={{ boxShadow: 'none' }} />
-              </ColorBox>
-            </div>
-            <div>
-              <Title>ALERT COLORS</Title>
-              <ColorBox>
-                <Color>
-                  <ColorText>WARNING</ColorText>
-                  <div className="text">
-                    <p>{light.color.WARNING}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.WARNING }} />
-                  <div style={{ backgroundColor: dark.color.WARNING }} />
-                  <div className="text">
-                    <p>{dark.color.WARNING}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>WARNING SUB</ColorText>
-                  <div className="text">
-                    <p>{light.color.WARNINGSUB}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.WARNINGSUB }} />
-                  <div style={{ backgroundColor: dark.color.WARNINGSUB }} />
-                  <div className="text">
-                    <p>{dark.color.WARNINGSUB}</p>
-                  </div>
-                </Color>
-                <Color>
-                  <ColorText>SUCCESS</ColorText>
-                  <div className="text">
-                    <p>{light.color.SUCCESS}</p>
-                  </div>
-                  <div style={{ backgroundColor: light.color.SUCCESS }} />
-                  <div style={{ backgroundColor: dark.color.SUCCESS }} />
-                  <div className="text">
-                    <p>{dark.color.SUCCESS}</p>
-                  </div>
-                </Color>
-              </ColorBox>
-            </div>
-          </FlexBox>
-          {/* GRADIENT */}
-          <Title>GRADIENT</Title>
+    <Warpper>
+      <FlexBox>
+        <div>
+          <Title>BRAND COLORS</Title>
           <ColorBox>
-            <GradientColor>
-              <ColorText style={{ width: 210 }}>GRADIENT 0</ColorText>
+            <Color>
+              <ColorText>PRIMARY</ColorText>
               <div className="text">
                 <p>{light.color.PRIMARY}</p>
+              </div>
+              <div style={{ backgroundColor: light.color.PRIMARY }} />
+              <div style={{ backgroundColor: dark.color.PRIMARY }} />
+              <div className="text">
+                <p>{dark.color.PRIMARY}</p>
+              </div>
+            </Color>
+            <Color>
+              <ColorText>SECONDARY</ColorText>
+              <div className="text">
+                <p>{light.color.SECONDARY}</p>
+              </div>
+              <div style={{ backgroundColor: light.color.SECONDARY }} />
+              <div style={{ backgroundColor: dark.color.SECONDARY }} />
+              <div className="text">
+                <p>{dark.color.SECONDARY}</p>
+              </div>
+            </Color>
+            <Color>
+              <ColorText>TERTIARY</ColorText>
+              <div className="text">
+                <p>{light.color.TERTIARY}</p>
+              </div>
+              <div style={{ backgroundColor: light.color.TERTIARY }} />
+              <div style={{ backgroundColor: dark.color.TERTIARY }} />
+              <div className="text">
+                <p>{dark.color.TERTIARY}</p>
+              </div>
+            </Color>
+          </ColorBox>
+        </div>
+        <div>
+          <Title>BRAND SUB COLORS</Title>
+          <ColorBox>
+            <Color>
+              <ColorText>
+                PRIMARY
+                <br />
+                SUB
+              </ColorText>
+              <div className="text">
                 <p>{light.color.PRIMARYSUB}</p>
               </div>
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={light.color.PRIMARY}
-                second={light.color.PRIMARYSUB}
-                position="to right"
-              />
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={dark.color.PRIMARY}
-                second={dark.color.PRIMARYSUB}
-                position="to right"
-              />
+              <div style={{ backgroundColor: light.color.PRIMARYSUB }} />
+              <div style={{ backgroundColor: dark.color.PRIMARYSUB }} />
               <div className="text">
-                <p>{dark.color.PRIMARY}</p>
                 <p>{dark.color.PRIMARYSUB}</p>
               </div>
-            </GradientColor>
-
-            <GradientColor>
-              <ColorText style={{ width: 210 }}>GRADIENT 1</ColorText>
+            </Color>
+            <Color>
+              <ColorText>
+                SECONDARY
+                <br />
+                SUB
+              </ColorText>
               <div className="text">
-                <p>{light.color.GRADIENT_POINT_1}</p>
-                <p>{light.color.PRIMARY}</p>
+                <p>{light.color.SECONDARYSUB}</p>
               </div>
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={light.color.GRADIENT_POINT_1}
-                second={light.color.PRIMARY}
-                position="to right"
-              />
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={dark.color.GRADIENT_POINT_1}
-                second={dark.color.PRIMARY}
-                position="to right"
-              />
+              <div style={{ backgroundColor: light.color.SECONDARYSUB }} />
+              <div style={{ backgroundColor: dark.color.SECONDARYSUB }} />
               <div className="text">
-                <p>{dark.color.GRADIENT_POINT_1}</p>
-                <p>{dark.color.PRIMARY}</p>
+                <p>{dark.color.SECONDARYSUB}</p>
               </div>
-            </GradientColor>
-
-            <GradientColor>
-              <ColorText style={{ width: 210 }}>GRADIENT 2</ColorText>
+            </Color>
+            <Color>
+              <ColorText>
+                TERTIARY
+                <br />
+                SUB
+              </ColorText>
               <div className="text">
-                <p>{light.color.PRIMARY}</p>
-                <p>{light.color.GRADIENT_POINT_2}</p>
+                <p>{light.color.TERTIARYSUB}</p>
               </div>
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={light.color.PRIMARY}
-                second={light.color.GRADIENT_POINT_2}
-                position="to right"
-              />
-              <GradientComponent
-                style={{ borderRadius: 0 }}
-                first={dark.color.PRIMARY}
-                second={dark.color.GRADIENT_POINT_2}
-                position="to right"
-              />
+              <div style={{ backgroundColor: light.color.TERTIARYSUB }} />
+              <div style={{ backgroundColor: dark.color.TERTIARYSUB }} />
               <div className="text">
-                <p>{dark.color.PRIMARY}</p>
-                <p>{dark.color.GRADIENT_POINT_2}</p>
+                <p>{dark.color.TERTIARYSUB}</p>
               </div>
-            </GradientColor>
+            </Color>
           </ColorBox>
+        </div>
+      </FlexBox>
 
-          {/* GRAYSCALE */}
-          <Title>GRAYSCALE</Title>
+      <FlexBox>
+        <div>
+          <Title>POINT COLORS</Title>
           <ColorBox>
             <Color>
-              <ColorText>WHITE</ColorText>
+              <ColorText>POINT</ColorText>
               <div className="text">
-                <p>{light.color.WHITE}</p>
+                <p>{light.color.POINT}</p>
               </div>
-              <div style={{ backgroundColor: light.color.WHITE }} />
-              <div style={{ backgroundColor: dark.color.WHITE }} />
+              <div style={{ backgroundColor: light.color.POINT }} />
+              <div style={{ backgroundColor: dark.color.POINT }} />
               <div className="text">
-                <p>{dark.color.WHITE}</p>
-              </div>
-            </Color>
-            <Color>
-              <ColorText>GRAY 0</ColorText>
-              <div className="text">
-                <p>{light.color.GRAY0}</p>
-              </div>
-              <div style={{ backgroundColor: light.color.GRAY0 }} />
-              <div style={{ backgroundColor: dark.color.GRAY0 }} />
-              <div className="text">
-                <p>{dark.color.GRAY0}</p>
+                <p>{dark.color.POINT}</p>
               </div>
             </Color>
             <Color>
-              <ColorText>GRAY 1</ColorText>
+              <ColorText>
+                POINT
+                <br />
+                SUB
+              </ColorText>
               <div className="text">
-                <p>{light.color.GRAY1}</p>
+                <p>{light.color.POINTSUB}</p>
               </div>
-              <div style={{ backgroundColor: light.color.GRAY1 }} />
-              <div style={{ backgroundColor: dark.color.GRAY1 }} />
+              <div style={{ backgroundColor: light.color.POINTSUB }} />
+              <div style={{ backgroundColor: dark.color.POINTSUB }} />
               <div className="text">
-                <p>{dark.color.GRAY1}</p>
+                <p>{dark.color.POINTSUB}</p>
+              </div>
+            </Color>
+            <Color style={{ boxShadow: 'none' }} />
+          </ColorBox>
+        </div>
+        <div>
+          <Title>ALERT COLORS</Title>
+          <ColorBox>
+            <Color>
+              <ColorText>WARNING</ColorText>
+              <div className="text">
+                <p>{light.color.WARNING}</p>
+              </div>
+              <div style={{ backgroundColor: light.color.WARNING }} />
+              <div style={{ backgroundColor: dark.color.WARNING }} />
+              <div className="text">
+                <p>{dark.color.WARNING}</p>
               </div>
             </Color>
             <Color>
-              <ColorText>GRAY 2</ColorText>
+              <ColorText>WARNING SUB</ColorText>
               <div className="text">
-                <p>{light.color.GRAY2}</p>
+                <p>{light.color.WARNINGSUB}</p>
               </div>
-              <div style={{ backgroundColor: light.color.GRAY2 }} />
-              <div style={{ backgroundColor: dark.color.GRAY2 }} />
+              <div style={{ backgroundColor: light.color.WARNINGSUB }} />
+              <div style={{ backgroundColor: dark.color.WARNINGSUB }} />
               <div className="text">
-                <p>{dark.color.GRAY2}</p>
-              </div>
-            </Color>
-            <Color>
-              <ColorText>GRAY 3</ColorText>
-              <div className="text">
-                <p>{light.color.GRAY3}</p>
-              </div>
-              <div style={{ backgroundColor: light.color.GRAY3 }} />
-              <div style={{ backgroundColor: dark.color.GRAY3 }} />
-              <div className="text">
-                <p>{dark.color.GRAY3}</p>
+                <p>{dark.color.WARNINGSUB}</p>
               </div>
             </Color>
             <Color>
-              <ColorText>GRAY 4</ColorText>
+              <ColorText>SUCCESS</ColorText>
               <div className="text">
-                <p>{light.color.GRAY4}</p>
+                <p>{light.color.SUCCESS}</p>
               </div>
-              <div style={{ backgroundColor: light.color.GRAY4 }} />
-              <div style={{ backgroundColor: dark.color.GRAY4 }} />
+              <div style={{ backgroundColor: light.color.SUCCESS }} />
+              <div style={{ backgroundColor: dark.color.SUCCESS }} />
               <div className="text">
-                <p>{dark.color.GRAY4}</p>
-              </div>
-            </Color>
-            <Color>
-              <ColorText>GRAY 5</ColorText>
-              <div className="text">
-                <p>{light.color.GRAY5}</p>
-              </div>
-              <div style={{ backgroundColor: light.color.GRAY5 }} />
-              <div style={{ backgroundColor: dark.color.GRAY5 }} />
-              <div className="text">
-                <p>{dark.color.GRAY5}</p>
-              </div>
-            </Color>
-            <Color>
-              <ColorText>BLACK</ColorText>
-              <div className="text">
-                <p>{light.color.BLACK}</p>
-              </div>
-              <div style={{ backgroundColor: light.color.BLACK }} />
-              <div style={{ backgroundColor: dark.color.BLACK }} />
-              <div className="text">
-                <p>{dark.color.BLACK}</p>
+                <p>{dark.color.SUCCESS}</p>
               </div>
             </Color>
           </ColorBox>
-          <FlexBox>
-            <div>
-              <Title>BACKGROUND COLORS _ LIGHT MODE</Title>
-              <BackgroundBox>
-                <BackgroundColor type="light">
-                  <div style={{ backgroundColor: light.background.PRIMARY }} />
-                  <div className="text">
-                    <p>{light.background.PRIMARY}</p>
-                  </div>
-                  <BackgroundText>PRIMARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="light">
-                  <div
-                    style={{ backgroundColor: light.background.SECONDARY }}
-                  />
-                  <div className="text">
-                    <p>{light.background.SECONDARY}</p>
-                  </div>
-                  <BackgroundText>SECONDARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="light">
-                  <div style={{ backgroundColor: light.background.TERTIARY }} />
-                  <div className="text">
-                    <p>{light.background.TERTIARY}</p>
-                  </div>
-                  <BackgroundText>TERTIARY</BackgroundText>
-                </BackgroundColor>
-              </BackgroundBox>
-            </div>
-            <div>
-              <Title>BACKGROUND COLORS _ DARK MODE</Title>
-              <BackgroundBox>
-                <BackgroundColor type="dark">
-                  <div style={{ backgroundColor: dark.background.PRIMARY }} />
-                  <div className="text">
-                    <p>{dark.background.PRIMARY}</p>
-                  </div>
-                  <BackgroundText>PRIMARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="dark">
-                  <div style={{ backgroundColor: dark.background.SECONDARY }} />
-                  <div className="text">
-                    <p>{dark.background.SECONDARY}</p>
-                  </div>
-                  <BackgroundText>SECONDARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="dark">
-                  <div style={{ backgroundColor: dark.background.TERTIARY }} />
-                  <div className="text">
-                    <p>{dark.background.TERTIARY}</p>
-                  </div>
-                  <BackgroundText>TERTIARY</BackgroundText>
-                </BackgroundColor>
-              </BackgroundBox>
-            </div>
-          </FlexBox>
+        </div>
+      </FlexBox>
+      {/* GRADIENT */}
+      <Title>GRADIENT</Title>
+      <ColorBox>
+        <GradientColor>
+          <ColorText style={{ width: 210 }}>GRADIENT 0</ColorText>
+          <div className="text">
+            <p>{light.color.PRIMARY}</p>
+            <p>{light.color.PRIMARYSUB}</p>
+          </div>
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={light.color.PRIMARY}
+            second={light.color.PRIMARYSUB}
+            position="to right"
+          />
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={dark.color.PRIMARY}
+            second={dark.color.PRIMARYSUB}
+            position="to right"
+          />
+          <div className="text">
+            <p>{dark.color.PRIMARY}</p>
+            <p>{dark.color.PRIMARYSUB}</p>
+          </div>
+        </GradientColor>
 
-          <FlexBox>
-            <div>
-              <Title>BACKGROUND COLORS _ LIGHT MODE</Title>
-              <BackgroundBox>
-                <BackgroundColor type="light">
-                  <div style={{ backgroundColor: light.background.PRIMARY }} />
-                  <div className="text">
-                    <p>{light.background.PRIMARY}</p>
-                  </div>
-                  <BackgroundText>PRIMARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="light" style={{ boxShadow: 'none' }} />
-                <BackgroundColor type="light" style={{ boxShadow: 'none' }} />
-              </BackgroundBox>
-            </div>
-            <div>
-              <Title>BACKGROUND COLORS _ DARK MODE</Title>
-              <BackgroundBox>
-                <BackgroundColor type="dark">
-                  <div style={{ backgroundColor: dark.background.PRIMARY }} />
-                  <div className="text">
-                    <p>{dark.background.PRIMARY}</p>
-                  </div>
-                  <BackgroundText>PRIMARY</BackgroundText>
-                </BackgroundColor>
-                <BackgroundColor type="dark" style={{ boxShadow: 'none' }} />
-                <BackgroundColor type="dark" style={{ boxShadow: 'none' }} />
-              </BackgroundBox>
-            </div>
-          </FlexBox>
-          <Title>DIM COLOR</Title>
+        <GradientColor>
+          <ColorText style={{ width: 210 }}>GRADIENT 1</ColorText>
+          <div className="text">
+            <p>{light.color.GRADIENT_POINT_1}</p>
+            <p>{light.color.PRIMARY}</p>
+          </div>
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={light.color.GRADIENT_POINT_1}
+            second={light.color.PRIMARY}
+            position="to right"
+          />
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={dark.color.GRADIENT_POINT_1}
+            second={dark.color.PRIMARY}
+            position="to right"
+          />
+          <div className="text">
+            <p>{dark.color.GRADIENT_POINT_1}</p>
+            <p>{dark.color.PRIMARY}</p>
+          </div>
+        </GradientColor>
+
+        <GradientColor>
+          <ColorText style={{ width: 210 }}>GRADIENT 2</ColorText>
+          <div className="text">
+            <p>{light.color.PRIMARY}</p>
+            <p>{light.color.GRADIENT_POINT_2}</p>
+          </div>
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={light.color.PRIMARY}
+            second={light.color.GRADIENT_POINT_2}
+            position="to right"
+          />
+          <GradientComponent
+            style={{ borderRadius: 0 }}
+            first={dark.color.PRIMARY}
+            second={dark.color.GRADIENT_POINT_2}
+            position="to right"
+          />
+          <div className="text">
+            <p>{dark.color.PRIMARY}</p>
+            <p>{dark.color.GRADIENT_POINT_2}</p>
+          </div>
+        </GradientColor>
+      </ColorBox>
+
+      {/* GRAYSCALE */}
+      <Title>GRAYSCALE</Title>
+      <ColorBox>
+        <Color>
+          <ColorText>WHITE</ColorText>
+          <div className="text">
+            <p>{light.color.WHITE}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.WHITE }} />
+          <div style={{ backgroundColor: dark.color.WHITE }} />
+          <div className="text">
+            <p>{dark.color.WHITE}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 0</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY0}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY0 }} />
+          <div style={{ backgroundColor: dark.color.GRAY0 }} />
+          <div className="text">
+            <p>{dark.color.GRAY0}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 1</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY1}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY1 }} />
+          <div style={{ backgroundColor: dark.color.GRAY1 }} />
+          <div className="text">
+            <p>{dark.color.GRAY1}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 2</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY2}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY2 }} />
+          <div style={{ backgroundColor: dark.color.GRAY2 }} />
+          <div className="text">
+            <p>{dark.color.GRAY2}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 3</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY3}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY3 }} />
+          <div style={{ backgroundColor: dark.color.GRAY3 }} />
+          <div className="text">
+            <p>{dark.color.GRAY3}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 4</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY4}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY4 }} />
+          <div style={{ backgroundColor: dark.color.GRAY4 }} />
+          <div className="text">
+            <p>{dark.color.GRAY4}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>GRAY 5</ColorText>
+          <div className="text">
+            <p>{light.color.GRAY5}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.GRAY5 }} />
+          <div style={{ backgroundColor: dark.color.GRAY5 }} />
+          <div className="text">
+            <p>{dark.color.GRAY5}</p>
+          </div>
+        </Color>
+        <Color>
+          <ColorText>BLACK</ColorText>
+          <div className="text">
+            <p>{light.color.BLACK}</p>
+          </div>
+          <div style={{ backgroundColor: light.color.BLACK }} />
+          <div style={{ backgroundColor: dark.color.BLACK }} />
+          <div className="text">
+            <p>{dark.color.BLACK}</p>
+          </div>
+        </Color>
+      </ColorBox>
+      <FlexBox>
+        <div>
+          <Title>BACKGROUND COLORS _ LIGHT MODE</Title>
           <BackgroundBox>
             <BackgroundColor type="light">
-              <div
-                style={{ backgroundColor: light.color.BLACK, opacity: 0.5 }}
-              />
+              <div style={{ backgroundColor: light.background.PRIMARY }} />
               <div className="text">
-                <p>{light.color.BLACK}</p>
+                <p>{light.background.PRIMARY}</p>
               </div>
-              <BackgroundText>50%</BackgroundText>
+              <BackgroundText>PRIMARY</BackgroundText>
             </BackgroundColor>
             <BackgroundColor type="light">
-              <div
-                style={{ backgroundColor: light.color.BLACK, opacity: 0.2 }}
-              />
+              <div style={{ backgroundColor: light.background.SECONDARY }} />
               <div className="text">
-                <p>{light.color.BLACK}</p>
+                <p>{light.background.SECONDARY}</p>
               </div>
-              <BackgroundText>20%</BackgroundText>
+              <BackgroundText>SECONDARY</BackgroundText>
+            </BackgroundColor>
+            <BackgroundColor type="light">
+              <div style={{ backgroundColor: light.background.TERTIARY }} />
+              <div className="text">
+                <p>{light.background.TERTIARY}</p>
+              </div>
+              <BackgroundText>TERTIARY</BackgroundText>
             </BackgroundColor>
           </BackgroundBox>
-          <Title>BUTTON TEXT COLOR</Title>
+        </div>
+        <div>
+          <Title>BACKGROUND COLORS _ DARK MODE</Title>
+          <BackgroundBox>
+            <BackgroundColor type="dark">
+              <div style={{ backgroundColor: dark.background.PRIMARY }} />
+              <div className="text">
+                <p>{dark.background.PRIMARY}</p>
+              </div>
+              <BackgroundText>PRIMARY</BackgroundText>
+            </BackgroundColor>
+            <BackgroundColor type="dark">
+              <div style={{ backgroundColor: dark.background.SECONDARY }} />
+              <div className="text">
+                <p>{dark.background.SECONDARY}</p>
+              </div>
+              <BackgroundText>SECONDARY</BackgroundText>
+            </BackgroundColor>
+            <BackgroundColor type="dark">
+              <div style={{ backgroundColor: dark.background.TERTIARY }} />
+              <div className="text">
+                <p>{dark.background.TERTIARY}</p>
+              </div>
+              <BackgroundText>TERTIARY</BackgroundText>
+            </BackgroundColor>
+          </BackgroundBox>
+        </div>
+      </FlexBox>
+
+      <FlexBox>
+        <div>
+          <Title>BACKGROUND COLORS _ LIGHT MODE</Title>
           <BackgroundBox>
             <BackgroundColor type="light">
-              <div
-                style={{ backgroundColor: light.color.BUTTON, opacity: 0.5 }}
-              />
+              <div style={{ backgroundColor: light.background.PRIMARY }} />
               <div className="text">
-                <p>{light.color.BUTTON}</p>
+                <p>{light.background.PRIMARY}</p>
               </div>
-              <BackgroundText>BUTTON</BackgroundText>
+              <BackgroundText>PRIMARY</BackgroundText>
             </BackgroundColor>
+            <BackgroundColor type="light" style={{ boxShadow: 'none' }} />
+            <BackgroundColor type="light" style={{ boxShadow: 'none' }} />
           </BackgroundBox>
-          <div style={{ height: 100 }} />
-        </Warpper>
-      )}
-    </ThemeConsumer>
+        </div>
+        <div>
+          <Title>BACKGROUND COLORS _ DARK MODE</Title>
+          <BackgroundBox>
+            <BackgroundColor type="dark">
+              <div style={{ backgroundColor: dark.background.PRIMARY }} />
+              <div className="text">
+                <p>{dark.background.PRIMARY}</p>
+              </div>
+              <BackgroundText>PRIMARY</BackgroundText>
+            </BackgroundColor>
+            <BackgroundColor type="dark" style={{ boxShadow: 'none' }} />
+            <BackgroundColor type="dark" style={{ boxShadow: 'none' }} />
+          </BackgroundBox>
+        </div>
+      </FlexBox>
+      <Title>DIM COLOR</Title>
+      <BackgroundBox>
+        <BackgroundColor type="light">
+          <div style={{ backgroundColor: light.color.BLACK, opacity: 0.5 }} />
+          <div className="text">
+            <p>{light.color.BLACK}</p>
+          </div>
+          <BackgroundText>50%</BackgroundText>
+        </BackgroundColor>
+        <BackgroundColor type="light">
+          <div style={{ backgroundColor: light.color.BLACK, opacity: 0.2 }} />
+          <div className="text">
+            <p>{light.color.BLACK}</p>
+          </div>
+          <BackgroundText>20%</BackgroundText>
+        </BackgroundColor>
+      </BackgroundBox>
+      <Title>BUTTON TEXT COLOR</Title>
+      <BackgroundBox>
+        <BackgroundColor type="light">
+          <div style={{ backgroundColor: light.color.BUTTON, opacity: 0.5 }} />
+          <div className="text">
+            <p>{light.color.BUTTON}</p>
+          </div>
+          <BackgroundText>BUTTON</BackgroundText>
+        </BackgroundColor>
+      </BackgroundBox>
+      <div style={{ height: 100 }} />
+    </Warpper>
   );
 };
 

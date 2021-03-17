@@ -7,6 +7,7 @@ const PaperIcon: React.FC<Props> = ({ size = 100, ...props }) => {
     <ThemeConsumer>
       {(theme) => (
         <svg
+          {...props}
           xmlns="http://www.w3.org/2000/svg"
           id="singletone_paper_popup_icon_100"
           width={size}

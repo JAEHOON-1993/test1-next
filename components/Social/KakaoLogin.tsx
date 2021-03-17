@@ -17,21 +17,20 @@ const KakaoLoginComponent: React.FC<Props> = ({ round, ...props }) => {
   return (
     <Button
       {...props}
-      label={
-        <T.Text
-          style={{
-            color: '#000',
-          }}
-        >
-          카카오 계정으로 로그인
-        </T.Text>
-      }
       backgroundColor={'#ffde32'}
       borderColor={'#ffde32'}
       round={round}
       onClick={() => Router.replace(KAKAO_LOGIN_URL)}
       icon={<Icon name="kakao" start />}
-    />
+    >
+      <T.Text
+        style={{
+          color: '#000',
+        }}
+      >
+        카카오 계정으로 로그인
+      </T.Text>
+    </Button>
   );
 };
 
