@@ -122,6 +122,27 @@ export const DrawerHeader = styled.div`
     cursor: pointer;
   }
 `;
+
+export const DrawerFooter = styled.div`
+  display: none;
+  width: 100%;
+
+  position: absolute;
+  bottom: 10px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 10px;
+
+  > button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px 6px;
+    margin-bottom: 15px;
+  }
+`;
+
 export const Dim = styled.div<MenuListProps>`
   z-index: 9;
   transition: 0.4s;
@@ -146,6 +167,7 @@ export const Content = styled.div`
   justify-content: flex-end;
 
   > div {
+    position: relative;
     :nth-of-type(1) {
       display: flex;
     }
@@ -236,7 +258,7 @@ export const MenuList = styled.ul<MenuListProps>`
       ${MenuMobileCSS}
     }
     ${MenuCSS}
-    ${DrawerHeader} {
+    ${DrawerHeader}, ${DrawerFooter} {
       display: flex;
     }
     ${(props) =>
@@ -248,5 +270,33 @@ export const MenuList = styled.ul<MenuListProps>`
           visibility: visible;
         }
       `};
+  }
+`;
+
+interface PopupBoxProp {
+  isOpen: boolean;
+}
+export const PopupBox = styled.ul<PopupBoxProp>`
+  position: absolute;
+  top: 65px;
+  right: 0px;
+  background-color: #fff;
+  > li {
+    cursor: pointer;
+    padding: 8px 15px;
+  }
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+
+  ${(props) =>
+    props.isOpen &&
+    css`
+      visibility: visible;
+      opacity: 1;
+      top: 60px;
+    `}
+  ${(props) => props.theme.window.tab} {
+    display: none;
   }
 `;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NextPage } from 'next';
-import styled, { ThemeConsumer } from 'styled-components';
+import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
 import * as T from 'components/Typography';
@@ -12,9 +12,12 @@ import {
   Nav,
   Dim,
   MenuList,
+  Menu,
   Content,
   MenuButton,
   DrawerHeader,
+  DrawerFooter,
+  PopupBox,
 } from 'components/Navigation/navigation.styled';
 
 const MENU_DATA = [
@@ -28,7 +31,7 @@ interface NavProps {
 const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
-  console.log('backgroundColor : ', backgroundColor);
+  const [popup, setPopup] = useState<boolean>(false);
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -71,6 +74,19 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
                   </Menu>
                 );
               })}
+              <DrawerFooter>
+                {isLogin && (
+                  <button onClick={() => setIsLogin(false)}>
+                    <T.Text
+                      color={
+                        backgroundColor ? theme.color.WHITE : theme.color.BLACK
+                      }
+                    >
+                      로그아웃
+                    </T.Text>
+                  </button>
+                )}
+              </DrawerFooter>
             </MenuList>
             <Content>
               <div>
@@ -78,10 +94,18 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
                   isLogin={isLogin}
                   avatar="/images/profile_default.png"
                   toLogin={() => setIsLogin(!isLogin)}
+                  togglePopup={() => setPopup(!popup)}
                   color={
                     backgroundColor ? theme.color.WHITE : theme.color.BLACK
                   }
                 />
+                {isLogin && (
+                  <PopupBox isOpen={popup}>
+                    <li onClick={() => setIsLogin(false)}>
+                      <T.Text sm>로그아웃</T.Text>
+                    </li>
+                  </PopupBox>
+                )}
               </div>
               <div className="tab">
                 <MenuButton onClick={() => setDrawer(true)}>
@@ -105,5 +129,3 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
 NavigationComponent.defaultProps = { backgroundColor: '#000' };
 
 export default NavigationComponent;
-
-const Menu = styled.li``;

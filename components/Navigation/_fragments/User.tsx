@@ -9,15 +9,21 @@ interface Props {
   color?: string;
   avatar?: string;
   toLogin: () => void;
+  togglePopup?: () => void;
 }
 
-const User = ({ isLogin, avatar, color, toLogin }: Props) => {
+const User = ({ isLogin, avatar, color, toLogin, togglePopup }: Props) => {
+  const onClickProfile = () => {
+    if (togglePopup) {
+      togglePopup();
+    }
+  };
   return (
     <ThemeConsumer>
       {(theme) => (
         <>
           {isLogin ? (
-            <UserInfo>
+            <UserInfo onClick={onClickProfile}>
               {avatar ? (
                 <Avatar src={avatar} />
               ) : (
@@ -58,11 +64,18 @@ const UserInfo = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
+  height: 40px;
   > h1 {
     margin-right: 5px;
   }
   > svg {
     margin-right: 5px;
+  }
+  ${(props) => props.theme.window.tab} {
+    cursor: default;
+    > svg {
+      display: none;
+    }
   }
 `;
 
