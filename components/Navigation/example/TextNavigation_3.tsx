@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
-import * as T from 'components/Typography';
+import { Title, Button } from 'components/Typography';
 import Logo from 'components/Navigation/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -37,9 +37,9 @@ const NavigationComponent = () => {
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
-                    <T.Title color={theme.color.BLACK} bold>
+                    <Title color={theme.color.BLACK} bold>
                       {menu.name}
-                    </T.Title>
+                    </Title>
                   </Menu>
                 );
               })}
@@ -47,9 +47,9 @@ const NavigationComponent = () => {
             <Content>
               <div>
                 <MenuButton onClick={() => setDrawer(true)}>
-                  <T.Button color={theme.color.BLACK} bold>
+                  <Button color={theme.color.BLACK} bold>
                     Menu
-                  </T.Button>
+                  </Button>
                   <SystemIcon name="hamburger" />
                 </MenuButton>
               </div>

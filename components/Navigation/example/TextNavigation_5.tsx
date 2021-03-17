@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
-import * as T from 'components/Typography';
+import { Text, Title } from 'components/Typography';
 import Logo from 'components/Navigation/_fragments/Logo';
 import User from 'components/Navigation/_fragments/User';
 import SystemIcon from 'components/Icons/SystemIcon';
@@ -63,27 +63,27 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
-                    <T.Title
+                    <Title
                       color={
                         backgroundColor ? theme.color.WHITE : theme.color.BLACK
                       }
                       bold
                     >
                       {menu.name}
-                    </T.Title>
+                    </Title>
                   </Menu>
                 );
               })}
               <DrawerFooter>
                 {isLogin && (
                   <button onClick={() => setIsLogin(false)}>
-                    <T.Text
+                    <Text
                       color={
                         backgroundColor ? theme.color.WHITE : theme.color.BLACK
                       }
                     >
                       로그아웃
-                    </T.Text>
+                    </Text>
                   </button>
                 )}
               </DrawerFooter>
@@ -102,7 +102,7 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
                 {isLogin && (
                   <PopupBox isOpen={popup}>
                     <li onClick={() => setIsLogin(false)}>
-                      <T.Text sm>로그아웃</T.Text>
+                      <Text sm>로그아웃</Text>
                     </li>
                   </PopupBox>
                 )}
