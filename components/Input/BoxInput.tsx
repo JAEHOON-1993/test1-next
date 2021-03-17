@@ -1,5 +1,5 @@
 import React, { useState, Ref, ReactNode } from 'react';
-import styled, { css, ThemeConsumer } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Text } from 'components/Typography';
 import Button from 'components/Button';
@@ -64,9 +64,9 @@ const BoxInput: React.FC<BoxInputProps> = ({
 
   return (
     <>
-      {label && <Label hasError={checkError}>이름</Label>}
-      <FlexBox>
-        <InputBox
+      {label && <Label hasError={checkError}>{label}</Label>}
+      <InputBox>
+        <Input
           {...InputProps}
           active={focused}
           onFocus={onFocus}
@@ -79,15 +79,14 @@ const BoxInput: React.FC<BoxInputProps> = ({
           readOnly={isReadOnly}
           hasError={checkError}
         />
-        {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
         {action && (
           <ActionBox
-            width="84px"
-            style={{ height: '40px', borderRadius: 0 }}
+            style={{ width: 84, height: 40, borderRadius: 0 }}
             label={action}
           />
         )}
-      </FlexBox>
+      </InputBox>
+      {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
     </>
   );
 };
@@ -99,20 +98,19 @@ interface BoxProps {
   hasError: boolean;
 }
 
-const FlexBox = styled.div`
+const InputBox = styled.div`
   width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
-const InputBox = styled.input<BoxProps>`
+const Input = styled.input<BoxProps>`
   width: calc(100% - 40px);
   height: 38px;
 
-  padding: 0; //reset
-  padding: 0 20px;
+  padding: 0 15px;
 
   font-size: 16px;
   line-height: 28px;

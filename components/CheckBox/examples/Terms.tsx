@@ -25,11 +25,11 @@ const Terms = () => {
   };
 
   const onToggleAll = () => {
-    const checkedLength = checked.filter((el: boolean) => el === true).length;
+    const checkedLength = checked.filter((el: boolean) => el === false).length;
     if (checkedLength > 0) {
-      setChecked(arr.fill(false));
-    } else {
       setChecked(arr.fill(true));
+    } else {
+      setChecked(arr.fill(false));
     }
   };
 
@@ -73,6 +73,7 @@ export default Terms;
 
 const Wrap = styled.div`
   max-width: 400px;
+  margin: auto;
 `;
 
 const TitleDiv = styled.div`

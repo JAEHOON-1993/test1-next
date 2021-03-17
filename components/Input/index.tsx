@@ -56,7 +56,7 @@ const InputComponent: React.FC<Props> = ({
   return (
     <div {...props}>
       {label && (
-        <Label sm isNullValue={isNullValue} hasError={error}>
+        <Label isNullValue={isNullValue} hasError={error}>
           {label}
         </Label>
       )}
@@ -97,7 +97,6 @@ interface styleProp {
 const FlexBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
 `;
 
@@ -106,6 +105,7 @@ const InputBox = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
+  justify-content: flex-start;
 `;
 
 const Label = styled(T.Text)<{ isNullValue?: boolean; hasError?: boolean }>`
