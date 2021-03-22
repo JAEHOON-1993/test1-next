@@ -79,11 +79,7 @@ const BoxInput: React.FC<BoxInputProps> = ({
           readOnly={isReadOnly}
           hasError={checkError}
         />
-        {action && (
-          <ActionBox style={{ width: 84, height: 40, borderRadius: 0 }}>
-            {action}
-          </ActionBox>
-        )}
+        {action && <ActionBox>{action}</ActionBox>}
       </InputBox>
       {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
     </>
@@ -99,14 +95,13 @@ interface BoxProps {
 
 const InputBox = styled.div`
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
 `;
 
 const Input = styled.input<BoxProps>`
-  width: calc(100% - 40px);
+  width: 100%;
   height: 38px;
 
   padding: 0 15px;
@@ -149,5 +144,9 @@ const ErrorText = styled(Text)`
 `;
 
 const ActionBox = styled(Button)`
+  flex-shrink: 0;
   margin-left: 10px;
+  width: 84px;
+  height: 40px;
+  border-radius: 0;
 `;
