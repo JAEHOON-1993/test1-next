@@ -18,20 +18,22 @@ const Container = styled.div<ContainerProps>`
   padding-left: 15px;
   padding-right: 15px;
   margin: auto;
+
+  width: 100%;
   /* Large PC */
-  width: 1280px;
+  max-width: 1280px;
 
   /* Small PC */
   ${(props) => props.theme.window.pc} {
-    width: 980px;
+    max-width: 980px;
   }
   /* Tab */
   ${(props) => props.theme.window.tab} {
-    width: 750px;
+    max-width: 750px;
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
-    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
     padding-right: 16px;
     padding-left: 16px;
     ${(props) =>
