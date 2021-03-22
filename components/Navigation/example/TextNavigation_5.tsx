@@ -27,6 +27,7 @@ const MENU_DATA = [
 
 interface NavProps {
   backgroundColor?: string;
+  fixed: boolean;
 }
 const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
   const [isLogin, setIsLogin] = useState<boolean>(false);

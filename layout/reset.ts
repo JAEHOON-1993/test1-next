@@ -33,9 +33,6 @@ const GlobalStyle = createGlobalStyle`
     -ms-touch-action: manipulation; 
     touch-action: manipulation; 
   }
-  html {
-    overflow: hidden;
-  }
   body {
     overflow: auto;
     user-select: none;

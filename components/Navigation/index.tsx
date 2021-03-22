@@ -24,6 +24,9 @@ import {
   DrawerHeader,
 } from 'components/Navigation/navigation.styled';
 
+interface Props {
+  fixed: boolean;
+}
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
   { name: '메뉴2', path: '/' },
@@ -31,13 +34,13 @@ const MENU_DATA = [
   { name: '메뉴4', path: '/' },
 ];
 
-const NavigationComponent = () => {
+const NavigationComponent = ({ fixed }: Props) => {
   const centerPoint = 'tab';
   const [drawer, setDrawer] = useState<boolean>(false);
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Nav centerPoint={centerPoint}>
+        <Nav centerPoint={centerPoint} fixed={fixed}>
           <Container>
             <Logo
               src="/images/logo.png"

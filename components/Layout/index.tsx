@@ -9,7 +9,8 @@ import Navigation from 'components/Navigation';
 
 interface Props {
   pageName?: string;
-  noHeader?: boolean;
+  noNav?: boolean;
+  fixedNav?: boolean;
   noBorder?: boolean;
   centered?: boolean;
   transparent?: boolean;
@@ -19,9 +20,10 @@ interface Props {
 
 const Layout = ({
   children,
-  noHeader,
+  noNav,
   centered,
   title = '똑똑한개발자',
+  fixedNav = true,
 }: Props) => {
   const height = useHeight();
 
@@ -32,8 +34,8 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noHeader && <Navigation />}
-      <Body height={height} noHeader={noHeader} centered={centered}>
+      {!noNav && <Navigation fixed={fixedNav} />}
+      <Body height={height} noNav={noNav} centered={centered}>
         {children}
       </Body>
       {/* <Footer /> */}
@@ -45,7 +47,8 @@ export default Layout;
 
 interface styleProps {
   height: number;
-  noHeader?: boolean;
+  noNav?: boolean;
+  fixedNav?: boolean;
   centered?: boolean;
 }
 
@@ -58,11 +61,12 @@ const Body = styled.div`
       display: flex;
     `}
   ${(props: styleProps) =>
-    !props.noHeader &&
+    !props.noNav &&
     css`
       min-height: ${(props: styleProps) => `${props.height - 80}px`};
-      ${(props) => props.theme.window.mobile} {
-        min-height: ${(props: styleProps) => `${props.height - 50}px`};
-      }
+      ${!props.fixedNav &&
+      css`
+        padding-top: 80px;
+      `}
     `};
 `;

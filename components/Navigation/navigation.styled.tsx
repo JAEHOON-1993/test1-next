@@ -6,12 +6,23 @@ import { Logo } from 'components/Navigation/_fragments/Logo';
 interface NavProps {
   centerPoint?: 'pc' | 'tab' | 'mobile';
   backgroundColor?: string;
+  fixed?: boolean;
 }
 export const Nav = styled.nav<NavProps>`
+  position: relative;
+  overflow: hidden;
   height: 80px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${(props) => props.theme.color.GRAY1};
+
+  ${(props) =>
+    props.fixed &&
+    css`
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    `}
   ${(props) =>
     props.backgroundColor
       ? css`
@@ -218,7 +229,7 @@ interface MenuListProps {
 }
 
 const MenuCSS = css`
-  position: absolute;
+  position: fixed;
   flex-direction: column;
   width: 313px;
   height: 100vh;
