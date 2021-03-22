@@ -8,6 +8,7 @@ const TermsPage = () => {
     <Container>
       <BoxInput label="이름" />
       <BoxInput label="테스트" />
+      <BoxInput label="테스트" action="전송" />
     </Container>
   );
 };

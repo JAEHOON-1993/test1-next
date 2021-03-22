@@ -82,7 +82,11 @@ const InputComponent: React.FC<Props> = ({
             </ErrorText>
           )}
         </InputBox>
-        {action && <ActionBox>{action}</ActionBox>}
+        {typeof action === 'string' || action instanceof String ? (
+          <ActionBox>{action}</ActionBox>
+        ) : (
+          action
+        )}
       </FlexBox>
     </div>
   );

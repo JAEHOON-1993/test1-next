@@ -79,7 +79,11 @@ const BoxInput: React.FC<BoxInputProps> = ({
           readOnly={isReadOnly}
           hasError={checkError}
         />
-        {action && <ActionBox>{action}</ActionBox>}
+        {typeof action === 'string' || action instanceof String ? (
+          <ActionBox>{action}</ActionBox>
+        ) : (
+          action
+        )}
       </InputBox>
       {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
     </>
@@ -147,6 +151,6 @@ const ActionBox = styled(Button)`
   flex-shrink: 0;
   margin-left: 10px;
   width: 84px;
-  height: 40px;
+  height: 38px;
   border-radius: 0;
 `;
