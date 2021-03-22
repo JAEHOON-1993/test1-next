@@ -33,7 +33,7 @@ const Container = styled.div<ContainerProps>`
   }
   /* Mobile */
   ${(props) => props.theme.window.mobile} {
-    max-width: calc(100% - 32px);
+    max-width: 100%;
     padding-right: 16px;
     padding-left: 16px;
     ${(props) =>
