@@ -89,6 +89,7 @@ const TextHeaderNoUser: Story<any | HeaderProps> = ({ ...args }) => {
 export const NoUser = TextHeaderNoUser.bind({});
 NoUser.args = {
   isCenter: true,
+  centerPoint: '',
   menuText: 'Menu',
 };
 
