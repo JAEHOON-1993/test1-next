@@ -1,19 +1,52 @@
-import { useState } from 'react';
-import styled, { ThemeConsumer } from 'styled-components';
-import Container from 'components/Container';
+/**
+ * @author TokTokHan, Corp.
+ * @Component
+ * @module components.Navigation
+ * @description example에서 적용을 희망하는 타입의 Navigation을 가져와서 적용시켜주세요.
+ */
 
-import { Title, Button } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
+import { useState } from 'react';
+import { ThemeConsumer } from 'styled-components';
+import Container from 'components/Container';
+import Router from 'next/router';
+
+import { Title } from 'components/Typography';
+import Logo from 'components/Header/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
   Nav,
   Dim,
   MenuList,
+  Menu,
   Content,
   MenuButton,
   DrawerHeader,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
+
+export interface HeaderProps {
+  /**
+   * Is this the principal call to action on the page?
+   */
+  primary?: boolean;
+  /**
+   * What background color to use
+   */
+  backgroundColor?: string;
+  /**
+   * How large should the button be?
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
+   * Button contents
+   */
+  label: string;
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
+  fixed: boolean;
+}
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
@@ -21,23 +54,24 @@ const MENU_DATA = [
   { name: '메뉴3', path: '/' },
   { name: '메뉴4', path: '/' },
 ];
-const NavigationComponent = () => {
-  const [drawer, setDrawer] = useState<boolean>(false);
 
+const HeaderComponent = ({ fixed }: HeaderProps) => {
+  const centerPoint = 'tab';
+  const [drawer, setDrawer] = useState<boolean>(false);
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Nav>
+        <Nav centerPoint={centerPoint} fixed={fixed}>
           <Container>
             <Logo
               src="/images/logo.png"
               width={114}
               height={22}
-              onClick={() => console.log('onClick')}
+              onClick={() => Router.push('/')}
             />
-            <MenuList isCenter isOpen={drawer}>
+            <MenuList isOpen={drawer}>
               <DrawerHeader>
-                <SystemIcon name="close" onClick={() => setDrawer(false)} />
+                <SystemIcon name="close" />
               </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
                 return (
@@ -52,9 +86,6 @@ const NavigationComponent = () => {
             <Content>
               <div>
                 <MenuButton onClick={() => setDrawer(true)}>
-                  <Button color={theme.color.BLACK} bold>
-                    Menu
-                  </Button>
                   <SystemIcon name="hamburger" />
                 </MenuButton>
               </div>
@@ -67,6 +98,4 @@ const NavigationComponent = () => {
   );
 };
 
-export default NavigationComponent;
-
-const Menu = styled.li``;
+export default HeaderComponent;

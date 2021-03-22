@@ -5,14 +5,17 @@ import Button from 'components/Button';
 import { Text, Title } from 'components/Typography';
 
 interface Props {
-  isLogin: boolean;
+  user: {
+    isLogin: boolean;
+    nickname: string;
+    avatar?: string;
+  };
   color?: string;
-  avatar?: string;
-  toLogin: () => void;
+  toLogin?: () => void;
   togglePopup?: () => void;
 }
 
-const User = ({ isLogin, avatar, color, toLogin, togglePopup }: Props) => {
+const User = ({ user, color, toLogin, togglePopup }: Props) => {
   const onClickProfile = () => {
     if (togglePopup) {
       togglePopup();
@@ -22,10 +25,10 @@ const User = ({ isLogin, avatar, color, toLogin, togglePopup }: Props) => {
     <ThemeConsumer>
       {(theme) => (
         <>
-          {isLogin ? (
+          {user?.isLogin ? (
             <UserInfo onClick={onClickProfile}>
-              {avatar ? (
-                <Avatar src={avatar} />
+              {user?.avatar ? (
+                <Avatar src={user?.avatar} />
               ) : (
                 <SystemIcon
                   name="myPage"
@@ -33,7 +36,7 @@ const User = ({ isLogin, avatar, color, toLogin, togglePopup }: Props) => {
                 />
               )}
               <Title bold color={color ? color : theme.color.BLACK}>
-                김똑똑 님
+                {user?.nickname} 님
               </Title>
               <SystemIcon
                 name="dropDownMenu"

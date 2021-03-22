@@ -3,7 +3,7 @@ import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
 import { Title } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
+import Logo from 'components/Header/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -14,14 +14,14 @@ import {
   Content,
   AbsoluteButton,
   MenuButton,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
   { name: '메뉴2', path: '/' },
 ];
 
-const NavigationComponent = () => {
+const HeaderComponent = () => {
   const centerPoint = 'mobile';
   const [drawer, setDrawer] = useState<boolean>(false);
   return (
@@ -63,4 +63,4 @@ const NavigationComponent = () => {
   );
 };
 
-export default NavigationComponent;
+export default HeaderComponent;

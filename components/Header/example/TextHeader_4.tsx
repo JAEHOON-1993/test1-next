@@ -1,56 +1,47 @@
-/**
- * @author TokTokHan, Corp.
- * @Component
- * @module components.Navigation
- * @description example에서 적용을 희망하는 타입의 Navigation을 가져와서 적용시켜주세요.
- */
-
 import { useState } from 'react';
-import { ThemeConsumer } from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
-import Router from 'next/router';
 
 import { Title } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
+import Logo from 'components/Header/_fragments/Logo';
+import User from 'components/Header/_fragments/User';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
   Nav,
   Dim,
   MenuList,
-  Menu,
   Content,
   MenuButton,
   DrawerHeader,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
 
-interface Props {
-  fixed: boolean;
-}
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
   { name: '메뉴2', path: '/' },
-  { name: '메뉴3', path: '/' },
-  { name: '메뉴4', path: '/' },
 ];
-
-const NavigationComponent = ({ fixed }: Props) => {
-  const centerPoint = 'tab';
+const HeaderComponent = () => {
+  const [isLogin, setIsLogin] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
+  const user = {
+    isLogin: isLogin,
+    nickname: '김똑똑',
+  };
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Nav centerPoint={centerPoint} fixed={fixed}>
+        <Nav>
           <Container>
             <Logo
               src="/images/logo.png"
               width={114}
               height={22}
-              onClick={() => Router.push('/')}
+              onClick={() => console.log('onClick')}
             />
             <MenuList isOpen={drawer}>
               <DrawerHeader>
-                <SystemIcon name="close" />
+                <User user={user} toLogin={() => setIsLogin(!isLogin)} />
+                <SystemIcon name="close" onClick={() => setDrawer(false)} />
               </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
                 return (
@@ -63,6 +54,9 @@ const NavigationComponent = ({ fixed }: Props) => {
               })}
             </MenuList>
             <Content>
+              <div>
+                <User user={user} toLogin={() => setIsLogin(!isLogin)} />
+              </div>
               <div>
                 <MenuButton onClick={() => setDrawer(true)}>
                   <SystemIcon name="hamburger" />
@@ -77,4 +71,6 @@ const NavigationComponent = ({ fixed }: Props) => {
   );
 };
 
-export default NavigationComponent;
+export default HeaderComponent;
+
+const Menu = styled.li``;

@@ -3,9 +3,10 @@ import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
 import { Title } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
+import Logo from 'components/Header/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
+import { HeaderProps } from 'components/Header/interface';
 import {
   Nav,
   Dim,
@@ -14,7 +15,7 @@ import {
   Content,
   MenuButton,
   DrawerHeader,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
@@ -23,8 +24,7 @@ const MENU_DATA = [
   { name: '메뉴4', path: '/' },
 ];
 
-const NavigationComponent = () => {
-  const centerPoint = 'tab';
+const HeaderComponent: React.FC<HeaderProps> = ({ centerPoint }) => {
   const [drawer, setDrawer] = useState<boolean>(false);
   return (
     <ThemeConsumer>
@@ -32,7 +32,7 @@ const NavigationComponent = () => {
         <Nav centerPoint={centerPoint}>
           <Container>
             <Logo
-              src="/images/logo.png"
+              src="https://next-init-rosy.vercel.app/images/logo.png"
               width={114}
               height={22}
               onClick={() => console.log('onClick')}
@@ -66,4 +66,4 @@ const NavigationComponent = () => {
   );
 };
 
-export default NavigationComponent;
+export default HeaderComponent;

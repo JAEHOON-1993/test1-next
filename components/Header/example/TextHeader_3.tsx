@@ -2,9 +2,8 @@ import { useState } from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
-import { Title } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
-import User from 'components/Navigation/_fragments/User';
+import { Title, Button } from 'components/Typography';
+import Logo from 'components/Header/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -14,15 +13,17 @@ import {
   Content,
   MenuButton,
   DrawerHeader,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
   { name: '메뉴2', path: '/' },
+  { name: '메뉴3', path: '/' },
+  { name: '메뉴4', path: '/' },
 ];
-const NavigationComponent = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+const HeaderComponent = () => {
   const [drawer, setDrawer] = useState<boolean>(false);
+
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -34,9 +35,8 @@ const NavigationComponent = () => {
               height={22}
               onClick={() => console.log('onClick')}
             />
-            <MenuList isOpen={drawer}>
+            <MenuList isCenter isOpen={drawer}>
               <DrawerHeader>
-                <User isLogin={isLogin} toLogin={() => setIsLogin(!isLogin)} />
                 <SystemIcon name="close" onClick={() => setDrawer(false)} />
               </DrawerHeader>
               {MENU_DATA.map((menu, idx) => {
@@ -51,10 +51,10 @@ const NavigationComponent = () => {
             </MenuList>
             <Content>
               <div>
-                <User isLogin={isLogin} toLogin={() => setIsLogin(!isLogin)} />
-              </div>
-              <div>
                 <MenuButton onClick={() => setDrawer(true)}>
+                  <Button color={theme.color.BLACK} bold>
+                    Menu
+                  </Button>
                   <SystemIcon name="hamburger" />
                 </MenuButton>
               </div>
@@ -67,6 +67,6 @@ const NavigationComponent = () => {
   );
 };
 
-export default NavigationComponent;
+export default HeaderComponent;
 
 const Menu = styled.li``;

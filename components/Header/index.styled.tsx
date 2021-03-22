@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import Button from 'components/Button';
-import { Logo } from 'components/Navigation/_fragments/Logo';
+import { Logo } from 'components/Header/_fragments/Logo';
 
 interface NavProps {
   centerPoint?: 'pc' | 'tab' | 'mobile';
@@ -10,7 +10,6 @@ interface NavProps {
 }
 export const Nav = styled.nav<NavProps>`
   position: relative;
-  overflow: hidden;
   height: 80px;
   display: flex;
   align-items: center;
@@ -130,6 +129,7 @@ export const DrawerHeader = styled.div`
 
   > svg {
     cursor: pointer;
+    margin-left: auto;
   }
 `;
 
@@ -290,7 +290,7 @@ export const PopupBox = styled.ul<PopupBoxProp>`
   position: absolute;
   top: 65px;
   right: 0px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.color.WHITE};
   > li {
     cursor: pointer;
     padding: 8px 15px;

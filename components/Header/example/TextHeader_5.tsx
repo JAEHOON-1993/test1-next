@@ -4,8 +4,8 @@ import { ThemeConsumer } from 'styled-components';
 import Container from 'components/Container';
 
 import { Text, Title } from 'components/Typography';
-import Logo from 'components/Navigation/_fragments/Logo';
-import User from 'components/Navigation/_fragments/User';
+import Logo from 'components/Header/_fragments/Logo';
+import User from 'components/Header/_fragments/User';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -18,7 +18,7 @@ import {
   DrawerHeader,
   DrawerFooter,
   PopupBox,
-} from 'components/Navigation/navigation.styled';
+} from 'components/Header/index.styled';
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
@@ -29,10 +29,16 @@ interface NavProps {
   backgroundColor?: string;
   fixed: boolean;
 }
-const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
+const HeaderComponent: NextPage<NavProps> = ({ backgroundColor }) => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
   const [popup, setPopup] = useState<boolean>(false);
+
+  const user = {
+    isLogin: isLogin,
+    nickname: '김똑똑',
+    avatar: '/images/profile_default.png',
+  };
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -51,8 +57,7 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
             <MenuList isOpen={drawer}>
               <DrawerHeader>
                 <User
-                  isLogin={isLogin}
-                  avatar="/images/profile_default.png"
+                  user={user}
                   toLogin={() => setIsLogin(!isLogin)}
                   color={
                     backgroundColor ? theme.color.WHITE : theme.color.BLACK
@@ -97,8 +102,7 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
             <Content>
               <div>
                 <User
-                  isLogin={isLogin}
-                  avatar="/images/profile_default.png"
+                  user={user}
                   toLogin={() => setIsLogin(!isLogin)}
                   togglePopup={() => setPopup(!popup)}
                   color={
@@ -132,6 +136,6 @@ const NavigationComponent: NextPage<NavProps> = ({ backgroundColor }) => {
   );
 };
 
-NavigationComponent.defaultProps = { backgroundColor: '#000' };
+HeaderComponent.defaultProps = { backgroundColor: '#000' };
 
-export default NavigationComponent;
+export default HeaderComponent;

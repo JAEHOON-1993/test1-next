@@ -4,13 +4,13 @@ import styled, { css } from 'styled-components';
 
 import useHeight from 'utils/useHeight';
 
-import Navigation from 'components/Navigation';
+import Header from 'components/Header';
 // import Footer from "./Footer";
 
 interface Props {
   pageName?: string;
-  noNav?: boolean;
-  fixedNav?: boolean;
+  noHeader?: boolean;
+  fixedHeader?: boolean;
   noBorder?: boolean;
   centered?: boolean;
   transparent?: boolean;
@@ -20,10 +20,10 @@ interface Props {
 
 const Layout = ({
   children,
-  noNav,
+  noHeader,
+  fixedHeader = true,
   centered,
   title = '똑똑한개발자',
-  fixedNav = true,
 }: Props) => {
   const height = useHeight();
 
@@ -34,8 +34,8 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {!noNav && <Navigation fixed={fixedNav} />}
-      <Body height={height} noNav={noNav} centered={centered}>
+      {!noHeader && <Header fixed={fixedHeader} />}
+      <Body height={height} noHeader={noHeader} centered={centered}>
         {children}
       </Body>
       {/* <Footer /> */}
@@ -47,7 +47,7 @@ export default Layout;
 
 interface styleProps {
   height: number;
-  noNav?: boolean;
+  noHeader?: boolean;
   fixedNav?: boolean;
   centered?: boolean;
 }
@@ -61,7 +61,7 @@ const Body = styled.div`
       display: flex;
     `}
   ${(props: styleProps) =>
-    !props.noNav &&
+    !props.noHeader &&
     css`
       min-height: ${(props: styleProps) => `${props.height - 80}px`};
       ${!props.fixedNav &&
