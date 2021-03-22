@@ -1,71 +1,69 @@
-# TypeScript Next.js example
+해당 문서에서는 코드를 확인하기 위한 간단한 설명만 정리해놓았습니다. 상세한 로직은 각 폴더별 파일을 참고해주세요.
 
-## Quick start
+# Project Name
 
-```
-$ git clone --depth=1 https://github.com/wkddnjset/next-ts <PROJECT_NAME>
-$ cd <PROJECT_NAME>
-$ yarn add 
-$ git remote rm origin
-$ git remote add origin <NEW_REPO>
-$ yarn run dev
-```
+---
 
-## Deploy your own
+(\*프로젝트 요약)
 
-Deploy the example using [Vercel](https://vercel.com):
+## 개발 및 배포 환경
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
+- Vercel
+- react 16.12.0
+- typescript 3.7.3
+- mobx 6.0.4
 
-## How to use it?
+# 0. 프로젝트 구조
 
-### Using `create-next-app`
+---
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+**Project Name**
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
-```
+- `./api`
+- `./components`
+- `./containers`
+  - `[page]`
+    - `_fragments`
+      - `[components]`
+    - `index.tsx`
+- `./layout`
+- `./pages`
+- `./stores`
+- `./public`
+- `./utils`
 
-### Download manually
+# 1. 프로젝트 기본 구성 폴더
 
-Download the example:
+---
 
-```bash
-curl https://codeload.github.com/vercel/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-typescript
-cd with-typescript
-```
+## 1. `api`
 
-Install it and run:
+백엔드 API가 정의되어있습니다. 최대한 백엔드에서 개발된 API 명세서를 기반으로 개발하고 있습니다.
 
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
+## 2. `components`
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+재사용을 고려한 컴포넌트들을 구축해놓은 폴더입니다.
 
-## Notes
+## 3. `containers`
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+컨테이너는 각 페이지와 1대1로 매칭되어 있으며, `index.tsx`를 통해 컨포넌트를 불러오고 있습니다. 코드를 간소화하기위해서 해당 페이지에서만 사용되는 컨포넌트를 `_fragments` 파일에서 관리합니다.
 
-```
-npm install --save-dev typescript
-```
+## 4. `layout`
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+컬러, 반응형 사이즈, 글로벌 스타일 등 공용으로 사용되는 static 한 데이터들을 모아놓은 폴더입니다.
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+## 5. `pages`
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+Next.js에서 라우팅에 사용되는 페이지들 입니다.
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+## 6. `stores`
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+Mobx store 파일들이 있습니다.
+
+## 7. `public`
+
+이미지나 파일같은 static 파일들이 있습니다.
+
+## 8. `utils`
+
+자주 사용되는 함수들을 모아놓은 폴더입니다.
