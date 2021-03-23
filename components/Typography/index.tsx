@@ -76,6 +76,8 @@ const sizes = {
 export const Title = styled.h1<BaseProps>`
   /* font-weight  */
   font-weight: 700;
+  /* letter-spacing */
+  letter-spacing: 0;
   /* color */
   color: ${(props) => (props.color ? props.color : 'inherit')};
 
@@ -98,6 +100,8 @@ export const Title = styled.h1<BaseProps>`
 export const Text = styled.p<BaseProps>`
   /* font-weight  */
   font-weight: 400;
+  /* letter-spacing */
+  letter-spacing: 0;
   /* color */
   color: ${(props) => (props.color ? props.color : 'inherit')};
 
