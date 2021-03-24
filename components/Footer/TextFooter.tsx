@@ -40,7 +40,7 @@ const TextFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="#"
-                sm
+                size="sm"
                 color="inherit"
               >
                 개인정보처리방침
@@ -50,7 +50,7 @@ const TextFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="#"
-                sm
+                size="sm"
                 color="inherit"
               >
                 서비스이용약관

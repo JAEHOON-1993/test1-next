@@ -38,7 +38,7 @@ const Terms = () => {
       {(theme) => (
         <Wrap>
           <TitleDiv>
-            <Title bold>아래 약관에 동의합니다.</Title>
+            <Title>아래 약관에 동의합니다.</Title>
             <SystemIcon
               name="check"
               onClick={onToggleAll}
@@ -58,7 +58,7 @@ const Terms = () => {
                   onChange={(val: boolean) => onClick(val, idx)}
                   isLink
                 >
-                  <Text sm>{data.label}</Text>
+                  <Text size="sm">{data.label}</Text>
                 </CheckBox>
               );
             })}

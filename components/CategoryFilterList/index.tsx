@@ -20,7 +20,7 @@ const CategoryFilterList: React.FC<Props> = ({ data, checked, title }) => {
   };
   return (
     <CheckBoxContainer>
-      {title && <Text bold>{title}</Text>}
+      {title && <Text>{title}</Text>}
       {checked
         ? data.list?.map((cur: any, index: any) => {
             return (

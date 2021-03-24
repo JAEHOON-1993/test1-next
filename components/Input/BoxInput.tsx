@@ -85,7 +85,7 @@ const BoxInput: React.FC<BoxInputProps> = ({
           action
         )}
       </InputBox>
-      {errorText && checkError && <ErrorText sm>{errorText}</ErrorText>}
+      {errorText && checkError && <ErrorText size='sm'>{errorText}</ErrorText>}
     </>
   );
 };

@@ -34,7 +34,7 @@ const BottomNavigationItem: React.FC<Props> = ({
   return (
     <Item {...props} onClick={clickHandler}>
       {icon && <TabBarIcon fill={active} name={icon} />}
-      <T.Text sm>{label}</T.Text>
+      <T.Text size="sm">{label}</T.Text>
     </Item>
   );
 };
