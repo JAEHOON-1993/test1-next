@@ -27,7 +27,7 @@ const BannerContainer: React.FC<Props> = () => {
         <RatioBox ratio="30%" src="/images/banner/1.png" />
       </Slider>
       <PageNumber>
-        <T.Text sm>{active + 1} / 3</T.Text>
+        <T.Text size="sm">{active + 1} / 3</T.Text>
       </PageNumber>
     </div>
   );

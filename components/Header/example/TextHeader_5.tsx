@@ -78,7 +78,6 @@ const HeaderComponent: NextPage<NavProps> = ({ backgroundColor }) => {
                       color={
                         backgroundColor ? theme.color.WHITE : theme.color.BLACK
                       }
-                      bold
                     >
                       {menu.name}
                     </Title>
@@ -112,7 +111,7 @@ const HeaderComponent: NextPage<NavProps> = ({ backgroundColor }) => {
                 {isLogin && (
                   <PopupBox isOpen={popup}>
                     <li onClick={() => setIsLogin(false)}>
-                      <Text sm>로그아웃</Text>
+                      <Text size="sm">로그아웃</Text>
                     </li>
                   </PopupBox>
                 )}

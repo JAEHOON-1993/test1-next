@@ -44,7 +44,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({ centerPoint }) => {
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
-                    <Title color={theme.color.BLACK} bold>
+                    <Title color={theme.color.BLACK}>
                       {menu.name}
                     </Title>
                   </Menu>

@@ -15,22 +15,22 @@ const TextBox: React.FC<Props> = ({ label, text1, text2, text3 }) => {
   return (
     <Container className="textbox">
       {label && (
-        <Text className="textbox__label" bold color="inherit">
+        <Text className="textbox__label" color="inherit">
           {label}
         </Text>
       )}
       {text1 && (
-        <Text className="textbox__text" sm color="inherit">
+        <Text className="textbox__text" size="sm" color="inherit">
           {text1}
         </Text>
       )}
       {text2 && (
-        <Text className="textbox__text" sm color="inherit">
+        <Text className="textbox__text" size="sm" color="inherit">
           {text2}
         </Text>
       )}
       {text3 && (
-        <Text className="textbox__text" sm color="inherit">
+        <Text className="textbox__text" size="sm" color="inherit">
           {text3}
         </Text>
       )}
