@@ -45,7 +45,7 @@ export const table = () => {
       <TableHead nthWidth={[2, '60%']}>
         {titleData.map((title) => (
           <TRHeadBox key={title}>
-            <Title bold>{title}</Title>
+            <Title>{title}</Title>
           </TRHeadBox>
         ))}
       </TableHead>
