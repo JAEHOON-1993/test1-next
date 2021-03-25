@@ -11,11 +11,30 @@ export default {
   title: 'Example/components/Navigation',
 } as Meta;
 
-export const TextNavigation_1 = <NavType1Container />;
-export const TextNavigation_2 = <NavType2Container />;
-export const TextNavigation_3 = <NavType3Container />;
-export const TextNavigation_4 = <NavType4Container />;
-export const TextNavigation_5 = <NavType5Container />;
+export const TextNavigation_1 = () => {
+  return <NavType1Container />;
+};
+
+export const TextNavigation_2 = () => {
+  return <NavType2Container />;
+};
+
+export const TextNavigation_3 = () => {
+  return <NavType3Container />;
+};
+
+export const TextNavigation_4 = () => {
+  return <NavType4Container />;
+};
+
+export const TextNavigation_5 = () => {
+  return <NavType5Container />;
+};
+
+// export const TextNavigation_2 = <NavType2Container />;
+// export const TextNavigation_3 = <NavType3Container />;
+// export const TextNavigation_4 = <NavType4Container />;
+// export const TextNavigation_5 = <NavType5Container />;
 
 // export const navMobile = <Nav_Mobile />;
 

@@ -21,7 +21,7 @@ const Template: Story<ButtonProps> = (args) => (
   <Button {...args}>I'm Button</Button>
 );
 
-export const Deafult = Template.bind({});
+export const Default = Template.bind({});
 
 const Wrapper = styled.div`
   .description {
@@ -107,7 +107,7 @@ export const ButtonWithIcon = () => {
     <Wrapper>
       <div>
         <Button leftIcon={<SystemIcon name="calender" color="currentColor" />}>
-          Calander
+          Calender
         </Button>
       </div>
       <div>
@@ -158,7 +158,7 @@ LoadingState.parameters = {
   },
 };
 
-export const HugginButton = () => {
+export const HuggingButton = () => {
   return (
     <Wrapper>
       <div>
@@ -175,7 +175,7 @@ export const HugginButton = () => {
   );
 };
 
-HugginButton.parameters = {
+HuggingButton.parameters = {
   docs: {
     description: {
       story:
