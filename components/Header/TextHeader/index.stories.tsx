@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { HeaderProps } from 'components/Header/interface';
 
-import TextHeader from 'components/Header/TexHeader';
+import TextHeader from 'components/Header/TextHeader';
 
 // import NavType2Container from 'components/Navigation/example/TextNavigation_2';
 // import NavType3Container from 'components/Navigation/example/TextNavigation_3';
