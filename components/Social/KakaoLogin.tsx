@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import { Button, Icon } from './Social.styled';
 
 import { KAKAO_LOGIN_URL } from './_settings';
@@ -23,13 +23,13 @@ const KakaoLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       onClick={() => Router.replace(KAKAO_LOGIN_URL)}
       icon={<Icon name="kakao" start />}
     >
-      <T.Text
+      <Text
         style={{
           color: '#000',
         }}
       >
         카카오 계정으로 로그인
-      </T.Text>
+      </Text>
     </Button>
   );
 };

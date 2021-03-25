@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 
 import SystemIcon from 'components/Icons/SystemIcon';
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 export interface CheckboxProps {
   checked: boolean;
@@ -45,7 +45,7 @@ const CheckWrap = styled.div`
     height: 20px;
   }
 `;
-const CheckLabel = styled(T.Text)`
+const CheckLabel = styled(Text)`
   margin-left: 5px;
   color: ${(props) => props.theme.color.GRAY4};
 `;

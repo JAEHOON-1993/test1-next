@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Typography';
 import ButtonBase from 'components/Button/ButtonBase';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -40,7 +39,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
         <>
           {icon && <div>{icon}</div>}
           {typeof children === 'string' || children instanceof String ? (
-            <T.Button sm={sm}>{children}</T.Button>
+            <Button sm={sm}>{children}</Button>
           ) : (
             children
           )}

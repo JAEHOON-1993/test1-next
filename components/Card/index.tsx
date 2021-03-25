@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Title, Text } from 'components/Typography';
 
 interface CardProps {
   children?: any;
@@ -40,8 +40,8 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
     <CardHeaderComponent {...props}>
       <CardHeaderImage avatar={avatar} thumbnail={thumbnail} />
       <CardHeaderText>
-        {title && <T.Title>{title}</T.Title>}
-        {subTitle && <T.Text>{subTitle}</T.Text>}
+        {title && <Title>{title}</Title>}
+        {subTitle && <Text>{subTitle}</Text>}
       </CardHeaderText>
       <CardHeaderAction>{action}</CardHeaderAction>
     </CardHeaderComponent>

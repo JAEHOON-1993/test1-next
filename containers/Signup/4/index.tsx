@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 import SignUpStore from 'stores/Signup';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -37,7 +37,7 @@ const SignUp4Container: React.FC<Props> = () => {
         </ButtonBaseComponent>
       </Nav>
       <TextBox>
-        <T.Text lg>프로필 사진을 등록해 주세요.(선택)</T.Text>
+        <Text size="lg">프로필 사진을 등록해 주세요.(선택)</Text>
       </TextBox>
       <input
         ref={inputRef}
@@ -57,7 +57,7 @@ const SignUp4Container: React.FC<Props> = () => {
           <SystemIcon name="plus" color="#fff" />
         </span>
       </AvatarBox>
-      <T.Text>{SignUpStore.nickname}</T.Text>
+      <Text>{SignUpStore.nickname}</Text>
       <Button round onClick={SignUpStore.register}>
         완료
       </Button>

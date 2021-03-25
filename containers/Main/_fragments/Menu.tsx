@@ -3,7 +3,7 @@ import Router from 'next/router';
 import styled from 'styled-components';
 
 import ColorIcon from 'components/Icons/ColorIcon';
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 import { Props } from '../types';
 
@@ -37,20 +37,20 @@ const MenuContainer: React.FC<Props> = () => {
         <div>
           <ColorIcon name="bed" />
         </div>
-        <T.Text>실내</T.Text>
+        <Text>실내</Text>
       </Item>
       <Item onClick={() => Router.push('/outdoor')}>
         <div>
           <ColorIcon name="home" />
         </div>
-        <T.Text>실외</T.Text>
+        <Text>실외</Text>
       </Item>
       {itemsData.map((item) => (
         <Item key={item.id}>
           <div>
             <ColorIcon name={item.name} />
           </div>
-          <T.Text>{item.text}</T.Text>
+          <Text>{item.text}</Text>
         </Item>
       ))}
     </Menu>

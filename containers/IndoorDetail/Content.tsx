@@ -7,7 +7,7 @@ import Select from 'components/Select';
 import Button from 'components/Button';
 import Rate from 'components/Rate';
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/Typography';
+import { Title, Text } from 'components/Typography';
 
 interface Props {
   fixed?: boolean;
@@ -35,31 +35,31 @@ const ContentContainer: React.FC<Props> = () => {
               <UserInfo>
                 <img src="/images/profile_default.png" />
                 <div>
-                  <T.Title>ArchDica</T.Title>
-                  <T.Text sm>아키디카 디지털 카탈로그</T.Text>
+                  <Title>ArchDica</Title>
+                  <Text size="sm">아키디카 디지털 카탈로그</Text>
                 </div>
               </UserInfo>
               <Hr />
-              <Name lg>다용도 타일 카펫</Name>
+              <Name size="lg">다용도 타일 카펫</Name>
               <Hr />
               <RateBox>
                 <Rate value={3.5} />
-                <T.Title>3.5</T.Title>
+                <Title>3.5</Title>
               </RateBox>
               <DiscountBox>
-                <T.Title lg>18%</T.Title>
-                <T.Text>{intComma(3800)}</T.Text>
+                <Title size="lg">18%</Title>
+                <Text>{intComma(3800)}</Text>
               </DiscountBox>
-              <Name lg>{intComma(3800)}원</Name>
+              <Name size="lg">{intComma(3800)}원</Name>
               <Hr />
               <ShippingBox>
                 <div>
-                  <T.Text>일반택배</T.Text>
-                  <T.Text sm color={theme.color.GRAY5}>
+                  <Text>일반택배</Text>
+                  <Text size="sm" color={theme.color.GRAY5}>
                     조건에 따라 추가비용 발생 가능
-                  </T.Text>
+                  </Text>
                 </div>
-                <T.Text color={theme.color.GRAY5}>{intComma(3000)}원</T.Text>
+                <Text color={theme.color.GRAY5}>{intComma(3000)}원</Text>
               </ShippingBox>
               <Hr />
               <CustomSelect
@@ -73,12 +73,12 @@ const ContentContainer: React.FC<Props> = () => {
                 placeholder="사이즈"
               />
               <PriceBox>
-                <T.Text>
+                <Text>
                   총 수량 <b style={{ color: theme.color.PRIMARY }}>0</b> 개
-                </T.Text>
+                </Text>
                 <div>
-                  <T.Text>합계</T.Text>
-                  <T.Title>0원</T.Title>
+                  <Text>합계</Text>
+                  <Title>0원</Title>
                 </div>
               </PriceBox>
               <ButtonBox>
@@ -145,7 +145,7 @@ const UserInfo = styled.div`
   }
 `;
 
-const Name = styled(T.Title)`
+const Name = styled(Title)`
   font-weight: bold;
 `;
 

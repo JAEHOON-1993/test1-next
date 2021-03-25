@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import { Card, CardHeader } from 'components/Card';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -19,9 +19,9 @@ const OutlineCard: React.FC<Props> = (props) => {
             title="주의사항"
             action={<SystemIcon name="alarm" color={theme.color.PRIMARY} />}
           />
-          <T.Text size="sm">
+          <Text size="sm">
             문제가 발생하는 경우 고객센터로 연락주시기 바랍니다.
-          </T.Text>
+          </Text>
         </AlertBox>
       )}
     </ThemeConsumer>

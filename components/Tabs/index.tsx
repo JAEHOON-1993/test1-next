@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import useWindowSize from 'utils/useWindowSize';
 
 import Container from 'components/Container';
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 interface Props {
   noMobile?: boolean;
@@ -60,7 +60,7 @@ const Tabs: React.FC<Props> = ({
                 active={active === idx}
                 onClick={() => tabChangeHandler(idx)}
               >
-                {render ? render(item) : <T.Text>{item.name}</T.Text>}
+                {render ? render(item) : <Text>{item.name}</Text>}
               </Item>
             );
           })}
