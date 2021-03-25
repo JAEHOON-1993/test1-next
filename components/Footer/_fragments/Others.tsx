@@ -15,9 +15,9 @@ const Others: React.FC<Props> = ({
 }) => {
   return (
     <Container>
-      <Temrs>{terms}</Temrs>
+      <Terms>{terms}</Terms>
 
-      <Text sm color="inherit">
+      <Text size="sm" color="inherit">
         {copyright}
       </Text>
     </Container>
@@ -39,7 +39,7 @@ const Container = styled.div`
   }
 `;
 
-const Temrs = styled.div`
+const Terms = styled.div`
   & > *:not(:last-child) {
     margin-right: 15px;
   }

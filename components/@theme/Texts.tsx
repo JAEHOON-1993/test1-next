@@ -12,16 +12,16 @@ const Texts: React.FC<Props> = () => {
         <>
           <h1 style={{ color: theme.color.PRIMARY }}>TYPOGRAPHY</h1>
           <TextBox>
-            <T.Title lg>Title Large</T.Title>
+            <T.Title size="lg">Title Large</T.Title>
             <T.Title>Title</T.Title>
-            <T.Title bold>Title with Bold</T.Title>
+            <T.Title>Title with Bold</T.Title>
             <T.Title color="blue">Title with Color</T.Title>
-            <T.Title sm>Title Small</T.Title>
+            <T.Title size="sm">Title Small</T.Title>
           </TextBox>
           <TextBox>
             <T.Text>Text Large</T.Text>
             <T.Text>Text</T.Text>
-            <T.Text bold>Text with Bold</T.Text>
+            <T.Text>Text with Bold</T.Text>
             <T.Text color="pink">Text with Color</T.Text>
             <T.Text>Text Small</T.Text>
           </TextBox>

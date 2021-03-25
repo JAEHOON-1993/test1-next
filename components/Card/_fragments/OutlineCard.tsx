@@ -19,7 +19,7 @@ const OutlineCard: React.FC<Props> = (props) => {
             title="주의사항"
             action={<SystemIcon name="alarm" color={theme.color.PRIMARY} />}
           />
-          <T.Text sm>
+          <T.Text size="sm">
             문제가 발생하는 경우 고객센터로 연락주시기 바랍니다.
           </T.Text>
         </AlertBox>

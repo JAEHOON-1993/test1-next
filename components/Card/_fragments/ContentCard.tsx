@@ -17,7 +17,7 @@ const ContentCard: React.FC<Props> = (props) => {
       {(theme) => (
         <CustomCard {...props}>
           <RatioBox src="https://picsum.photos/200" />
-          <T.Text sm style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
+          <T.Text size="sm" style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
             Text Small
           </T.Text>
           <T.Title>Title</T.Title>

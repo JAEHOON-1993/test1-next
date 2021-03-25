@@ -13,8 +13,8 @@ export default {
 
 const Template: Story<Props> = (args) => <Footer {...args} />;
 
-export const Deafult = Template.bind({});
-Deafult.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
 const Wrapper = styled.div`
   .description {

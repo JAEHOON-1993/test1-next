@@ -8,7 +8,7 @@ import GradientComponent from 'components/Gradient';
 
 const Colors: React.FC<Props> = () => {
   return (
-    <Warpper>
+    <Wrapper>
       <FlexBox>
         <div>
           <Title>BRAND COLORS</Title>
@@ -453,13 +453,13 @@ const Colors: React.FC<Props> = () => {
         </BackgroundColor>
       </BackgroundBox>
       <div style={{ height: 100 }} />
-    </Warpper>
+    </Wrapper>
   );
 };
 
 export default Colors;
 
-const Warpper = styled.div`
+const Wrapper = styled.div`
   max-height: 500px;
   padding-bottom: 100px;
 `;

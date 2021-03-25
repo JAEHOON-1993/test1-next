@@ -22,7 +22,7 @@ const Template: Story<LinkProps> = ({ href, ...args }) => (
   </Link>
 );
 
-export const Deafult = Template.bind({});
+export const Default = Template.bind({});
 
 export const External = () => (
   <Link href="https://www.toktokhan.dev/" isExternal>

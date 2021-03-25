@@ -77,7 +77,7 @@ const InputComponent: React.FC<Props> = ({
           />
           {!error && <Hr focused={focused} />}
           {errorText && error && (
-            <ErrorText sm as="div">
+            <ErrorText size="sm" as="div">
               {errorText}
             </ErrorText>
           )}

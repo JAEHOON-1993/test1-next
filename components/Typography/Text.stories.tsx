@@ -28,7 +28,7 @@ const Template: Story<BaseProps> = (args) => (
   </Text>
 );
 
-export const Deafult = Template.bind({});
+export const Default = Template.bind({});
 
 const Wrapper = styled.div`
   .description {

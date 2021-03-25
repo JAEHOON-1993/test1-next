@@ -64,7 +64,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
               {MENU_DATA.map((menu, idx) => {
                 return (
                   <Menu key={idx}>
-                    <Title color={theme.color.BLACK} bold>
+                    <Title color={theme.color.BLACK}>
                       {menu.name}
                     </Title>
                   </Menu>
@@ -103,7 +103,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                           setPopup(false);
                         }}
                       >
-                        <Text sm>로그아웃</Text>
+                        <Text size="sm">로그아웃</Text>
                       </li>
                     </PopupBox>
                   )}

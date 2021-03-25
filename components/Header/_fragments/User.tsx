@@ -35,7 +35,7 @@ const User = ({ user, color, toLogin, togglePopup }: Props) => {
                   color={color ? color : theme.color.BLACK}
                 />
               )}
-              <Title bold color={color ? color : theme.color.BLACK}>
+              <Title color={color ? color : theme.color.BLACK}>
                 {user?.nickname} 님
               </Title>
               <SystemIcon
@@ -50,7 +50,7 @@ const User = ({ user, color, toLogin, togglePopup }: Props) => {
               color={color ? color : theme.color.BLACK}
               onClick={toLogin}
             >
-              <Text sm color={color ? color : theme.color.BLACK}>
+              <Text size="sm" color={color ? color : theme.color.BLACK}>
                 로그인/회원가입
               </Text>
             </Button>

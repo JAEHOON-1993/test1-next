@@ -34,7 +34,7 @@ const UploadFile = observer(
 
     return (
       <Wrap>
-        <Label sm>{title}</Label>
+        <Label size="sm">{title}</Label>
         <Flex>
           <FileName>
             {file && (
@@ -62,7 +62,7 @@ const UploadFile = observer(
           )}
         </Flex>
         {info && (
-          <InfoBox as="div" sm>
+          <InfoBox as="div" size="sm">
             {info}
           </InfoBox>
         )}
