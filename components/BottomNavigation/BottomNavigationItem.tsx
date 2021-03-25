@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import TabBarIcon, { nameProps } from 'components/Icons/TabBarIcon';
 import ButtonBase from 'components/Button/ButtonBase';
 
@@ -34,7 +34,7 @@ const BottomNavigationItem: React.FC<Props> = ({
   return (
     <Item {...props} onClick={clickHandler}>
       {icon && <TabBarIcon fill={active} name={icon} />}
-      <T.Text size="sm">{label}</T.Text>
+      <Text size="sm">{label}</Text>
     </Item>
   );
 };

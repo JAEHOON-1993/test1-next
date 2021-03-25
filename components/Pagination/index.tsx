@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Button } from 'components/Typography';
 
 import PrevPageArrow from 'components/Icons/SystemIcon/PrevPageArrow';
 import NextPageArrow from 'components/Icons/SystemIcon/NextPageArrow';
@@ -41,7 +41,7 @@ const PageNumber: React.FC<Props> = ({ count = 100 }) => {
                 onClick={() => handlePageCount(pageNumber)}
                 isActive={click === pageNumber}
               >
-                <T.Button>{pageNumber}</T.Button>
+                <Button>{pageNumber}</Button>
               </PageButton>
             );
           }

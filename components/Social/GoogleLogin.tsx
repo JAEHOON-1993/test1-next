@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import { Button, Icon } from './Social.styled';
 import { GOOGLE_LOGIN_URL } from './_settings';
 
@@ -25,7 +25,7 @@ const GoogleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           onClick={() => Router.replace(GOOGLE_LOGIN_URL)}
           icon={<Icon round={round} name="google" start />}
         >
-          <T.Text style={{ color: theme.color.GRAY4 }}>Google로 로그인</T.Text>
+          <Text style={{ color: theme.color.GRAY4 }}>Google로 로그인</Text>
         </Button>
       )}
     </ThemeConsumer>

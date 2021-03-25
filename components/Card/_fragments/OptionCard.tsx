@@ -3,7 +3,7 @@ import styled, { ThemeConsumer } from 'styled-components';
 
 import { intComma } from 'utils/format';
 
-import * as T from 'components/Typography';
+import { Title, Text } from 'components/Typography';
 import { Card, CardHeader } from 'components/Card';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -27,13 +27,13 @@ const ItemCard: React.FC<Props> = (props) => {
                 <SystemIcon name="smallMinus" color={theme.color.GRAY4} />
               </div>
               <div>
-                <T.Text>{0}</T.Text>
+                <Text>{0}</Text>
               </div>
               <div>
                 <SystemIcon name="smallPlus" color={theme.color.GRAY4} />
               </div>
             </ButtonBox>
-            <T.Title>{intComma(3200)}원</T.Title>
+            <Title>{intComma(3200)}원</Title>
           </Footer>
         </ItemBox>
       )}

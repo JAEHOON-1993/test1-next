@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 import { Button, Icon } from './Social.styled';
 import { FACEBOOK_LOGIN_URL } from './_settings';
@@ -25,9 +25,9 @@ const FacebookLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           onClick={() => Router.replace(FACEBOOK_LOGIN_URL)}
           icon={<Icon name="facebook" start round={round} color="#fff" />}
         >
-          <T.Text style={{ color: theme.color.WHITE }}>
+          <Text style={{ color: theme.color.WHITE }}>
             Facebook으로 로그인
-          </T.Text>
+          </Text>
         </Button>
       )}
     </ThemeConsumer>

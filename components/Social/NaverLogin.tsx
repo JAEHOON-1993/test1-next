@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import { Button, Icon } from './Social.styled';
 
 import { NAVER_LOGIN_URL } from './_settings';
@@ -22,7 +22,7 @@ const NaverLoginComponent: React.FC<Props> = ({ round, ...props }) => {
       onClick={() => Router.replace(NAVER_LOGIN_URL)}
       icon={<Icon round={round} name="naver" start color="#fff" />}
     >
-      <T.Text style={{ color: '#fff' }}>네이버 계정으로 로그인</T.Text>
+      <Text style={{ color: '#fff' }}>네이버 계정으로 로그인</Text>
     </Button>
   );
 };

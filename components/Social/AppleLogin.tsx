@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 import { Button, TempoIcon } from './Social.styled';
 
@@ -28,7 +28,7 @@ const AppleLoginComponent: React.FC<Props> = ({ round, ...props }) => {
           onClick={() => Router.replace(APPLE_LOGIN_URL)}
           icon={<TempoIcon round={round} src={APPLE_LOGO} start />}
         >
-          <T.Text style={{ color: theme.color.WHITE }}>Apple로 로그인</T.Text>
+          <Text style={{ color: theme.color.WHITE }}>Apple로 로그인</Text>
         </Button>
       )}
     </ThemeConsumer>

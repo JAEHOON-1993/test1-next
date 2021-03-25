@@ -22,7 +22,7 @@ const MessageComponent: React.FC<CardProps> = ({
         <div>
           <Text>{data.message}</Text>
         </div>
-        <Date sm>{MessageFormatTime(data.date)}</Date>
+        <Date size="sm">{MessageFormatTime(data.date)}</Date>
       </TextBox>
     </MessageBox>
   );

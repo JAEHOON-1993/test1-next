@@ -1,7 +1,7 @@
 import React, { useState, ReactNode, Ref } from 'react';
 import styled, { css } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Title, Text } from 'components/Typography';
 
 export interface Props {
   label?: string;
@@ -112,7 +112,7 @@ const InputBox = styled.div`
   justify-content: flex-start;
 `;
 
-const Label = styled(T.Text)<{ isNullValue?: boolean; hasError?: boolean }>`
+const Label = styled(Text)<{ isNullValue?: boolean; hasError?: boolean }>`
   color: ${(props) => props.theme.color.PRIMARY};
 
   ${(props) =>
@@ -185,7 +185,7 @@ const Hr = styled.div`
     `}
 `;
 
-const ErrorText = styled(T.Text)`
+const ErrorText = styled(Text)`
   color: ${(props) => props.theme.color.WARNING};
   margin: 10px 0;
 `;

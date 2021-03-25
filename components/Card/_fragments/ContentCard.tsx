@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Title, Text } from 'components/Typography';
 import { Card } from 'components/Card';
 import RatioBox from 'components/RatioBox';
 import SystemIcon from 'components/Icons/SystemIcon';
@@ -17,10 +17,10 @@ const ContentCard: React.FC<Props> = (props) => {
       {(theme) => (
         <CustomCard {...props}>
           <RatioBox src="https://picsum.photos/200" />
-          <T.Text size="sm" style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
+          <Text size="sm" style={{ color: theme.color.PRIMARY, marginTop: 10 }}>
             Text Small
-          </T.Text>
-          <T.Title>Title</T.Title>
+          </Text>
+          <Title>Title</Title>
           <PriceText>
             <b>18%</b> Price
           </PriceText>
