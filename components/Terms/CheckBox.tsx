@@ -23,7 +23,7 @@ const Terms: React.FC<Props> = ({ firstText }) => {
     <ThemeConsumer>
       {(theme) => (
         <EachTerms>
-          <Text sm>{firstText}</Text>
+          <Text size="sm">{firstText}</Text>
           <SystemIcon
             name="done"
             onClick={() => setChecked({ ...checked, first: !checked.first })}

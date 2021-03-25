@@ -38,7 +38,7 @@ const SelectComponent: React.FC<Props> = ({
 
   return (
     <Wrap>
-      <Label as="div" sm>
+      <Label as="div" size="sm">
         {title}
       </Label>
       <CustomSelect

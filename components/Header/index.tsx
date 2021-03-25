@@ -38,10 +38,6 @@ export interface HeaderProps {
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Button contents
-   */
-  label: string;
-  /**
    * Optional click handler
    */
   onClick?: () => void;

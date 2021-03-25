@@ -1,25 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Title } from 'components/Typography';
 
 import { Props } from '../types';
 
 const TitleContainer: React.FC<Props> = () => {
   return (
-    <Title>
+    <MainTitle>
       <div>
-        <T.Title style={{ fontWeight: 'bold' }}>안녕하세요, Murat님!</T.Title>
-        <T.Title>오늘은 어떤 걸 구매하시겠습니까?</T.Title>
+        <Title style={{ fontWeight: 'bold' }}>안녕하세요, Murat님!</Title>
+        <Title>오늘은 어떤 걸 구매하시겠습니까?</Title>
       </div>
       <img src="/images/profile_default.png" />
-    </Title>
+    </MainTitle>
   );
 };
 
 export default TitleContainer;
 
-const Title = styled.div`
+const MainTitle = styled.div`
   height: 90px;
   display: flex;
   align-items: center;

@@ -3,7 +3,7 @@ const prettier = require('prettier');
 
 const axios = require('axios');
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiResponse } from 'next';
 
 const DOMAIN = 'https://www.toktokhan.dev';
 
@@ -12,7 +12,7 @@ const FORBIDDEN = ['/signup', '/login', '/example'].map(
   (route) => `!**${route}`,
 );
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (res: NextApiResponse) => {
   try {
     /**
      * localRoutes: pages 폴더 내 파일을 기준으로 만듭니다.
