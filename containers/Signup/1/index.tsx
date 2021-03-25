@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 
 // components
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -59,11 +59,11 @@ const SignUp1Container: React.FC<Props> = () => {
         </ButtonBaseComponent>
       </Nav>
       <TextBox>
-        <T.Text lg>
+        <Text size="lg">
           본인인증을 위한
           <br />
           핸드폰 번호를 입력하세요
-        </T.Text>
+        </Text>
       </TextBox>
       <Input
         name="phone"

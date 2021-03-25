@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import Tabs from 'components/Tabs';
 
 interface Props {
@@ -23,8 +23,8 @@ const TabContainer: React.FC<Props> = () => {
         data={DATA}
         render={(item: any, idx: number) => (
           <Tab key={idx}>
-            <T.Text sm>{item.name}</T.Text>
-            {item.value && <T.Text sm>{item.value}</T.Text>}
+            <Text size="sm">{item.name}</Text>
+            {item.value && <Text size="sm">{item.value}</Text>}
           </Tab>
         )}
       />

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 import RatioBox from 'components/RatioBox';
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 import { Props } from '../types';
 
@@ -27,7 +27,7 @@ const BannerContainer: React.FC<Props> = () => {
         <RatioBox ratio="30%" src="/images/banner/1.png" />
       </Slider>
       <PageNumber>
-        <T.Text size="sm">{active + 1} / 3</T.Text>
+        <Text size="sm">{active + 1} / 3</Text>
       </PageNumber>
     </div>
   );

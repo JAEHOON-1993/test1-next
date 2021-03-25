@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 import SignUpStore from 'stores/Signup';
 
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 import ButtonBaseComponent from 'components/Button/ButtonBase';
 import SystemIcon from 'components/Icons/SystemIcon';
 
@@ -28,7 +28,7 @@ const SignUp3Container: React.FC<Props> = () => {
         </ButtonBaseComponent>
       </Nav>
       <TextBox>
-        <T.Text lg>사용할 닉네임을 입력해주세요</T.Text>
+        <Text size="lg">사용할 닉네임을 입력해주세요</Text>
       </TextBox>
       <Input
         name="phone"
