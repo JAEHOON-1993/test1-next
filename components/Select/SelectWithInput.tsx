@@ -42,7 +42,7 @@ const SelectWithInputComponent: React.FC<Props> = ({
 
   return (
     <Wrap width={width}>
-      <Label as="div" sm>
+      <Label as="div" size="sm">
         {title}
       </Label>
       <CustomSelect

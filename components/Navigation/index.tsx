@@ -11,7 +11,7 @@ import Container from 'components/Container';
 import Router from 'next/router';
 
 import { Title } from 'components/Typography';
-import Logo from 'components/Header/_fragments/Logo';
+import Logo from 'components/Navigation/_fragments/Logo';
 import SystemIcon from 'components/Icons/SystemIcon';
 
 import {
@@ -22,27 +22,7 @@ import {
   Content,
   MenuButton,
   DrawerHeader,
-} from 'components/Header/index.styled';
-
-export interface HeaderProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-  fixed: boolean;
-}
+} from 'components/Navigation/navigation.styled';
 
 const MENU_DATA = [
   { name: '메뉴1', path: '/' },
@@ -51,13 +31,13 @@ const MENU_DATA = [
   { name: '메뉴4', path: '/' },
 ];
 
-const HeaderComponent = ({ fixed }: HeaderProps) => {
+const NavigationComponent = () => {
   const centerPoint = 'tab';
   const [drawer, setDrawer] = useState<boolean>(false);
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Nav centerPoint={centerPoint} fixed={fixed}>
+        <Nav centerPoint={centerPoint}>
           <Container>
             <Logo
               src="/images/logo.png"
@@ -94,4 +74,4 @@ const HeaderComponent = ({ fixed }: HeaderProps) => {
   );
 };
 
-export default HeaderComponent;
+export default NavigationComponent;
