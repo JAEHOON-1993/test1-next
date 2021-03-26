@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
-interface BaseProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * 버튼은 2가지 색상으로 제공됩니다. 기본은 'primary' 입니다.
    */
@@ -111,6 +111,7 @@ const sizes = {
 };
 
 const StyledButton = styled.button<BaseProps>`
+  appearance: none;
   position: relative;
   display: flex;
   justify-content: center;
