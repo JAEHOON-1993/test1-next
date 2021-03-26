@@ -17,7 +17,7 @@ export const socialButton = () => {
   return (
     <>
       <SocialBox>
-        <KakaoLogin />
+        <KakaoLogin/>
         <NaverLogin />
         <FacebookLogin />
         <GoogleLogin />

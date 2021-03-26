@@ -10,19 +10,22 @@ interface Props {
   round?: boolean;
   style?: any;
   children?: any;
+  size?: 'sm' | 'md';
 }
 
-const NaverLoginComponent: React.FC<Props> = ({ round, ...props }) => {
+const NaverLoginComponent: React.FC<Props> = ({size, round, ...props }) => {
   return (
     <Button
       {...props}
       backgroundColor={'#20cf5d'}
       borderColor={'#20cf5d'}
       round={round}
+      size={size}
       onClick={() => Router.replace(NAVER_LOGIN_URL)}
-      icon={<Icon round={round} name="naver" start color="#fff" />}
+      icon={<Icon  name="naver" color="#fff" />}
     >
-      <Text style={{ color: '#fff' }}>네이버 계정으로 로그인</Text>
+      {size == 'sm' ? null : <Text style={{ color: '#fff' }}>네이버 계정으로 로그인</Text>}
+      
     </Button>
   );
 };
