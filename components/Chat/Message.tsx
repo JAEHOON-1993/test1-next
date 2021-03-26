@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { MessageFormatTime } from 'utils/format';
-import * as T from 'components/Typography';
+import { Text } from 'components/Typography';
 
 interface CardProps {
   data: any;
@@ -20,7 +20,7 @@ const MessageComponent: React.FC<CardProps> = ({
       {!data.isSend && <img src="/images/profile_default.png" />}
       <TextBox isSend={data.isSend} {...props}>
         <div>
-          <Text>{data.message}</Text>
+          <MainText>{data.message}</MainText>
         </div>
         <Date size="sm">{MessageFormatTime(data.date)}</Date>
       </TextBox>
@@ -62,10 +62,10 @@ const TextBox = styled.div<MessageBoxType>`
       }
     `}
 `;
-const Text = styled(T.Text)`
+const MainText = styled(Text)`
   white-space: pre;
 `;
-const Date = styled(T.Text)`
+const Date = styled(Text)`
   align-self: flex-end;
   color: ${(props) => props.theme.color.GRAY5};
   margin: 0px 5px;
