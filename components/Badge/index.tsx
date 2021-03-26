@@ -7,7 +7,7 @@ interface Props {
 }
 
 /**
- * 카테고리 혹은 상태를 나타 날 때 사용하는 Badge 컴포넌트입니다.
+ * 카테고리 혹은 상태를 나타낼 때 사용하는 Badge 컴포넌트입니다.
  */
 const Badge: React.FC<Props> = ({ label, color, outline }) => {
   return (
