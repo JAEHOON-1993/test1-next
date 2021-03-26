@@ -15,7 +15,7 @@ const Template: Story<BaseProps> = (args) => (
   <InputBase placeholder="아이디를 입력해 주세요." {...args} />
 );
 
-export const Deafult = Template.bind({});
+export const Default = Template.bind({});
 
 const Wrapper = styled.div`
   .description {
@@ -48,7 +48,7 @@ Variants.parameters = {
   },
 };
 
-export const DisabeldInput = () => {
+export const DisabledInput = () => {
   return (
     <Wrapper>
       <div>
@@ -65,7 +65,7 @@ export const DisabeldInput = () => {
   );
 };
 
-DisabeldInput.parameters = {
+DisabledInput.parameters = {
   docs: {
     description: {
       story:
