@@ -81,7 +81,7 @@ export const InputWithError = () => {
         <InputBase
           placeholder="이메일을 입력해 주세요."
           value="tokdigmal.com"
-          hasError
+          isError
         />
       </div>
       <div>
@@ -89,7 +89,7 @@ export const InputWithError = () => {
           placeholder="이메일을 입력해 주세요."
           variant="outline"
           value="tokdigmal.com"
-          hasError
+          isError
         />
       </div>
     </Wrapper>
@@ -100,7 +100,7 @@ InputWithError.parameters = {
   docs: {
     description: {
       story:
-        '`hasError` prop을 이용하여 인풋 값이 유효하지 않음을 표시할 수 있습니다.',
+        '`isError` prop을 이용하여 인풋 값이 유효하지 않음을 표시할 수 있습니다.',
     },
   },
 };
