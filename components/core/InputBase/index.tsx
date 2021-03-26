@@ -18,7 +18,7 @@ export interface BaseProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
    * true인 경우 보더의 색상을 변경시켜 에러 상태임을 표시합니다.
    */
-  hasError?: boolean;
+  isError?: boolean;
 }
 
 const sizes = {
@@ -92,9 +92,9 @@ const StyledInput = styled.input<BaseProps>`
   }
   /* isDisabled */
   background-color: ${(props) => props.isDisabled && props.theme.color.GRAY2};
-  /* hasError */
+  /* isError */
   border-color: ${(props) =>
-    props.hasError && props.theme.color.WARNING} !important;
+    props.isError && props.theme.color.WARNING} !important;
 `;
 
 /**
