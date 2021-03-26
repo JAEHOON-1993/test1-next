@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { sizes } from './theme/size';
 
 interface Props {
-  size?: 'default' | 'small'
+  size?: 'default' | 'small';
   label: string;
   color?: string;
   outline?: boolean;
@@ -12,9 +12,22 @@ interface Props {
 /**
  * 카테고리 혹은 상태를 나타낼 때 사용하는 Badge 컴포넌트입니다.
  */
-const Badge: React.FC<Props> = ({ size, label, color, outline, isDisabled, ...props }) => {
+const Badge: React.FC<Props> = ({
+  size,
+  label,
+  color,
+  outline,
+  isDisabled,
+  ...props
+}) => {
   return (
-    <BadgeWrap size={size} color={color} outline={outline} isDisabled={isDisabled} {...props}>
+    <BadgeWrap
+      size={size}
+      color={color}
+      outline={outline}
+      isDisabled={isDisabled}
+      {...props}
+    >
       {label}
     </BadgeWrap>
   );
@@ -24,10 +37,10 @@ export default Badge;
 
 Badge.defaultProps = {
   size: 'default',
-}
+};
 
 interface styleProps {
-  size?: 'default' | 'small'
+  size?: 'default' | 'small';
   outline?: boolean;
   isDisabled?: boolean;
 }
@@ -36,7 +49,6 @@ const BadgeWrap = styled.div<styleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
   /* PC */
   ${(props) => sizes[props.size || 'default']['pc']}
   /* Tab */
@@ -48,9 +60,9 @@ const BadgeWrap = styled.div<styleProps>`
     ${(props) => sizes[props.size || 'default']['mobile']}
   }
 
-  color: ${(props) => props.theme.color.WHITE};
+  color: white;
 
-  font-weight: ${(props) => props.isDisabled ? 400 : 700};
+  font-weight: ${(props) => (props.isDisabled ? 400 : 700)};
   background-color: ${(props) =>
     props.color ? props.color : props.theme.color.PRIMARY};
   border-radius: 15px;
@@ -62,7 +74,7 @@ const BadgeWrap = styled.div<styleProps>`
       border: 1px solid ${(props) => props.theme.color.PRIMARY};
       background-color: transparent;
     `}
-    ${(props) =>
+  ${(props) =>
     props.isDisabled &&
     css`
       color: ${(props) => props.theme.color.BLACK};
@@ -70,7 +82,8 @@ const BadgeWrap = styled.div<styleProps>`
     `}
 
   ${(props) =>
-    (props.isDisabled && props.outline) &&
+    props.isDisabled &&
+    props.outline &&
     css`
       color: ${(props) => props.theme.color.GRAY3};
       border: 1px solid ${(props) => props.theme.color.GRAY3};
