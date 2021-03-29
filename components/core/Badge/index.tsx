@@ -10,21 +10,21 @@ interface Props {
 const sizes = {
   default: {
     pc: css`
-      width: 53px;
+      //width: 53px;
       height: 30px;
       font-size: 12px;
       line-height: 18px;
       padding: 0px 15px;
     `,
     tab: css`
-      width: 49px;
+      //width: 49px;
       height: 30px;
       font-size: 10px;
       line-height: 16px;
       padding: 0px 15px;
     `,
     mobile: css`
-      width: 53px;
+      //width: 53px;
       height: 30px;
       font-size: 12px;
       line-height: 18px;
@@ -94,6 +94,7 @@ interface StyleProps {
 
 const Wrapper = styled.div<StyleProps>`
   display: flex;
+  width: max-content;
   align-items: center;
   justify-content: center;
   ${(props) => sizes[props.size || 'default']['pc']}
@@ -103,9 +104,7 @@ const Wrapper = styled.div<StyleProps>`
   ${(props) => props.theme.window.mobile} {
     ${(props) => sizes[props.size || 'default']['mobile']}
   }
-
   color: white;
-
   font-weight: ${(props) => (props.isDisabled ? 400 : 700)};
   background-color: ${(props) =>
     props.color ? props.color : props.theme.color.PRIMARY};

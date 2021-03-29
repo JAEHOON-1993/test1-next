@@ -36,7 +36,7 @@ Disabled.args = {
 
 export const DisabledOutline = Template.bind({});
 DisabledOutline.args = {
-  label: '전체',
+  label: '시나리오',
   isDisabled: true,
   outline: true,
 };
