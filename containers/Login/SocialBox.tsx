@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import KakaoLogin from 'components/Social/KakaoLogin';
-import NaverLogin from 'components/Social/NaverLogin';
-import GoogleLogin from 'components/Social/GoogleLogin';
-import FacebookLogin from 'components/Social/FacebookLogin';
-import AppleLogin from 'components/Social/AppleLogin';
+import KakaoLogin from 'components/core/SocialLogin/KakaoLogin';
+import NaverLogin from 'components/core/SocialLogin/NaverLogin';
+import GoogleLogin from 'components/core/Social/GoogleLogin';
+import FacebookLogin from 'components/core/Social/FacebookLogin';
+import AppleLogin from 'components/core/Social/AppleLogin';
 
 interface Props {
   fixed?: boolean;

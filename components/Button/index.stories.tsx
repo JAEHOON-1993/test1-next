@@ -5,12 +5,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Button, { ButtonProps } from 'components/Button';
 import SystemIcon from 'components/Icons/SystemIcon';
 
-import NaverLogin from 'components/Social/NaverLogin';
-import KakaoLogin from 'components/Social/KakaoLogin';
-import GoogleLogin from 'components/Social/GoogleLogin';
-import FacebookLogin from 'components/Social/FacebookLogin';
-import AppleLogin from 'components/Social/AppleLogin';
-
 export default {
   title: 'Example/components/Button',
   component: Button,
@@ -102,25 +96,25 @@ const ButtonBox = styled.div`
   margin-bottom: 10px;
 `;
 
-export const socialButton = () => {
-  return (
-    <>
-      <SocialBox>
-        <h1>
-          Social Login <small>[Default]</small>
-        </h1>
-        <KakaoLogin />
-        <NaverLogin />
-        <FacebookLogin />
-        <GoogleLogin />
-        <AppleLogin />
-      </SocialBox>
-    </>
-  );
-};
+// export const socialButton = () => {
+//   return (
+//     <>
+//       <SocialBox>
+//         <h1>
+//           Social Login <small>[Default]</small>
+//         </h1>
+//         <KakaoLogin />
+//         <NaverLogin />
+//         <FacebookLogin />
+//         <GoogleLogin />
+//         <AppleLogin />
+//       </SocialBox>
+//     </>
+//   );
+// };
 
-const SocialBox = styled.div`
-  > button {
-    margin-bottom: 8px;
-  }
-`;
+// const SocialBox = styled.div`
+//   > button {
+//     margin-bottom: 8px;
+//   }
+// `;
