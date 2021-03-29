@@ -13,30 +13,25 @@ export default {
 
 const Template: Story = (args) => (
   <div>
-    <Badge label="" {...args} />
+    <Badge label="전체" {...args} />
   </div>
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  label: '전체',
-};
+Default.args = {};
 
 export const Outline = Template.bind({});
 Outline.args = {
-  label: '전체',
   outline: true,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  label: '전체',
   isDisabled: true,
 };
 
 export const DisabledOutline = Template.bind({});
 DisabledOutline.args = {
-  label: '시나리오',
   isDisabled: true,
   outline: true,
 };
@@ -44,12 +39,10 @@ DisabledOutline.args = {
 Outline.parameters = {
   docs: {
     description: {
-      story:
-        '`outline`을(를) 이용하여 아웃라인 여부를 변경할 수 있습니다.',
+      story: '`outline`을(를) 이용하여 아웃라인 여부를 변경할 수 있습니다.',
     },
   },
 };
-
 
 Disabled.parameters = {
   docs: {
@@ -68,4 +61,3 @@ DisabledOutline.parameters = {
     },
   },
 };
-
