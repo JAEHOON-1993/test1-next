@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 
-import { Text } from 'components/Typography';
+import { Text } from '../../../components/Typography'
 import { Button, Icon } from './Social.styled';
 
 import { KAKAO_LOGIN_URL } from './_settings';

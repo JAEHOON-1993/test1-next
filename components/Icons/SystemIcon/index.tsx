@@ -53,10 +53,13 @@ import MyPageIcon from './MyPage';
 import ArchiveBoxIcon from './ArchiveBox';
 import PaperClipIcon from './PaperClip';
 import DropDownMenuIcon from './DropDownMenu';
+import AppleIcon from './Apple'
+
 
 export type nameProps =
   | 'add'
   | 'addProfile'
+  | 'apple'
   | 'alarm'
   | 'alarmNew'
   | 'arrowRight'
@@ -131,6 +134,8 @@ const SystemIcon: React.FC<Props> = ({ name, ...props }) => {
   switch (name) {
     case 'add':
       return <AddIcon {...props} />;
+    case 'apple':
+      return <AppleIcon {...props} />;  
     case 'addProfile':
       return <AddProfileIcon {...props} />;
     case 'alarm':

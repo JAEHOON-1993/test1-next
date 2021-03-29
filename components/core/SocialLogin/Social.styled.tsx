@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import ButtonComponent from 'components/Button';
 
-import SystemIcon from 'components/Icons/SystemIcon';
+import SocialIcon from 'components/Icons/SocialIcon';
 
 interface Props {
   round?: boolean;
@@ -39,10 +39,10 @@ export const TempoIcon = styled.img`
     `}
 `;
 
-export const Icon = styled(SystemIcon)`
+export const Icon = styled(SocialIcon)`
   /* width: 47px;
   height: 47px; */
-  border-radius: 13px;
+  /* border-radius: 13px; */
   ${(props: Props) =>
     props.round &&
     css`
@@ -65,10 +65,8 @@ export const Button = styled(ButtonComponent)`
   max-width: 500px;
   height: 45px;
   background-color: ${(props: Props) => props.backgroundColor};
-
   border: 1px solid ${(props: Props) => props.borderColor};
   border-radius: 5px;
-
   display: flex;
   align-items: center;
   p {

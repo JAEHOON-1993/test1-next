@@ -12,6 +12,7 @@ interface Props {
 }
 
 const ContentContainer: React.FC<Props> = () => {
+
   return (
     <ContentBox>
       <Card onClick={() => RouterStore.push('/indoor/[id]', '/indoor/1')} />
