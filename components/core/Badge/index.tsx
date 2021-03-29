@@ -68,7 +68,7 @@ const Badge: React.FC<Props> = ({
   ...props
 }) => {
   return (
-    <BadgeWrap
+    <Wrapper
       size={size}
       color={color}
       outline={outline}
@@ -76,7 +76,7 @@ const Badge: React.FC<Props> = ({
       {...props}
     >
       {label}
-    </BadgeWrap>
+    </Wrapper>
   );
 };
 
@@ -86,23 +86,20 @@ Badge.defaultProps = {
   size: 'default',
 };
 
-interface styleProps {
+interface StyleProps {
   size?: 'default' | 'small';
   outline?: boolean;
   isDisabled?: boolean;
 }
 
-const BadgeWrap = styled.div<styleProps>`
+const Wrapper = styled.div<StyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* PC */
   ${(props) => sizes[props.size || 'default']['pc']}
-  /* Tab */
   ${(props) => props.theme.window.tab} {
     ${(props) => sizes[props.size || 'default']['tab']}
   }
-  /* Mobile */
   ${(props) => props.theme.window.mobile} {
     ${(props) => sizes[props.size || 'default']['mobile']}
   }
