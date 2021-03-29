@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react/types-6-0';
 
 import Badge from './index';
 import styled from 'styled-components';
@@ -12,18 +12,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => (
-  <div>
-    <Badge label="전체" {...args} />
-  </div>
-);
-
-export const Default = Template.bind({});
-
 const Wrapper = styled.div`
-  .description {
-    margin-bottom: 12px;
-  }
   & > div + div {
     margin-top: 32px;
   }
@@ -33,49 +22,31 @@ export const DefaultBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge label="전체" />
+        <Badge size="small" label="small" />
       </div>
       <div>
-        <Badge size="small" label="전체" />
+        <Badge label="default" />
       </div>
     </Wrapper>
   );
+};
+
+DefaultBadge.parameters = {
+  docs: {
+    description: {
+      story: '카테고리 혹은 상태를 나타낼 때 사용하는 Badge 컴포넌트입니다.',
+    },
+  },
 };
 
 export const OutlineBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge label="전체" outline={true} />
+        <Badge size="small" label="small" outline={true} />
       </div>
       <div>
-        <Badge size="small" label="전체" outline={true} />
-      </div>
-    </Wrapper>
-  );
-};
-
-export const DisabledBadge = () => {
-  return (
-    <Wrapper>
-      <div>
-        <Badge label="전체" isDisabled />
-      </div>
-      <div>
-        <Badge size="small" label="전체" isDisabled />
-      </div>
-    </Wrapper>
-  );
-};
-
-export const OutlineDisabledBadge = () => {
-  return (
-    <Wrapper>
-      <div>
-        <Badge label="전체" isDisabled outline />
-      </div>
-      <div>
-        <Badge size="small" label="전체" isDisabled outline />
+        <Badge label="default" outline={true} />
       </div>
     </Wrapper>
   );
@@ -84,18 +55,44 @@ export const OutlineDisabledBadge = () => {
 OutlineBadge.parameters = {
   docs: {
     description: {
-      story: '`outline`을(를) 이용하여 아웃라인 여부를 변경할 수 있습니다.',
+      story:
+        '`outline`을(를) 이용하여 활성화 된 Badge의 아웃라인 여부를 변경할 수 있습니다.',
     },
   },
+};
+
+export const DisabledBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge size="small" label="small" isDisabled />
+      </div>
+      <div>
+        <Badge label="default" isDisabled />
+      </div>
+    </Wrapper>
+  );
 };
 
 DisabledBadge.parameters = {
   docs: {
     description: {
-      story:
-        '`isDisabled`을(를) 이용하여 badge의 disabled 상태를 변경할 수 있습니다.',
+      story: '`isDisabled`을(를) 이용하여 비활성화 상태로 변경할 수 있습니다.',
     },
   },
+};
+
+export const OutlineDisabledBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge size="small" label="small" isDisabled outline />
+      </div>
+      <div>
+        <Badge label="default" isDisabled outline />
+      </div>
+    </Wrapper>
+  );
 };
 
 OutlineDisabledBadge.parameters = {
