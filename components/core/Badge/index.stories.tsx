@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import Badge from './index';
+import styled from 'styled-components';
 
 export default {
   title: 'Components/Core/Badge',
@@ -18,25 +19,69 @@ const Template: Story = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
 
-export const Outline = Template.bind({});
-Outline.args = {
-  outline: true,
+const Wrapper = styled.div`
+  .description {
+    margin-bottom: 12px;
+  }
+  & > div + div {
+    margin-top: 32px;
+  }
+`;
+
+export const DefaultBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge label="전체" />
+      </div>
+      <div>
+        <Badge size="small" label="전체" />
+      </div>
+    </Wrapper>
+  );
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  isDisabled: true,
+export const OutlineBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge label="전체" outline={true} />
+      </div>
+      <div>
+        <Badge size="small" label="전체" outline={true} />
+      </div>
+    </Wrapper>
+  );
 };
 
-export const DisabledOutline = Template.bind({});
-DisabledOutline.args = {
-  isDisabled: true,
-  outline: true,
+export const DisabledBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge label="전체" isDisabled />
+      </div>
+      <div>
+        <Badge size="small" label="전체" isDisabled />
+      </div>
+    </Wrapper>
+  );
 };
 
-Outline.parameters = {
+export const OutlineDisabledBadge = () => {
+  return (
+    <Wrapper>
+      <div>
+        <Badge label="전체" isDisabled outline />
+      </div>
+      <div>
+        <Badge size="small" label="전체" isDisabled outline />
+      </div>
+    </Wrapper>
+  );
+};
+
+OutlineBadge.parameters = {
   docs: {
     description: {
       story: '`outline`을(를) 이용하여 아웃라인 여부를 변경할 수 있습니다.',
@@ -44,7 +89,7 @@ Outline.parameters = {
   },
 };
 
-Disabled.parameters = {
+DisabledBadge.parameters = {
   docs: {
     description: {
       story:
@@ -53,7 +98,7 @@ Disabled.parameters = {
   },
 };
 
-DisabledOutline.parameters = {
+OutlineDisabledBadge.parameters = {
   docs: {
     description: {
       story:
