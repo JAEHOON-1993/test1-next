@@ -94,17 +94,24 @@ const StyledInput = styled.input<BaseProps>`
   background-color: ${(props) => props.isDisabled && props.theme.color.GRAY2};
   /* isError */
   border-color: ${(props) =>
-    props.isError && props.theme.color.WARNING} !important;
+    props.isError && `${props.theme.color.WARNING} !important`};
 `;
 
 /**
  * `InputBase` 컴포넌트는 최소한의 스타일 포함합니다. 더 많은 스타일, 로직이 추가된 `Input` 컴포넌트를 만드는데 사용됩니다.
  */
-const InputBase: React.FC<BaseProps> = ({ isDisabled, ...props }) => {
-  return (
-    <StyledInput disabled={isDisabled} isDisabled={isDisabled} {...props} />
-  );
-};
+const InputBase = React.forwardRef<HTMLInputElement, BaseProps>(
+  ({ isDisabled, ...props }, ref) => {
+    return (
+      <StyledInput
+        ref={ref}
+        disabled={isDisabled}
+        isDisabled={isDisabled}
+        {...props}
+      />
+    );
+  },
+);
 
 export default InputBase;
 
