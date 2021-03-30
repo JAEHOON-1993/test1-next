@@ -9,7 +9,6 @@ interface Props {
   backgroundColor?: string;
   borderColor?: string;
   color?: string;
-  start?: boolean;
   /**
    * 'sm', 'md' 두 가지 사이즈가 제공됩니다.
    * 'md' 사이즈가 default로 제공되고,
@@ -67,14 +66,14 @@ export const Icon = styled(SocialIcon)`
   /* width: 47px;
   height: 47px; */
   /* border-radius: 13px; */
-
-  ${(props: Props) =>
-    props.start &&
+  /* ${(props: Props) =>
+    props.round &&
     css`
+    background-color: '#000000'
       position: absolute;
-      left: 13px;
-      top: 10px;
-    `}
+      left: 0px;
+    `} */
+
 `;
 
 export const Button = styled(ButtonComponent)`
@@ -103,14 +102,14 @@ export const Button = styled(ButtonComponent)`
   :focus {
     outline: none;
   }
-  ${(props: Props) =>
+  /* ${(props: Props) =>
     props.round &&
     css`
       border-radius: 100px;
       background-color: ${(props) => props.theme.color.WHITE};
       box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
       justify-content: center;
-    `}
+    `} */
 `;
 
 Button.defaultProps = {
