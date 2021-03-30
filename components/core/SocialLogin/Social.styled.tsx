@@ -12,7 +12,7 @@ interface Props {
   /**
    * 'sm', 'md' 두 가지 사이즈가 제공됩니다.
    * 'md' 사이즈가 default로 제공되고,
-   * 'sm' 사이즈 적용 시 정사각형의 아이콘 버튼만 표시됩니다. 
+   * 'sm' 사이즈 적용 시 정사각형의 아이콘 버튼만 표시됩니다.
    */
   size?: 'sm' | 'md';
 }
@@ -36,44 +36,31 @@ const sizes = {
     pc: css`
       height: 45px;
       width: 310px;
+      font-size: 15px;
       padding-left: 27px;
       padding-right: 30px;
     `,
     tab: css`
       height: 45px;
       width: 310px;
+      font-size: 14px;
       padding-left: 17px;
       padding-right: 30px;
     `,
     mobile: css`
       height: 45px;
       width: 310px;
+      font-size: 16px;
       padding-left: 17px;
       padding-right: 30px;
     `,
   },
 };
 
-export const Hr = styled.div`
-  width: 1px;
-  height: 26px;
-  background-color: ${(props) => props.theme.color.WHITE};
-  margin-left: 5px;
-  margin-right: 15px;
-`;
-
 export const Icon = styled(SocialIcon)`
-  /* width: 47px;
+ /* width: 47px;
   height: 47px; */
   /* border-radius: 13px; */
-  /* ${(props: Props) =>
-    props.round &&
-    css`
-    background-color: '#000000'
-      position: absolute;
-      left: 0px;
-    `} */
-
 `;
 
 export const Button = styled(ButtonComponent)`
@@ -102,14 +89,6 @@ export const Button = styled(ButtonComponent)`
   :focus {
     outline: none;
   }
-  /* ${(props: Props) =>
-    props.round &&
-    css`
-      border-radius: 100px;
-      background-color: ${(props) => props.theme.color.WHITE};
-      box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
-      justify-content: center;
-    `} */
 `;
 
 Button.defaultProps = {
