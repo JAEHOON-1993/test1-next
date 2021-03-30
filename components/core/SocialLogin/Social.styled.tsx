@@ -35,19 +35,19 @@ const sizes = {
   md: {
     pc: css`
       height: 45px;
-      width: 100%;
+      width: 310px;
       padding-left: 27px;
       padding-right: 30px;
     `,
     tab: css`
       height: 45px;
-      width: 100%;
+      width: 310px;
       padding-left: 17px;
       padding-right: 30px;
     `,
     mobile: css`
       height: 45px;
-      width: 100%;
+      width: 310px;
       padding-left: 17px;
       padding-right: 30px;
     `,
