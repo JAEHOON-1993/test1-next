@@ -73,7 +73,6 @@ const Badge: React.FC<Props> = ({
     </Wrapper>
   );
 };
-
 export default Badge;
 
 Badge.defaultProps = {
@@ -117,11 +116,11 @@ const Wrapper = styled.div<StyleProps>`
       color: ${(props) => props.theme.color.BLACK};
       background-color: ${(props) => props.theme.color.GRAY2};
     `}
-
   ${(props) =>
     props.isDisabled &&
     props.outline &&
     css`
+      font-weight: 700;
       color: ${(props) => props.theme.color.GRAY3};
       border: 1px solid ${(props) => props.theme.color.GRAY3};
       background-color: transparent;
