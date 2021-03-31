@@ -46,8 +46,12 @@ const FloatingActionButton: React.FC<FloatingProps> = ({
       backgroundColor={backgroundColor}
       outlineColor={outlineColor}
       {...props}
-    > 
-    {label == null ? <IconContainer>{icon}</IconContainer> : <LabelContainer fontColor={fontColor}>{label}</LabelContainer>}
+    >
+      {label == null ? (
+        <IconContainer>{icon}</IconContainer>
+      ) : (
+        <LabelContainer fontColor={fontColor}>{label}</LabelContainer>
+      )}
     </Wrapper>
   );
 };

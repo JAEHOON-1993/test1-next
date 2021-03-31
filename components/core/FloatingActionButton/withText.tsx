@@ -39,7 +39,7 @@ type IconContainerProps = Pick<
   'size' | 'backgroundColor' | 'outlineColor'
 >;
 
-const LabelContainer = styled.div<LabelProps>`   
+const LabelContainer = styled.div<LabelProps>`
   position: absolute;
   width: max-content;
   margin: auto;
@@ -62,7 +62,6 @@ const IconContainer = styled.button<IconContainerProps>`
   top: -15%;
   left: 71.5px;
   ${(props) => IconSize[props.size || 'md']}
-
   background: ${(props) => props.backgroundColor};
   border-radius: 100%;
   border: 1px solid
