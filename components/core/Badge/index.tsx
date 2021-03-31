@@ -1,34 +1,14 @@
 import styled, { css } from 'styled-components';
 
 interface Props {
-  size?: 'default' | 'small';
+  size?: 'sm' | 'md';
   label: string;
   color?: string;
   outline?: boolean;
   isDisabled?: boolean;
 }
 const sizes = {
-  default: {
-    pc: css`
-      height: 30px;
-      font-size: 12px;
-      line-height: 18px;
-      padding: 0px 15px;
-    `,
-    tab: css`
-      height: 30px;
-      font-size: 10px;
-      line-height: 16px;
-      padding: 0px 15px;
-    `,
-    mobile: css`
-      height: 30px;
-      font-size: 12px;
-      line-height: 18px;
-      padding: 0px 15px;
-    `,
-  },
-  small: {
+  sm: {
     pc: css`
       height: 26px;
       font-size: 12px;
@@ -48,8 +28,28 @@ const sizes = {
       padding: 0px 8px;
     `,
   },
+  md: {
+    pc: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+    tab: css`
+      height: 30px;
+      font-size: 10px;
+      line-height: 16px;
+      padding: 0px 15px;
+    `,
+    mobile: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+  },
+ 
 };
-
 /**
  * 카테고리 혹은 상태를 나타낼 때 사용하는 Badge 컴포넌트입니다.
  */
@@ -77,11 +77,11 @@ const Badge: React.FC<Props> = ({
 export default Badge;
 
 Badge.defaultProps = {
-  size: 'default',
+  size: 'md',
 };
 
 interface StyleProps {
-  size?: 'default' | 'small';
+  size?: 'sm' | 'md';
   outline?: boolean;
   isDisabled?: boolean;
 }
@@ -91,12 +91,12 @@ const Wrapper = styled.div<StyleProps>`
   width: max-content;
   align-items: center;
   justify-content: center;
-  ${(props) => sizes[props.size || 'default']['pc']}
+  ${(props) => sizes[props.size || 'md']['pc']}
   ${(props) => props.theme.window.tab} {
-    ${(props) => sizes[props.size || 'default']['tab']}
+    ${(props) => sizes[props.size || 'md']['tab']}
   }
   ${(props) => props.theme.window.mobile} {
-    ${(props) => sizes[props.size || 'default']['mobile']}
+    ${(props) => sizes[props.size || 'md']['mobile']}
   }
   color: white;
   font-weight: ${(props) => (props.isDisabled ? 400 : 700)};

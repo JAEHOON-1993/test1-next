@@ -7,9 +7,6 @@ import styled from 'styled-components';
 export default {
   title: 'Components/Core/Badge',
   component: Badge,
-  argTypes: {
-    color: { control: 'color' },
-  },
 } as Meta;
 
 const Wrapper = styled.div`
@@ -22,7 +19,7 @@ export const DefaultBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge size="small" label="small" />
+        <Badge size="sm" label="small" />
       </div>
       <div>
         <Badge label="default" />
@@ -43,10 +40,10 @@ export const OutlineBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge size="small" label="small" outline={true} />
+        <Badge size="sm" label="small" outline />
       </div>
       <div>
-        <Badge label="default" outline={true} />
+        <Badge label="default" outline />
       </div>
     </Wrapper>
   );
@@ -65,7 +62,7 @@ export const DisabledBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge size="small" label="small" isDisabled />
+        <Badge size="sm" label="small" isDisabled />
       </div>
       <div>
         <Badge label="default" isDisabled />
@@ -86,7 +83,7 @@ export const OutlineDisabledBadge = () => {
   return (
     <Wrapper>
       <div>
-        <Badge size="small" label="small" isDisabled outline />
+        <Badge size="sm" label="small" isDisabled outline />
       </div>
       <div>
         <Badge label="default" isDisabled outline />
