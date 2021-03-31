@@ -5,6 +5,7 @@ import styled, { ThemeConsumer } from 'styled-components';
 import FloatingActionButton from './index';
 import ColorIcon from 'components/Icons/ColorIcon';
 import DuotoneIcon from 'components/Icons/DuotoneIcon';
+import FloatingActionButtonWithText from './withText';
 
 export default {
   title: 'Components/Core/Floating Action Button',
@@ -54,6 +55,27 @@ export const WithText = () => {
           isMaxContent
           backgroundColor={theme.color.PRIMARY}
           fontColor='white'
+       />
+     </div>
+     <div>
+       <FloatingActionButtonWithText
+      label='문의하기'
+      size='md'
+       icon={<DuotoneIcon name="click"/>}
+       />
+     </div>
+     <div>
+       <FloatingActionButtonWithText
+       size='sm'
+       label='신청하기'
+       icon={<ColorIcon name="ai"/>}
+       />
+     </div>
+     <div>
+       <FloatingActionButtonWithText
+       size='lg'
+       label='신청하기'
+       icon={<ColorIcon name="ai"/>}
        />
      </div>
      </Wrapper>
