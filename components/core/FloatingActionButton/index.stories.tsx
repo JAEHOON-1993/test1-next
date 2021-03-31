@@ -24,30 +24,44 @@ export const Default = () => {
      <Wrapper>
      <div>
        <FloatingActionButton 
-       color='#ffffff'
+       backgroundColor='#ffffff'
        outlineColor={theme.color.PRIMARY}
        icon={<ColorIcon name="ai"/>}
        />
      </div>
      <div>
        <FloatingActionButton 
-       color='#ffffff'
+       backgroundColor={theme.color.GRADIENT2}
        outlineColor='blue'
        icon={<DuotoneIcon name="click"/>}
        />
      </div>
-     <div>
-       <FloatingActionButton 
-          label='asdlfkasdlkfasldkf'
-       />
-     </div>
-
      </Wrapper>
     )}
   </ThemeConsumer>
-
   );
 };
+
+
+export const WithText = () => {
+  return (
+    <ThemeConsumer>
+    {(theme) => (
+     <Wrapper>
+     <div>
+       <FloatingActionButton 
+          label='BUTTON'
+          isMaxContent
+          backgroundColor={theme.color.PRIMARY}
+          fontColor='white'
+       />
+     </div>
+     </Wrapper>
+    )}
+  </ThemeConsumer>
+  );
+};
+
 
 // FloatingActionButton.parameters = {
 //   docs: {

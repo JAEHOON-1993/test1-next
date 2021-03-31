@@ -1,35 +1,103 @@
 import styled, { css } from 'styled-components';
 
+import { light, dark } from 'layout/theme';
+
 interface Props {
   label?: string;
   icon?: React.ReactNode;
-  color?: string;
+  backgroundColor?: string;
+  isMaxContent?: boolean;
+  fontColor?: string;
   outlineColor?: string;
-  disabled?: boolean;
   onClick?: () => void;
 }
 
 const FloatingActionButton: React.FC<Props> = ({
-  color='#ffffff',
-  outlineColor='#f13838',
-  disabled,
+  backgroundColor='#ffffff',
+  outlineColor=light.color.PRIMARY,
   icon,
+  fontColor,
+  isMaxContent,
   label,
   ...props
 }) => {
   return (
     <Wrapper
-      color={color}
+    isMaxContent={isMaxContent}
+    backgroundColor={backgroundColor}
       outlineColor={outlineColor}
-      disabled={disabled}
       {...props}
     >
-      {label && <div>{label}</div>}
+      {label && <LabelContainer fontColor={fontColor}>{label}</LabelContainer>}
       {icon && <IconContainer>{icon}</IconContainer>}
     </Wrapper>
   );
 };
 export default FloatingActionButton;
+
+
+const sizes = {
+  sm: {
+    pc: css`
+      height: 26px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 8px;
+    `,
+    tab: css`
+      height: 26px;
+      font-size: 10px;
+      line-height: 16px;
+      padding: 0px 8px;
+    `,
+    mobile: css`
+      height: 26px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 8px;
+    `,
+  },
+  md: {
+    pc: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+    tab: css`
+      height: 30px;
+      font-size: 10px;
+      line-height: 16px;
+      padding: 0px 15px;
+    `,
+    mobile: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+  },
+  lg: {
+    pc: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+    tab: css`
+      height: 30px;
+      font-size: 10px;
+      line-height: 16px;
+      padding: 0px 15px;
+    `,
+    mobile: css`
+      height: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0px 15px;
+    `,
+  },
+};
 
 type IconContainerProps = Pick<Props, 'icon'>;
 
@@ -42,21 +110,22 @@ const IconContainer = styled.div<IconContainerProps>`
   }
 `;
 
+const LabelContainer = styled.div<Props>`
+  font-size: 15px;
+  line-height: 27px;
+  font-weight: 700;
+  padding: 0px 18px;
+  color: ${(props) => props.fontColor};
+`;
+
 const Wrapper = styled.button<Props>`
   cursor: pointer;
-  width: 50px;
+  width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
   height: 50px;
-  background-color: ${(props) => props.color};
-  border-radius: 100%;
+  background-color: ${(props) => props.backgroundColor};
+  border-radius: ${(props) => (props.isMaxContent ? '60px' : '100%')};
   border: 1px solid
     ${(props) => (props.outlineColor ? props.outlineColor : 'transparent')};
-  ${(props) =>
-    props.disabled &&
-    css`
-      cursor: not-allowed;
-      color: ${(props) => props.theme.color.WHITE};
-      background-color: ${(props) => props.theme.color.GRAY4};
-    `}
 `;
 
 
