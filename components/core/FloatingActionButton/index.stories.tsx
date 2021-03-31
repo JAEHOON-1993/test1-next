@@ -60,13 +60,13 @@ export const WithText = () => {
      <div>
        <FloatingActionButtonWithText
       label='문의하기'
-      size='md'
+      size='sm'
        icon={<DuotoneIcon name="click"/>}
        />
      </div>
      <div>
        <FloatingActionButtonWithText
-       size='sm'
+       size='md'
        label='신청하기'
        icon={<ColorIcon name="ai"/>}
        />
