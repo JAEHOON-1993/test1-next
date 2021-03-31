@@ -1,39 +1,13 @@
 import styled from 'styled-components';
+import { FloatingProps } from '.';
 
 import { LabelSize, IconSize, TextContainerSize } from './size';
 
-interface Props {
-  /**
-   * 버튼에 label을 표시할 수 있습니다.
-   */
-  label?: string;
-  /**
-   * 버튼에 표시될 아이콘을 설정합니다.
-   */
-  icon: React.ReactNode;
-  /**
-   * 버튼의 색을 설정합니다.
-   */
-  backgroundColor?: string;
-  /**
-   * label 사용 시 표시되는 text의 색상을 설정합니다.
-   */
-  fontColor?: string;
-  /**
-   * 버튼 outline의 색상을 설정합니다.
-   */
-  outlineColor?: string;
-  /**
-   * sm, md, lg 3가지 사이즈가 제공되며, 기본값은 md 입니다.
-   */
+interface WithTextProps extends FloatingProps {
   size?: 'sm' | 'md' | 'lg';
-  /**
-   * 버튼 클릭 시 동작할 기능, 상태를 설정합니다.
-   */
-  onClick?: () => void;
 }
 
-const FloatingActionButtonWithText: React.FC<Props> = ({
+const FloatingActionButtonWithText: React.FC<WithTextProps> = ({
   backgroundColor = '#ffffff',
   outlineColor,
   icon,
@@ -41,10 +15,8 @@ const FloatingActionButtonWithText: React.FC<Props> = ({
   size,
   fontColor,
   onClick,
-  
 }) => {
   return (
-
     <TextContainer size={size} onClick={onClick}>
       <LabelContainer size={size} fontColor={fontColor}>
         {label}
@@ -53,26 +25,24 @@ const FloatingActionButtonWithText: React.FC<Props> = ({
         size={size}
         backgroundColor={backgroundColor}
         outlineColor={outlineColor}
-
       >
         {icon && <SvgContainer>{icon}</SvgContainer>}
       </IconContainer>
     </TextContainer>
-  
   );
 };
 export default FloatingActionButtonWithText;
 
-
-type LabelProps = Pick<Props, 'size' | 'fontColor'>;
+type LabelProps = Pick<WithTextProps, 'size' | 'fontColor'>;
 type IconContainerProps = Pick<
-  Props,
+  WithTextProps,
   'size' | 'backgroundColor' | 'outlineColor'
 >;
 
-const LabelContainer = styled.div<LabelProps>`
-  width: max-content;
+const LabelContainer = styled.div<LabelProps>`   
   position: absolute;
+  width: max-content;
+  margin: auto;
   font-weight: bold;
   ${(props) => LabelSize[props.size || 'md']}
 `;
@@ -100,7 +70,7 @@ const IconContainer = styled.button<IconContainerProps>`
 `;
 
 const TextContainer = styled.div<LabelProps>`
-    cursor: pointer;
+  cursor: pointer;
   position: relative;
   border: 1px solid #f0f0f0;
   box-sizing: border-box;

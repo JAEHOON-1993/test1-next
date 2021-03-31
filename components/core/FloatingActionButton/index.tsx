@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-
-interface Props {
+export interface FloatingProps {
   /**
    * 버튼에 label을 표시할 수 있습니다.
    */
@@ -32,7 +31,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const FloatingActionButton: React.FC<Props> = ({
+const FloatingActionButton: React.FC<FloatingProps> = ({
   backgroundColor = '#ffffff',
   outlineColor,
   icon,
@@ -54,8 +53,8 @@ const FloatingActionButton: React.FC<Props> = ({
 };
 export default FloatingActionButton;
 
-type IconContainerProps = Pick<Props, 'icon'>;
-type LabelProps = Pick<Props, 'fontColor'>;
+type IconContainerProps = Pick<FloatingProps, 'icon'>;
+type LabelProps = Pick<FloatingProps, 'fontColor'>;
 
 const IconContainer = styled.div<IconContainerProps>`
   display: flex;
@@ -75,7 +74,7 @@ const LabelContainer = styled.div<LabelProps>`
   color: ${(props) => props.fontColor};
 `;
 
-const Wrapper = styled.button<Props>`
+const Wrapper = styled.button<FloatingProps>`
   cursor: pointer;
   width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
   height: 50px;
