@@ -6,6 +6,7 @@ import FloatingActionButton from './index';
 import ColorIcon from 'components/Icons/ColorIcon';
 import DuotoneIcon from 'components/Icons/DuotoneIcon';
 import FloatingActionButtonWithText from './withText';
+import SocialIcon from 'components/Icons/SocialIcon';
 
 export default {
   title: 'Components/Core/Floating Action Button',
@@ -25,14 +26,14 @@ export const Default = () => {
      <Wrapper>
      <div>
        <FloatingActionButton 
-       backgroundColor='#ffffff'
+       backgroundColor={theme.color.GRADIENT1}
        outlineColor={theme.color.PRIMARY}
-       icon={<ColorIcon name="ai"/>}
+       icon={<SocialIcon name="naver" color={theme.color.WHITE}/>}
        />
      </div>
      <div>
        <FloatingActionButton 
-       backgroundColor={theme.color.GRADIENT2}
+       backgroundColor={theme.color.WHITE}
        outlineColor='blue'
        icon={<DuotoneIcon name="click"/>}
        />
@@ -41,6 +42,14 @@ export const Default = () => {
     )}
   </ThemeConsumer>
   );
+};
+
+Default.parameters = {
+  docs: {
+    description: {
+      story: '특정 동작을 유도 혹은 특정 기능을 수행하는 Floating action button 컴포넌트입니다.',
+    },
+  },
 };
 
 
@@ -60,20 +69,16 @@ export const WithText = () => {
      <div>
        <FloatingActionButtonWithText
       label='문의하기'
+      outlineColor='blue'
       size='sm'
        icon={<DuotoneIcon name="click"/>}
+       onClick={() => console.log('문의하기')}
        />
      </div>
      <div>
        <FloatingActionButtonWithText
        size='md'
-       label='신청하기'
-       icon={<ColorIcon name="ai"/>}
-       />
-     </div>
-     <div>
-       <FloatingActionButtonWithText
-       size='lg'
+       outlineColor='green'
        label='신청하기'
        icon={<ColorIcon name="ai"/>}
        />
@@ -85,10 +90,10 @@ export const WithText = () => {
 };
 
 
-// FloatingActionButton.parameters = {
-//   docs: {
-//     description: {
-//       story: '카테고리 혹은 상태를 나타낼 때 사용하는 Badge 컴포넌트입니다.',
-//     },
-//   },
-// };
+WithText.parameters = {
+  docs: {
+    description: {
+      story: 'Text와 함께 표시되며, 특정 동작을 유도 혹은 특정 기능을 수행하는 Floating action button 컴포넌트입니다.',
+    },
+  },
+};

@@ -1,57 +1,81 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { light, dark } from 'layout/theme';
 import { LabelSize, IconSize, TextContainerSize } from './size';
 
 interface Props {
+  /**
+   * 버튼에 label을 표시할 수 있습니다.
+   */
   label?: string;
-  icon?: React.ReactNode;
+  /**
+   * 버튼에 표시될 아이콘을 설정합니다.
+   */
+  icon: React.ReactNode;
+  /**
+   * 버튼의 색을 설정합니다.
+   */
   backgroundColor?: string;
+  /**
+   * label 사용 시 표시되는 text의 색상을 설정합니다.
+   */
   fontColor?: string;
+  /**
+   * 버튼 outline의 색상을 설정합니다.
+   */
   outlineColor?: string;
+  /**
+   * sm, md, lg 3가지 사이즈가 제공되며, 기본값은 md 입니다.
+   */
   size?: 'sm' | 'md' | 'lg';
+  /**
+   * 버튼 클릭 시 동작할 기능, 상태를 설정합니다.
+   */
   onClick?: () => void;
 }
 
 const FloatingActionButtonWithText: React.FC<Props> = ({
   backgroundColor = '#ffffff',
-  outlineColor = light.color.PRIMARY,
+  outlineColor,
   icon,
   label,
   size,
   fontColor,
-  ...props
+  onClick,
+  
 }) => {
   return (
-    <TextContainer size={size}>
-      <LabelContainer size={size}>{label}</LabelContainer>
+
+    <TextContainer size={size} onClick={onClick}>
+      <LabelContainer size={size} fontColor={fontColor}>
+        {label}
+      </LabelContainer>
       <IconContainer
-      size={size}
+        size={size}
         backgroundColor={backgroundColor}
         outlineColor={outlineColor}
-        {...props}
+
       >
         {icon && <SvgContainer>{icon}</SvgContainer>}
       </IconContainer>
     </TextContainer>
+  
   );
 };
 export default FloatingActionButtonWithText;
 
-const LabelContainer = styled.div<Props>`
+
+type LabelProps = Pick<Props, 'size' | 'fontColor'>;
+type IconContainerProps = Pick<
+  Props,
+  'size' | 'backgroundColor' | 'outlineColor'
+>;
+
+const LabelContainer = styled.div<LabelProps>`
   width: max-content;
   position: absolute;
   font-weight: bold;
   ${(props) => LabelSize[props.size || 'md']}
-  ${(props) => props.theme.window.tab} {
-    ${(props) => LabelSize[props.size || 'md']}
-  }
-  ${(props) => props.theme.window.mobile} {
-    ${(props) => LabelSize[props.size || 'md']}
-  }
 `;
-
-type IconContainerProps = Pick<Props, 'icon'>;
 
 const SvgContainer = styled.div<IconContainerProps>`
   display: flex;
@@ -62,35 +86,26 @@ const SvgContainer = styled.div<IconContainerProps>`
   }
 `;
 
-const IconContainer = styled.button<Props>`
+const IconContainer = styled.button<IconContainerProps>`
+  cursor: pointer;
   position: relative;
   top: -15%;
   left: 71.5px;
   ${(props) => IconSize[props.size || 'md']}
-  ${(props) => props.theme.window.tab} {
-    ${(props) => IconSize[props.size || 'md']}
-  }
-  ${(props) => props.theme.window.mobile} {
-    ${(props) => IconSize[props.size || 'md']}
-  }
-  background-color: ${(props) => props.backgroundColor};
+
+  background: ${(props) => props.backgroundColor};
   border-radius: 100%;
   border: 1px solid
     ${(props) => (props.outlineColor ? props.outlineColor : 'transparent')};
 `;
 
-const TextContainer = styled.div<Props>`
+const TextContainer = styled.div<LabelProps>`
+    cursor: pointer;
   position: relative;
   border: 1px solid #f0f0f0;
   box-sizing: border-box;
   z-index: 2;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
   ${(props) => TextContainerSize[props.size || 'md']}
-  ${(props) => props.theme.window.tab} {
-    ${(props) => TextContainerSize[props.size || 'md']}
-  }
-  ${(props) => props.theme.window.mobile} {
-    ${(props) => TextContainerSize[props.size || 'md']}
-  }
   border-radius: 20px;
 `;
