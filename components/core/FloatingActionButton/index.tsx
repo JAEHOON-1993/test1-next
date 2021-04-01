@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export interface FloatingProps {
+export interface FloatingProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * 버튼에 label을 표시할 수 있습니다.
    */
@@ -25,10 +25,6 @@ export interface FloatingProps {
    * 버튼 outline의 색상을 설정합니다.
    */
   outlineColor?: string;
-  /**
-   * 버튼 클릭 시 동작할 기능, 상태를 설정합니다.
-   */
-  onClick?: () => void;
 }
 
 const FloatingActionButton: React.FC<FloatingProps> = ({
