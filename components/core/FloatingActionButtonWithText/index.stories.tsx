@@ -2,16 +2,14 @@ import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 
 import styled, { ThemeConsumer } from 'styled-components';
-import FloatingActionButton from './index';
 import DuotoneIcon from 'components/Icons/DuotoneIcon';
-import SocialIcon from 'components/Icons/SocialIcon';
 
 import ColorIcon from 'components/Icons/ColorIcon';
 import FloatingActionButtonWithText from './index';
 
 export default {
   title: 'Components/Core/Floating Action Button with Text',
-  component: FloatingActionButton,
+  component: FloatingActionButtonWithText,
 } as Meta;
 
 const Wrapper = styled.div`
@@ -34,6 +32,7 @@ export const WithText = () => {
           </div>
           <div>
             <FloatingActionButtonWithText
+               onClick={() => console.log('clicked')}
               size="lg"
               outlineColor="green"
               label="신청하기"

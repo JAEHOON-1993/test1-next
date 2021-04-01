@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { LabelContainerSize, IconSize, LabelSize } from './size';
 
-interface WithTextProps extends React.HTMLAttributes<HTMLDivElement> {
+interface WithTextProps extends React.HTMLAttributes<HTMLDivElement | HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   /**
    * 버튼에 label을 표시할 수 있습니다.
@@ -28,6 +28,7 @@ interface WithTextProps extends React.HTMLAttributes<HTMLDivElement> {
    * 버튼 outline의 색상을 설정합니다.
    */
   outlineColor?: string;
+  onClick?: () => void
 }
 
 const FloatingActionButtonWithText: React.FC<WithTextProps> = ({
@@ -37,7 +38,7 @@ const FloatingActionButtonWithText: React.FC<WithTextProps> = ({
   label,
   size,
   fontColor,
-  onClick,
+    onClick,
 }) => {
   return (
     <TextContainer onClick={onClick}>
@@ -82,8 +83,9 @@ const LabelContainer = styled.div<LabelProps>`
 `;
 
 const SvgContainer = styled.div<IconContainerProps>`
-  display: flex;
+display: flex;
   align-items: center;
+  justify-content: center;
   svg {
     width: 40px;
     height: 40px;
@@ -91,7 +93,7 @@ const SvgContainer = styled.div<IconContainerProps>`
 `;
 
 const IconContainer = styled.button<IconContainerProps>`
-  z-index: 2;
+  cursor: pointer;
   position: relative;
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
   right: 20%;
