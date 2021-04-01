@@ -25,6 +25,7 @@ export interface FloatingProps extends React.ButtonHTMLAttributes<HTMLButtonElem
    * 버튼 outline의 색상을 설정합니다.
    */
   outlineColor?: string;
+  isFiltered?: boolean;
 }
 
 const FloatingActionButton: React.FC<FloatingProps> = ({
@@ -34,6 +35,7 @@ const FloatingActionButton: React.FC<FloatingProps> = ({
   fontColor,
   isMaxContent,
   label,
+  isFiltered,
   ...props
 }) => {
   return (
@@ -41,6 +43,7 @@ const FloatingActionButton: React.FC<FloatingProps> = ({
       isMaxContent={isMaxContent}
       backgroundColor={backgroundColor}
       outlineColor={outlineColor}
+      isFiltered={isFiltered}
       {...props}
     >
       {label == null ? (
@@ -76,6 +79,7 @@ const LabelContainer = styled.div<LabelProps>`
 
 const Wrapper = styled.button<FloatingProps>`
   cursor: pointer;
+  filter: ${(props) => (props.isFiltered && 'drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161))')};
   width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
   height: 50px;
   background: ${(props) => props.backgroundColor};

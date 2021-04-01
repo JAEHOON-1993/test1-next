@@ -27,10 +27,7 @@ export const LabelSize = {
   md: css`
     font-size: 14px;
     line-height: 26px;
-    left: 14.71%;
-    right: 34.31%;
-    top: 15.79%;
-    bottom: 15.79%;
+    
   `,
   lg: css`
     font-size: 15px;
