@@ -252,42 +252,16 @@ export const all = () => {
           </SystemIconBox>
 
           <SystemIconBox>
-            <SystemIcon name="star" star="large" />
-            <div>Star (large)</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="starHalf" star="large" />
-            <div>StarHalf (large)</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="starEmpty" star="large" />
-            <div>StarEmpty (large)</div>
-          </SystemIconBox>
-
-          <SystemIconBox>
             <SystemIcon name="star" />
-            <div>star (default)</div>
+            <div>Star</div>
           </SystemIconBox>
           <SystemIconBox>
             <SystemIcon name="starHalf" />
-            <div>starHalf (default)</div>
+            <div>StarHalf</div>
           </SystemIconBox>
           <SystemIconBox>
             <SystemIcon name="starEmpty" />
-            <div>starEmpty (default)</div>
-          </SystemIconBox>
-
-          <SystemIconBox>
-            <SystemIcon name="star" star="small" />
-            <div>star (small)</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="starHalf" star="small" />
-            <div>starHalf (small)</div>
-          </SystemIconBox>
-          <SystemIconBox>
-            <SystemIcon name="starEmpty" star="small" />
-            <div>starEmpty (small)</div>
+            <div>StarEmpty</div>
           </SystemIconBox>
 
           <AlphaBetically>[ T ]</AlphaBetically>
