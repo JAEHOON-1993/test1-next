@@ -35,7 +35,9 @@ export interface Props
    */
   isFiltered?: boolean;
 }
-
+/**
+ * 특정 동작을 유도하거나 특정 기능을 수행하는 Floating Action Button 입니다.
+ */
 const FloatingActionButton: React.FC<Props> = ({
   backgroundColor = '#ffffff',
   size,

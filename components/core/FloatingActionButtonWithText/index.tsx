@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 import { LabelContainerSize, IconSize, StyledLabelSize } from './size';
 
-export interface Props
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * 4가지 사이즈가 제공됩니다. 기본은 md입니다.
    */
-    size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
   /**
    * 버튼에 label을 표시할 수 있습니다.
    */
@@ -34,7 +33,7 @@ export interface Props
   onClick?: () => void;
 }
 /**
- * 특정 동작을 유도하거나 특정 기능을 수행하는 Floating Action Button 입니다.
+ * 안내 문구와 함께 표기되어 특정 동작을 유도하거나 수행하는 Floating Action Button with Text 입니다.
  */
 const FloatingActionButtonWithText: React.FC<Props> = ({
   backgroundColor,
@@ -47,7 +46,7 @@ const FloatingActionButtonWithText: React.FC<Props> = ({
 }) => {
   return (
     <Container onClick={onClick}>
-      <LabelContainer size={size} >
+      <LabelContainer size={size}>
         <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
       </LabelContainer>
       <IconContainer
@@ -65,8 +64,8 @@ export default FloatingActionButtonWithText;
 FloatingActionButtonWithText.defaultProps = {
   size: 'md',
   backgroundColor: '#ffffff',
-  label: 'label'
-}
+  label: 'label',
+};
 
 type LabelProps = Pick<Props, 'size' | 'fontColor'>;
 type IconContainerProps = Pick<
