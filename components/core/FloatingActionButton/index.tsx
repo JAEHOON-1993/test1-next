@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export interface FloatingProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * 3가지 사이즈가 제공됩니다. 기본은 md입니다.
+   */
+  size?: 'sm' | 'md' | 'lg';
   /**
    * 버튼에 label을 표시할 수 있습니다.
    */
@@ -14,7 +19,7 @@ export interface FloatingProps extends React.ButtonHTMLAttributes<HTMLButtonElem
    */
   backgroundColor?: string;
   /**
-   * 설정 시 내부 contents만큼 width가 확장됩니다.
+   * label 사용 시 내부 contents만큼 width가 확장됩니다.
    */
   isMaxContent?: boolean;
   /**
@@ -25,12 +30,16 @@ export interface FloatingProps extends React.ButtonHTMLAttributes<HTMLButtonElem
    * 버튼 outline의 색상을 설정합니다.
    */
   outlineColor?: string;
+  /**
+   * true일 경우 버튼에 필터효과를 적용합니다.
+   */
   isFiltered?: boolean;
 }
 
-const FloatingActionButton: React.FC<FloatingProps> = ({
+const FloatingActionButton: React.FC<Props> = ({
   backgroundColor = '#ffffff',
-  outlineColor,
+  size,
+  outlineColor = 'blue',
   icon,
   fontColor,
   isMaxContent,
@@ -39,7 +48,7 @@ const FloatingActionButton: React.FC<FloatingProps> = ({
   ...props
 }) => {
   return (
-    <Wrapper
+    <Container
       isMaxContent={isMaxContent}
       backgroundColor={backgroundColor}
       outlineColor={outlineColor}
@@ -49,15 +58,51 @@ const FloatingActionButton: React.FC<FloatingProps> = ({
       {label == null ? (
         <IconContainer>{icon}</IconContainer>
       ) : (
-        <LabelContainer fontColor={fontColor}>{label}</LabelContainer>
+        <LabelContainer size={size} fontColor={fontColor}>
+          {label}
+        </LabelContainer>
       )}
-    </Wrapper>
+    </Container>
   );
 };
 export default FloatingActionButton;
 
-type IconContainerProps = Pick<FloatingProps, 'icon'>;
-type LabelProps = Pick<FloatingProps, 'fontColor'>;
+type IconContainerProps = Pick<Props, 'icon'>;
+type LabelProps = Pick<Props, 'size' | 'fontColor'>;
+
+const LabelSize = {
+  sm: css`
+    font-size: 16px;
+    line-height: 28px;
+    width: 67px;
+    height: 28px;
+  `,
+  md: css`
+    font-size: 14px;
+    line-height: 26px;
+    width: 59px;
+    height: 26px;
+  `,
+  lg: css`
+    font-size: 15px;
+    line-height: 27px;
+    width: 63px;
+    height: 27px;
+  `,
+};
+
+const Container = styled.button<Props>`
+  cursor: pointer;
+  filter: ${(props) =>
+    props.isFiltered && 'drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161))'};
+  width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
+  height: 50px;
+  background: ${(props) => props.backgroundColor};
+  box-sizing: border-box;
+  border-radius: ${(props) => (props.isMaxContent ? '60px' : '100%')};
+  border: 1px solid
+    ${(props) => (props.outlineColor ? props.outlineColor : 'transparent')};
+`;
 
 const IconContainer = styled.div<IconContainerProps>`
   display: flex;
@@ -70,21 +115,9 @@ const IconContainer = styled.div<IconContainerProps>`
 `;
 
 const LabelContainer = styled.div<LabelProps>`
-  font-size: 15px;
-  line-height: 27px;
+  ${(props) => LabelSize[props.size || 'md']}
   font-weight: 700;
-  padding: 0px 18px;
+  margin: 0px 10px;
   color: ${(props) => props.fontColor};
 `;
 
-const Wrapper = styled.button<FloatingProps>`
-  cursor: pointer;
-  filter: ${(props) => (props.isFiltered && 'drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161))')};
-  width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
-  height: 50px;
-  background: ${(props) => props.backgroundColor};
-  box-sizing: border-box;
-  border-radius: ${(props) => (props.isMaxContent ? '60px' : '100%')};
-  border: 1px solid
-    ${(props) => (props.outlineColor ? props.outlineColor : 'transparent')};
-`;

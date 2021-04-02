@@ -30,7 +30,7 @@ export const LabelContainerSize = {
   `,
 };
 
-export const LabelSize = {
+export const StyledLabelSize = {
   sm: css`
     width: 59px;
     height: 28px;

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 
 import styled, { ThemeConsumer } from 'styled-components';
-import FloatingActionButton from './index';
-import DuotoneIcon from 'components/Icons/DuotoneIcon';
-import SocialIcon from 'components/Icons/SocialIcon';
-
+import FloatingActionButton, { Props } from './index';
 
 export default {
   title: 'Components/Core/Floating Action Button',
   component: FloatingActionButton,
+  argTypes: {
+    icon: { control: false },
+  },
 } as Meta;
 
 const Wrapper = styled.div`
@@ -18,37 +18,62 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Default = () => {
+const Template: Story<Props> = (args) => (
+  <FloatingActionButton
+    {...args}
+    backgroundColor="white"
+    outlineColor="blue"
+  ></FloatingActionButton>
+);
+
+export const Default = Template.bind({});
+
+export const WithLabel = () => {
   return (
-    <ThemeConsumer>
-      {(theme) => (
         <Wrapper>
           <div>
             <FloatingActionButton
-              backgroundColor={theme.color.GRADIENT1}
-              outlineColor={theme.color.PRIMARY}
-              icon={<SocialIcon name="naver" color={theme.color.WHITE} />}
-            />
-          </div>
-          <div>
-            <FloatingActionButton
-            isFiltered
-              backgroundColor={theme.color.WHITE}
-              outlineColor="blue"
-              icon={<DuotoneIcon name="click" />}
+            onClick={() => console.log('log')
+            }
+               backgroundColor="white"
+               outlineColor="blue"
+               label="BUTTON"
+               isMaxContent
             />
           </div>
         </Wrapper>
-      )}
-    </ThemeConsumer>
   );
 };
 
-Default.parameters = {
+
+WithLabel.parameters = {
   docs: {
     description: {
       story:
-        '특정 동작을 유도 혹은 특정 기능을 수행하는 Floating action button 컴포넌트입니다.',
+        '`label`, `isMaxContent` Props를 사용하여 Text를 포함할 수 있습니다.',
+    },
+  },
+};
+
+export const FilteredButton = () => {
+  return (
+    <Wrapper>
+      <div>
+        <FloatingActionButton
+           backgroundColor="white"
+           outlineColor="blue"
+           isFiltered
+        />
+      </div>
+    </Wrapper>
+);
+};
+
+FilteredButton.parameters = {
+  docs: {
+    description: {
+      story:
+        '`isFiltered` Prop을 사용하여 버튼에 필터효과를 적용할 수 있습니다.',
     },
   },
 };
