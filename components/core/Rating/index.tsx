@@ -4,8 +4,6 @@ import styled from 'styled-components';
 
 import SystemIcon from 'components/Icons/SystemIcon';
 
-import { makeStars } from './script';
-
 export interface RatingProps {
   /**
    * 최대 평가(별)을 의미합니다.
@@ -20,6 +18,10 @@ export interface RatingProps {
    */
   onChange?: (value: number) => void;
   /**
+   * 아이콘의 크기를 지정할 수 있습니다.
+   */
+  size?: number;
+  /**
    * hover, click 효과를 모두 제거합니다.
    */
   readOnly?: boolean;
@@ -32,6 +34,7 @@ const Rating: React.FC<RatingProps> = ({
   max = 5,
   value: rating,
   onChange,
+  size = 36,
   readOnly,
 }) => {
   const [hoverRating, setHoverRating] = useState(0);
@@ -40,11 +43,18 @@ const Rating: React.FC<RatingProps> = ({
     setHoverRating(value);
   };
 
-  const getNumberOfStars = () => {
-    if (!hoverRating && rating && rating <= max) return rating;
-    return hoverRating;
+  const getCurrentIndex = () => {
+    if (!hoverRating && rating && rating <= max) {
+      if (rating % 1 === 0) return rating * 2;
+
+      const newRating = (rating % 1 > 0.5 ? 1 : 0.5) + Math.floor(rating);
+      return newRating * 2;
+    }
+
+    return hoverRating * 2;
   };
-  const numberOfStars = getNumberOfStars();
+
+  const currentIndex = getCurrentIndex();
 
   return (
     <Container readOnly={readOnly}>
@@ -58,21 +68,15 @@ const Rating: React.FC<RatingProps> = ({
               onMouseEnter={() => handleHover((index + 1) / 2)}
               onMouseLeave={() => handleHover(0)}
               onClick={() => onChange && onChange((index + 1) / 2)}
+              size={size}
             >
-              <StyledSystemIcon name="starEmpty" color="transparent" />
+              <SystemIcon
+                name={index + 1 <= currentIndex ? 'star' : 'starEmpty'}
+                size={size}
+              />
             </InactiveIcon>
           ))}
       </InactiveIconContainer>
-      <ActiveIconContainer>
-        {makeStars(numberOfStars, max).map((value, index) => (
-          <StyledSystemIcon
-            key={index}
-            name={
-              value === 1 ? 'star' : value === 0.5 ? 'starHalf' : 'starEmpty'
-            }
-          />
-        ))}
-      </ActiveIconContainer>
     </Container>
   );
 };
@@ -94,22 +98,11 @@ const InactiveIconContainer = styled.div`
 
 type InactiveIconProps = {
   index: number;
-};
+} & Pick<RatingProps, 'size'>;
 
 const InactiveIcon = styled.div<InactiveIconProps>`
-  width: 15px;
+  width: ${(props) => props.size && `${props.size / 2}px`};
   overflow: hidden;
   line-height: 0;
   direction: ${(props) => (props.index % 2 === 0 ? 'ltr' : 'rtl')};
-`;
-
-const ActiveIconContainer = styled.div`
-  position: absolute;
-  pointer-events: none;
-`;
-
-const StyledSystemIcon = styled(SystemIcon)`
-  /* Pc */
-  width: 30px;
-  height: 30px;
 `;

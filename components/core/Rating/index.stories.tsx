@@ -15,15 +15,6 @@ const Template: Story<RatingProps> = (args) => <Rating {...args} />;
 
 export const Default = Template.bind({});
 
-const Wrapper = styled.div`
-  .description {
-    margin-bottom: 12px;
-  }
-  & > div + div {
-    margin-top: 32px;
-  }
-`;
-
 export const ControlledRating = () => {
   const [rating, setRating] = useState(0);
 
@@ -31,33 +22,19 @@ export const ControlledRating = () => {
     setRating(value);
   };
 
-  return (
-    <Wrapper>
-      <div>
-        <Rating max={5} value={rating} onChange={handleChange} />
-      </div>
-    </Wrapper>
-  );
+  return <Rating max={5} value={rating} onChange={handleChange} />;
 };
 
 ControlledRating.parameters = {
   docs: {
     description: {
       story:
-        'React `useState` Hook을 이용하여 Rating component를 controlled 상태로 만들 수 있습니다.',
+        '`value`, `onChange` prop을 이용하여 Rating component를 controlled 상태로 만들 수 있습니다.',
     },
   },
 };
 
-export const ReadOnlyRating = () => {
-  return (
-    <Wrapper>
-      <div>
-        <Rating max={5} value={3.8} readOnly />
-      </div>
-    </Wrapper>
-  );
-};
+export const ReadOnlyRating = () => <Rating max={5} value={3.8} readOnly />;
 
 ReadOnlyRating.parameters = {
   docs: {
