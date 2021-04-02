@@ -104,13 +104,13 @@ const StyledSelect = styled.select<ReadOnlyBaseProps>`
 
 export interface SelectBaseProps extends BaseProps {
   /**
-   * 현재 선택된 값을 나타냅니다. 초값을 `''` 빈 문자열로 설정하십시오.
+   * 현재 선택된 값을 나타냅니다.
    */
   value?: any;
   /**
-   * option이 선택되면 실행되는 콜백함수 입니다. `event.target.value(any)`의 형태로 값에 접근하기 위해 사용됩니다.
+   * 옵션 선택에 따라 변경된 새로운 값을 받습니다.
    */
-  onChange?: (event: any) => void;
+  onChange?: (value: any) => void;
 }
 
 /**
@@ -147,8 +147,7 @@ const SelectBase = React.forwardRef<HTMLSelectElement, SelectBaseProps>(
       setSelectedValue(value || '');
 
       if (onChange) {
-        const event = { target: { value } };
-        onChange(event);
+        onChange(value);
       }
     };
 
