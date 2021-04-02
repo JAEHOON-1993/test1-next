@@ -101,7 +101,7 @@ const Container = styled.div<ContainerProps>`
   /* isFullWidth */
   width: ${(props) => props.isFullWidth && '100%'};
   & .input-label {
-    display: inline-block;
+    display: block;
     margin-bottom: 10px;
   }
 `;
