@@ -21,7 +21,7 @@ export interface Props
   /**
    * label 사용 시, 내부 contents만큼 width가 확장됩니다.
    */
-  isMaxContent?: boolean;
+  isExtended?: boolean;
   /**
    * label 사용 시, 표시되는 text의 색상을 설정합니다.
    */
@@ -42,14 +42,14 @@ const FloatingActionButton: React.FC<Props> = ({
   outlineColor,
   icon,
   fontColor,
-  isMaxContent,
+  isExtended,
   label,
   isFiltered,
   ...props
 }) => {
   return (
     <Container
-      isMaxContent={isMaxContent}
+      isExtended={isExtended}
       backgroundColor={backgroundColor}
       outlineColor={outlineColor}
       isFiltered={isFiltered}
@@ -95,11 +95,11 @@ const Container = styled.button<Props>`
   cursor: pointer;
   filter: ${(props) =>
     props.isFiltered && 'drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161))'};
-  width: ${(props) => (props.isMaxContent ? 'max-content' : '50px')};
+  width: ${(props) => (props.isExtended ? 'max-content' : '50px')};
   height: 50px;
   background: ${(props) => props.backgroundColor};
   box-sizing: border-box;
-  border-radius: ${(props) => (props.isMaxContent ? '60px' : '100%')};
+  border-radius: ${(props) => (props.isExtended ? '60px' : '100%')};
   border: 1px solid
     ${(props) => (props.outlineColor ? props.outlineColor : 'transparent')};
 `;

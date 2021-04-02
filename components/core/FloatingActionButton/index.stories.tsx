@@ -36,7 +36,7 @@ export const WithLabel = () => {
           backgroundColor="white"
           outlineColor="blue"
           label="BUTTON"
-          isMaxContent
+          isExtended
         />
       </div>
     </Wrapper>
