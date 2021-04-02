@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import styled, { ThemeConsumer } from 'styled-components';
+import styled from 'styled-components';
 import FloatingActionButton, { Props } from './index';
 
 export default {
@@ -21,30 +21,27 @@ const Wrapper = styled.div`
 const Template: Story<Props> = (args) => (
   <FloatingActionButton
     {...args}
-    backgroundColor="white"
-    outlineColor="blue"
-  ></FloatingActionButton>
+    backgroundColor="#4595F5"
+  />
 );
 
 export const Default = Template.bind({});
 
 export const WithLabel = () => {
   return (
-        <Wrapper>
-          <div>
-            <FloatingActionButton
-            onClick={() => console.log('log')
-            }
-               backgroundColor="white"
-               outlineColor="blue"
-               label="BUTTON"
-               isMaxContent
-            />
-          </div>
-        </Wrapper>
+    <Wrapper>
+      <div>
+        <FloatingActionButton
+          onClick={() => console.log('log')}
+          backgroundColor="white"
+          outlineColor="blue"
+          label="BUTTON"
+          isMaxContent
+        />
+      </div>
+    </Wrapper>
   );
 };
-
 
 WithLabel.parameters = {
   docs: {
@@ -60,13 +57,13 @@ export const FilteredButton = () => {
     <Wrapper>
       <div>
         <FloatingActionButton
-           backgroundColor="white"
-           outlineColor="blue"
-           isFiltered
+          backgroundColor="white"
+          outlineColor="blue"
+          isFiltered
         />
       </div>
     </Wrapper>
-);
+  );
 };
 
 FilteredButton.parameters = {

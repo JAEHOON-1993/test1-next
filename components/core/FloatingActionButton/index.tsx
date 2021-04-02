@@ -15,15 +15,15 @@ export interface Props
    */
   icon?: React.ReactNode;
   /**
-   * 버튼의 색을 설정합니다.
+   * 버튼의 배경색을 설정합니다.
    */
   backgroundColor?: string;
   /**
-   * label 사용 시 내부 contents만큼 width가 확장됩니다.
+   * label 사용 시, 내부 contents만큼 width가 확장됩니다.
    */
   isMaxContent?: boolean;
   /**
-   * label 사용 시 표시되는 text의 색상을 설정합니다.
+   * label 사용 시, 표시되는 text의 색상을 설정합니다.
    */
   fontColor?: string;
   /**
@@ -39,7 +39,7 @@ export interface Props
 const FloatingActionButton: React.FC<Props> = ({
   backgroundColor = '#ffffff',
   size,
-  outlineColor = 'blue',
+  outlineColor,
   icon,
   fontColor,
   isMaxContent,
@@ -120,4 +120,3 @@ const LabelContainer = styled.div<LabelProps>`
   margin: 0px 10px;
   color: ${(props) => props.fontColor};
 `;
-
