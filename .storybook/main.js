@@ -21,6 +21,7 @@ module.exports = {
       interfaces: path.resolve(__dirname, '../interfaces/'),
       stores: path.resolve(__dirname, '../stores/'),
       api: path.resolve(__dirname, '../api/'),
+      hooks: path.resolve(__dirname, '../hooks'),
       images: path.resolve(__dirname, '../public/images'),
       icons: path.resolve(__dirname, '../public/icons'),
     };
