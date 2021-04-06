@@ -1,35 +1,39 @@
 import React from 'react';
-import Router from 'next/router';
 
-import { Text } from '../../../components/Typography'
+import { Text } from 'components/Typography';
 import { Button, Icon } from './Social.styled';
-
-import { KAKAO_LOGIN_URL } from './_settings';
 
 interface Props {
   round?: boolean;
-  onClick?: any;
-  style?: any;
-  children?: any;
+  onClick?: () => void;
+  size?: 'sm' | 'md';
 }
 
-const KakaoLoginComponent: React.FC<Props> = ({ round, ...props }) => {
+const KakaoLoginComponent: React.FC<Props> = ({
+  size,
+  round,
+  onClick,
+  ...props
+}) => {
   return (
     <Button
       {...props}
       backgroundColor={'#ffde32'}
       borderColor={'#ffde32'}
+      size={size}
       round={round}
-      onClick={() => Router.replace(KAKAO_LOGIN_URL)}
-      icon={<Icon name="kakao" start />}
+      onClick={onClick}
+      icon={<Icon name="kakao" />}
     >
-      <Text
-        style={{
-          color: '#000',
-        }}
-      >
-        카카오 계정으로 로그인
-      </Text>
+      {size == 'sm' ? null : (
+        <Text
+          style={{
+            color: '#000000',
+          }}
+        >
+          카카오 계정으로 로그인
+        </Text>
+      )}
     </Button>
   );
 };

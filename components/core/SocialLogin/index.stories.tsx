@@ -13,29 +13,54 @@ export default {
   title: 'Components/Core/SocialLogin',
 } as Meta;
 
-export const socialButton = () => {
+export const SocialButton = () => {
   return (
     <>
-      <SocialBox>
+     <SocialBox>
         <KakaoLogin />
         <NaverLogin />
-        <FacebookLogin />
+        <FacebookLogin/>
         <GoogleLogin />
         <AppleLogin />
+      </SocialBox>
+      
+    </>
+  );
+};
+
+export const SmallSocialButton = () => {
+  return (
+    <>
+     <SocialBox>
+        <KakaoLogin size='sm' />
+        <NaverLogin size='sm' />
+        <FacebookLogin size='sm' />
+        <GoogleLogin size='sm' />
+        <AppleLogin size='sm' />
       </SocialBox>
     </>
   );
 };
+
 
 const SocialBox = styled.div`
   > button {
     margin-bottom: 8px;
   }
 `;
-socialButton.parameters = {
+
+SocialButton.parameters = {
   docs: {
     description: {
       story: '소셜 로그인 기능을 제공합니다.',
+    },
+  },
+};
+
+SmallSocialButton.parameters = {
+  docs: {
+    description: {
+      story: '`size` prop으로 사이즈를 조절할 수 있습니다.',
     },
   },
 };
