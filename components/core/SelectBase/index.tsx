@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 
 import SystemIcon from 'components/Icons/SystemIcon';
 
+import useOnClickOutside from 'hooks/useOnClickOutside';
+
 interface BaseProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   /**
    * select는 2가지 스타일로 제공됩니다. 기본은 'flushed' 입니다.
@@ -151,26 +153,7 @@ const SelectBase = React.forwardRef<HTMLSelectElement, SelectBaseProps>(
       }
     };
 
-    // native click event
-    const onClickAway = (event: MouseEvent) => {
-      // 선택 옵션이 열려있는 상태면 함수 실행 종료
-      if (!optionsShown) return;
-      // 마우스 클릭 이벤트 발생시 container 밖을 클릭한 경우 선택 옵션 닫힘
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setOptionsShown(false);
-      }
-    };
-
-    useLayoutEffect(() => {
-      document.addEventListener('mousedown', onClickAway);
-      // 언마운트시 이벤트 리스너 정리
-      return () => {
-        document.removeEventListener('mousedown', onClickAway);
-      };
-    }, [optionsShown]);
+    useOnClickOutside(containerRef, () => setOptionsShown(false));
 
     return (
       <Container isFullWidth={isFullWidth} ref={containerRef}>
