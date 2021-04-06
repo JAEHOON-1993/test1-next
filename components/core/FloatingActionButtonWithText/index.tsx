@@ -97,6 +97,7 @@ const LabelContainer = styled.div<LabelProps>`
 const StyledLabel = styled.div<LabelProps>`
   color: ${(props) => props.fontColor};
   display: flex;
+  align-items: center;
   justify-content: center;
   ${(props) => StyledLabelSize[props.size || 'md']}
 `;

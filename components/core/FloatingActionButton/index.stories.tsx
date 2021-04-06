@@ -3,6 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 
 import styled from 'styled-components';
 import FloatingActionButton, { Props } from './index';
+import SocialIcon from 'components/Icons/SocialIcon';
 
 export default {
   title: 'Components/Core/Floating Action Button',
@@ -21,6 +22,7 @@ const Wrapper = styled.div`
 const Template: Story<Props> = (args) => (
   <FloatingActionButton
     {...args}
+    icon={<SocialIcon name="kakao" color="white"/>}
     backgroundColor="#4595F5"
   />
 );

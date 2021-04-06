@@ -58,9 +58,7 @@ const sizes = {
 };
 
 export const Icon = styled(SocialIcon)`
- /* width: 47px;
-  height: 47px; */
-  /* border-radius: 13px; */
+  display: flex;
 `;
 
 export const Button = styled(ButtonComponent)`
@@ -74,7 +72,6 @@ export const Button = styled(ButtonComponent)`
     ${(props) => sizes[props.size || 'md']['mobile']}
   }
   max-width: 500px;
-
   background-color: ${(props: Props) => props.backgroundColor};
   border: 1px solid ${(props: Props) => props.borderColor};
   border-radius: 5px;
