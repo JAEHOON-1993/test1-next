@@ -69,7 +69,7 @@ export const Button = styled(ButtonComponent)`
     ${(props) => sizes[props.size || 'md']['tab']}
   }
   ${(props) => props.theme.window.mobile} {
-    ${(props) => sizes[props.size || 'md']['mobile']}
+    ${(props) => sizes[props.size || 'sm']['mobile']}
   }
   max-width: 500px;
   background-color: ${(props: Props) => props.backgroundColor};

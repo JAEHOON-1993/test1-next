@@ -85,7 +85,7 @@ const LabelContainer = styled.div<LabelProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 35px 6px 15px;
+  padding: 8px 35px 6px 15px;
   font-weight: bold;
   box-sizing: border-box;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
