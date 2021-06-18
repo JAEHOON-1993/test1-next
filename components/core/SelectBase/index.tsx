@@ -1,4 +1,4 @@
-import React, { Children, useState, useRef, useLayoutEffect } from 'react';
+import React, { Children, useState, useRef } from 'react';
 
 import styled, { css } from 'styled-components';
 
