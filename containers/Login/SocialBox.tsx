@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import KakaoLogin from 'components/core/SocialLogin/KakaoLogin';
 import NaverLogin from 'components/core/SocialLogin/NaverLogin';
-import GoogleLogin from 'components/core/Social/GoogleLogin';
-import FacebookLogin from 'components/core/Social/FacebookLogin';
-import AppleLogin from 'components/core/Social/AppleLogin';
+import GoogleLogin from 'components/core/SocialLogin/GoogleLogin';
+import FacebookLogin from 'components/core/SocialLogin/FacebookLogin';
+import AppleLogin from 'components/core/SocialLogin/AppleLogin';
 
 interface Props {
   fixed?: boolean;

@@ -40,14 +40,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-MyApp.getInitialProps = async ({ Component, ctx }: any) => {
-  let pageProps = {};
-  // console.log('Component : ', Component);
-  // console.log('ctx : ', ctx);
-  if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx);
-  }
-  return { pageProps };
-};
-
 export default MyApp;

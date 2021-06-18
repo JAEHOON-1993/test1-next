@@ -1,47 +1,26 @@
-const globby = require('globby');
 const prettier = require('prettier');
+import axios from 'axios';
 
-const axios = require('axios');
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import { NextApiResponse } from 'next';
+const DOMAIN =
+  process.env.NODE_ENV === 'production'
+    ? 'https://www.piksl.co.kr'
+    : 'http://localhost:3000';
 
-const DOMAIN = 'https://www.toktokhan.dev';
-
-// sitemap 생성시 제외할 라우트의 목록입니다.
-const FORBIDDEN = ['/signup', '/login', '/example'].map(
-  (route) => `!**${route}`,
-);
-
-export default async (res: NextApiResponse) => {
+export default async (_req: NextApiRequest, res: NextApiResponse) => {
   try {
-    /**
-     * localRoutes: pages 폴더 내 파일을 기준으로 만듭니다.
-     */
-    const localFiles: string[] = await globby([
-      'pages/**/*.{js,tsx}',
-      '!pages/_*.{js,tsx}',
-      '!pages/**/[*.{js,tsx}',
-      '!pages/api',
-      ...FORBIDDEN,
-    ]);
-
-    const localRoutes = localFiles.map((file) => {
-      const route = file
-        .replace('pages', '')
-        .replace(/.tsx|.js/, '')
-        .replace(/\/index/g, '');
-      return route;
-    });
+    const { data: localRoutes } = await axios.get(`${DOMAIN}/sitemap.json`);
 
     /**
      * externalRoutes: 백엔드 서버로 부터 받아옵니다.
      * 해당 프로젝트에 맞게 수정해야하는 부분입니다. 하나 이상의 api 호출이 필요할 수도 있습니다.
      */
     const { data } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts',
+      'https://api.tagamall.com/api/v1/product/',
     );
 
-    const externalRoutes = data.map((item: any) => `/indoor/${item.id}`);
+    const externalRoutes = data.map((item: any) => `/items/${item.id}`);
 
     /**
      * localRoutes와 externalRoutes를 합하여 전체 routes를 구성합니다.

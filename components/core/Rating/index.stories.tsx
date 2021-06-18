@@ -4,8 +4,6 @@ import { Story, Meta } from '@storybook/react';
 
 import Rating, { RatingProps } from './index';
 
-import styled from 'styled-components';
-
 export default {
   title: 'Components/Core/Rating',
   component: Rating,
